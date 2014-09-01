@@ -554,10 +554,10 @@ public class Activity extends RIFCSElement
 
     
     /**
-     * Add a description to the activity object 
+     * Add an existence date to the activity object 
      * 
-     * @param description
-     *    a Description object      
+     * @param existenceDate
+     *    an ExistenceDate object      
      */
     public void addExistenceDate(ExistenceDate existenceDate)
     {
@@ -571,14 +571,11 @@ public class Activity extends RIFCSElement
     }
 
     /**
-     * Add a description to the activity object 
-     * @param startDateFormat 
+     * Add an existence date to the activity object 
      * @param startVal 
-     * @param endDateFormat 
+     * @param startDateFormat 
      * @param endVal 
-     * 
-     * @param description
-     *    a Description object      
+     * @param endDateFormat 
      */
     public void addExistenceDate(String startVal, String startDateFormat, String endVal, String endDateFormat)
     {

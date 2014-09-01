@@ -475,7 +475,7 @@ public class Collection extends RIFCSElement {
 	/**
 	 * Add a Rights element to the collection object
 	 * 
-	 * @param Right
+	 * @param right
 	 *            a Rights object
 	 */
 	public void addRight(Right right) {

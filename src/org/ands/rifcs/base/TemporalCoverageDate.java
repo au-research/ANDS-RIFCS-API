@@ -46,8 +46,8 @@ public class TemporalCoverageDate extends RIFCSElement
     /**
      * Set the dateFormat
      * 
-     * @param type 
-     *          The type of date
+     * @param dateFormat
+     *          The date format
      */      
     public void setDateFormat(String dateFormat)
     {
@@ -56,10 +56,10 @@ public class TemporalCoverageDate extends RIFCSElement
 
 
     /**
-     * return the type
+     * return the dateFormat
      * 
      * @return
-     *      The type attribute value or empty string if attribute
+     *      The date format value or empty string if attribute
      *      is empty or not present
      */
     public String DateFormat()

@@ -46,7 +46,8 @@ public class ExistenceDate extends RIFCSElement {
 	/**
 	 * Set the startDate
 	 * 
-	 * @param startDate
+	 * @param value
+	 * @param dateFormat
 	 * @throws RIFCSException
 	 */
 	public void setStartDate(String value, String dateFormat ) throws RIFCSException {
@@ -68,7 +69,8 @@ public class ExistenceDate extends RIFCSElement {
 	/**
 	 * Set the endDate
 	 * 
-	 * @param endDate
+	 * @param value
+	 * @param dateFormat
 	 * @throws RIFCSException
 	 */
 	public void setEndDate(String value, String dateFormat ) throws RIFCSException {

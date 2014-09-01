@@ -325,9 +325,6 @@ public class Party extends RIFCSElement {
      * @param type 
      * @param termIdentifier 
      * @param lang 
-     * 
-     * @param subject
-     *    a Subject object      
      */
     public void addSubject(String value, String type, String termIdentifier, String lang)
     {
@@ -430,8 +427,8 @@ public class Party extends RIFCSElement {
 	/**
 	 * Add a description to the activity object
 	 * 
-	 * @param description
-	 *            a Description object
+	 * @param right
+	 *            a Right object
 	 */
 	public void addRight(Right right) {
 		/*
@@ -459,8 +456,8 @@ public class Party extends RIFCSElement {
 	/**
 	 * Add a description to the activity object
 	 * 
-	 * @param description
-	 *            a Description object
+	 * @param existenceDate
+	 *            an ExistenceDate object
 	 */
 	public void addExistenceDate(ExistenceDate existenceDate) {
 		/*
@@ -474,13 +471,10 @@ public class Party extends RIFCSElement {
 
     /**
      * Add a description to the activity object 
-     * @param startDateFormat 
      * @param startVal 
-     * @param endDateFormat 
+     * @param startDateFormat 
      * @param endVal 
-     * 
-     * @param description
-     *    a Description object      
+     * @param endDateFormat 
      */
     public void addExistenceDate(String startVal, String startDateFormat, String endVal, String endDateFormat)
     {

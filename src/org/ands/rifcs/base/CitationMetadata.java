@@ -174,8 +174,8 @@ public class CitationMetadata extends RIFCSElement
     /**
      * Set the actionable URI 
      * 
-     * @param uri
-     *    an actionable uri where the resource can be located
+     * @param url
+     *    an actionable URL where the resource can be located
      */
     public void setURL(String url)
     {

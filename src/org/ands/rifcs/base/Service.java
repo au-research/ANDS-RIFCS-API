@@ -377,9 +377,6 @@ public class Service extends RIFCSElement
      * @param type 
      * @param termIdentifier 
      * @param lang 
-     * 
-     * @param subject
-     *    a Subject object      
      */
     public void addSubject(String value, String type, String termIdentifier, String lang)
     {
@@ -492,8 +489,8 @@ public class Service extends RIFCSElement
     /**
      * Add a description to the activity object 
      * 
-     * @param description
-     *    a Description object      
+     * @param right
+     *    a Right object      
      */
     public void addRight(Right right)
     {
@@ -529,8 +526,8 @@ public class Service extends RIFCSElement
     /**
      * Add a description to the activity object 
      * 
-     * @param description
-     *    a Description object      
+     * @param existenceDate
+     *    an ExistenceDate object      
      */
     public void addExistenceDate(ExistenceDate existenceDate)
     {
@@ -546,13 +543,10 @@ public class Service extends RIFCSElement
 
     /**
      * Add a description to the activity object 
-     * @param startDateFormat 
      * @param startVal 
-     * @param endDateFormat 
+     * @param startDateFormat 
      * @param endVal 
-     * 
-     * @param description
-     *    a Description object      
+     * @param endDateFormat 
      */
     public void addExistenceDate(String startVal, String startDateFormat, String endVal, String endDateFormat)
     {
@@ -619,10 +613,10 @@ public class Service extends RIFCSElement
     /**
      * Add an access policy to the service object 
      * 
-     * @param accessPolicy
-     *    an AccessPolicy object      
+     * @param accessPolicyVal
+     *    the name of an AccessPolicy
      */
-    public void addAccessPolicy(String accessPloicyVal)
+    public void addAccessPolicy(String accessPolicyVal)
     {
     	AccessPolicy policy = null;
 		try {
@@ -631,7 +625,7 @@ public class Service extends RIFCSElement
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	policy.setValue(accessPloicyVal);
+    	policy.setValue(accessPolicyVal);
         this.getElement().appendChild(policy.getElement());
         this.aps.add(policy);
     }

@@ -187,7 +187,7 @@ public class RIFCSElement
      * Obtain a list of descendant RIFCS elements with the given name
      * 
      * @param localName
-     *      Obtain a list of descendant METS elements
+     *      Obtain a list of descendant RIF-CS elements
      *      
      * @return 
      *      The text content of the element

@@ -291,7 +291,7 @@ public class RIFCSWrapper
      * provided in these cases.
      * 
      * @param schemaUrl
-     *          the URL of a schema to validate the METS document against
+     *          the URL of a schema to validate the RIF-CS document against
      *          
      * @exception SAXException
      *      if document is invalid

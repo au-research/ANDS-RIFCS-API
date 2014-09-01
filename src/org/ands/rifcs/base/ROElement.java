@@ -175,7 +175,7 @@ public class ROElement
      * Obtain a list of descendant RIFCS elements with the given name
      * 
      * @param localName
-     *      Obtain a list of descendant METS elements
+     *      Obtain a list of descendant RIF-CS elements
      *      
      * @return org.w3c.dom.NodeList 
      *      The text content of the element

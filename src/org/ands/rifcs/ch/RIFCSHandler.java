@@ -21,7 +21,7 @@ package org.ands.rifcs.ch;
 
 import org.w3c.dom.Document;
 /**
- * Interface which any METS Content Handler must implement
+ * Interface which any RIF-CS Content Handler must implement
  * 
  * @author Scott Yeadon
  */

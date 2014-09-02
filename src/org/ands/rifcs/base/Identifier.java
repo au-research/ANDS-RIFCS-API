@@ -35,7 +35,7 @@ public class Identifier extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected Identifier(Node n) throws RIFCSException {
+    protected Identifier(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_IDENTIFIER);
     }
 
@@ -46,7 +46,7 @@ public class Identifier extends RIFCSElement {
      * @param type
      *      The location type
      */
-    public final void setType(String type) {
+    public final void setType(final String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -69,7 +69,7 @@ public class Identifier extends RIFCSElement {
      * @param value
      *      The content of the identifier
      */
-    public final void setValue(String value) {
+    public final void setValue(final String value) {
         super.setTextContent(value);
     }
 

@@ -42,7 +42,7 @@ public class Name extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected Name(Node n) throws RIFCSException {
+    protected Name(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_NAME);
         initStructures();
     }
@@ -54,7 +54,7 @@ public class Name extends RIFCSElement {
      * @param type
      *          The type of name
      */
-    public final void setType(String type) {
+    public final void setType(final String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -77,7 +77,7 @@ public class Name extends RIFCSElement {
     * @param lang
     *      The xml:lang attribute value
     */
-    public final void setLanguage(String lang) {
+    public final void setLanguage(final String lang) {
         super.setAttributeValueNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG, lang);
     }
 
@@ -101,7 +101,7 @@ public class Name extends RIFCSElement {
      *      A date object representing the date the name
      *      information was valid from
      */
-    public final void setDateFrom(Date dateFrom) {
+    public final void setDateFrom(final Date dateFrom) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_FROM, RegistryObject.formatDate(dateFrom));
     }
 
@@ -114,7 +114,7 @@ public class Name extends RIFCSElement {
      *      of the <a href="http://www.w3.org/TR/xmlschema-2/">W3C's Schema
      *      Data Types document</a>
      */
-    public final void setDateFrom(String dateFrom) {
+    public final void setDateFrom(final String dateFrom) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_FROM, dateFrom);
     }
 
@@ -133,7 +133,7 @@ public class Name extends RIFCSElement {
      * @param dateTo
      *      A date object representing the date the name was valid to
      */
-    public final void setDateTo(Date dateTo) {
+    public final void setDateTo(final Date dateTo) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_TO, RegistryObject.formatDate(dateTo));
     }
 
@@ -146,7 +146,7 @@ public class Name extends RIFCSElement {
      *      of the <a href="http://www.w3.org/TR/xmlschema-2/">W3C's Schema
      *      Data Types document</a>
      */
-    public final void setDateTo(String dateTo) {
+    public final void setDateTo(final String dateTo) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_TO, dateTo);
     }
 
@@ -182,7 +182,7 @@ public class Name extends RIFCSElement {
      * @param namePart
      *    a completed NamePart object
      */
-    public final void addNamePart(NamePart namePart) {
+    public final void addNamePart(final NamePart namePart) {
        this.getElement().appendChild(namePart.getElement());
        this.nameParts.add(namePart);
     }
@@ -196,8 +196,8 @@ public class Name extends RIFCSElement {
      * @param type
      *    namePart type (e.g. surname, middle name) or null
      */
-    public final void addNamePart(String namePart,
-                            String type) throws RIFCSException {
+    public final void addNamePart(final String namePart,
+                            final String type) throws RIFCSException {
         NamePart np = newNamePart();
         np.setValue(namePart);
         np.setType(type);

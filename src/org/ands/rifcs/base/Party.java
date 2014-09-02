@@ -51,7 +51,7 @@ public class Party extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected Party(Node n) throws RIFCSException {
+    protected Party(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_PARTY);
         initStructures();
     }
@@ -62,7 +62,7 @@ public class Party extends RIFCSElement {
      * @param type
      *            The type of party being described
      */
-    public final void setType(String type) {
+    public final void setType(final String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -83,7 +83,7 @@ public class Party extends RIFCSElement {
      *            A date object representing the date the party metadata was
      *            last modified
      */
-    public final void setDateModified(Date date) {
+    public final void setDateModified(final Date date) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_MODIFIED,
                                 RegistryObject.formatDate(date));
     }
@@ -96,7 +96,7 @@ public class Party extends RIFCSElement {
      *            3.2.7 of the <a href="http://www.w3.org/TR/xmlschema-2/">W3C's
      *            Schema Data Types document</a>
      */
-    public final void setDateModified(String date) {
+    public final void setDateModified(final String date) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_MODIFIED, date);
     }
 
@@ -132,7 +132,7 @@ public class Party extends RIFCSElement {
      * @param identifier
      *            an Identifier object
      */
-    public final void addIdentifier(Identifier identifier) {
+    public final void addIdentifier(final Identifier identifier) {
         this.getElement().appendChild(identifier.getElement());
         this.identifiers.add(identifier);
     }
@@ -168,7 +168,7 @@ public class Party extends RIFCSElement {
      * @param name
      *            a Name object
      */
-    public final void addName(Name name) {
+    public final void addName(final Name name) {
         this.getElement().appendChild(name.getElement());
         this.names.add(name);
     }
@@ -204,7 +204,7 @@ public class Party extends RIFCSElement {
      * @param location
      *            a Location object
      */
-    public final void addLocation(Location location) {
+    public final void addLocation(final Location location) {
         this.getElement().appendChild(location.getElement());
         this.locations.add(location);
     }
@@ -240,7 +240,7 @@ public class Party extends RIFCSElement {
      * @param coverage
      *            a Coverage object
      */
-    public final void addCoverage(Coverage coverage) {
+    public final void addCoverage(final Coverage coverage) {
         this.getElement().appendChild(coverage.getElement());
         this.coverages.add(coverage);
     }
@@ -277,7 +277,7 @@ public class Party extends RIFCSElement {
      * @param relatedObject
      *            an RelatedObject object
      */
-    public final void addRelatedObject(RelatedObject relatedObject) {
+    public final void addRelatedObject(final RelatedObject relatedObject) {
         this.getElement().appendChild(relatedObject.getElement());
         this.relatedObjects.add(relatedObject);
     }
@@ -313,7 +313,7 @@ public class Party extends RIFCSElement {
      * @param subject
      *            a Subject object
      */
-    public final void addSubject(Subject subject) {
+    public final void addSubject(final Subject subject) {
         this.getElement().appendChild(subject.getElement());
         this.subjects.add(subject);
     }
@@ -326,7 +326,7 @@ public class Party extends RIFCSElement {
      * @param termIdentifier
      * @param lang
      */
-    public final void addSubject(String value, String type, String termIdentifier, String lang)
+    public final void addSubject(final String value, final String type, final String termIdentifier, final String lang)
     {
         /*   if (subjects == null)
              {
@@ -382,7 +382,7 @@ public class Party extends RIFCSElement {
      * @param description
      *            a Description object
      */
-    public final void addDescription(Description description) {
+    public final void addDescription(final Description description) {
         this.getElement().appendChild(description.getElement());
         this.descriptions.add(description);
     }
@@ -399,7 +399,7 @@ public class Party extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    public final void addDescription(String description, String type, String language) throws RIFCSException {
+    public final void addDescription(final String description, final String type, final String language) throws RIFCSException {
         Description d = newDescription();
         d.setType(type);
         d.setValue(description);
@@ -430,7 +430,7 @@ public class Party extends RIFCSElement {
      * @param right
      *            a Right object
      */
-    public final void addRight(Right right) {
+    public final void addRight(final Right right) {
         /*
          * if (descriptions == null) { descriptions = new
          * ArrayList<Description>(); }
@@ -459,7 +459,7 @@ public class Party extends RIFCSElement {
      * @param existenceDate
      *            an ExistenceDate object
      */
-    public final void addExistenceDate(ExistenceDate existenceDate) {
+    public final void addExistenceDate(final ExistenceDate existenceDate) {
         /*
          * if (descriptions == null) { descriptions = new
          * ArrayList<Description>(); }
@@ -476,7 +476,7 @@ public class Party extends RIFCSElement {
      * @param endVal
      * @param endDateFormat
      */
-    public final void addExistenceDate(String startVal, String startDateFormat, String endVal, String endDateFormat)
+    public final void addExistenceDate(final String startVal, final String startDateFormat, final String endVal, final String endDateFormat)
     {
         /*    if (descriptions == null)
               {
@@ -526,7 +526,7 @@ public class Party extends RIFCSElement {
      * @param relatedInfo
      *            a relatedInfo object
      */
-    public final void addRelatedInfo(RelatedInfo relatedInfo) {
+    public final void addRelatedInfo(final RelatedInfo relatedInfo) {
         this.getElement().appendChild(relatedInfo.getElement());
         this.ris.add(relatedInfo);
     }

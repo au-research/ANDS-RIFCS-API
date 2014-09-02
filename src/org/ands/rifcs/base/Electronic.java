@@ -42,7 +42,7 @@ public class Electronic extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected Electronic(Node n) throws RIFCSException {
+    protected Electronic(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_ELECTRONIC);
         initStructures();
     }
@@ -54,7 +54,7 @@ public class Electronic extends RIFCSElement {
      * @param type
      *      The electronic address type
      */
-    public final void setType(String type) {
+    public final void setType(final String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -100,10 +100,10 @@ public class Electronic extends RIFCSElement {
      * @param use
      *    the argument use
      */
-    public final void addArg(String name,
-                       String required,
-                       String type,
-                       String use) throws RIFCSException {
+    public final void addArg(final String name,
+                       final String required,
+                       final String type,
+                       final String use) throws RIFCSException {
         Arg arg = newArg();
         arg.setName(name);
         arg.setRequired(required);
@@ -130,7 +130,7 @@ public class Electronic extends RIFCSElement {
      * @param arg
      *    a completed Arg object
      */
-    public final void addArg(Arg arg) {
+    public final void addArg(final Arg arg) {
        this.getElement().appendChild(arg.getElement());
        this.args.add(arg);
     }
@@ -143,7 +143,7 @@ public class Electronic extends RIFCSElement {
      *    a resolvable URI representing the electronic address
      *    of the containing registry object
      */
-    public final void setValue(String valueUri) {
+    public final void setValue(final String valueUri) {
         Element value = this.newElement(Constants.ELEMENT_VALUE);
         value.setTextContent(valueUri);
         this.getElement().appendChild(value);

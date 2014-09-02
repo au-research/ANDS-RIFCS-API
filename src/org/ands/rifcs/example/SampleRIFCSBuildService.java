@@ -36,7 +36,7 @@ public class SampleRIFCSBuildService {
 
     }
 
-    public static void main(String[] args) throws RIFCSException, FileNotFoundException, SAXException, ParserConfigurationException, IOException {
+    public static void main(final String[] args) throws RIFCSException, FileNotFoundException, SAXException, ParserConfigurationException, IOException {
         RIFCSWrapper mw = new RIFCSWrapper();
         rifcs = mw.getRIFCSObject();
         RegistryObject r = rifcs.newRegistryObject();

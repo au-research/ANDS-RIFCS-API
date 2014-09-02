@@ -37,12 +37,12 @@ public class DateElement extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected DateElement(Node n) throws RIFCSException {
+    protected DateElement(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_DATE);
     }
 
 
-    public DateElement(Node n, String name) throws RIFCSException {
+    public DateElement(final Node n, final String name) throws RIFCSException {
         super(n, name);
     }
 
@@ -53,7 +53,7 @@ public class DateElement extends RIFCSElement {
      * @param type
      *          The type of date
      */
-    public final void setType(String type) {
+    public final void setType(final String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -76,7 +76,7 @@ public class DateElement extends RIFCSElement {
      * @param value
      *      The content of the date
      */
-    public final void setValue(String value) {
+    public final void setValue(final String value) {
         super.setTextContent(value);
     }
 
@@ -87,7 +87,7 @@ public class DateElement extends RIFCSElement {
      * @param value
      *      The content of the date
      */
-    public final void setValue(Date value) {
+    public final void setValue(final Date value) {
         super.setTextContent(RegistryObject.formatDate(value));
     }
 

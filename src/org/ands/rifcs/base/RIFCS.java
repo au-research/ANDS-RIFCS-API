@@ -93,7 +93,7 @@ public class RIFCS {
      *
      * @exception RIFCSException
      */
-    public RIFCS(Document d) throws RIFCSException {
+    public RIFCS(final Document d) throws RIFCSException {
         this.doc = d;
         initObjectClassMap();
         initRegistryObjects();
@@ -172,7 +172,7 @@ public class RIFCS {
      * @param r
      *    A RegistryObject
      */
-    public final void addRegistryObject(RegistryObject r) throws RIFCSException {
+    public final void addRegistryObject(final RegistryObject r) throws RIFCSException {
         doc.getDocumentElement().appendChild(r.getElement());
         ros.put(r.getKey(), r);
         rosByClass.get(r.getObjectClassName()).add(r);

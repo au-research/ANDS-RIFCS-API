@@ -39,7 +39,7 @@ public class CitationInfo extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected CitationInfo(Node n) throws RIFCSException {
+    protected CitationInfo(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_CITATIONINFO);
         initStructures();
     }
@@ -72,8 +72,8 @@ public class CitationInfo extends RIFCSElement {
      *      The full citation style, use <code>null</code> if style is unknown
      *
      */
-    public final void setCitation(String citation,
-                            String style) throws RIFCSException {
+    public final void setCitation(final String citation,
+                            final String style) throws RIFCSException {
         Element e = this.newElement(Constants.ELEMENT_FULL_CITATION);
         e.setTextContent(citation);
         if (style != null) {
@@ -125,7 +125,7 @@ public class CitationInfo extends RIFCSElement {
      * @param citationMetadata
      *    a citationMetadata option
      */
-    public final void addCitationMetadata(CitationMetadata citationMetadata) {
+    public final void addCitationMetadata(final CitationMetadata citationMetadata) {
         this.getElement().appendChild(citationMetadata.getElement());
         cm = citationMetadata;
     }

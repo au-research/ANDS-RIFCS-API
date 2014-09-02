@@ -39,7 +39,7 @@ public class RelatedInfo extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected RelatedInfo(Node n) throws RIFCSException {
+    protected RelatedInfo(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_RELATED_INFO);
         initStructures();
     }
@@ -51,7 +51,7 @@ public class RelatedInfo extends RIFCSElement {
      * @param type
      *          The type of related information
      */
-    public final void setType(String type) {
+    public final void setType(final String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -94,8 +94,8 @@ public class RelatedInfo extends RIFCSElement {
      *      The type of the identifier
      *
      */
-    public final void setIdentifier(String anIdentifier,
-                              String type) throws RIFCSException {
+    public final void setIdentifier(final String anIdentifier,
+                              final String type) throws RIFCSException {
         this.identifier = this.newIdentifier();
         this.identifier.setValue(anIdentifier);
         this.identifier.setType(type);
@@ -120,7 +120,7 @@ public class RelatedInfo extends RIFCSElement {
      * @param title
      *    The title of the related information resource
      */
-    public final void setTitle(String title) {
+    public final void setTitle(final String title) {
         Element e = this.newElement(Constants.ELEMENT_TITLE);
         e.setTextContent(title);
         this.getElement().appendChild(e);
@@ -149,7 +149,7 @@ public class RelatedInfo extends RIFCSElement {
      * @param notes
      *    Notes relevant to the related information resource
      */
-    public final void setNotes(String notes) {
+    public final void setNotes(final String notes) {
         Element e = this.newElement(Constants.ELEMENT_NOTES);
         e.setTextContent(notes);
         this.getElement().appendChild(e);

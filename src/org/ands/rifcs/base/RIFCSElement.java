@@ -49,8 +49,8 @@ public class RIFCSElement {
      * @exception RIFCSException
      *
      */
-    protected RIFCSElement(Node n,
-                           String name) throws RIFCSException {
+    protected RIFCSElement(final Node n,
+                           final String name) throws RIFCSException {
         if (n == null) {
             throw new RIFCSException("Null Node passed to constructor");
         }
@@ -77,7 +77,7 @@ public class RIFCSElement {
      *      The attribute value or empty string if attribute
      *      is empty or not present
      */
-    protected final String getAttributeValue(String name) {
+    protected final String getAttributeValue(final String name) {
         return e.getAttribute(name);
     }
 
@@ -91,8 +91,8 @@ public class RIFCSElement {
      * @param value
      *      The attribute value
      */
-    protected final void setAttributeValue(String name,
-                                     String value) {
+    protected final void setAttributeValue(final String name,
+                                     final String value) {
         e.setAttribute(name, value);
     }
 
@@ -107,9 +107,9 @@ public class RIFCSElement {
      * @param value
      *      The attribute value
      */
-    protected final void setAttributeValueNS(String ns,
-                                       String name,
-                                       String value) {
+    protected final void setAttributeValueNS(final String ns,
+                                       final String name,
+                                       final String value) {
         e.setAttributeNS(ns, name, value);
     }
 
@@ -122,8 +122,8 @@ public class RIFCSElement {
      * @param name
      *      The attribute name
      */
-    protected final String getAttributeValueNS(String ns,
-                                         String name) {
+    protected final String getAttributeValueNS(final String ns,
+                                         final String name) {
         return e.getAttributeNS(ns, name);
     }
 
@@ -141,8 +141,8 @@ public class RIFCSElement {
      *      The attribute value or empty string if attribute
      *      is empty or not present
      */
-    protected final String getAttributeValue(String ns,
-                                       String localName) {
+    protected final String getAttributeValue(final String ns,
+                                       final String localName) {
         return e.getAttributeNS(ns, localName);
     }
 
@@ -164,7 +164,7 @@ public class RIFCSElement {
      * @param value
      *      The text content of the element
      */
-    protected final void setTextContent(String value) {
+    protected final void setTextContent(final String value) {
         e.setTextContent(value);
     }
 
@@ -178,7 +178,7 @@ public class RIFCSElement {
      * @return
      *      The text content of the element
      */
-    protected final NodeList getElements(String localName) {
+    protected final NodeList getElements(final String localName) {
         return e.getElementsByTagNameNS(Constants.NS_RIFCS, localName);
     }
 
@@ -193,7 +193,7 @@ public class RIFCSElement {
      *      A list of RIFCS elements whose tag name matches
      *      the localName
      */
-    protected final List<Node> getChildElements(String localName) {
+    protected final List<Node> getChildElements(final String localName) {
         NodeList nl = e.getChildNodes();
         List<Node> l = new ArrayList<Node>();
         for (int i = 0; i < nl.getLength(); i++) {
@@ -244,7 +244,7 @@ public class RIFCSElement {
      * @return
      *      an element with the given name
      */
-    protected final Element newElement(String elementName) {
+    protected final Element newElement(final String elementName) {
         return this.getElement().getOwnerDocument().createElementNS(Constants.NS_RIFCS, elementName);
     }
 
@@ -255,7 +255,7 @@ public class RIFCSElement {
      * @return
      *      The date in UTC format
      */
-    protected static String formatDate(Date date) {
+    protected static String formatDate(final Date date) {
         SimpleDateFormat df = new SimpleDateFormat(Constants.TIMESTAMP_UTC_FORMAT);
         Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
         cal.setTime(date);

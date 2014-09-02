@@ -51,7 +51,7 @@ public class Collection extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected Collection(Node n) throws RIFCSException {
+    protected Collection(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_COLLECTION);
         initStructures();
     }
@@ -62,7 +62,7 @@ public class Collection extends RIFCSElement {
      * @param type
      *            The type of collection being described
      */
-    public final void setType(String type) {
+    public final void setType(final String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -84,7 +84,7 @@ public class Collection extends RIFCSElement {
      *            A date object representing the date the collection metadata
      *            was recorded in the catalog system
      */
-    public final void setDateAccessioned(Date date) {
+    public final void setDateAccessioned(final Date date) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_ACCESSIONED, RegistryObject.formatDate(date));
     }
 
@@ -97,7 +97,7 @@ public class Collection extends RIFCSElement {
      *            3.2.7 of the <a href="http://www.w3.org/TR/xmlschema-2/">W3C's
      *            Schema Data Types document</a>
      */
-    public final void setDateAccessioned(String date) {
+    public final void setDateAccessioned(final String date) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_ACCESSIONED, date);
     }
 
@@ -118,7 +118,7 @@ public class Collection extends RIFCSElement {
      *            A date object representing the date the collection metadata
      *            was last modified
      */
-    public final void setDateModified(Date date) {
+    public final void setDateModified(final Date date) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_MODIFIED, RegistryObject.formatDate(date));
     }
 
@@ -130,7 +130,7 @@ public class Collection extends RIFCSElement {
      *            3.2.7 of the <a href="http://www.w3.org/TR/xmlschema-2/">W3C's
      *            Schema Data Types document</a>
      */
-    public final void setDateModified(String date) {
+    public final void setDateModified(final String date) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_MODIFIED, date);
     }
 
@@ -166,7 +166,7 @@ public class Collection extends RIFCSElement {
      * @param identifier
      *            an Identifier object
      */
-    public final void addIdentifier(Identifier identifier) {
+    public final void addIdentifier(final Identifier identifier) {
         this.getElement().appendChild(identifier.getElement());
         this.identifiers.add(identifier);
     }
@@ -182,7 +182,7 @@ public class Collection extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public final void addIdentifier(String identifier, String type) throws RIFCSException {
+    public final void addIdentifier(final String identifier, final String type) throws RIFCSException {
         Identifier i = newIdentifier();
         i.setType(type);
         i.setValue(identifier);
@@ -221,7 +221,7 @@ public class Collection extends RIFCSElement {
      * @param name
      *            a Name object
      */
-    public final void addName(Name name) {
+    public final void addName(final Name name) {
         this.getElement().appendChild(name.getElement());
         this.names.add(name);
     }
@@ -257,7 +257,7 @@ public class Collection extends RIFCSElement {
      * @param location
      *            a Location object
      */
-    public final void addLocation(Location location) {
+    public final void addLocation(final Location location) {
         this.getElement().appendChild(location.getElement());
         this.locations.add(location);
     }
@@ -293,7 +293,7 @@ public class Collection extends RIFCSElement {
      * @param coverage
      *            a Coverage object
      */
-    public final void addCoverage(Coverage coverage) {
+    public final void addCoverage(final Coverage coverage) {
         this.getElement().appendChild(coverage.getElement());
         this.coverages.add(coverage);
     }
@@ -329,7 +329,7 @@ public class Collection extends RIFCSElement {
      * @param relatedObject
      *            an RelatedObject object
      */
-    public final void addRelatedObject(RelatedObject relatedObject) {
+    public final void addRelatedObject(final RelatedObject relatedObject) {
         this.getElement().appendChild(relatedObject.getElement());
         this.relatedObjects.add(relatedObject);
     }
@@ -365,7 +365,7 @@ public class Collection extends RIFCSElement {
      * @param subject
      *            a Subject object
      */
-    public final void addSubject(Subject subject) {
+    public final void addSubject(final Subject subject) {
         this.getElement().appendChild(subject.getElement());
         this.subjects.add(subject);
     }
@@ -382,7 +382,7 @@ public class Collection extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    public final void addSubject(String subject, String type, String language) throws RIFCSException {
+    public final void addSubject(final String subject, final String type, final String language) throws RIFCSException {
         Subject s = newSubject();
         s.setType(type);
         s.setValue(subject);
@@ -424,7 +424,7 @@ public class Collection extends RIFCSElement {
      * @param description
      *            a Description object
      */
-    public final void addDescription(Description description) {
+    public final void addDescription(final Description description) {
         this.getElement().appendChild(description.getElement());
         this.descriptions.add(description);
     }
@@ -441,7 +441,7 @@ public class Collection extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    public final void addDescription(String description, String type, String language) throws RIFCSException {
+    public final void addDescription(final String description, final String type, final String language) throws RIFCSException {
         Description d = newDescription();
         d.setType(type);
         d.setValue(description);
@@ -478,7 +478,7 @@ public class Collection extends RIFCSElement {
      * @param right
      *            a Rights object
      */
-    public final void addRight(Right right) {
+    public final void addRight(final Right right) {
         this.getElement().appendChild(right.getElement());
         this.rightsList.add(right);
     }
@@ -515,7 +515,7 @@ public class Collection extends RIFCSElement {
      * @param relatedInfo
      *            a relatedInfo object
      */
-    public final void addRelatedInfo(RelatedInfo relatedInfo) {
+    public final void addRelatedInfo(final RelatedInfo relatedInfo) {
         this.getElement().appendChild(relatedInfo.getElement());
         this.ris.add(relatedInfo);
     }
@@ -534,7 +534,7 @@ public class Collection extends RIFCSElement {
      *             related info element.
      */
     @Deprecated
-    public final void addRelatedInfo(String relatedInfoURI) throws RIFCSException {
+    public final void addRelatedInfo(final String relatedInfoURI) throws RIFCSException {
         RelatedInfo ri = newRelatedInfo();
         ri.setIdentifier(relatedInfoURI, "uri");
         this.getElement().appendChild(ri.getElement());
@@ -554,7 +554,7 @@ public class Collection extends RIFCSElement {
         return new CitationInfo(this.newElement(Constants.ELEMENT_CITATIONINFO));
     }
 
-    public final void addCitationInfo(CitationInfo citationInfo) {
+    public final void addCitationInfo(final CitationInfo citationInfo) {
         this.getElement().appendChild(citationInfo.getElement());
         this.cis.add(citationInfo);
     }

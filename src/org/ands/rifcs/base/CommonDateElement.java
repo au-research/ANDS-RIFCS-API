@@ -37,7 +37,7 @@ public class CommonDateElement extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected CommonDateElement(Node n) throws RIFCSException {
+    protected CommonDateElement(final Node n) throws RIFCSException {
         super(n, n.getNodeName());
     }
 
@@ -48,7 +48,7 @@ public class CommonDateElement extends RIFCSElement {
      * @param type
      *          The type of date
      */
-    public final void setDateFormat(String type) {
+    public final void setDateFormat(final String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_FORMAT, type);
     }
 
@@ -71,7 +71,7 @@ public class CommonDateElement extends RIFCSElement {
      * @param value
      *      The content of the date
      */
-    public final void setValue(String value) {
+    public final void setValue(final String value) {
         super.setTextContent(value);
     }
 
@@ -82,7 +82,7 @@ public class CommonDateElement extends RIFCSElement {
      * @param value
      *      The content of the date
      */
-    public final void setValue(Date value) {
+    public final void setValue(final Date value) {
         super.setTextContent(RegistryObject.formatDate(value));
     }
 

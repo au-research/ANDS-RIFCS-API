@@ -44,7 +44,7 @@ public class CitationMetadata extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected CitationMetadata(Node n) throws RIFCSException {
+    protected CitationMetadata(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_CITATION_METADATA);
         initStructures();
     }
@@ -110,8 +110,8 @@ public class CitationMetadata extends RIFCSElement {
      *      The type of the identifier
      *
      */
-    public final void setIdentifier(String anIdentifier,
-                              String type) throws RIFCSException {
+    public final void setIdentifier(final String anIdentifier,
+                              final String type) throws RIFCSException {
         this.identifier = this.newIdentifier();
         this.identifier.setValue(anIdentifier);
         this.identifier.setType(type);
@@ -137,7 +137,7 @@ public class CitationMetadata extends RIFCSElement {
      * @param title
      *    The title of the related information resource
      */
-    public final void setTitle(String title) {
+    public final void setTitle(final String title) {
         Element e = this.newElement(Constants.ELEMENT_TITLE);
         e.setTextContent(title);
         this.getElement().appendChild(e);
@@ -167,7 +167,7 @@ public class CitationMetadata extends RIFCSElement {
      * @param url
      *    an actionable URL where the resource can be located
      */
-    public final void setURL(String url) {
+    public final void setURL(final String url) {
         Element value = this.newElement(Constants.ELEMENT_URL);
         value.setTextContent(url);
         this.getElement().appendChild(value);
@@ -196,7 +196,7 @@ public class CitationMetadata extends RIFCSElement {
      * @param edition
      *    the resource edition
      */
-    public final void setEdition(String edition) {
+    public final void setEdition(final String edition) {
         Element e = this.newElement(Constants.ELEMENT_EDITION);
         e.setTextContent(edition);
         this.getElement().appendChild(e);
@@ -224,7 +224,7 @@ public class CitationMetadata extends RIFCSElement {
      * @param publisher
      *    the resource publisher
      */
-    public final void setPublisher(String publisher) {
+    public final void setPublisher(final String publisher) {
         Element e = this.newElement(Constants.ELEMENT_PUBLISHER);
         e.setTextContent(publisher);
         this.getElement().appendChild(e);
@@ -253,7 +253,7 @@ public class CitationMetadata extends RIFCSElement {
      * @param placePublished
      *    the place the resource was published
      */
-    public final void setPlacePublished(String placePublished) {
+    public final void setPlacePublished(final String placePublished) {
         Element e = this.newElement(Constants.ELEMENT_PLACE_PUBLISHED);
         e.setTextContent(placePublished);
         this.getElement().appendChild(e);
@@ -283,7 +283,7 @@ public class CitationMetadata extends RIFCSElement {
      *    the context of the resource (for example if the resource is
      *    a smaller part of a larger context)
      */
-    public final void setContext(String context) {
+    public final void setContext(final String context) {
         Element e = this.newElement(Constants.ELEMENT_CONTEXT);
         e.setTextContent(context);
         this.getElement().appendChild(e);
@@ -313,7 +313,7 @@ public class CitationMetadata extends RIFCSElement {
      * @param contributor
      *    a Contributor object
      */
-    public final void addContributor(Contributor contributor) {
+    public final void addContributor(final Contributor contributor) {
         this.getElement().appendChild(contributor.getElement());
         this.names.add(contributor);
     }
@@ -337,7 +337,7 @@ public class CitationMetadata extends RIFCSElement {
      * @param date
      *    a CitationDate object
      */
-    public final void addDate(CitationDate date) {
+    public final void addDate(final CitationDate date) {
         this.getElement().appendChild(date.getElement());
         this.dates.add(date);
     }

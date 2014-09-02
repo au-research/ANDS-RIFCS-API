@@ -35,7 +35,7 @@ public class Subject extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected Subject(Node n) throws RIFCSException {
+    protected Subject(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_SUBJECT);
     }
 
@@ -46,7 +46,7 @@ public class Subject extends RIFCSElement {
      * @param type
      *          The type of subject
      */
-    public final void setType(String type) {
+    public final void setType(final String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -68,7 +68,7 @@ public class Subject extends RIFCSElement {
     * @param termIdentifier
     *          The termIdentifier of subject
     */
-   public final void setTermIdentifier(String termIdentifier) {
+   public final void setTermIdentifier(final String termIdentifier) {
        super.setAttributeValue(Constants.ATTRIBUTE_TERM_IDENTIFIER, termIdentifier);
    }
 
@@ -91,7 +91,7 @@ public class Subject extends RIFCSElement {
     * @param lang
     *      The xml:lang attribute value
     */
-    public final void setLanguage(String lang) {
+    public final void setLanguage(final String lang) {
         super.setAttributeValueNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG, lang);
     }
 
@@ -114,7 +114,7 @@ public class Subject extends RIFCSElement {
      * @param value
      *      The content of the subject
      */
-    public final void setValue(String value) {
+    public final void setValue(final String value) {
         super.setTextContent(value);
     }
 

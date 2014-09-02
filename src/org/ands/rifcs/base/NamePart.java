@@ -35,7 +35,7 @@ public class NamePart extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected NamePart(Node n) throws RIFCSException {
+    protected NamePart(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_NAMEPART);
     }
 
@@ -46,7 +46,7 @@ public class NamePart extends RIFCSElement {
      * @param type
      *          The type of namePart being described
      */
-    public final void setType(String type) {
+    public final void setType(final String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -69,7 +69,7 @@ public class NamePart extends RIFCSElement {
      * @param value
      *      The content of the namePart
      */
-    public final void setValue(String value) {
+    public final void setValue(final String value) {
         super.setTextContent(value);
     }
 

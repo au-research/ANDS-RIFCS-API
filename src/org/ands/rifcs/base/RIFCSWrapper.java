@@ -95,7 +95,7 @@ public class RIFCSWrapper {
      *
      * @exception RIFCSException
      */
-    public RIFCSWrapper(Document d) throws RIFCSException {
+    public RIFCSWrapper(final Document d) throws RIFCSException {
         this.doc = d;
         rifcs = new RIFCS(d);
     }
@@ -129,7 +129,7 @@ public class RIFCSWrapper {
      * @param os
      *        The OutputStream to write the data to
      */
-    public final void write(OutputStream os) {
+    public final void write(final OutputStream os) {
         DOMImplementation impl = doc.getImplementation();
         DOMImplementationLS implLS = (DOMImplementationLS) impl.getFeature("LS", "3.0");
 
@@ -233,8 +233,8 @@ public class RIFCSWrapper {
 
 
     // Only to be called from Xerces workaround
-    private void removeElements(Document targetDoc,
-                                String element) {
+    private void removeElements(final Document targetDoc,
+                                final String element) {
         NodeList nl = targetDoc.getDocumentElement().getElementsByTagName(element);
 
         Node[] n = new Node[nl.getLength()];
@@ -252,8 +252,8 @@ public class RIFCSWrapper {
 
 
     // Only to be called from Xerces workaround
-    private void addToSchema(Document targetDoc,
-                             Document sourceDoc) {
+    private void addToSchema(final Document targetDoc,
+                             final Document sourceDoc) {
         NodeList nl = sourceDoc.getDocumentElement().getChildNodes();
         for (int i = 0; i < nl.getLength(); i++) {
             Node n = targetDoc.importNode(nl.item(i), true);
@@ -278,7 +278,7 @@ public class RIFCSWrapper {
      * @exception IOException
      *      if URL stream cannot be accessed
      */
-    public final void validate(String schemaUrl) throws SAXException, MalformedURLException, IOException {
+    public final void validate(final String schemaUrl) throws SAXException, MalformedURLException, IOException {
         // create a SchemaFactory capable of understanding WXS schemas
         SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 

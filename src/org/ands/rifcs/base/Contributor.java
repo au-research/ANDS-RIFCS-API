@@ -41,7 +41,7 @@ public class Contributor extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected Contributor(Node n) throws RIFCSException {
+    protected Contributor(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_CONTRIBUTOR);
         initStructures();
     }
@@ -54,7 +54,7 @@ public class Contributor extends RIFCSElement {
      *          an integer sequence number indicating the order
      *          a contributor would appear in a citation
      */
-    public final void setSeq(int seq) {
+    public final void setSeq(final int seq) {
         super.setAttributeValue(Constants.ATTRIBUTE_SEQ, String.valueOf(seq));
     }
 
@@ -99,7 +99,7 @@ public class Contributor extends RIFCSElement {
      * @param namePart
      *    a completed NamePart object
      */
-    public final void addNamePart(NamePart namePart) {
+    public final void addNamePart(final NamePart namePart) {
        this.getElement().appendChild(namePart.getElement());
        this.nameParts.add(namePart);
     }
@@ -113,8 +113,8 @@ public class Contributor extends RIFCSElement {
      * @param type
      *    namePart type (e.g. surname, middle name) or null
      */
-    public final void addNamePart(String namePart,
-                            String type) throws RIFCSException {
+    public final void addNamePart(final String namePart,
+                            final String type) throws RIFCSException {
         NamePart np = newNamePart();
         np.setValue(namePart);
         np.setType(type);

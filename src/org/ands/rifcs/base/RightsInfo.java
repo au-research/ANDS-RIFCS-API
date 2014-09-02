@@ -35,7 +35,7 @@ public class RightsInfo extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected RightsInfo(Node n) throws RIFCSException {
+    protected RightsInfo(final Node n) throws RIFCSException {
         super(n, n.getNodeName());
     }
 
@@ -46,7 +46,7 @@ public class RightsInfo extends RIFCSElement {
      * @param rightsUri
      *          The rightsUri of RightsInfo
      */
-    public final void setRightsUri(String rightsUri) {
+    public final void setRightsUri(final String rightsUri) {
         super.setAttributeValue(Constants.ATTRIBUTE_RIGHTS_URI, rightsUri);
     }
 
@@ -69,7 +69,7 @@ public class RightsInfo extends RIFCSElement {
      * @param value
      *      The content of the RightsInfo
      */
-    public final void setValue(String value) {
+    public final void setValue(final String value) {
         super.setTextContent(value);
     }
 

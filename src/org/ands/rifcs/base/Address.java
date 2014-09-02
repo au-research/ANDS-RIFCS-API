@@ -43,7 +43,7 @@ public class Address extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected Address(Node n) throws RIFCSException {
+    protected Address(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_ADDRESS);
         initStructures();
     }
@@ -72,7 +72,7 @@ public class Address extends RIFCSElement {
      * @param electronic
      *    an ElectronicAddress object
      */
-    public final void addElectronic(Electronic electronic) {
+    public final void addElectronic(final Electronic electronic) {
         this.getElement().appendChild(electronic.getElement());
         this.electronics.add(electronic);
     }
@@ -112,7 +112,7 @@ public class Address extends RIFCSElement {
      * @param physical
      *    a PhysicalAddress object
      */
-    public final void addPhysical(Physical physical) {
+    public final void addPhysical(final Physical physical) {
         if (this.physicals == null) {
             this.physicals = new ArrayList<Physical>();
         }

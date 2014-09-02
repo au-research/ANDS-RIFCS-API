@@ -35,7 +35,7 @@ public class Arg extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected Arg(Node n) throws RIFCSException {
+    protected Arg(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_ARG);
     }
 
@@ -46,7 +46,7 @@ public class Arg extends RIFCSElement {
      * @param type
      *          The type of argument
      */
-    public final void setType(String type) {
+    public final void setType(final String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -69,7 +69,7 @@ public class Arg extends RIFCSElement {
      * @param required
      *      <code>true</code> or <code>false</code>
      */
-    public final void setRequired(String required) {
+    public final void setRequired(final String required) {
         super.setAttributeValue(Constants.ATTRIBUTE_REQUIRED, required);
     }
 
@@ -92,7 +92,7 @@ public class Arg extends RIFCSElement {
      * @param use
      *          term indicating the use of the argument
      */
-    public final void setUse(String use) {
+    public final void setUse(final String use) {
         super.setAttributeValue(Constants.ATTRIBUTE_USE, use);
     }
 
@@ -115,7 +115,7 @@ public class Arg extends RIFCSElement {
      * @param name
      *      The argument name
      */
-    public final void setName(String name) {
+    public final void setName(final String name) {
         super.setTextContent(name);
     }
 

@@ -31,7 +31,7 @@ public class RIFCSException extends Exception {
      * @param reason
      *            string describing reason for the exception
      */
-    public RIFCSException(String reason) {
+    public RIFCSException(final String reason) {
         super(reason);
     }
 
@@ -44,8 +44,8 @@ public class RIFCSException extends Exception {
      * @param cause
      *            A Throwable describing the cause of the exception
      */
-    public RIFCSException(String reason,
-                        Throwable cause) {
+    public RIFCSException(final String reason,
+                        final Throwable cause) {
         super(reason, cause);
     }
 
@@ -56,7 +56,7 @@ public class RIFCSException extends Exception {
      * @param cause
      *            A Throwable describing the cause of the exception
      */
-    public RIFCSException(Throwable cause) {
+    public RIFCSException(final Throwable cause) {
         super(cause);
     }
 

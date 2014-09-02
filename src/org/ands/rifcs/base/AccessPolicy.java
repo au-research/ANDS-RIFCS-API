@@ -35,7 +35,7 @@ public class AccessPolicy extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected AccessPolicy(Node n) throws RIFCSException {
+    protected AccessPolicy(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_ACCESS_POLICY);
     }
 
@@ -46,7 +46,7 @@ public class AccessPolicy extends RIFCSElement {
      * @param value
      *      The access policy URI
      */
-    public final void setValue(String value) {
+    public final void setValue(final String value) {
         super.setTextContent(value);
     }
 

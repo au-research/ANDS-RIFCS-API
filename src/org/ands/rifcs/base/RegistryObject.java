@@ -44,7 +44,7 @@ public class RegistryObject extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected RegistryObject(Node n) throws RIFCSException {
+    protected RegistryObject(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_REGISTRY_OBJECT);
         initStructures();
     }
@@ -56,7 +56,7 @@ public class RegistryObject extends RIFCSElement {
      * @param keyValue
      *      The key uniquely identifying the registry object
      */
-    public final void setKey(String keyValue) {
+    public final void setKey(final String keyValue) {
         Element key = this.newElement(Constants.ELEMENT_KEY);
         key.setTextContent(keyValue);
         this.getElement().appendChild(key);
@@ -85,7 +85,7 @@ public class RegistryObject extends RIFCSElement {
      * @param sourceValue
      *      A string identifying the source of this RIF-CS data
      */
-    public final void setOriginatingSource(String sourceValue) {
+    public final void setOriginatingSource(final String sourceValue) {
         Element source = this.newElement(Constants.ELEMENT_ORIG_SOURCE);
         source.setTextContent(sourceValue);
         this.getElement().appendChild(source);
@@ -101,8 +101,8 @@ public class RegistryObject extends RIFCSElement {
      *      A string clarifying the type of source e.g. to flag
      *      whether the source is authoritative
      */
-    public final void setOriginatingSource(String sourceValue,
-                                     String type) {
+    public final void setOriginatingSource(final String sourceValue,
+                                     final String type) {
         Element source = this.newElement(Constants.ELEMENT_ORIG_SOURCE);
         source.setTextContent(sourceValue);
         source.setAttribute(Constants.ATTRIBUTE_TYPE, type);
@@ -117,7 +117,7 @@ public class RegistryObject extends RIFCSElement {
      *      A string clarifying the type of source e.g. to flag
      *      whether the source is authoritative
      */
-    public final void setOriginatingSourceType(String type) {
+    public final void setOriginatingSourceType(final String type) {
         NodeList nl = super.getElements(Constants.ELEMENT_ORIG_SOURCE);
         if (nl.getLength() == 1) {
            ((Element) nl.item(0)).setAttribute(Constants.ATTRIBUTE_TYPE, type);
@@ -168,7 +168,7 @@ public class RegistryObject extends RIFCSElement {
      *      A string identifying the group this registry object
      *      is associated with
      */
-    public final void setGroup(String group) {
+    public final void setGroup(final String group) {
         super.setAttributeValue(Constants.ATTRIBUTE_GROUP, group);
     }
 
@@ -263,7 +263,7 @@ public class RegistryObject extends RIFCSElement {
      *  @param collection
      *      A Collection object
      */
-    public final void addCollection(Collection collection) {
+    public final void addCollection(final Collection collection) {
         this.getElement().appendChild(collection.getElement());
         this.objectClass = Constants.ELEMENT_COLLECTION;
     }
@@ -275,7 +275,7 @@ public class RegistryObject extends RIFCSElement {
      *  @param activity
      *      An Activity object
      */
-    public final void addActivity(Activity activity) {
+    public final void addActivity(final Activity activity) {
         this.getElement().appendChild(activity.getElement());
         this.objectClass = Constants.ELEMENT_PARTY;
     }
@@ -287,7 +287,7 @@ public class RegistryObject extends RIFCSElement {
      *  @param party
      *      A Party object
      */
-    public final void addParty(Party party) {
+    public final void addParty(final Party party) {
         this.getElement().appendChild(party.getElement());
         this.objectClass = Constants.ELEMENT_PARTY;
     }
@@ -299,7 +299,7 @@ public class RegistryObject extends RIFCSElement {
      *  @param service
      *      A Service object
      */
-    public final void addService(Service service) {
+    public final void addService(final Service service) {
         this.getElement().appendChild(service.getElement());
         this.objectClass = Constants.ELEMENT_SERVICE;
     }

@@ -42,7 +42,7 @@ public class RelatedObject extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected RelatedObject(Node n) throws RIFCSException {
+    protected RelatedObject(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_RELATED_OBJECT);
         initStructures();
     }
@@ -54,7 +54,7 @@ public class RelatedObject extends RIFCSElement {
      * @param keyValue
      *      The key uniquely identifying the related registry object
      */
-    public final void setKey(String keyValue) {
+    public final void setKey(final String keyValue) {
         Element key = this.newElement(Constants.ELEMENT_KEY);
         key.setTextContent(keyValue);
         this.getElement().appendChild(key);
@@ -106,10 +106,10 @@ public class RelatedObject extends RIFCSElement {
      * @param descriptionLanguage
      *    The xml:lang attribute value
      */
-    public final void addRelation(String type,
-                            String url,
-                            String description,
-                            String descriptionLanguage) throws RIFCSException {
+    public final void addRelation(final String type,
+                            final String url,
+                            final String description,
+                            final String descriptionLanguage) throws RIFCSException {
         Relation relation = newRelation();
 
         relation.setType(type);
@@ -147,7 +147,7 @@ public class RelatedObject extends RIFCSElement {
      * @param relation
      *    A Relation object
      */
-    public final void addRelation(Relation relation) {
+    public final void addRelation(final Relation relation) {
         this.getElement().appendChild(relation.getElement());
         this.relations.add(relation);
     }

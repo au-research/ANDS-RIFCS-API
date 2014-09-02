@@ -35,7 +35,7 @@ public class Spatial extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected Spatial(Node n) throws RIFCSException {
+    protected Spatial(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_SPATIAL);
     }
 
@@ -46,7 +46,7 @@ public class Spatial extends RIFCSElement {
      * @param type
      *          The type of spatial information
      */
-    public final void setType(String type) {
+    public final void setType(final String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -69,7 +69,7 @@ public class Spatial extends RIFCSElement {
     * @param lang
     *      The xml:lang attribute value
     */
-    public final void setLanguage(String lang) {
+    public final void setLanguage(final String lang) {
         super.setAttributeValueNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG, lang);
     }
 
@@ -92,7 +92,7 @@ public class Spatial extends RIFCSElement {
      * @param value
      *      The spatial value
      */
-    public final void setValue(String value) {
+    public final void setValue(final String value) {
         super.setTextContent(value);
     }
 

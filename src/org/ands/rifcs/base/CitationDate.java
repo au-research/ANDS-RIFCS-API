@@ -35,7 +35,7 @@ public class CitationDate extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected CitationDate(Node n) throws RIFCSException {
+    protected CitationDate(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_DATE);
     }
 
@@ -46,7 +46,7 @@ public class CitationDate extends RIFCSElement {
      * @param type
      *          The type of date
      */
-    public final void setType(String type) {
+    public final void setType(final String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -69,7 +69,7 @@ public class CitationDate extends RIFCSElement {
      * @param value
      *      The content of the date
      */
-    public final void setValue(String value) {
+    public final void setValue(final String value) {
         super.setTextContent(value);
     }
 

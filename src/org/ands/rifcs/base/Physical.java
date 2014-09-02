@@ -41,7 +41,7 @@ public class Physical extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected Physical(Node n) throws RIFCSException {
+    protected Physical(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_PHYSICAL);
         initStructures();
     }
@@ -53,7 +53,7 @@ public class Physical extends RIFCSElement {
      * @param type
      *          The type of physical address
      */
-    public final void setType(String type) {
+    public final void setType(final String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -76,7 +76,7 @@ public class Physical extends RIFCSElement {
     * @param lang
     *      The xml:lang attribute value
     */
-    public final void setLanguage(String lang) {
+    public final void setLanguage(final String lang) {
         super.setAttributeValueNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG, lang);
     }
 
@@ -116,7 +116,7 @@ public class Physical extends RIFCSElement {
      * @param addressPart
      *    a completed AddressPart object
      */
-    public final void addAddressPart(AddressPart addressPart) {
+    public final void addAddressPart(final AddressPart addressPart) {
         /*if (addressParts == null)
         {
             addressParts = new ArrayList<AddressPart>();

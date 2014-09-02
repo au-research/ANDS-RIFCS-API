@@ -44,7 +44,7 @@ public class Location extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected Location(Node n) throws RIFCSException {
+    protected Location(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_LOCATION);
         initStructures();
     }
@@ -57,7 +57,7 @@ public class Location extends RIFCSElement {
      *      A date object representing the date the contained location
      *      information was valid from
      */
-    public final void setDateFrom(Date dateFrom) {
+    public final void setDateFrom(final Date dateFrom) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_FROM, RegistryObject.formatDate(dateFrom));
     }
 
@@ -70,7 +70,7 @@ public class Location extends RIFCSElement {
      *      of the <a href="http://www.w3.org/TR/xmlschema-2/">W3C's Schema
      *      Data Types document</a>
      */
-    public final void setDateFrom(String dateFrom) {
+    public final void setDateFrom(final String dateFrom) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_FROM, dateFrom);
     }
 
@@ -90,7 +90,7 @@ public class Location extends RIFCSElement {
      *      A date object representing the date the contained location
      *      information was valid to
      */
-    public final void setDateTo(Date dateTo) {
+    public final void setDateTo(final Date dateTo) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_TO, RegistryObject.formatDate(dateTo));
     }
 
@@ -103,7 +103,7 @@ public class Location extends RIFCSElement {
      *      of the <a href="http://www.w3.org/TR/xmlschema-2/">W3C's Schema
      *      Data Types document</a>
      */
-    public final void setDateTo(String dateTo) {
+    public final void setDateTo(final String dateTo) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_TO, dateTo);
     }
 
@@ -139,7 +139,7 @@ public class Location extends RIFCSElement {
      * @param address
      *    a completed Address object
      */
-    public final void addAddress(Address address) {
+    public final void addAddress(final Address address) {
         this.getElement().appendChild(address.getElement());
         this.addresses.add(address);
     }
@@ -179,7 +179,7 @@ public class Location extends RIFCSElement {
      * @param spatial
      *    a completed Spatial object.
      */
-    public final void addSpatial(Spatial spatial) {
+    public final void addSpatial(final Spatial spatial) {
         this.getElement().appendChild(spatial.getElement());
         this.spatials.add(spatial);
     }

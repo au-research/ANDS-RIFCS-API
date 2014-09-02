@@ -37,7 +37,7 @@ public class Relation extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected Relation(Node n) throws RIFCSException {
+    protected Relation(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_RELATION);
     }
 
@@ -48,7 +48,7 @@ public class Relation extends RIFCSElement {
      * @param type
      *          The type of relation being described
      */
-    public final void setType(String type) {
+    public final void setType(final String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -71,7 +71,7 @@ public class Relation extends RIFCSElement {
      * @param descValue
      *      A plain text description of the relation
      */
-    public final void setDescription(String descValue) {
+    public final void setDescription(final String descValue) {
         Element desc = this.newElement(Constants.ELEMENT_DESCRIPTION);
         desc.setTextContent(descValue);
         this.getElement().appendChild(desc);
@@ -100,7 +100,7 @@ public class Relation extends RIFCSElement {
      * @param lang
      *      The xml:lang attribute value
      */
-    public final void setDescriptionLanguage(String lang) {
+    public final void setDescriptionLanguage(final String lang) {
         NodeList nl = super.getElements(Constants.ELEMENT_DESCRIPTION);
         if (nl.getLength() == 1) {
             ((Element) nl.item(0)).setAttributeNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG, lang);
@@ -132,7 +132,7 @@ public class Relation extends RIFCSElement {
      *      A URL expressing or implementing the relationship
      *      between registry objects
      */
-    public final void setURL(String urlValue) {
+    public final void setURL(final String urlValue) {
         Element url = this.newElement(Constants.ELEMENT_URL);
         url.setTextContent(urlValue);
         this.getElement().appendChild(url);

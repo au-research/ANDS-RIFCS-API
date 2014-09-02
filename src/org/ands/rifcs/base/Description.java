@@ -35,7 +35,7 @@ public class Description extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected Description(Node n) throws RIFCSException {
+    protected Description(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_DESCRIPTION);
     }
 
@@ -46,7 +46,7 @@ public class Description extends RIFCSElement {
      * @param type
      *          The type of description
      */
-    public final void setType(String type) {
+    public final void setType(final String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -69,7 +69,7 @@ public class Description extends RIFCSElement {
      * @param lang
      *      The xml:lang attribute value
      */
-    public final void setLanguage(String lang) {
+    public final void setLanguage(final String lang) {
         super.setAttributeValueNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG, lang);
     }
 
@@ -92,7 +92,7 @@ public class Description extends RIFCSElement {
      * @param value
      *      The content of the description
      */
-    public final void setValue(String value) {
+    public final void setValue(final String value) {
         super.setTextContent(value);
     }
 

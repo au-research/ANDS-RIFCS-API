@@ -36,7 +36,7 @@ import org.xml.sax.SAXException;
 public class SampleRIFCSRead {
     private static RIFCS rifcs = null;
 
-    public static void main(String[] args) throws RIFCSException, FileNotFoundException, SAXException, ParserConfigurationException, IOException, MalformedURLException
+    public static void main(final String[] args) throws RIFCSException, FileNotFoundException, SAXException, ParserConfigurationException, IOException, MalformedURLException
     {
         RIFCSReader rr = new RIFCSReader();
         rr.mapToDOM(new FileInputStream(args[0]));

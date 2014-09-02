@@ -37,7 +37,7 @@ public class TemporalCoverageDate extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected TemporalCoverageDate(Node n) throws RIFCSException {
+    protected TemporalCoverageDate(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_DATE);
     }
 
@@ -47,7 +47,7 @@ public class TemporalCoverageDate extends RIFCSElement {
      * @param dateFormat
      *          The date format
      */
-    public final void setDateFormat(String dateFormat) {
+    public final void setDateFormat(final String dateFormat) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_FORMAT, dateFormat);
     }
 
@@ -71,7 +71,7 @@ public class TemporalCoverageDate extends RIFCSElement {
      * @param type
      *          The type of date
      */
-    public final void setType(String type) {
+    public final void setType(final String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -94,7 +94,7 @@ public class TemporalCoverageDate extends RIFCSElement {
      * @param value
      *      The content of the date
      */
-    public final void setValue(String value) {
+    public final void setValue(final String value) {
         super.setTextContent(value);
     }
 
@@ -105,7 +105,7 @@ public class TemporalCoverageDate extends RIFCSElement {
      * @param value
      *      The content of the date
      */
-    public final void setValue(Date value) {
+    public final void setValue(final Date value) {
         super.setTextContent(RegistryObject.formatDate(value));
     }
 

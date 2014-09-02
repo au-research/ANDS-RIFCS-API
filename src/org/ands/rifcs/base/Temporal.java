@@ -47,7 +47,7 @@ public class Temporal extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    protected Temporal(Node n) throws RIFCSException {
+    protected Temporal(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_TEMPORAL);
     }
 
@@ -106,7 +106,7 @@ public class Temporal extends RIFCSElement {
      * @param text
      *    a text description of the temporal coverage
      */
-    public final void addText(String text) {
+    public final void addText(final String text) {
         Element e = this.newElement(Constants.ELEMENT_TEXT);
         e.setTextContent(text);
         this.getElement().appendChild(e);
@@ -126,7 +126,7 @@ public class Temporal extends RIFCSElement {
      */
 
 
-    public final void addDate(String date, String type) throws RIFCSException {
+    public final void addDate(final String date, final String type) throws RIFCSException {
         this.addDate(date, type, "W3C");
     }
     /**
@@ -141,7 +141,7 @@ public class Temporal extends RIFCSElement {
      */
 
 
-    public final void addDate(String date, String type, String dateFormat) throws RIFCSException {
+    public final void addDate(final String date, final String type, final String dateFormat) throws RIFCSException {
         TemporalCoverageDate de = this.newDate();
         de.setType(type);
         de.setDateFormat(dateFormat);
@@ -162,7 +162,7 @@ public class Temporal extends RIFCSElement {
      */
 
 
-    public final void addDate(Date date, String type) throws RIFCSException {
+    public final void addDate(final Date date, final String type) throws RIFCSException {
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
         String text = df.format(date);
         String result = text.substring(0, 22) + ":" + text.substring(22);

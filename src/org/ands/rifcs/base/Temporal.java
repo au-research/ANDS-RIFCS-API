@@ -69,7 +69,7 @@ public class Temporal extends RIFCSElement {
     //     return new DateElement(this.newElement(Constants.ELEMENT_DATE));
     // }
 
-    public TemporalCoverageDate newDate() throws RIFCSException {
+    public final TemporalCoverageDate newDate() throws RIFCSException {
         return new TemporalCoverageDate(this.newElement(Constants.ELEMENT_DATE));
     }
 

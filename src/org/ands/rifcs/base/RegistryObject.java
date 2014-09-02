@@ -120,7 +120,7 @@ public class RegistryObject extends RIFCSElement {
     public void setOriginatingSourceType(String type) {
         NodeList nl = super.getElements(Constants.ELEMENT_ORIG_SOURCE);
         if (nl.getLength() == 1) {
-           ((Element)nl.item(0)).setAttribute(Constants.ATTRIBUTE_TYPE, type);
+           ((Element) nl.item(0)).setAttribute(Constants.ATTRIBUTE_TYPE, type);
         }
     }
 
@@ -150,8 +150,8 @@ public class RegistryObject extends RIFCSElement {
     public String getOriginatingSourceType() {
         NodeList nl = super.getElements(Constants.ELEMENT_ORIG_SOURCE);
         if (nl.getLength() == 1) {
-           if (((Element)nl.item(0)).hasAttribute(Constants.ATTRIBUTE_TYPE)) {
-               return ((Element)nl.item(0)).getAttribute(Constants.ATTRIBUTE_TYPE);               
+           if (((Element) nl.item(0)).hasAttribute(Constants.ATTRIBUTE_TYPE)) {
+               return ((Element) nl.item(0)).getAttribute(Constants.ATTRIBUTE_TYPE);               
            } else {
                return null;
            }
@@ -351,7 +351,7 @@ public class RegistryObject extends RIFCSElement {
     
     private void initStructures() {
         List<Node> nl = super.getChildElements();
-        for (Iterator<Node> i=nl.iterator(); i.hasNext();) {
+        for (Iterator<Node> i = nl.iterator(); i.hasNext();) {
             Node n = i.next();
             if (n.getNodeName().equals(Constants.ELEMENT_COLLECTION)) {
                 objectClass = Constants.ELEMENT_COLLECTION;

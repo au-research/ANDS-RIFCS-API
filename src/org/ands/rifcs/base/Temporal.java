@@ -110,7 +110,7 @@ public class Temporal extends RIFCSElement {
         Element e = this.newElement(Constants.ELEMENT_TEXT);
         e.setTextContent(text);
         this.getElement().appendChild(e);
-        this.texts.add((Element)e);
+        this.texts.add((Element) e);
     }
      
 
@@ -147,7 +147,7 @@ public class Temporal extends RIFCSElement {
 	    de.setDateFormat(dateFormat);
 	    de.setValue(date);
 	    this.getElement().appendChild(de.getElement());
-	    this.dates.add((TemporalCoverageDate)de);
+	    this.dates.add((TemporalCoverageDate) de);
 	}
     
     /**
@@ -180,7 +180,7 @@ public class Temporal extends RIFCSElement {
         NodeList nl = super.getElements(Constants.ELEMENT_TEXT);
         
         for (int i = 0; i < nl.getLength(); i++) {
-            texts.add((Element)nl.item(i));
+            texts.add((Element) nl.item(i));
         }
     }
 

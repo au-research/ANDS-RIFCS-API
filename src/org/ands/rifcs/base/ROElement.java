@@ -55,15 +55,15 @@ public class ROElement {
         
         String name = n.getNodeName(); 
         
-        if (!name.equals(Constants.ELEMENT_ACTIVITY) &&
-            !name.equals(Constants.ELEMENT_COLLECTION) &&
-            !name.equals(Constants.ELEMENT_PARTY) &&
-            !name.equals(Constants.ELEMENT_SERVICE)) {
+        if (!name.equals(Constants.ELEMENT_ACTIVITY)
+        		&& !name.equals(Constants.ELEMENT_COLLECTION)
+        		&& !name.equals(Constants.ELEMENT_PARTY)
+        		&& !name.equals(Constants.ELEMENT_SERVICE)) {
             throw new RIFCSException("Invalid regsitry object type: " + name);
         }
 
 //        this.getElement().getOwnerDocument().createElementNS(Constants.NS_RIFCS, name);
-        e = (Element)n;
+        e = (Element) n;
     }
 
 
@@ -183,8 +183,8 @@ public class ROElement {
         NodeList nl = e.getChildNodes();
         List<Node> l = new ArrayList<Node>();
         for (int i = 0; i < nl.getLength(); i++) {
-            if (nl.item(i).getNodeType() == Node.ELEMENT_NODE &&
-                nl.item(i).getLocalName().equals(localName)) {
+            if (nl.item(i).getNodeType() == Node.ELEMENT_NODE
+            		&& nl.item(i).getLocalName().equals(localName)) {
                 l.add(nl.item(i));
             }
         }

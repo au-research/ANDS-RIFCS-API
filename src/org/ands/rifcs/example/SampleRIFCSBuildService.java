@@ -98,12 +98,12 @@ public class SampleRIFCSBuildService {
         
         s.addAccessPolicy("Access Policy");
         
-        Right right= s.newRight();
+        Right right = s.newRight();
         right.setAccessRights("Access Right Value", "Access Rights Uri", "Access Right Type");
         right.setLicence("Licence Value", "Licence Uri", "Licence Type");
         right.setRightsStatement("Right Statement Value", "Right Statement Uri");
         s.addRight(right);
-        right= s.newRight();
+        right = s.newRight();
         right.setAccessRights("Access Right Value2", "Access Rights Uri2", "Access Right Type2");
         right.setLicence("Licence Value2", "Licence Uri2", "Licence Type2");
         right.setRightsStatement("Right Statement Value2", "Right Statement Uri2");

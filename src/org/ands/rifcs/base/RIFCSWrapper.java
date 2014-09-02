@@ -131,7 +131,7 @@ public class RIFCSWrapper {
      */
     public void write(OutputStream os) {
         DOMImplementation impl = doc.getImplementation();
-        DOMImplementationLS implLS = (DOMImplementationLS)impl.getFeature("LS", "3.0");
+        DOMImplementationLS implLS = (DOMImplementationLS) impl.getFeature("LS", "3.0");
         
         LSOutput lso = implLS.createLSOutput();
         lso.setByteStream(os);
@@ -241,11 +241,11 @@ public class RIFCSWrapper {
 
         // xerces updates nodelist dynamically so need to keep
         // references in a temp array in order to remove elements
-        for (int i=0; i < nl.getLength(); i++) {
+        for (int i = 0; i < nl.getLength(); i++) {
             n[i] = nl.item(i);
         }
         
-        for (int i=0; i < n.length; i++) {
+        for (int i = 0; i < n.length; i++) {
             targetDoc.getDocumentElement().removeChild(n[i]);
         }        
     }
@@ -255,7 +255,7 @@ public class RIFCSWrapper {
     private void addToSchema(Document targetDoc,
                              Document sourceDoc) {
         NodeList nl = sourceDoc.getDocumentElement().getChildNodes();
-        for (int i=0; i < nl.getLength(); i++) {
+        for (int i = 0; i < nl.getLength(); i++) {
             Node n = targetDoc.importNode(nl.item(i), true);
             targetDoc.getDocumentElement().appendChild(n);
         }                

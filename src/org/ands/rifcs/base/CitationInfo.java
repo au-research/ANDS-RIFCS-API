@@ -112,7 +112,7 @@ public class CitationInfo extends RIFCSElement {
     public String getCitationStyle() {
         NodeList nl = super.getElements(Constants.ELEMENT_FULL_CITATION);
         if (nl.getLength() > 0) {
-            return ((Element)nl.item(0)).getAttribute(Constants.ATTRIBUTE_STYLE);
+            return ((Element) nl.item(0)).getAttribute(Constants.ATTRIBUTE_STYLE);
         }
         
         return null;

@@ -154,7 +154,7 @@ public class Right extends RIFCSElement {
 	 * @throws RIFCSException
 	 */
 	public void setAccessRights(RightsTypedInfo accessRights) throws RIFCSException {
-		this.accessRights= accessRights;
+		this.accessRights = accessRights;
 		this.getElement().appendChild(this.accessRights.getElement());
 	}
 

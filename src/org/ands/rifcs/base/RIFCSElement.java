@@ -63,7 +63,7 @@ public class RIFCSElement {
             throw new RIFCSException("Node of type Element required in constructor");
         }
 
-        e = (Element)n;
+        e = (Element) n;
     }
 
 
@@ -197,8 +197,8 @@ public class RIFCSElement {
         NodeList nl = e.getChildNodes();
         List<Node> l = new ArrayList<Node>();
         for (int i = 0; i < nl.getLength(); i++) {
-            if (nl.item(i).getNodeType() == Node.ELEMENT_NODE &&
-                nl.item(i).getLocalName().equals(localName)) {
+            if (nl.item(i).getNodeType() == Node.ELEMENT_NODE
+            		&& nl.item(i).getLocalName().equals(localName)) {
                 l.add(nl.item(i));
             }
         }

@@ -108,13 +108,13 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
                              Attributes attributes) throws SAXException {
         Element e = null;
 
-        if (uri.length()>0) {
+        if (uri.length() > 0) {
             e = doc.createElementNS(uri, qName);
         } else {
             e = doc.createElement(qName);
         }
         
-        for (int i=0; i<attributes.getLength(); i++) {
+        for (int i = 0; i < attributes.getLength(); i++) {
             e.setAttribute(attributes.getQName(i), attributes.getValue(i));
         }
         
@@ -144,7 +144,7 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
         if (!s.matches("\\s+")) {
             Element e = elements.peek();
 
-            if (e.getTextContent().length()==0) {
+            if (e.getTextContent().length() == 0) {
                 e.setTextContent(s);
             } else {
                 e.setTextContent(e.getTextContent() + s);

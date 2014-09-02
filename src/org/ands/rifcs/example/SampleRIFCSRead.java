@@ -59,11 +59,11 @@ public final class SampleRIFCSRead {
         for (Iterator<RegistryObject> i = list.iterator(); i.hasNext();) {
             RegistryObject ro = (RegistryObject) i.next();
             Collection c = (Collection) ro.getClassObject();
-            Iterator j = c.getNames().iterator();
+            Iterator<Name> j = c.getNames().iterator();
             while (j.hasNext()) {
                 Name n = (Name) j.next();
                 if (n.getType().equals("primary")) {
-                    Iterator k = n.getNameParts().iterator();
+                    Iterator<NamePart> k = n.getNameParts().iterator();
                     while (k.hasNext()) {
                         System.out.println((new StringBuilder()).
                                 append(((NamePart) k.next()).

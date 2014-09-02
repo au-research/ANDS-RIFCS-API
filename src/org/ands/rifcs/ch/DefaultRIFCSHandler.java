@@ -70,7 +70,7 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
     /**
      * Create an empty DOM document when the startDocument event is received.
      *
-     * @exception SAXException
+     * @exception SAXException A SAXException
      *
      */
     public final void startDocument() throws SAXException {
@@ -100,7 +100,7 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
      * @param attributes
      *      Attributes associated with the element
      *
-     * @exception SAXException
+     * @exception SAXException A SAXException
      *
      */
     public final void startElement(final String uri,
@@ -135,7 +135,7 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
      * @param length
      *      The length of the character data being passed
      *
-     * @exception SAXException
+     * @exception SAXException A SAXException
      *
      */
     public final void characters(final char[] chars,
@@ -163,7 +163,7 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
      * @param name
      *      The entity name
      *
-     * @exception SAXException
+     * @exception SAXException A SAXException
      *
      */
     public final void skippedEntity(final String name) throws SAXException {
@@ -186,7 +186,7 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
      * @param qName
      *      The qualified element name
      *
-     * @exception SAXException
+     * @exception SAXException A SAXException
      *
      */
     public final void endElement(final String uri,

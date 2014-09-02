@@ -192,12 +192,14 @@ public class RIFCSWrapper {
      * accessed remotely from the production site. If wanting to use a
      * local cached schema use the other validate method.
      *
-     * @exception SAXException
+     * @throws SAXException
      *      if document is invalid
-     * @exception MalformedURLException
+     * @throws MalformedURLException
      *      if schema URL is invalid
-     * @exception IOException
+     * @throws IOException
      *      if URL stream cannot be accessed
+     * @throws ParserConfigurationException
+     *      A ParserConfigurationException
      */
     public final void validate() throws SAXException,
     MalformedURLException, IOException, ParserConfigurationException {

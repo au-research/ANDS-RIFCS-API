@@ -56,9 +56,9 @@ public class RIFCSReader {
      * @param is
      *      XML InputStream
      *
-     * @throws SAXException
-     * @throws ParserConfigurationException
-     * @throws IOException
+     * @throws SAXException A SAXException
+     * @throws ParserConfigurationException A ParserConfigurationException
+     * @throws IOException An IOException
      *
      */
     public final void mapToDOM(final InputStream is) throws SAXException,
@@ -85,9 +85,9 @@ public class RIFCSReader {
      * @param ch
      *      XML SAX Content Handler
      *
-     * @throws SAXException
-     * @throws ParserConfigurationException
-     * @throws IOException
+     * @throws SAXException A SAXException
+     * @throws ParserConfigurationException A ParserConfigurationException
+     * @throws IOException An IOException
      *
      */
     public final void mapToDOM(final InputStream is,

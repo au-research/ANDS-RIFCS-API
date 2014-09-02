@@ -32,8 +32,11 @@ import org.w3c.dom.NodeList;
  *
  */
 public class CitationMetadata extends RIFCSElement {
+    /** The Identifier for this CitationMetadata. */
     private Identifier identifier = null;
+    /** List of Contributor nodes. */
     private List<Contributor> names = new ArrayList<Contributor>();
+    /** List of CitationDate nodes. */
     private List<CitationDate> dates = new ArrayList<CitationDate>();
 
     /**
@@ -59,6 +62,8 @@ public class CitationMetadata extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
+     * @return the new Contributor object
+     *
      * @throws RIFCSException A RIFCSException
      *
      */
@@ -76,6 +81,8 @@ public class CitationMetadata extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
+     * @return the new CitationDate object
+     *
      * @throws RIFCSException A RIFCSException
      *
      */
@@ -92,6 +99,8 @@ public class CitationMetadata extends RIFCSElement {
      * owned by the RIF-CS document. The returned object needs to be
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
+     *
+     * @return the new Identifier object
      *
      * @throws RIFCSException A RIFCSException
      *
@@ -356,7 +365,12 @@ public class CitationMetadata extends RIFCSElement {
     }
 
 
-    /* initialisation code for existing documents */
+    /** Initialisation code for existing documents. A wrapper that
+     *  invokes initIdentifier(), initContributors(), etc., in turn.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initStructures() throws RIFCSException {
         initIdentifier();
         initContributors();
@@ -364,7 +378,11 @@ public class CitationMetadata extends RIFCSElement {
     }
 
 
-    /* initialisation code for existing documents */
+    /** Initialisation code for identifier elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initIdentifier() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_IDENTIFIER);
 
@@ -374,6 +392,11 @@ public class CitationMetadata extends RIFCSElement {
     }
 
 
+    /** Initialisation code for contributor elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initContributors() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_CONTRIBUTOR);
 
@@ -383,6 +406,11 @@ public class CitationMetadata extends RIFCSElement {
     }
 
 
+    /** Initialisation code for citationDate elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initCitationDates() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_DATE);
 

@@ -24,7 +24,7 @@ package org.ands.rifcs.base;
  * @author Scott Yeadon
  *
  */
-public class Constants {
+public final class Constants {
 
     /** This class can not be instantiated. */
     private Constants() {

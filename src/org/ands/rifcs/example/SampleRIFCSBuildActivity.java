@@ -28,7 +28,7 @@ import org.ands.rifcs.base.*;
 
 import org.xml.sax.SAXException;
 
-public class SampleRIFCSBuildActivity {
+public final class SampleRIFCSBuildActivity {
 
     private static RIFCS rifcs = null;
 

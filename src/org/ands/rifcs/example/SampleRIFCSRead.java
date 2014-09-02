@@ -33,7 +33,7 @@ import org.ands.rifcs.ch.*;
 
 import org.xml.sax.SAXException;
 
-public class SampleRIFCSRead {
+public final class SampleRIFCSRead {
     private static RIFCS rifcs = null;
 
     /** This class can not be instantiated. */

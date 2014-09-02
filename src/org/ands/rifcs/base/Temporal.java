@@ -36,6 +36,16 @@ import org.w3c.dom.NodeList;
  *
  */
 public class Temporal extends RIFCSElement {
+    /**
+     * Pattern to use to make the SimpleDateFormat for formatting dates.
+     */
+    private static final String TEMPORAL_DATE_FORMAT =
+            "yyyy-MM-dd'T'HH:mm:ssZ";
+    /**
+     * The length of TEMPORAL_DATE_FORMAT.
+     */
+    private static final int TEMPORAL_DATE_FORMAT_LENGTH =
+            TEMPORAL_DATE_FORMAT.length();
     private List<TemporalCoverageDate> dates =
             new ArrayList<TemporalCoverageDate>();
     private List<Element> texts = new ArrayList<Element>();
@@ -166,9 +176,10 @@ public class Temporal extends RIFCSElement {
      */
     public final void addDate(final Date date,
             final String type) throws RIFCSException {
-        DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+        DateFormat df = new SimpleDateFormat(TEMPORAL_DATE_FORMAT);
         String text = df.format(date);
-        String result = text.substring(0, 22) + ":" + text.substring(22);
+        String result = text.substring(0, TEMPORAL_DATE_FORMAT_LENGTH)
+                + ":" + text.substring(TEMPORAL_DATE_FORMAT_LENGTH);
         this.addDate(result, type);
     }
 

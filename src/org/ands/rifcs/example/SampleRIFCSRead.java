@@ -42,9 +42,9 @@ public class SampleRIFCSRead {
         rr.mapToDOM(new FileInputStream(args[0]));
         RIFCSWrapper rw = new RIFCSWrapper(rr.getDocument());
 	    rw.validate();
-	    RIFCS rifcs = rw.getRIFCSObject();
+	    RIFCS aRifcs = rw.getRIFCSObject();
 
-	    List<RegistryObject> list = rifcs.getCollections();
+	    List<RegistryObject> list = aRifcs.getCollections();
 	    for (Iterator<RegistryObject> i = list.iterator(); i.hasNext();) {
 	    	RegistryObject ro = (RegistryObject) i.next();
             Collection c = (Collection) ro.getClassObject();

@@ -104,16 +104,16 @@ public class CitationMetadata extends RIFCSElement {
     /**
      * Set the identifier
      *
-     * @param identifier
+     * @param anIdentifier
      *      The identifier of the related information resource
      * @param type
      *      The type of the identifier
      *
      */
-    public void setIdentifier(String identifier,
+    public void setIdentifier(String anIdentifier,
                               String type) throws RIFCSException {
         this.identifier = this.newIdentifier();
-        this.identifier.setValue(identifier);
+        this.identifier.setValue(anIdentifier);
         this.identifier.setType(type);
         this.getElement().appendChild(this.identifier.getElement());
     }

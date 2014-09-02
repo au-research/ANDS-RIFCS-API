@@ -59,11 +59,11 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
     /**
      * Set the locator
      *
-     * @param locator
+     * @param aLocator
      *        The Locator object used to track the parsing location
      */
-    public void setDocumentLocator(Locator locator) {
-        this.locator = locator;
+    public void setDocumentLocator(Locator aLocator) {
+        this.locator = aLocator;
     }
 
 

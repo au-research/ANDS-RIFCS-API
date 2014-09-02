@@ -32,17 +32,27 @@ import org.w3c.dom.NodeList;
  *
  */
 public class Activity extends RIFCSElement {
+    /** The Identifier objects belonging to this Activity. */
     private List<Identifier> identifiers = new ArrayList<Identifier>();
+    /** The Name objects belonging to this Activity. */
     private List<Name> names = new ArrayList<Name>();
+    /** The Location objects belonging to this Activity. */
     private List<Location> locations = new ArrayList<Location>();
+    /** The Coverage objects belonging to this Activity. */
     private List<Coverage> coverages = new ArrayList<Coverage>();
+    /** The RelatedObject objects belonging to this Activity. */
     private List<RelatedObject> relatedObjects =
-            new ArrayList<RelatedObject>();
+        new ArrayList<RelatedObject>();
+    /** The Subject objects belonging to this Activity. */
     private List<Subject> subjects = new ArrayList<Subject>();
+    /** The Description objects belonging to this Activity. */
     private List<Description> descriptions = new ArrayList<Description>();
+    /** The Right objects belonging to this Activity. */
     private List<Right> rights = new ArrayList<Right>();
+    /** The ExistenceDate objects belonging to this Activity. */
     private List<ExistenceDate> existenceDates =
-            new ArrayList<ExistenceDate>();
+        new ArrayList<ExistenceDate>();
+    /** The RelatedInfo objects belonging to this Activity. */
     private List<RelatedInfo> ris = new ArrayList<RelatedInfo>();
 
     /**
@@ -91,7 +101,7 @@ public class Activity extends RIFCSElement {
      */
     public final void setDateModified(final Date date) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_MODIFIED,
-                RegistryObject.formatDate(date));
+                                RegistryObject.formatDate(date));
     }
 
 
@@ -129,6 +139,8 @@ public class Activity extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
+     * @return the new Identifier object
+     *
      * @throws RIFCSException A RIFCSException
      *
      */
@@ -144,11 +156,11 @@ public class Activity extends RIFCSElement {
      *    an Identifier object
      */
     public final void addIdentifier(final Identifier identifier) {
-/*        if (identifiers == null)
-        {
-            identifiers = new ArrayList<Identifier>();
-        }
-  */
+        /*        if (identifiers == null)
+                  {
+                  identifiers = new ArrayList<Identifier>();
+                  }
+        */
         this.getElement().appendChild(identifier.getElement());
         this.identifiers.add(identifier);
     }
@@ -160,7 +172,7 @@ public class Activity extends RIFCSElement {
      * @return
      *      A list of Identifier objects
      */
-  public final List<Identifier> getIdentifiers() {
+    public final List<Identifier> getIdentifiers() {
         return identifiers;
     }
 
@@ -173,6 +185,8 @@ public class Activity extends RIFCSElement {
      * owned by the RIF-CS document. The returned object needs to be
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
+     *
+     * @return the new Name object
      *
      * @throws RIFCSException A RIFCSException
      *
@@ -189,10 +203,10 @@ public class Activity extends RIFCSElement {
      *    a Name object
      */
     public final void addName(final Name name) {
-       /* if (names == null)
-        {
-            names = new ArrayList<Name>();
-        }*/
+        /* if (names == null)
+           {
+           names = new ArrayList<Name>();
+           }*/
 
         this.getElement().appendChild(name.getElement());
         this.names.add(name);
@@ -219,6 +233,8 @@ public class Activity extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
+     * @return the new Location object
+     *
      * @throws RIFCSException A RIFCSException
      *
      */
@@ -234,11 +250,11 @@ public class Activity extends RIFCSElement {
      *    a Location object
      */
     public final void addLocation(final Location location) {
-     /*   if (locations == null)
-        {
-            locations = new ArrayList<Location>();
-        }
-       */
+        /*   if (locations == null)
+             {
+             locations = new ArrayList<Location>();
+             }
+        */
         this.getElement().appendChild(location.getElement());
         this.locations.add(location);
     }
@@ -263,6 +279,8 @@ public class Activity extends RIFCSElement {
      * owned by the RIF-CS document. The returned object needs to be
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
+     *
+     * @return the new Coverage object
      *
      * @throws RIFCSException A RIFCSException
      *
@@ -304,12 +322,14 @@ public class Activity extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
+     * @return the new RelatedObject object
+     *
      * @throws RIFCSException A RIFCSException
      *
      */
     public final RelatedObject newRelatedObject() throws RIFCSException {
         return new RelatedObject(this.newElement(
-                Constants.ELEMENT_RELATED_OBJECT));
+            Constants.ELEMENT_RELATED_OBJECT));
     }
 
 
@@ -320,11 +340,11 @@ public class Activity extends RIFCSElement {
      *    an RelatedObject object
      */
     public final void addRelatedObject(final RelatedObject relatedObject) {
- /*       if (relatedObjects == null)
-        {
-            relatedObjects = new ArrayList<RelatedObject>();
-        }
-   */
+        /*       if (relatedObjects == null)
+                 {
+                 relatedObjects = new ArrayList<RelatedObject>();
+                 }
+        */
         this.getElement().appendChild(relatedObject.getElement());
         this.relatedObjects.add(relatedObject);
     }
@@ -350,6 +370,8 @@ public class Activity extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
+     * @return the new Subject object
+     *
      * @throws RIFCSException A RIFCSException
      *
      */
@@ -365,11 +387,11 @@ public class Activity extends RIFCSElement {
      *    a Subject object
      */
     public final void addSubject(final Subject subject) {
-     /*   if (subjects == null)
-        {
-            subjects = new ArrayList<Subject>();
-        }
-       */
+        /*   if (subjects == null)
+             {
+             subjects = new ArrayList<Subject>();
+             }
+        */
         this.getElement().appendChild(subject.getElement());
         this.subjects.add(subject);
     }
@@ -377,26 +399,27 @@ public class Activity extends RIFCSElement {
 
     /**
      * Add a subject to the activity object.
-     * @param value
-     * @param type
-     * @param termIdentifier
-     * @param lang
+     * @param value The value
+     * @param type The type
+     * @param termIdentifier The termIdentifier
+     * @param lang The lang
      */
     public final void addSubject(final String value, final String type,
-            final String termIdentifier, final String lang) {
-     /*   if (subjects == null)
-        {
-            subjects = new ArrayList<Subject>();
-        }
+                                 final String termIdentifier,
+                                 final String lang) {
+        /*   if (subjects == null)
+             {
+             subjects = new ArrayList<Subject>();
+             }
 
-        type, termIdentifier, lang, value
-       */
+             type, termIdentifier, lang, value
+        */
         Subject subject = null;
-                try {
-                        subject = this.newSubject();
-                } catch (RIFCSException e) {
-                        e.printStackTrace();
-                }
+        try {
+            subject = this.newSubject();
+        } catch (RIFCSException e) {
+            e.printStackTrace();
+        }
         subject.setValue(value);
         subject.setType(type);
         subject.setTermIdentifier(termIdentifier);
@@ -428,6 +451,8 @@ public class Activity extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
+     * @return the new Description object
+     *
      * @throws RIFCSException A RIFCSException
      *
      */
@@ -443,39 +468,39 @@ public class Activity extends RIFCSElement {
      *    a Description object
      */
     public final void addDescription(final Description description) {
-    /*    if (descriptions == null)
-        {
-            descriptions = new ArrayList<Description>();
-        }
-      */
+        /*    if (descriptions == null)
+              {
+              descriptions = new ArrayList<Description>();
+              }
+        */
         this.getElement().appendChild(description.getElement());
         this.descriptions.add(description);
     }
 
-        /**
-         * Convenience method to add a description to the activity object.
-         *
-         * @param description
-         *            a description string
-         * @param type
-         *            the description type
-         * @param language
-         *            the description language or null
-         *
-         * @throws RIFCSException A RIFCSException
-         */
-        public final void addDescription(final String description,
-                final String type, final String language)
-                        throws RIFCSException {
-                Description d = newDescription();
-                d.setType(type);
-                d.setValue(description);
-                if (language != null) {
-                        d.setLanguage(language);
-                }
-                this.getElement().appendChild(d.getElement());
-                this.descriptions.add(d);
+    /**
+     * Convenience method to add a description to the activity object.
+     *
+     * @param description
+     *            a description string
+     * @param type
+     *            the description type
+     * @param language
+     *            the description language or null
+     *
+     * @throws RIFCSException A RIFCSException
+     */
+    public final void addDescription(final String description,
+                                     final String type, final String language)
+        throws RIFCSException {
+        Description d = newDescription();
+        d.setType(type);
+        d.setValue(description);
+        if (language != null) {
+            d.setLanguage(language);
         }
+        this.getElement().appendChild(d.getElement());
+        this.descriptions.add(d);
+    }
 
 
     /**
@@ -488,6 +513,20 @@ public class Activity extends RIFCSElement {
         return descriptions;
     }
 
+    /**
+     * Create and return an empty Right object.
+     *
+     * The returned object has no properties or content and is not part
+     * of the RIF-CS document, it is essentially a constructor of an object
+     * owned by the RIF-CS document. The returned object needs to be
+     * "filled out" (e.g. with properties, additional sub-elements, etc)
+     * before being added to the RIF-CS document.
+     *
+     * @return the new Right object
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     public final Right newRight() throws RIFCSException {
         return new Right(this.newElement(Constants.ELEMENT_RIGHTS));
     }
@@ -500,11 +539,11 @@ public class Activity extends RIFCSElement {
      *    a Right object
      */
     public final void addRight(final Right right) {
-    /*    if (descriptions == null)
-        {
-            descriptions = new ArrayList<Description>();
-        }
-      */
+        /*    if (descriptions == null)
+              {
+              descriptions = new ArrayList<Description>();
+              }
+        */
         this.getElement().appendChild(right.getElement());
         this.rights.add(right);
     }
@@ -522,9 +561,23 @@ public class Activity extends RIFCSElement {
 
 
 
+    /**
+     * Create and return an empty ExistenceDate object.
+     *
+     * The returned object has no properties or content and is not part
+     * of the RIF-CS document, it is essentially a constructor of an object
+     * owned by the RIF-CS document. The returned object needs to be
+     * "filled out" (e.g. with properties, additional sub-elements, etc)
+     * before being added to the RIF-CS document.
+     *
+     * @return the new ExistenceDate object
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     public final ExistenceDate newExistenceDate() throws RIFCSException {
         return new ExistenceDate(this.newElement(
-                Constants.ELEMENT_EXISTENSE_DATES));
+            Constants.ELEMENT_EXISTENSE_DATES));
     }
 
 
@@ -535,41 +588,41 @@ public class Activity extends RIFCSElement {
      *    an ExistenceDate object
      */
     public final void addExistenceDate(final ExistenceDate existenceDate) {
-    /*    if (descriptions == null)
-        {
-            descriptions = new ArrayList<Description>();
-        }
-      */
+        /*    if (descriptions == null)
+              {
+              descriptions = new ArrayList<Description>();
+              }
+        */
         this.getElement().appendChild(existenceDate.getElement());
         this.existenceDates.add(existenceDate);
     }
 
     /**
      * Add an existence date to the activity object.
-     * @param startVal
-     * @param startDateFormat
-     * @param endVal
-     * @param endDateFormat
+     * @param startVal The start date
+     * @param startDateFormat The start date format
+     * @param endVal The end date
+     * @param endDateFormat The end date format
      */
     public final void addExistenceDate(final String startVal,
-            final String startDateFormat,
-            final String endVal,
-            final String endDateFormat) {
-    /*    if (descriptions == null)
-        {
-            descriptions = new ArrayList<Description>();
-        }
-      */
+                                       final String startDateFormat,
+                                       final String endVal,
+                                       final String endDateFormat) {
+        /*    if (descriptions == null)
+              {
+              descriptions = new ArrayList<Description>();
+              }
+        */
         ExistenceDate date;
-                try {
-                        date = this.newExistenceDate();
-        date.setStartDate(startVal, startDateFormat);
-        date.setEndDate(endVal, endDateFormat);
-        this.getElement().appendChild(date.getElement());
-        this.existenceDates.add(date);
-                } catch (RIFCSException e) {
-                        e.printStackTrace();
-                }
+        try {
+            date = this.newExistenceDate();
+            date.setStartDate(startVal, startDateFormat);
+            date.setEndDate(endVal, endDateFormat);
+            this.getElement().appendChild(date.getElement());
+            this.existenceDates.add(date);
+        } catch (RIFCSException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -592,6 +645,8 @@ public class Activity extends RIFCSElement {
      * owned by the RIF-CS document. The returned object needs to be
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
+     *
+     * @return the new RelatedInfo object
      *
      * @throws RIFCSException A RIFCSException
      *
@@ -624,7 +679,12 @@ public class Activity extends RIFCSElement {
     }
 
 
-    /* initialisation code for existing documents */
+    /** Initialisation code for existing documents. A wrapper that
+     *  invokes initIdentifiers(), initNames(), etc., in turn.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initStructures() throws RIFCSException {
         initIdentifiers();
         initNames();
@@ -636,6 +696,11 @@ public class Activity extends RIFCSElement {
         initRelatedInfo();
     }
 
+    /** Initialisation code for identifier elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initIdentifiers() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_IDENTIFIER);
 
@@ -644,6 +709,11 @@ public class Activity extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for name elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initNames() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_NAME);
 
@@ -652,6 +722,11 @@ public class Activity extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for location elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initLocations() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_LOCATION);
 
@@ -660,6 +735,11 @@ public class Activity extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for coverage elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initCoverage() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_COVERAGE);
 
@@ -668,6 +748,11 @@ public class Activity extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for relatedObject elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initRelatedObjects() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_RELATED_OBJECT);
 
@@ -676,6 +761,11 @@ public class Activity extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for subject elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initSubjects() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_SUBJECT);
 
@@ -684,6 +774,11 @@ public class Activity extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for description elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initDescriptions() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_DESCRIPTION);
 
@@ -692,6 +787,11 @@ public class Activity extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for relatedInfo elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initRelatedInfo() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_RELATED_INFO);
 

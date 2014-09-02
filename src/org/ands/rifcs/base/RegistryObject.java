@@ -42,7 +42,7 @@ public class RegistryObject extends RIFCSElement {
      * @param n
      *        A w3c Node, typically an Element
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     protected RegistryObject(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_REGISTRY_OBJECT);
@@ -195,7 +195,7 @@ public class RegistryObject extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final Collection newCollection() throws RIFCSException {
@@ -213,7 +213,7 @@ public class RegistryObject extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final Activity newActivity() throws RIFCSException {
@@ -231,7 +231,7 @@ public class RegistryObject extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final Party newParty() throws RIFCSException {
@@ -249,7 +249,7 @@ public class RegistryObject extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final Service newService() throws RIFCSException {
@@ -327,7 +327,7 @@ public class RegistryObject extends RIFCSElement {
      *      If null is returned it is likely there is some problem with the
      *      document or its state.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     public final RIFCSElement getClassObject() throws RIFCSException {
         NodeList nl = super.getElements(objectClass);

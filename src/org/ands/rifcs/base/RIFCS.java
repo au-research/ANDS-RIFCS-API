@@ -51,7 +51,7 @@ public class RIFCS {
      * The RIF-CS document will consist only of a root element with
      * sub-elements. Used when creating a new RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     public RIFCS() throws RIFCSException {
         try {
@@ -83,7 +83,7 @@ public class RIFCS {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final RegistryObject newRegistryObject() throws RIFCSException {
@@ -99,7 +99,7 @@ public class RIFCS {
      * @param d
      *        A w3c Document representing a RIF-CS DOM
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     public RIFCS(final Document d) throws RIFCSException {
         this.doc = d;
@@ -179,6 +179,7 @@ public class RIFCS {
      *
      * @param r
      *    A RegistryObject
+     * @throws RIFCSException A RIFCSException
      */
     public final void addRegistryObject(final RegistryObject r)
             throws RIFCSException {
@@ -190,6 +191,7 @@ public class RIFCS {
 
     /**
      * For existing DOM, initialise and create all the supporting structures.
+     * @throws RIFCSException A RIFCSException
      */
     private void initRegistryObjects() throws RIFCSException {
         NodeList nl = doc.getElementsByTagNameNS(Constants.NS_RIFCS,

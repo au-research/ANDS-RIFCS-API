@@ -33,7 +33,7 @@ public class Subject extends RIFCSElement {
      * @param n
      *        A w3c Node, typically an Element
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     protected Subject(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_SUBJECT);

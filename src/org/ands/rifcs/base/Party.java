@@ -49,7 +49,7 @@ public class Party extends RIFCSElement {
      * @param n
      *            A w3c Node, typically an Element
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     protected Party(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_PARTY);
@@ -119,7 +119,7 @@ public class Party extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final Identifier newIdentifier() throws RIFCSException {
@@ -155,7 +155,7 @@ public class Party extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final Name newName() throws RIFCSException {
@@ -191,7 +191,7 @@ public class Party extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final Location newLocation() throws RIFCSException {
@@ -227,7 +227,7 @@ public class Party extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final Coverage newCoverage() throws RIFCSException {
@@ -263,7 +263,7 @@ public class Party extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final RelatedObject newRelatedObject() throws RIFCSException {
@@ -300,7 +300,7 @@ public class Party extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final Subject newSubject() throws RIFCSException {
@@ -370,7 +370,7 @@ public class Party extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final Description newDescription() throws RIFCSException {
@@ -398,7 +398,7 @@ public class Party extends RIFCSElement {
      * @param language
      *            the description language or null
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     public final void addDescription(final String description,
             final String type, final String language) throws RIFCSException {
@@ -517,7 +517,7 @@ public class Party extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final RelatedInfo newRelatedInfo() throws RIFCSException {

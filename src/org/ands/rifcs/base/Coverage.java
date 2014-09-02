@@ -42,7 +42,7 @@ public class Coverage extends RIFCSElement {
      * @param n
      *        A w3c Node, typically an Element
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     protected Coverage(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_COVERAGE);
@@ -59,7 +59,7 @@ public class Coverage extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final Spatial newSpatial() throws RIFCSException {
@@ -99,7 +99,7 @@ public class Coverage extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final Temporal newTemporal() throws RIFCSException {
@@ -125,6 +125,7 @@ public class Coverage extends RIFCSElement {
      *
      * @param text
      *      The value to add to the text element
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final void addTemporal(final String text) throws RIFCSException {
@@ -143,6 +144,7 @@ public class Coverage extends RIFCSElement {
      *      The date to add to the date element.
      * @param type
      *      The type of date
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final void addTemporalDate(final Date date,
@@ -162,6 +164,7 @@ public class Coverage extends RIFCSElement {
      *      The date to add to the date element.
      * @param type
      *      The type of date
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final void addTemporalDate(final String date,

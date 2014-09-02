@@ -37,7 +37,7 @@ public class RelatedInfo extends RIFCSElement {
      * @param n
      *        A w3c Node, typically an Element
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     protected RelatedInfo(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_RELATED_INFO);
@@ -77,7 +77,7 @@ public class RelatedInfo extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final Identifier newIdentifier() throws RIFCSException {
@@ -92,6 +92,7 @@ public class RelatedInfo extends RIFCSElement {
      *      The identifier of the related information resource
      * @param type
      *      The type of the identifier
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final void setIdentifier(final String anIdentifier,

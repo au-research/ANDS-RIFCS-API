@@ -41,7 +41,7 @@ public class ROElement {
      * @param n
      *        A w3c Node, typically an Element
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     protected ROElement(final Node n) throws RIFCSException {

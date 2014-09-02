@@ -37,7 +37,7 @@ public class CitationInfo extends RIFCSElement {
      * @param n
      *        A w3c Node, typically an Element
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     protected CitationInfo(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_CITATIONINFO);
@@ -54,7 +54,7 @@ public class CitationInfo extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final CitationMetadata newCitationMetadata() throws RIFCSException {
@@ -71,6 +71,7 @@ public class CitationInfo extends RIFCSElement {
      *      The full citation in string form
      * @param style
      *      The full citation style, use <code>null</code> if style is unknown
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final void setCitation(final String citation,

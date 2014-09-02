@@ -33,7 +33,7 @@ public class RightsTypedInfo extends RIFCSElement {
      * @param n
      *        A w3c Node, typically an Element
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     protected RightsTypedInfo(final Node n) throws RIFCSException {
         super(n, n.getNodeName());

@@ -46,7 +46,7 @@ public class RIFCSElement {
      * @param name
      *        The name of the RIF-CS Element
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     protected RIFCSElement(final Node n,

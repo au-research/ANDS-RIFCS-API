@@ -46,7 +46,7 @@ public class Temporal extends RIFCSElement {
      * @param n
      *        A w3c Node, typically an Element
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     protected Temporal(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_TEMPORAL);
@@ -62,7 +62,7 @@ public class Temporal extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     // public DateElement newDate() throws RIFCSException
@@ -124,6 +124,7 @@ public class Temporal extends RIFCSElement {
      *      The date to add to the date element.
      * @param type
      *      The type of date
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final void addDate(final String date, final String type)
@@ -139,6 +140,7 @@ public class Temporal extends RIFCSElement {
      *      The date to add to the date element.
      * @param type
      *      The type of date
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final void addDate(final String date,
@@ -159,6 +161,7 @@ public class Temporal extends RIFCSElement {
      *      The date to add to the date element.
      * @param type
      *      The type of date
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final void addDate(final Date date,

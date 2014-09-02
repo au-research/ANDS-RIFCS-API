@@ -40,7 +40,7 @@ public class Name extends RIFCSElement {
      * @param n
      *        A w3c Node, typically an Element
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     protected Name(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_NAME);
@@ -172,7 +172,7 @@ public class Name extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final NamePart newNamePart() throws RIFCSException {
@@ -199,6 +199,7 @@ public class Name extends RIFCSElement {
      *    String with the name value
      * @param type
      *    namePart type (e.g. surname, middle name) or null
+     * @throws RIFCSException A RIFCSException
      */
     public final void addNamePart(final String namePart,
                             final String type) throws RIFCSException {

@@ -37,7 +37,7 @@ public class ExistenceDate extends RIFCSElement {
      * @param n
      *            A w3c Node, typically an Element
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     protected ExistenceDate(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_EXISTENSE_DATES);
@@ -48,7 +48,7 @@ public class ExistenceDate extends RIFCSElement {
      *
      * @param value
      * @param dateFormat
-     * @throws RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     public final void setStartDate(final String value,
             final String dateFormat) throws RIFCSException {
@@ -73,7 +73,7 @@ public class ExistenceDate extends RIFCSElement {
      *
      * @param value
      * @param dateFormat
-     * @throws RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     public final void setEndDate(final String value,
             final String dateFormat) throws RIFCSException {

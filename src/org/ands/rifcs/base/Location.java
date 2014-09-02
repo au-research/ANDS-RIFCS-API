@@ -42,7 +42,7 @@ public class Location extends RIFCSElement {
      * @param n
      *        A w3c Node, typically an Element
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     protected Location(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_LOCATION);
@@ -127,7 +127,7 @@ public class Location extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final Address newAddress() throws RIFCSException {
@@ -167,7 +167,7 @@ public class Location extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final Spatial newSpatial() throws RIFCSException {

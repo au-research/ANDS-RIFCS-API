@@ -35,7 +35,7 @@ public class CommonDateElement extends RIFCSElement {
      * @param n
      *        A w3c Node, typically an Element
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     protected CommonDateElement(final Node n) throws RIFCSException {
         super(n, n.getNodeName());

@@ -50,7 +50,7 @@ public class Collection extends RIFCSElement {
      * @param n
      *            A w3c Node, typically an Element
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     protected Collection(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_COLLECTION);
@@ -156,7 +156,7 @@ public class Collection extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final Identifier newIdentifier() throws RIFCSException {
@@ -182,7 +182,7 @@ public class Collection extends RIFCSElement {
      * @param type
      *            the identifier type
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final void addIdentifier(final String identifier,
@@ -212,7 +212,7 @@ public class Collection extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final Name newName() throws RIFCSException {
@@ -248,7 +248,7 @@ public class Collection extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final Location newLocation() throws RIFCSException {
@@ -284,7 +284,7 @@ public class Collection extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final Coverage newCoverage() throws RIFCSException {
@@ -320,7 +320,7 @@ public class Collection extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final RelatedObject newRelatedObject() throws RIFCSException {
@@ -357,7 +357,7 @@ public class Collection extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final Subject newSubject() throws RIFCSException {
@@ -385,7 +385,7 @@ public class Collection extends RIFCSElement {
      * @param language
      *            the subject language or null
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     public final void addSubject(final String subject,
             final String type, final String language) throws RIFCSException {
@@ -417,7 +417,7 @@ public class Collection extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final Description newDescription() throws RIFCSException {
@@ -445,7 +445,7 @@ public class Collection extends RIFCSElement {
      * @param language
      *            the description language or null
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     public final void addDescription(final String description,
             final String type, final String language) throws RIFCSException {
@@ -509,7 +509,7 @@ public class Collection extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final RelatedInfo newRelatedInfo() throws RIFCSException {
@@ -535,7 +535,7 @@ public class Collection extends RIFCSElement {
      * @param relatedInfoURI
      *            a relatedInfo URI
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      * @deprecated Use the newRelatedInfo() method to construct relatedInfo.
      *             This method will be removed in a future release. If used it
      *             will create a single identifier of type uri within the

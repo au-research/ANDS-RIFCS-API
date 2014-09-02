@@ -40,7 +40,7 @@ public class Electronic extends RIFCSElement {
      * @param n
      *        A w3c Node, typically an Element
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     protected Electronic(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_ELECTRONIC);
@@ -80,7 +80,7 @@ public class Electronic extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final Arg newArg() throws RIFCSException {
@@ -99,6 +99,7 @@ public class Electronic extends RIFCSElement {
      *    the argument type
      * @param use
      *    the argument use
+     * @throws RIFCSException A RIFCSException
      */
     public final void addArg(final String name,
                        final String required,

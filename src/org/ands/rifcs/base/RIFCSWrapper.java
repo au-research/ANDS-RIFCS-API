@@ -75,7 +75,7 @@ public class RIFCSWrapper {
      * no attributes set and no sub-elements. Used when creating a
      * new RIFCS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     public RIFCSWrapper() throws RIFCSException {
         try {
@@ -104,7 +104,7 @@ public class RIFCSWrapper {
      * @param d
      *        A w3c Document representing a RIFCS DOM
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     public RIFCSWrapper(final Document d) throws RIFCSException {
         this.doc = d;

@@ -33,7 +33,7 @@ public class Identifier extends RIFCSElement {
      * @param n
      *        A w3c Node, typically an Element
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     protected Identifier(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_IDENTIFIER);

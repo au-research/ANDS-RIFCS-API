@@ -40,7 +40,7 @@ public class RelatedObject extends RIFCSElement {
      * @param n
      *        A w3c Node, typically an Element
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      */
     protected RelatedObject(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_RELATED_OBJECT);
@@ -86,7 +86,7 @@ public class RelatedObject extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
-     * @exception RIFCSException
+     * @throws RIFCSException A RIFCSException
      *
      */
     public final Relation newRelation() throws RIFCSException {
@@ -106,6 +106,7 @@ public class RelatedObject extends RIFCSElement {
      *    String describing the relation or null
      * @param descriptionLanguage
      *    The xml:lang attribute value
+     * @throws RIFCSException A RIFCSException
      */
     public final void addRelation(final String type,
                             final String url,

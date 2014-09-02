@@ -29,6 +29,8 @@ import org.w3c.dom.NodeList;
  *
  */
 public class CitationInfo extends RIFCSElement {
+
+    /** The CitationMetadata for this CitationInfo. */
     private CitationMetadata cm = null;
 
     /**
@@ -53,6 +55,8 @@ public class CitationInfo extends RIFCSElement {
      * owned by the RIF-CS document. The returned object needs to be
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
+     *
+     * @return the new CitationMetadata object
      *
      * @throws RIFCSException A RIFCSException
      *
@@ -146,7 +150,11 @@ public class CitationInfo extends RIFCSElement {
     }
 
 
-    // intialise structures for existing documents
+    /** Initialisation code for existing documents.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initStructures() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_CITATION_METADATA);
 

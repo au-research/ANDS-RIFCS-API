@@ -104,7 +104,7 @@ public class Temporal extends RIFCSElement {
      *      A list of string values
      */
     public final List<String> getText() {
-        ArrayList al = new ArrayList<String>();
+        ArrayList<String> al = new ArrayList<String>();
         for (Iterator<Element> i = texts.iterator(); i.hasNext();) {
             al.add(i.next().getTextContent());
         }

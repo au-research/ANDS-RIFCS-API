@@ -28,66 +28,66 @@ import org.w3c.dom.Node;
  */
 public class ExistenceDate extends RIFCSElement {
 
-	protected CommonDateElement startDate = null;
-	protected CommonDateElement endDate = null;
+    protected CommonDateElement startDate = null;
+    protected CommonDateElement endDate = null;
 
-	/**
-	 * Construct an ExistenceDate object.
-	 *
-	 * @param n
-	 *            A w3c Node, typically an Element
-	 *
-	 * @exception RIFCSException
-	 */
-	protected ExistenceDate(Node n) throws RIFCSException {
-		super(n, Constants.ELEMENT_EXISTENSE_DATES);
-	}
+    /**
+     * Construct an ExistenceDate object.
+     *
+     * @param n
+     *            A w3c Node, typically an Element
+     *
+     * @exception RIFCSException
+     */
+    protected ExistenceDate(Node n) throws RIFCSException {
+        super(n, Constants.ELEMENT_EXISTENSE_DATES);
+    }
 
-	/**
-	 * Set the startDate.
-	 *
-	 * @param value
-	 * @param dateFormat
-	 * @throws RIFCSException
-	 */
-	public void setStartDate(String value, String dateFormat) throws RIFCSException {
-		CommonDateElement dateElement =  new CommonDateElement(this.newElement(Constants.ELEMENT_START_DATE));
-		dateElement.setDateFormat(dateFormat);
-		dateElement.setValue(value);
-		this.startDate = dateElement;
-		this.getElement().appendChild(this.startDate.getElement());
-	}
-	/**
-	 * return the StartDate.
-	 *
-	 * @return The StartDate
-	 */
-	public CommonDateElement getStartDate() {
-		return this.startDate;
-	}
+    /**
+     * Set the startDate.
+     *
+     * @param value
+     * @param dateFormat
+     * @throws RIFCSException
+     */
+    public void setStartDate(String value, String dateFormat) throws RIFCSException {
+        CommonDateElement dateElement =  new CommonDateElement(this.newElement(Constants.ELEMENT_START_DATE));
+        dateElement.setDateFormat(dateFormat);
+        dateElement.setValue(value);
+        this.startDate = dateElement;
+        this.getElement().appendChild(this.startDate.getElement());
+    }
+    /**
+     * return the StartDate.
+     *
+     * @return The StartDate
+     */
+    public CommonDateElement getStartDate() {
+        return this.startDate;
+    }
 
-	/**
-	 * Set the endDate.
-	 *
-	 * @param value
-	 * @param dateFormat
-	 * @throws RIFCSException
-	 */
-	public void setEndDate(String value, String dateFormat) throws RIFCSException {
-		CommonDateElement dateElement =  new CommonDateElement(this.newElement(Constants.ELEMENT_END_DATE));
-		dateElement.setDateFormat(dateFormat);
-		dateElement.setValue(value);
-		this.endDate = dateElement;
-		this.getElement().appendChild(this.endDate.getElement());
-	}
+    /**
+     * Set the endDate.
+     *
+     * @param value
+     * @param dateFormat
+     * @throws RIFCSException
+     */
+    public void setEndDate(String value, String dateFormat) throws RIFCSException {
+        CommonDateElement dateElement =  new CommonDateElement(this.newElement(Constants.ELEMENT_END_DATE));
+        dateElement.setDateFormat(dateFormat);
+        dateElement.setValue(value);
+        this.endDate = dateElement;
+        this.getElement().appendChild(this.endDate.getElement());
+    }
 
 
-	/**
-	 * return the EndDate.
-	 *
-	 * @return The EndDate
-	 */
-	public CommonDateElement getEndDate() {
-		return this.endDate;
-	}
+    /**
+     * return the EndDate.
+     *
+     * @return The EndDate
+     */
+    public CommonDateElement getEndDate() {
+        return this.endDate;
+    }
 }

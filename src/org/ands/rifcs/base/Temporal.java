@@ -64,13 +64,13 @@ public class Temporal extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-   // public DateElement newDate() throws RIFCSException
-   // {
-   //     return new DateElement(this.newElement(Constants.ELEMENT_DATE));
-   // }
+    // public DateElement newDate() throws RIFCSException
+    // {
+    //     return new DateElement(this.newElement(Constants.ELEMENT_DATE));
+    // }
 
     public TemporalCoverageDate newDate() throws RIFCSException {
-    return new TemporalCoverageDate(this.newElement(Constants.ELEMENT_DATE));
+        return new TemporalCoverageDate(this.newElement(Constants.ELEMENT_DATE));
     }
 
 
@@ -127,8 +127,8 @@ public class Temporal extends RIFCSElement {
 
 
     public void addDate(String date, String type) throws RIFCSException {
-    	this.addDate(date, type, "W3C");
-	}
+        this.addDate(date, type, "W3C");
+    }
     /**
      * Add temporal date to the coverage object. A convenience method
      * creating a single temporal element with a date element.
@@ -142,13 +142,13 @@ public class Temporal extends RIFCSElement {
 
 
     public void addDate(String date, String type, String dateFormat) throws RIFCSException {
-	    TemporalCoverageDate de = this.newDate();
-	    de.setType(type);
-	    de.setDateFormat(dateFormat);
-	    de.setValue(date);
-	    this.getElement().appendChild(de.getElement());
-	    this.dates.add((TemporalCoverageDate) de);
-	}
+        TemporalCoverageDate de = this.newDate();
+        de.setType(type);
+        de.setDateFormat(dateFormat);
+        de.setValue(date);
+        this.getElement().appendChild(de.getElement());
+        this.dates.add((TemporalCoverageDate) de);
+    }
 
     /**
      * Add temporal date to the coverage object. A convenience method
@@ -163,11 +163,11 @@ public class Temporal extends RIFCSElement {
 
 
     public void addDate(Date date, String type) throws RIFCSException {
-    	DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
-    	String text = df.format(date);
-    	String result = text.substring(0, 22) + ":" + text.substring(22);
-    	this.addDate(result, type);
-	}
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+        String text = df.format(date);
+        String result = text.substring(0, 22) + ":" + text.substring(22);
+        this.addDate(result, type);
+    }
 
 
     /* initialisation code for existing documents */

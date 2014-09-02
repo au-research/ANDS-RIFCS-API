@@ -386,16 +386,16 @@ public class Activity extends RIFCSElement {
 
         type, termIdentifier, lang, value
        */
-    	Subject subject = null;
-		try {
-			subject = this.newSubject();
-		} catch (RIFCSException e) {
-			e.printStackTrace();
-		}
-    	subject.setValue(value);
-    	subject.setType(type);
-    	subject.setTermIdentifier(termIdentifier);
-    	subject.setLanguage(lang);
+        Subject subject = null;
+                try {
+                        subject = this.newSubject();
+                } catch (RIFCSException e) {
+                        e.printStackTrace();
+                }
+        subject.setValue(value);
+        subject.setType(type);
+        subject.setTermIdentifier(termIdentifier);
+        subject.setLanguage(lang);
 
         this.getElement().appendChild(subject.getElement());
         this.subjects.add(subject);
@@ -447,28 +447,28 @@ public class Activity extends RIFCSElement {
         this.descriptions.add(description);
     }
 
-	/**
-	 * Convenience method to add a description to the activity object.
-	 *
-	 * @param description
-	 *            a description string
-	 * @param type
-	 *            the description type
-	 * @param language
-	 *            the description language or null
-	 *
-	 * @exception RIFCSException
-	 */
-	public void addDescription(String description, String type, String language) throws RIFCSException {
-		Description d = newDescription();
-		d.setType(type);
-		d.setValue(description);
-		if (language != null) {
-			d.setLanguage(language);
-		}
-		this.getElement().appendChild(d.getElement());
-		this.descriptions.add(d);
-	}
+        /**
+         * Convenience method to add a description to the activity object.
+         *
+         * @param description
+         *            a description string
+         * @param type
+         *            the description type
+         * @param language
+         *            the description language or null
+         *
+         * @exception RIFCSException
+         */
+        public void addDescription(String description, String type, String language) throws RIFCSException {
+                Description d = newDescription();
+                d.setType(type);
+                d.setValue(description);
+                if (language != null) {
+                        d.setLanguage(language);
+                }
+                this.getElement().appendChild(d.getElement());
+                this.descriptions.add(d);
+        }
 
 
     /**
@@ -549,16 +549,16 @@ public class Activity extends RIFCSElement {
             descriptions = new ArrayList<Description>();
         }
       */
-    	ExistenceDate date;
-		try {
-			date = this.newExistenceDate();
-    	date.setStartDate(startVal, startDateFormat);
-    	date.setEndDate(endVal, endDateFormat);
+        ExistenceDate date;
+                try {
+                        date = this.newExistenceDate();
+        date.setStartDate(startVal, startDateFormat);
+        date.setEndDate(endVal, endDateFormat);
         this.getElement().appendChild(date.getElement());
         this.existenceDates.add(date);
-		} catch (RIFCSException e) {
-			e.printStackTrace();
-		}
+                } catch (RIFCSException e) {
+                        e.printStackTrace();
+                }
     }
 
 

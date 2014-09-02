@@ -42,7 +42,7 @@ public class CommonDateElement extends RIFCSElement {
     }
 
 
-	/**
+        /**
      * Set the type.
      *
      * @param type

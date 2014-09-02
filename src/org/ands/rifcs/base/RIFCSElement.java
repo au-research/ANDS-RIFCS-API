@@ -108,8 +108,8 @@ public class RIFCSElement {
      *      The attribute value
      */
     protected void setAttributeValueNS(String ns,
-                                        String name,
-                                     String value) {
+                                       String name,
+                                       String value) {
         e.setAttributeNS(ns, name, value);
     }
 
@@ -198,7 +198,7 @@ public class RIFCSElement {
         List<Node> l = new ArrayList<Node>();
         for (int i = 0; i < nl.getLength(); i++) {
             if (nl.item(i).getNodeType() == Node.ELEMENT_NODE
-            		&& nl.item(i).getLocalName().equals(localName)) {
+                && nl.item(i).getLocalName().equals(localName)) {
                 l.add(nl.item(i));
             }
         }

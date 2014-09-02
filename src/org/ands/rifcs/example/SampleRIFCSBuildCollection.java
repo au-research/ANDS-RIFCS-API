@@ -30,7 +30,7 @@ import org.xml.sax.SAXException;
 
 public class SampleRIFCSBuildCollection {
 
-	private static RIFCS rifcs = null;
+    private static RIFCS rifcs = null;
 
     public SampleRIFCSBuildCollection() {
 

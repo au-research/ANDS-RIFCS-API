@@ -153,7 +153,7 @@ public class Service extends RIFCSElement {
      * @return
      *      A list of Identifier objects
      */
-  public List<Identifier> getIdentifiers() {
+    public List<Identifier> getIdentifiers() {
         return identifiers;
     }
 
@@ -355,23 +355,23 @@ public class Service extends RIFCSElement {
      * @param lang
      */
     public void addSubject(String value, String type, String termIdentifier, String lang) {
-     /*   if (subjects == null)
-        {
-            subjects = new ArrayList<Subject>();
-        }
+        /*   if (subjects == null)
+             {
+             subjects = new ArrayList<Subject>();
+             }
 
-        type, termIdentifier, lang, value
-       */
-    	Subject subject = null;
-		try {
-			subject = this.newSubject();
-		} catch (RIFCSException e) {
-			e.printStackTrace();
-		}
-    	subject.setValue(value);
-    	subject.setType(type);
-    	subject.setTermIdentifier(termIdentifier);
-    	subject.setLanguage(lang);
+             type, termIdentifier, lang, value
+        */
+        Subject subject = null;
+        try {
+            subject = this.newSubject();
+        } catch (RIFCSException e) {
+            e.printStackTrace();
+        }
+        subject.setValue(value);
+        subject.setType(type);
+        subject.setTermIdentifier(termIdentifier);
+        subject.setLanguage(lang);
 
         this.getElement().appendChild(subject.getElement());
         this.subjects.add(subject);
@@ -418,28 +418,28 @@ public class Service extends RIFCSElement {
     }
 
 
-	/**
-	 * Convenience method to add a description to the collection object.
-	 *
-	 * @param description
-	 *            a description string
-	 * @param type
-	 *            the description type
-	 * @param language
-	 *            the description language or null
-	 *
-	 * @exception RIFCSException
-	 */
-	public void addDescription(String description, String type, String language) throws RIFCSException {
-		Description d = newDescription();
-		d.setType(type);
-		d.setValue(description);
-		if (language != null) {
-			d.setLanguage(language);
-		}
-		this.getElement().appendChild(d.getElement());
-		this.descriptions.add(d);
-	}
+    /**
+     * Convenience method to add a description to the collection object.
+     *
+     * @param description
+     *            a description string
+     * @param type
+     *            the description type
+     * @param language
+     *            the description language or null
+     *
+     * @exception RIFCSException
+     */
+    public void addDescription(String description, String type, String language) throws RIFCSException {
+        Description d = newDescription();
+        d.setType(type);
+        d.setValue(description);
+        if (language != null) {
+            d.setLanguage(language);
+        }
+        this.getElement().appendChild(d.getElement());
+        this.descriptions.add(d);
+    }
 
     /**
      * Obtain the description for this service.
@@ -463,11 +463,11 @@ public class Service extends RIFCSElement {
      *    a Right object
      */
     public void addRight(Right right) {
-    /*    if (descriptions == null)
-        {
-            descriptions = new ArrayList<Description>();
-        }
-      */
+        /*    if (descriptions == null)
+              {
+              descriptions = new ArrayList<Description>();
+              }
+        */
         this.getElement().appendChild(right.getElement());
         this.rights.add(right);
     }
@@ -497,11 +497,11 @@ public class Service extends RIFCSElement {
      *    an ExistenceDate object
      */
     public void addExistenceDate(ExistenceDate existenceDate) {
-    /*    if (descriptions == null)
-        {
-            descriptions = new ArrayList<Description>();
-        }
-      */
+        /*    if (descriptions == null)
+              {
+              descriptions = new ArrayList<Description>();
+              }
+        */
         this.getElement().appendChild(existenceDate.getElement());
         this.existenceDates.add(existenceDate);
     }
@@ -515,21 +515,21 @@ public class Service extends RIFCSElement {
      * @param endDateFormat
      */
     public void addExistenceDate(String startVal, String startDateFormat, String endVal, String endDateFormat) {
-    /*    if (descriptions == null)
-        {
-            descriptions = new ArrayList<Description>();
+        /*    if (descriptions == null)
+              {
+              descriptions = new ArrayList<Description>();
+              }
+        */
+        ExistenceDate date;
+        try {
+            date = this.newExistenceDate();
+            date.setStartDate(startVal, startDateFormat);
+            date.setEndDate(endVal, endDateFormat);
+            this.getElement().appendChild(date.getElement());
+            this.existenceDates.add(date);
+        } catch (RIFCSException e) {
+            e.printStackTrace();
         }
-      */
-    	ExistenceDate date;
-		try {
-			date = this.newExistenceDate();
-    	date.setStartDate(startVal, startDateFormat);
-    	date.setEndDate(endVal, endDateFormat);
-        this.getElement().appendChild(date.getElement());
-        this.existenceDates.add(date);
-		} catch (RIFCSException e) {
-			e.printStackTrace();
-		}
     }
 
     /**
@@ -579,14 +579,14 @@ public class Service extends RIFCSElement {
      *    the name of an AccessPolicy
      */
     public void addAccessPolicy(String accessPolicyVal) {
-    	AccessPolicy policy = null;
-		try {
-			policy = this.newAccessPolicy();
-		} catch (RIFCSException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	policy.setValue(accessPolicyVal);
+        AccessPolicy policy = null;
+        try {
+            policy = this.newAccessPolicy();
+        } catch (RIFCSException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        policy.setValue(accessPolicyVal);
         this.getElement().appendChild(policy.getElement());
         this.aps.add(policy);
     }

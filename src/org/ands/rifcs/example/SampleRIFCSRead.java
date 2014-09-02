@@ -34,19 +34,19 @@ import org.ands.rifcs.ch.*;
 import org.xml.sax.SAXException;
 
 public class SampleRIFCSRead {
-	private static RIFCS rifcs = null;
+    private static RIFCS rifcs = null;
 
     public static void main(String[] args) throws RIFCSException, FileNotFoundException, SAXException, ParserConfigurationException, IOException, MalformedURLException
     {
         RIFCSReader rr = new RIFCSReader();
         rr.mapToDOM(new FileInputStream(args[0]));
         RIFCSWrapper rw = new RIFCSWrapper(rr.getDocument());
-	    rw.validate();
-	    RIFCS aRifcs = rw.getRIFCSObject();
+        rw.validate();
+        RIFCS aRifcs = rw.getRIFCSObject();
 
-	    List<RegistryObject> list = aRifcs.getCollections();
-	    for (Iterator<RegistryObject> i = list.iterator(); i.hasNext();) {
-	    	RegistryObject ro = (RegistryObject) i.next();
+        List<RegistryObject> list = aRifcs.getCollections();
+        for (Iterator<RegistryObject> i = list.iterator(); i.hasNext();) {
+            RegistryObject ro = (RegistryObject) i.next();
             Collection c = (Collection) ro.getClassObject();
             Iterator j = c.getNames().iterator();
             while (j.hasNext()) {
@@ -54,8 +54,8 @@ public class SampleRIFCSRead {
                 if (n.getType().equals("primary")) {
                     Iterator k = n.getNameParts().iterator();
                     while (k.hasNext()) {
-						System.out.println((new StringBuilder()).append(((NamePart) k.next()).getValue()).append(" (").append(ro.getKey()).append(")").toString());
-					}
+                        System.out.println((new StringBuilder()).append(((NamePart) k.next()).getValue()).append(" (").append(ro.getKey()).append(")").toString());
+                    }
                 }
             }
         }

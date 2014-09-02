@@ -56,9 +56,9 @@ public class ROElement {
         String name = n.getNodeName();
 
         if (!name.equals(Constants.ELEMENT_ACTIVITY)
-        		&& !name.equals(Constants.ELEMENT_COLLECTION)
-        		&& !name.equals(Constants.ELEMENT_PARTY)
-        		&& !name.equals(Constants.ELEMENT_SERVICE)) {
+                && !name.equals(Constants.ELEMENT_COLLECTION)
+                && !name.equals(Constants.ELEMENT_PARTY)
+                && !name.equals(Constants.ELEMENT_SERVICE)) {
             throw new RIFCSException("Invalid regsitry object type: " + name);
         }
 
@@ -184,7 +184,7 @@ public class ROElement {
         List<Node> l = new ArrayList<Node>();
         for (int i = 0; i < nl.getLength(); i++) {
             if (nl.item(i).getNodeType() == Node.ELEMENT_NODE
-            		&& nl.item(i).getLocalName().equals(localName)) {
+                    && nl.item(i).getLocalName().equals(localName)) {
                 l.add(nl.item(i));
             }
         }

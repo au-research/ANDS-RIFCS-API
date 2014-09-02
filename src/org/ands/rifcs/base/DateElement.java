@@ -44,10 +44,10 @@ public class DateElement extends RIFCSElement {
 
     public DateElement(Node n, String name) throws RIFCSException {
         super(n, name);
-	}
+    }
 
 
-	/**
+    /**
      * Set the type.
      *
      * @param type

@@ -46,8 +46,10 @@ public class Temporal extends RIFCSElement {
      */
     private static final int TEMPORAL_DATE_FORMAT_LENGTH =
             TEMPORAL_DATE_FORMAT.length();
+    /** The date information for this temporal coverage. */
     private List<TemporalCoverageDate> dates =
             new ArrayList<TemporalCoverageDate>();
+    /** The text information for this temporal coverage. */
     private List<Element> texts = new ArrayList<Element>();
 
     /**
@@ -71,6 +73,8 @@ public class Temporal extends RIFCSElement {
      * owned by the RIF-CS document. The returned object needs to be
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
+     *
+     * @return the new Date object
      *
      * @throws RIFCSException A RIFCSException
      *
@@ -149,7 +153,9 @@ public class Temporal extends RIFCSElement {
      * @param date
      *      The date to add to the date element.
      * @param type
-     *      The type of date
+     *      The type of date.
+     * @param dateFormat
+     *      The date format.
      * @throws RIFCSException A RIFCSException
      *
      */
@@ -184,12 +190,22 @@ public class Temporal extends RIFCSElement {
     }
 
 
-    /* initialisation code for existing documents */
+    /** Initialisation code for existing documents. A wrapper that
+     *  invokes initTexts() and initDates() in turn.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initStructures() throws RIFCSException {
         initTexts();
         initDates();
     }
 
+    /** Initialisation code for element elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initTexts() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_TEXT);
 
@@ -198,6 +214,11 @@ public class Temporal extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for date elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initDates() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_DATE);
 

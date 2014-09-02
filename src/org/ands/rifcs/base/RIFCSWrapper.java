@@ -102,7 +102,7 @@ public class RIFCSWrapper {
 
 
     /**
-     * Obtain the DOM document
+     * Obtain the DOM document.
      *
      * @return
      *        A w3c Document representing a RIFCS DOM
@@ -113,7 +113,7 @@ public class RIFCSWrapper {
 
 
     /**
-     * Obtain a RIFCS object
+     * Obtain a RIFCS object.
      *
      * @return
      *        a RIFCS object representing a RIFCS root element
@@ -124,7 +124,7 @@ public class RIFCSWrapper {
 
 
     /**
-     * Write a RIFCS document to an output stream
+     * Write a RIFCS document to an output stream.
      *
      * @param os
      *        The OutputStream to write the data to

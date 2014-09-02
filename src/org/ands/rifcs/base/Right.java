@@ -21,7 +21,7 @@ package org.ands.rifcs.base;
 import org.w3c.dom.Node;
 
 /**
- * Class representing registry object rights
+ * Class representing registry object rights.
  *
  * @author Mahmoud Sadeghi
  *
@@ -33,7 +33,7 @@ public class Right extends RIFCSElement {
 	protected RightsTypedInfo accessRights = null;
 
 	/**
-	 * Construct a Rights object
+	 * Construct a Rights object.
 	 *
 	 * @param n
 	 *            A w3c Node, typically an Element
@@ -45,7 +45,7 @@ public class Right extends RIFCSElement {
 	}
 
 	/**
-	 * Set the rightsStatement
+	 * Set the rightsStatement.
 	 *
 	 * @param aRightsStatement
 	 * @throws RIFCSException
@@ -56,7 +56,7 @@ public class Right extends RIFCSElement {
 	}
 
 	/**
-	 * Set the rightsStatement Value
+	 * Set the rightsStatement Value.
 	 *
 	 * @param value
 	 * @throws RIFCSException
@@ -66,7 +66,7 @@ public class Right extends RIFCSElement {
 	}
 
 	/**
-	 * Set the rightsStatement Value and URI
+	 * Set the rightsStatement Value and URI.
 	 *
 	 * @param value
 	 * @param rightsUri
@@ -82,7 +82,7 @@ public class Right extends RIFCSElement {
 	}
 
 	/**
-	 * return the rightsStatement
+	 * return the rightsStatement.
 	 *
 	 * @return The rightsStatement
 	 */
@@ -90,7 +90,7 @@ public class Right extends RIFCSElement {
 		return this.rightsStatement;
 	}
 	/**
-	 * Set the licence
+	 * Set the licence.
 	 *
 	 * @param aLicence
 	 * @throws RIFCSException
@@ -101,7 +101,7 @@ public class Right extends RIFCSElement {
 	}
 
 	/**
-	 * Set the licence Value
+	 * Set the licence Value.
 	 *
 	 * @param value
 	 * @throws RIFCSException
@@ -111,7 +111,7 @@ public class Right extends RIFCSElement {
 	}
 
 	/**
-	 * Set the licence Value and Type
+	 * Set the licence Value and Type.
 	 *
 	 * @param value
 	 * @param type
@@ -122,7 +122,7 @@ public class Right extends RIFCSElement {
 	}
 
 	/**
-	 * Set the licence Value, URI and Type
+	 * Set the licence Value, URI and Type.
 	 *
 	 * @param value
 	 * @param rightsUri
@@ -142,7 +142,7 @@ public class Right extends RIFCSElement {
 	}
 
 	/**
-	 * return the licence
+	 * return the licence.
 	 *
 	 * @return The licence
 	 */
@@ -151,7 +151,7 @@ public class Right extends RIFCSElement {
 	}
 
 	/**
-	 * Set the accessRights
+	 * Set the accessRights.
 	 *
 	 * @param anAccessRights
 	 * @throws RIFCSException
@@ -162,7 +162,7 @@ public class Right extends RIFCSElement {
 	}
 
 	/**
-	 * Set the accessRightsValue
+	 * Set the accessRightsValue.
 	 *
 	 * @param value
 	 * @throws RIFCSException
@@ -172,7 +172,7 @@ public class Right extends RIFCSElement {
 	}
 
 	/**
-	 * Set the accessRights Value and Type
+	 * Set the accessRights Value and Type.
 	 *
 	 * @param value
 	 * @param type
@@ -183,7 +183,7 @@ public class Right extends RIFCSElement {
 	}
 
 	/**
-	 * Set the accessRights Value, URI and Type
+	 * Set the accessRights Value, URI and Type.
 	 *
 	 * @param value
 	 * @param rightsUri
@@ -203,7 +203,7 @@ public class Right extends RIFCSElement {
 	}
 
 	/**
-	 * return the accessRights
+	 * return the accessRights.
 	 *
 	 * @return The accessRights
 	 */

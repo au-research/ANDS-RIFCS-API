@@ -20,13 +20,13 @@
 package org.ands.rifcs.base;
 
 /**
- * An exception class for exceptions
+ * An exception class for exceptions.
  *
  * @author Scott Yeadon, ANU
  */
 public class RIFCSException extends Exception {
     /**
-     * create a ROException
+     * create a ROException.
      *
      * @param reason
      *            string describing reason for the exception
@@ -37,7 +37,7 @@ public class RIFCSException extends Exception {
 
 
     /**
-     * create a ROException
+     * create a ROException.
      *
      * @param reason
      *            string describing reason for the exception
@@ -51,7 +51,7 @@ public class RIFCSException extends Exception {
 
 
     /**
-     * create a ROException
+     * create a ROException.
      *
      * @param cause
      *            A Throwable describing the cause of the exception
@@ -62,7 +62,7 @@ public class RIFCSException extends Exception {
 
 
     /**
-     * Obtain the reason for the exception
+     * Obtain the reason for the exception.
      *
      * @return
      *          The message text of the exception

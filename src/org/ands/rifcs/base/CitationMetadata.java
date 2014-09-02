@@ -26,7 +26,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * Class representing registry object related information
+ * Class representing registry object related information.
  *
  * @author Scott Yeadon
  *
@@ -37,7 +37,7 @@ public class CitationMetadata extends RIFCSElement {
     private List<CitationDate> dates = new ArrayList<CitationDate>();
 
     /**
-     * Construct a CitationMetadata object
+     * Construct a CitationMetadata object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -102,7 +102,7 @@ public class CitationMetadata extends RIFCSElement {
 
 
     /**
-     * Set the identifier
+     * Set the identifier.
      *
      * @param anIdentifier
      *      The identifier of the related information resource
@@ -120,7 +120,7 @@ public class CitationMetadata extends RIFCSElement {
 
 
     /**
-     * Obtain the identifier
+     * Obtain the identifier.
      *
      * @return Identifier
      *      The identifier of the resource or
@@ -132,7 +132,7 @@ public class CitationMetadata extends RIFCSElement {
 
 
     /**
-     * Set the title
+     * Set the title.
      *
      * @param title
      *    The title of the related information resource
@@ -145,7 +145,7 @@ public class CitationMetadata extends RIFCSElement {
 
 
     /**
-     * Get the title
+     * Get the title.
      *
      * @return String
      *    The title of the related information resource or
@@ -162,7 +162,7 @@ public class CitationMetadata extends RIFCSElement {
 
 
     /**
-     * Set the actionable URI
+     * Set the actionable URI.
      *
      * @param url
      *    an actionable URL where the resource can be located
@@ -175,7 +175,7 @@ public class CitationMetadata extends RIFCSElement {
 
 
     /**
-     * Return the citation uri
+     * Return the citation uri.
      *
      * @return String
      *    an actionable URI where the resource can be located
@@ -191,7 +191,7 @@ public class CitationMetadata extends RIFCSElement {
 
 
     /**
-     * Set the resource edition
+     * Set the resource edition.
      *
      * @param edition
      *    the resource edition
@@ -204,7 +204,7 @@ public class CitationMetadata extends RIFCSElement {
 
 
     /**
-     * Return the resource edition
+     * Return the resource edition.
      *
      * @return String
      *    the resource edition
@@ -219,7 +219,7 @@ public class CitationMetadata extends RIFCSElement {
     }
 
     /**
-     * Set the resource publisher
+     * Set the resource publisher.
      *
      * @param publisher
      *    the resource publisher
@@ -232,7 +232,7 @@ public class CitationMetadata extends RIFCSElement {
 
 
     /**
-     * Return the resource publisher
+     * Return the resource publisher.
      *
      * @return String
      *    the resource publisher
@@ -248,7 +248,7 @@ public class CitationMetadata extends RIFCSElement {
 
 
     /**
-     * Set the placePublished
+     * Set the placePublished.
      *
      * @param placePublished
      *    the place the resource was published
@@ -261,7 +261,7 @@ public class CitationMetadata extends RIFCSElement {
 
 
     /**
-     * Return the placePublished
+     * Return the placePublished.
      *
      * @return String
      *    the place the resource was published
@@ -277,7 +277,7 @@ public class CitationMetadata extends RIFCSElement {
 
 
     /**
-     * Set the resource context
+     * Set the resource context.
      *
      * @param context
      *    the context of the resource (for example if the resource is
@@ -291,7 +291,7 @@ public class CitationMetadata extends RIFCSElement {
 
 
     /**
-     * Return the context
+     * Return the context.
      *
      * @return String
      *    the context of the resource (for example if the resource is
@@ -308,7 +308,7 @@ public class CitationMetadata extends RIFCSElement {
 
 
     /**
-     * Add a name to the citation information
+     * Add a name to the citation information.
      *
      * @param contributor
      *    a Contributor object
@@ -321,7 +321,7 @@ public class CitationMetadata extends RIFCSElement {
 
     /**
      * Obtain the contributors to this resource who are required for
-     * forming a citation of this resource
+     * forming a citation of this resource.
      *
      * @return
      *      A list of Contributor objects
@@ -332,7 +332,7 @@ public class CitationMetadata extends RIFCSElement {
 
 
     /**
-     * Add a date to the citation information
+     * Add a date to the citation information.
      *
      * @param date
      *    a CitationDate object
@@ -345,7 +345,7 @@ public class CitationMetadata extends RIFCSElement {
 
     /**
      * Obtain the contributors to this resource who are required for
-     * forming a citation of this resource
+     * forming a citation of this resource.
      *
      * @return
      *      A list of Contributor objects

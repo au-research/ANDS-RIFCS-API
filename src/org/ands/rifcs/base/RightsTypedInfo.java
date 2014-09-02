@@ -21,14 +21,14 @@ package org.ands.rifcs.base;
 import org.w3c.dom.Node;
 
 /**
- * Class representing a RIF-CS rightsTypedInfo object
+ * Class representing a RIF-CS rightsTypedInfo object.
  *
  * @author Mahmoud Sadeghi
  *
  */
 public class RightsTypedInfo extends RIFCSElement {
     /**
-     * Construct a rightsTypedInfo object
+     * Construct a rightsTypedInfo object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -41,7 +41,7 @@ public class RightsTypedInfo extends RIFCSElement {
 
 
     /**
-     * Set the type
+     * Set the type.
      *
      * @param type
      *          The type of rightsTypedInfo
@@ -52,7 +52,7 @@ public class RightsTypedInfo extends RIFCSElement {
 
 
     /**
-     * return the type
+     * return the type.
      *
      * @return
      *      The type attribute value or empty string if attribute
@@ -64,7 +64,7 @@ public class RightsTypedInfo extends RIFCSElement {
 
 
     /**
-     * Set the rightsUri
+     * Set the rightsUri.
      *
      * @param rightsUri
      *          The rightsUri of RightsInfo
@@ -75,7 +75,7 @@ public class RightsTypedInfo extends RIFCSElement {
 
 
     /**
-     * return the rightsUri
+     * return the rightsUri.
      *
      * @return
      *      The type attribute value or empty string if attribute
@@ -87,7 +87,7 @@ public class RightsTypedInfo extends RIFCSElement {
 
 
     /**
-     * Set the content
+     * Set the content.
      *
      * @param value
      *      The content of the rightsTypedInfo
@@ -98,7 +98,7 @@ public class RightsTypedInfo extends RIFCSElement {
 
 
     /**
-     * Obtain the content
+     * Obtain the content.
      *
      * @return
      *      The rightsTypedInfo string

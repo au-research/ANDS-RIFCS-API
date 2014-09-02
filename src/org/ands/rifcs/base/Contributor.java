@@ -25,7 +25,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * Class representing a RIF-CS name object
+ * Class representing a RIF-CS name object.
  *
  * @author Scott Yeadon
  *
@@ -34,7 +34,7 @@ public class Contributor extends RIFCSElement {
     private List<NamePart> nameParts = new ArrayList<NamePart>();
 
     /**
-     * Construct a Name object
+     * Construct a Name object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -48,7 +48,7 @@ public class Contributor extends RIFCSElement {
 
 
     /**
-     * Set the citation sequence
+     * Set the citation sequence.
      *
      * @param seq
      *          an integer sequence number indicating the order
@@ -60,7 +60,7 @@ public class Contributor extends RIFCSElement {
 
 
     /**
-     * return the seq
+     * return the seq.
      *
      * @return int
      *          an integer sequence number indicating the order
@@ -94,7 +94,7 @@ public class Contributor extends RIFCSElement {
 
 
     /**
-     * Add a name part to a name object
+     * Add a name part to a name object.
      *
      * @param namePart
      *    a completed NamePart object
@@ -106,7 +106,7 @@ public class Contributor extends RIFCSElement {
 
 
     /**
-     * Convenience method to add a name part to a name object
+     * Convenience method to add a name part to a name object.
      *
      * @param namePart
      *    String with the name value
@@ -124,7 +124,7 @@ public class Contributor extends RIFCSElement {
 
 
     /**
-     * Obtain the name parts for this name
+     * Obtain the name parts for this name.
      *
      * @return
      *      A list of NamePart objects

@@ -26,7 +26,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * Class representing a RIF-CS Collection registry object
+ * Class representing a RIF-CS Collection registry object.
  *
  * @author Scott Yeadon
  *
@@ -44,7 +44,7 @@ public class Collection extends RIFCSElement {
 	private List<CitationInfo> cis = new ArrayList<CitationInfo>();
 
 	/**
-	 * Construct a Collection object
+	 * Construct a Collection object.
 	 *
 	 * @param n
 	 *            A w3c Node, typically an Element
@@ -57,7 +57,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * Set the type
+	 * Set the type.
 	 *
 	 * @param type
 	 *            The type of collection being described
@@ -67,7 +67,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * return the type
+	 * return the type.
 	 *
 	 * @return The type attribute value or empty string if attribute is empty or
 	 *         not present
@@ -78,7 +78,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Set the date the collection metadata was recorded in the system from
-	 * which the RIF-CS is being constructed
+	 * which the RIF-CS is being constructed.
 	 *
 	 * @param date
 	 *            A date object representing the date the collection metadata
@@ -90,7 +90,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Set the date the collection metadata was recorded in the system from
-	 * which the RIF-CS is being constructed
+	 * which the RIF-CS is being constructed.
 	 *
 	 * @param date
 	 *            A string in UTC and of one of the forms described in section
@@ -102,7 +102,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * return the date accessioned
+	 * return the date accessioned.
 	 *
 	 * @return The dateAccessioned attribute value or empty string if attribute
 	 *         is empty or not present
@@ -112,7 +112,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * Set the date the collection metadata was modified
+	 * Set the date the collection metadata was modified.
 	 *
 	 * @param date
 	 *            A date object representing the date the collection metadata
@@ -123,7 +123,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * Set the date the collection metadata was last modified
+	 * Set the date the collection metadata was last modified.
 	 *
 	 * @param date
 	 *            A string in UTC and of one of the forms described in section
@@ -135,7 +135,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * return the date modified
+	 * return the date modified.
 	 *
 	 * @return The dateModified attribute value or empty string if attribute is
 	 *         empty or not present
@@ -161,7 +161,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * Add an identifier to the collection object
+	 * Add an identifier to the collection object.
 	 *
 	 * @param identifier
 	 *            an Identifier object
@@ -172,7 +172,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * Convenience method to add an identifier to the collection object
+	 * Convenience method to add an identifier to the collection object.
 	 *
 	 * @param identifier
 	 *            an identifier string
@@ -191,7 +191,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * Obtain the identifiers for this collection
+	 * Obtain the identifiers for this collection.
 	 *
 	 * @return A list of Identifier objects
 	 */
@@ -216,7 +216,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * Add a name to the collection object
+	 * Add a name to the collection object.
 	 *
 	 * @param name
 	 *            a Name object
@@ -227,7 +227,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * Obtain the names for this collection
+	 * Obtain the names for this collection.
 	 *
 	 * @return A list of Name objects
 	 */
@@ -252,7 +252,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * Add a location to the collection object
+	 * Add a location to the collection object.
 	 *
 	 * @param location
 	 *            a Location object
@@ -263,7 +263,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * Obtain the locations for this collection
+	 * Obtain the locations for this collection.
 	 *
 	 * @return A list of Location objects
 	 */
@@ -288,7 +288,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * Add a coverage element to the collection object
+	 * Add a coverage element to the collection object.
 	 *
 	 * @param coverage
 	 *            a Coverage object
@@ -299,7 +299,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * Obtain the coverage for this collection
+	 * Obtain the coverage for this collection.
 	 *
 	 * @return A list of coverage objects
 	 */
@@ -324,7 +324,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * Add a related object to the collection object
+	 * Add a related object to the collection object.
 	 *
 	 * @param relatedObject
 	 *            an RelatedObject object
@@ -335,7 +335,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * Obtain the related objects for this collection
+	 * Obtain the related objects for this collection.
 	 *
 	 * @return A list of RelatedObject objects
 	 */
@@ -360,7 +360,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * Add a subject to the collection object
+	 * Add a subject to the collection object.
 	 *
 	 * @param subject
 	 *            a Subject object
@@ -371,7 +371,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * Convenience method to add a subject to the collection object
+	 * Convenience method to add a subject to the collection object.
 	 *
 	 * @param subject
 	 *            a subject string
@@ -394,7 +394,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * Obtain the subjects for this collection
+	 * Obtain the subjects for this collection.
 	 *
 	 * @return A list of Subject objects
 	 */
@@ -419,7 +419,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * Add a description to the collection object
+	 * Add a description to the collection object.
 	 *
 	 * @param description
 	 *            a Description object
@@ -430,7 +430,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * Convenience method to add a description to the collection object
+	 * Convenience method to add a description to the collection object.
 	 *
 	 * @param description
 	 *            a description string
@@ -453,7 +453,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * Obtain the description for this collection
+	 * Obtain the description for this collection.
 	 *
 	 * @return A list of Description objects
 	 */
@@ -473,7 +473,7 @@ public class Collection extends RIFCSElement {
 
 
 	/**
-	 * Add a Rights element to the collection object
+	 * Add a Rights element to the collection object.
 	 *
 	 * @param right
 	 *            a Rights object
@@ -485,7 +485,7 @@ public class Collection extends RIFCSElement {
 
 
 	/**
-	 * Obtain the Rights for this collection
+	 * Obtain the Rights for this collection.
 	 *
 	 * @return A list of Rights objects
 	 */
@@ -510,7 +510,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * Add related info to the collection object
+	 * Add related info to the collection object.
 	 *
 	 * @param relatedInfo
 	 *            a relatedInfo object
@@ -521,7 +521,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * Convenience method to add related info containing a single URL identifier
+	 * Convenience method to add related info containing a single URL identifier.
 	 * to the collection object
 	 *
 	 * @param relatedInfoURI
@@ -542,7 +542,7 @@ public class Collection extends RIFCSElement {
 	}
 
 	/**
-	 * Obtain the related info for this collection
+	 * Obtain the related info for this collection.
 	 *
 	 * @return A list of RelatedInfo objects
 	 */

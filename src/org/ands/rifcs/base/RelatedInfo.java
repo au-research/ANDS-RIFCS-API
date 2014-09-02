@@ -23,7 +23,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * Class representing registry object related information
+ * Class representing registry object related information.
  *
  * @author Scott Yeadon
  *
@@ -32,7 +32,7 @@ public class RelatedInfo extends RIFCSElement {
     private Identifier identifier = null;
 
     /**
-     * Construct a RelatedInfo object
+     * Construct a RelatedInfo object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -46,7 +46,7 @@ public class RelatedInfo extends RIFCSElement {
 
 
     /**
-     * Set the type
+     * Set the type.
      *
      * @param type
      *          The type of related information
@@ -57,7 +57,7 @@ public class RelatedInfo extends RIFCSElement {
 
 
     /**
-     * return the type
+     * return the type.
      *
      * @return
      *      The type attribute value or empty string if attribute
@@ -86,7 +86,7 @@ public class RelatedInfo extends RIFCSElement {
 
 
     /**
-     * Set the identifier
+     * Set the identifier.
      *
      * @param anIdentifier
      *      The identifier of the related information resource
@@ -104,7 +104,7 @@ public class RelatedInfo extends RIFCSElement {
 
 
     /**
-     * Obtain the identifier
+     * Obtain the identifier.
      *
      * @return Identifier
      *      The identifier of the related information resource
@@ -115,7 +115,7 @@ public class RelatedInfo extends RIFCSElement {
 
 
     /**
-     * Set the title
+     * Set the title.
      *
      * @param title
      *    The title of the related information resource
@@ -128,7 +128,7 @@ public class RelatedInfo extends RIFCSElement {
 
 
     /**
-     * Get the title
+     * Get the title.
      *
      * @return String
      *    The title of the related information resource
@@ -144,7 +144,7 @@ public class RelatedInfo extends RIFCSElement {
 
 
     /**
-     * Set the notes
+     * Set the notes.
      *
      * @param notes
      *    Notes relevant to the related information resource
@@ -157,7 +157,7 @@ public class RelatedInfo extends RIFCSElement {
 
 
     /**
-     * Get the notes
+     * Get the notes.
      *
      * @return String
      *    The title of the related information resource

@@ -25,7 +25,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * Class representing a RIF-CS physical address object
+ * Class representing a RIF-CS physical address object.
  *
  * @author Scott Yeadon
  *
@@ -34,7 +34,7 @@ public class Physical extends RIFCSElement {
     private List<AddressPart> addressParts = new ArrayList<AddressPart>();
 
     /**
-     * Construct a physical address object
+     * Construct a physical address object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -48,7 +48,7 @@ public class Physical extends RIFCSElement {
 
 
     /**
-     * Set the type
+     * Set the type.
      *
      * @param type
      *          The type of physical address
@@ -59,7 +59,7 @@ public class Physical extends RIFCSElement {
 
 
     /**
-     * return the type
+     * return the type.
      *
      * @return
      *      The type attribute value or empty string if attribute
@@ -71,7 +71,7 @@ public class Physical extends RIFCSElement {
 
 
    /**
-    * Set the language
+    * Set the language.
     *
     * @param lang
     *      The xml:lang attribute value
@@ -82,7 +82,7 @@ public class Physical extends RIFCSElement {
 
 
     /**
-     * Obtain the language
+     * Obtain the language.
      *
      * @return
      *      The type attribute value or empty string if attribute
@@ -111,7 +111,7 @@ public class Physical extends RIFCSElement {
 
 
     /**
-     * Add an address part to the physical address object
+     * Add an address part to the physical address object.
      *
      * @param addressPart
      *    a completed AddressPart object
@@ -128,7 +128,7 @@ public class Physical extends RIFCSElement {
 
 
     /**
-     * Obtain the address parts for this physical address
+     * Obtain the address parts for this physical address.
      *
      * @return
      *      A list of AddressPart objects

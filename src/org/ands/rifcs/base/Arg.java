@@ -21,14 +21,14 @@ package org.ands.rifcs.base;
 import org.w3c.dom.Node;
 
 /**
- * Class representing a RIF-CS Arg
+ * Class representing a RIF-CS Arg.
  *
  * @author Scott Yeadon
  *
  */
 public class Arg extends RIFCSElement {
     /**
-     * Construct an Arg object
+     * Construct an Arg object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -41,7 +41,7 @@ public class Arg extends RIFCSElement {
 
 
     /**
-     * Set the type
+     * Set the type.
      *
      * @param type
      *          The type of argument
@@ -52,7 +52,7 @@ public class Arg extends RIFCSElement {
 
 
     /**
-     * return the type
+     * return the type.
      *
      * @return
      *      The type attribute value or empty string if attribute
@@ -64,7 +64,7 @@ public class Arg extends RIFCSElement {
 
 
     /**
-     * Set whether the argument is mandatory
+     * Set whether the argument is mandatory.
      *
      * @param required
      *      <code>true</code> or <code>false</code>
@@ -75,7 +75,7 @@ public class Arg extends RIFCSElement {
 
 
     /**
-     * return whether the argument is mandatory
+     * return whether the argument is mandatory.
      *
      * @return
      *  The attribute value or empty string if attribute
@@ -87,7 +87,7 @@ public class Arg extends RIFCSElement {
 
 
     /**
-     * Set the use of the argument
+     * Set the use of the argument.
      *
      * @param use
      *          term indicating the use of the argument
@@ -98,7 +98,7 @@ public class Arg extends RIFCSElement {
 
 
     /**
-     * return the use of the argument
+     * return the use of the argument.
      *
      * @return
      *  The attribute value or empty string if attribute
@@ -110,7 +110,7 @@ public class Arg extends RIFCSElement {
 
 
     /**
-     * Set the name of the argument
+     * Set the name of the argument.
      *
      * @param name
      *      The argument name
@@ -121,7 +121,7 @@ public class Arg extends RIFCSElement {
 
 
     /**
-     * return the name of the argument
+     * return the name of the argument.
      *
      * @return
      *      The name or empty string if not set

@@ -26,7 +26,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * Class representing a RIF-CS address
+ * Class representing a RIF-CS address.
  *
  * @author Scott Yeadon
  *
@@ -37,7 +37,7 @@ public class Coverage extends RIFCSElement {
 
 
     /**
-     * Construct a Coverage object
+     * Construct a Coverage object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -68,7 +68,7 @@ public class Coverage extends RIFCSElement {
 
 
     /**
-     * Add spatial information to the location object
+     * Add spatial information to the location object.
      *
      * @param spatial
      *    a completed Spatial object
@@ -80,7 +80,7 @@ public class Coverage extends RIFCSElement {
 
 
     /**
-     * Obtain the spatial information for this location
+     * Obtain the spatial information for this location.
      *
      * @return
      *      A list of Spatial objects
@@ -108,7 +108,7 @@ public class Coverage extends RIFCSElement {
 
 
     /**
-     * Add temporal information to the coverage object
+     * Add temporal information to the coverage object.
      *
      * @param temporal
      *    a completed Temporal object
@@ -121,7 +121,7 @@ public class Coverage extends RIFCSElement {
 
     /**
      * Add temporal text to the coverage object. A convenience method
-     * creating a single temporal element with a text element
+     * creating a single temporal element with a text element.
      *
      * @param text
      *      The value to add to the text element
@@ -174,7 +174,7 @@ public class Coverage extends RIFCSElement {
 
 
     /**
-     * Obtain the temporal information for this coverage
+     * Obtain the temporal information for this coverage.
      *
      * @return
      *      A list of Temporal objects

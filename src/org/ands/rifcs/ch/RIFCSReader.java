@@ -34,7 +34,7 @@ import org.xml.sax.SAXException;
 
 /**
  * A Reader which takes an XML input stream and maps it to a DOM
- * Document
+ * Document.
  *
  * @author Scott Yeadon
  */
@@ -42,7 +42,7 @@ public class RIFCSReader {
     private Document doc = null;
 
     /**
-     * Create a RIFCS Reader
+     * Create a RIFCS Reader.
      *
      */
     public RIFCSReader() {
@@ -51,7 +51,7 @@ public class RIFCSReader {
 
 
     /**
-     * Map an XML InputStream to DOM via SAX
+     * Map an XML InputStream to DOM via SAX.
      *
      * @param is
      *      XML InputStream
@@ -77,7 +77,7 @@ public class RIFCSReader {
 
 
     /**
-     * Map an XML InputStream to DOM via SAX
+     * Map an XML InputStream to DOM via SAX.
      *
      * @param is
      *      XML InputStream
@@ -103,7 +103,7 @@ public class RIFCSReader {
 
 
     /**
-     * Get a DOM document resulting from a SAX parse
+     * Get a DOM document resulting from a SAX parse.
      *
      *  @return
      *      The DOM document. May be null if called before parsing and empty

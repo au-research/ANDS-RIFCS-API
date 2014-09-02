@@ -23,7 +23,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * Class representing registry object related information
+ * Class representing registry object related information.
  *
  * @author Scott Yeadon
  *
@@ -32,7 +32,7 @@ public class CitationInfo extends RIFCSElement {
     private CitationMetadata cm = null;
 
     /**
-     * Construct a RelatedInfo object
+     * Construct a RelatedInfo object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -64,7 +64,7 @@ public class CitationInfo extends RIFCSElement {
 
 
     /**
-     * Set the fullCitation and citation style
+     * Set the fullCitation and citation style.
      *
      * @param citation
      *      The full citation in string form
@@ -84,7 +84,7 @@ public class CitationInfo extends RIFCSElement {
 
 
     /**
-     * Get the fullCitation
+     * Get the fullCitation.
      *
      * @return String
      *      The fullCitation element content in string form
@@ -102,7 +102,7 @@ public class CitationInfo extends RIFCSElement {
 
 
     /**
-     * Get the fullCitation style
+     * Get the fullCitation style.
      *
      * @return String
      *      The fullCitation element style or empty string if
@@ -120,7 +120,7 @@ public class CitationInfo extends RIFCSElement {
 
 
     /**
-     * Add citationMetadata to the citationInfo object
+     * Add citationMetadata to the citationInfo object.
      *
      * @param citationMetadata
      *    a citationMetadata option
@@ -132,7 +132,7 @@ public class CitationInfo extends RIFCSElement {
 
 
     /**
-     * Get the citationMetadata
+     * Get the citationMetadata.
      *
      * @return CitationMetadata
      *    a citationMetadata object

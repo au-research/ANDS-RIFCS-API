@@ -27,7 +27,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * superclass of all RIF-CS object classes (class not currently used)
+ * superclass of all RIF-CS object classes (class not currently used).
  *
  * @author Scott Yeadon
  *
@@ -36,7 +36,7 @@ public class ROElement {
     private Element e = null;
 
     /**
-     * Construct a RIF-CS element
+     * Construct a RIF-CS element.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -68,7 +68,7 @@ public class ROElement {
 
 
     /**
-     * Obtain an attribute value
+     * Obtain an attribute value.
      *
      * @param name
      *      The name of the attribute
@@ -83,7 +83,7 @@ public class ROElement {
 
 
     /**
-     * Set an attribute value
+     * Set an attribute value.
      *
      * @param name
      *      The name of the attribute
@@ -98,7 +98,7 @@ public class ROElement {
 
 
     /**
-     * Set an attribute value with namespace
+     * Set an attribute value with namespace.
      *
      * @param ns
      *      The namespace URL of the attribute
@@ -116,7 +116,7 @@ public class ROElement {
 
     /**
      * Obtain an attribute value where the attribute has a
-     * namespace
+     * namespace.
      *
      * @param ns
      *      The attribute namespace URL
@@ -134,7 +134,7 @@ public class ROElement {
 
 
     /**
-     * Obtain the text content of the RIFCS Element
+     * Obtain the text content of the RIFCS Element.
      *
      * @return
      *      The text content of the element
@@ -145,7 +145,7 @@ public class ROElement {
 
 
     /**
-     * Set the text content of the RIFCS Element
+     * Set the text content of the RIFCS Element.
      *
      * @param value
      *      The text content of the element
@@ -156,7 +156,7 @@ public class ROElement {
 
 
     /**
-     * Obtain a list of descendant RIFCS elements with the given name
+     * Obtain a list of descendant RIFCS elements with the given name.
      *
      * @param localName
      *      Obtain a list of descendant RIF-CS elements
@@ -170,7 +170,7 @@ public class ROElement {
 
 
     /**
-     * Obtain a list of child RIFCS elements
+     * Obtain a list of child RIFCS elements.
      *
      * @param localName
      *      An element name
@@ -194,7 +194,7 @@ public class ROElement {
 
 
     /**
-     * Obtain the w3c dom element this object represents
+     * Obtain the w3c dom element this object represents.
      *
      * @return
      *      A w3c dom element
@@ -206,7 +206,7 @@ public class ROElement {
 
     /**
      * Return null, this class should be overridden by subclasses if sub-elements
-     * are permitted
+     * are permitted.
      *
      * @return
      *      an element with the given name

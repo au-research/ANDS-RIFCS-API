@@ -26,7 +26,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * Class representing a registry object
+ * Class representing a registry object.
  *
  * @author Scott Yeadon
  *
@@ -37,7 +37,7 @@ public class RegistryObject extends RIFCSElement {
     private String objectClass = null;
 
     /**
-     * Construct a registry object
+     * Construct a registry object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -51,7 +51,7 @@ public class RegistryObject extends RIFCSElement {
 
 
     /**
-     * Set the key value
+     * Set the key value.
      *
      * @param keyValue
      *      The key uniquely identifying the registry object
@@ -64,7 +64,7 @@ public class RegistryObject extends RIFCSElement {
 
 
     /**
-     * Get the key value
+     * Get the key value.
      *
      * @return
      *     The key uniquely identifying the registry object
@@ -80,7 +80,7 @@ public class RegistryObject extends RIFCSElement {
 
 
     /**
-     * Set the originating source
+     * Set the originating source.
      *
      * @param sourceValue
      *      A string identifying the source of this RIF-CS data
@@ -93,7 +93,7 @@ public class RegistryObject extends RIFCSElement {
 
 
     /**
-     * Set the originating source
+     * Set the originating source.
      *
      * @param sourceValue
      *      A string identifying the source of this RIF-CS data
@@ -111,7 +111,7 @@ public class RegistryObject extends RIFCSElement {
 
 
     /**
-     * Set the originating source type
+     * Set the originating source type.
      *
      * @param type
      *      A string clarifying the type of source e.g. to flag
@@ -126,7 +126,7 @@ public class RegistryObject extends RIFCSElement {
 
 
     /**
-     * Return the originating source string
+     * Return the originating source string.
      *
      * @return
      *     A string identifying the source of this RIF-CS data
@@ -142,7 +142,7 @@ public class RegistryObject extends RIFCSElement {
 
 
     /**
-     * Return the originating source type
+     * Return the originating source type.
      *
      * @return
      *      A string clarifying the type of source
@@ -162,7 +162,7 @@ public class RegistryObject extends RIFCSElement {
 
 
     /**
-     * Set the group identifier
+     * Set the group identifier.
      *
      * @param group
      *      A string identifying the group this registry object
@@ -174,7 +174,7 @@ public class RegistryObject extends RIFCSElement {
 
 
     /**
-     * Get the group identifier
+     * Get the group identifier.
      *
      * @return
      *      A string identifying the group this registry object
@@ -258,7 +258,7 @@ public class RegistryObject extends RIFCSElement {
 
 
     /**
-     * Add a collection to the registry object
+     * Add a collection to the registry object.
      *
      *  @param collection
      *      A Collection object
@@ -270,7 +270,7 @@ public class RegistryObject extends RIFCSElement {
 
 
     /**
-     * Add an activity to the registry object
+     * Add an activity to the registry object.
      *
      *  @param activity
      *      An Activity object
@@ -282,7 +282,7 @@ public class RegistryObject extends RIFCSElement {
 
 
     /**
-     * Add a party to the registry object
+     * Add a party to the registry object.
      *
      *  @param party
      *      A Party object
@@ -294,7 +294,7 @@ public class RegistryObject extends RIFCSElement {
 
 
     /**
-     * Add a service to the registry object
+     * Add a service to the registry object.
      *
      *  @param service
      *      A Service object
@@ -318,7 +318,7 @@ public class RegistryObject extends RIFCSElement {
 
 
     /**
-     * Obtain the RIFCSElement object representing the object class
+     * Obtain the RIFCSElement object representing the object class.
      *
      *  @return
      *      An object class object (i.e. collection, service,

@@ -23,14 +23,14 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * Class representing a related object relation
+ * Class representing a related object relation.
  *
  * @author Scott Yeadon
  *
  */
 public class Relation extends RIFCSElement {
     /**
-     * Construct a Relation object
+     * Construct a Relation object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -43,7 +43,7 @@ public class Relation extends RIFCSElement {
 
 
     /**
-     * Set the type
+     * Set the type.
      *
      * @param type
      *          The type of relation being described
@@ -54,7 +54,7 @@ public class Relation extends RIFCSElement {
 
 
     /**
-     * return the type
+     * return the type.
      *
      * @return
      *      The type attribute value or empty string if attribute
@@ -66,7 +66,7 @@ public class Relation extends RIFCSElement {
 
 
     /**
-     * Set the relation description value
+     * Set the relation description value.
      *
      * @param descValue
      *      A plain text description of the relation
@@ -79,7 +79,7 @@ public class Relation extends RIFCSElement {
 
 
     /**
-     * Get the relation description value
+     * Get the relation description value.
      *
      * @return
      *      The relation description
@@ -95,7 +95,7 @@ public class Relation extends RIFCSElement {
 
 
     /**
-     * Set the language of the description
+     * Set the language of the description.
      *
      * @param lang
      *      The xml:lang attribute value
@@ -109,7 +109,7 @@ public class Relation extends RIFCSElement {
 
 
     /**
-     * Obtain the language of the description
+     * Obtain the language of the description.
      *
      * @return
      *      The language value or empty string if attribute
@@ -126,7 +126,7 @@ public class Relation extends RIFCSElement {
 
 
     /**
-     * Set the relation URL
+     * Set the relation URL.
      *
      * @param urlValue
      *      A URL expressing or implementing the relationship
@@ -140,7 +140,7 @@ public class Relation extends RIFCSElement {
 
 
     /**
-     * Get the relation URL
+     * Get the relation URL.
      *
      * @return
      *      The URL expressing or implementing the relationship

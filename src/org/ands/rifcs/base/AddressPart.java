@@ -21,14 +21,14 @@ package org.ands.rifcs.base;
 import org.w3c.dom.Node;
 
 /**
- * Class representing a RIF-CS addressPart
+ * Class representing a RIF-CS addressPart.
  *
  * @author Scott Yeadon
  *
  */
 public class AddressPart extends RIFCSElement {
     /**
-     * Construct an AddressPart object
+     * Construct an AddressPart object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -41,7 +41,7 @@ public class AddressPart extends RIFCSElement {
 
 
     /**
-     * Set the type
+     * Set the type.
      *
      * @param type
      *          The type of addressPart
@@ -52,7 +52,7 @@ public class AddressPart extends RIFCSElement {
 
 
     /**
-     * return the type
+     * return the type.
      *
      * @return
      *      The type attribute value or empty string if attribute
@@ -64,7 +64,7 @@ public class AddressPart extends RIFCSElement {
 
 
     /**
-     * Set the language
+     * Set the language.
      *
      * @param lang
      *      The xml:lang attribute value
@@ -75,7 +75,7 @@ public class AddressPart extends RIFCSElement {
 
 
     /**
-     * Obtain the language
+     * Obtain the language.
      *
      * @return
      *      The type attribute value or empty string if attribute
@@ -87,7 +87,7 @@ public class AddressPart extends RIFCSElement {
 
 
     /**
-     * Set the content
+     * Set the content.
      *
      * @param value
      *      The content of the addressPart
@@ -98,7 +98,7 @@ public class AddressPart extends RIFCSElement {
 
 
     /**
-     * Obtain the content
+     * Obtain the content.
      *
      * @return
      *      The addressPart content

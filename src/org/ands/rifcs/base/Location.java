@@ -26,7 +26,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * Class representing a RIF-CS location object
+ * Class representing a RIF-CS location object.
  *
  * @author Scott Yeadon
  *
@@ -37,7 +37,7 @@ public class Location extends RIFCSElement {
 
 
     /**
-     * Construct an Location object
+     * Construct an Location object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -51,7 +51,7 @@ public class Location extends RIFCSElement {
 
 
     /**
-     * Set the date the location was relevant from
+     * Set the date the location was relevant from.
      *
      * @param dateFrom
      *      A date object representing the date the contained location
@@ -63,7 +63,7 @@ public class Location extends RIFCSElement {
 
 
     /**
-     * Set the date the location was relevant from
+     * Set the date the location was relevant from.
      *
      * @param dateFrom
      *      A string in UTC and of one of the forms described in section 3.2.7
@@ -76,7 +76,7 @@ public class Location extends RIFCSElement {
 
 
     /**
-     * Set the date the location was relevant from
+     * Set the date the location was relevant from.
      */
     public String getDateFrom() {
         return super.getAttributeValue(Constants.ATTRIBUTE_DATE_FROM);
@@ -84,7 +84,7 @@ public class Location extends RIFCSElement {
 
 
     /**
-     * Set the date the location was relevant to
+     * Set the date the location was relevant to.
      *
      * @param dateTo
      *      A date object representing the date the contained location
@@ -96,7 +96,7 @@ public class Location extends RIFCSElement {
 
 
     /**
-     * Set the date the location was relevant to
+     * Set the date the location was relevant to.
      *
      * @param dateTo
      *      A string in UTC and of one of the forms described in section 3.2.7
@@ -109,7 +109,7 @@ public class Location extends RIFCSElement {
 
 
     /**
-     * Set the date the location was relevant to
+     * Set the date the location was relevant to.
      */
     public String getDateTo() {
         return super.getAttributeValue(Constants.ATTRIBUTE_DATE_TO);
@@ -134,7 +134,7 @@ public class Location extends RIFCSElement {
 
 
     /**
-     * Add an address to the location object
+     * Add an address to the location object.
      *
      * @param address
      *    a completed Address object
@@ -146,7 +146,7 @@ public class Location extends RIFCSElement {
 
 
     /**
-     * Obtain the addresses for this location
+     * Obtain the addresses for this location.
      *
      * @return List<Address>
      *      A list of Address objects
@@ -174,10 +174,10 @@ public class Location extends RIFCSElement {
 
 
     /**
-     * Add spatial information to the location object
+     * Add spatial information to the location object.
      *
      * @param spatial
-     *    a completed Spatial object
+     *    a completed Spatial object.
      */
     public void addSpatial(Spatial spatial) {
         this.getElement().appendChild(spatial.getElement());
@@ -186,7 +186,7 @@ public class Location extends RIFCSElement {
 
 
     /**
-     * Obtain the spatial information for this location
+     * Obtain the spatial information for this location.
      *
      * @return
      *      A list of Spatial objects

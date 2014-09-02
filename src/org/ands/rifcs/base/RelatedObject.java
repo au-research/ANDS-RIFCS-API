@@ -26,7 +26,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * Class representing related object information
+ * Class representing related object information.
  *
  * @author Scott Yeadon
  *
@@ -35,7 +35,7 @@ public class RelatedObject extends RIFCSElement {
     List<Relation> relations = new ArrayList<Relation>();
 
     /**
-     * Construct a RelatedObject object
+     * Construct a RelatedObject object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -49,7 +49,7 @@ public class RelatedObject extends RIFCSElement {
 
 
     /**
-     * Set the related object key value
+     * Set the related object key value.
      *
      * @param keyValue
      *      The key uniquely identifying the related registry object
@@ -62,7 +62,7 @@ public class RelatedObject extends RIFCSElement {
 
 
     /**
-     * Get the related object key value
+     * Get the related object key value.
      *
      * @return
      *     The key uniquely identifying the related registry object
@@ -95,7 +95,7 @@ public class RelatedObject extends RIFCSElement {
 
 
     /**
-     * Add a related object relation
+     * Add a related object relation.
      *
      * @param type
      *          The type of relation being described
@@ -131,7 +131,7 @@ public class RelatedObject extends RIFCSElement {
 
 
     /**
-     * Obtain the relations for this collection
+     * Obtain the relations for this collection.
      *
      * @return
      *      A list of Relation objects
@@ -142,7 +142,7 @@ public class RelatedObject extends RIFCSElement {
 
 
     /**
-     * Add a related object relation
+     * Add a related object relation.
      *
      * @param relation
      *    A Relation object

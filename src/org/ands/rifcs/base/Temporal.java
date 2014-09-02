@@ -30,7 +30,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * Class representing a RIF-CS address
+ * Class representing a RIF-CS address.
  *
  * @author Scott Yeadon
  *
@@ -40,7 +40,7 @@ public class Temporal extends RIFCSElement {
     private List<Element> texts = new ArrayList<Element>();
 
     /**
-     * Construct a Temporal object
+     * Construct a Temporal object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -75,7 +75,7 @@ public class Temporal extends RIFCSElement {
 
 
     /**
-     * Obtain the date information for this temporal coverage
+     * Obtain the date information for this temporal coverage.
      *
      * @return
      *      A list of DateElement objects
@@ -86,7 +86,7 @@ public class Temporal extends RIFCSElement {
 
 
     /**
-     * Obtain the text information for this temporal coverage
+     * Obtain the text information for this temporal coverage.
      *
      * @return
      *      A list of string values
@@ -101,7 +101,7 @@ public class Temporal extends RIFCSElement {
 
 
     /**
-     * Add text information to the temporal object
+     * Add text information to the temporal object.
      *
      * @param text
      *    a text description of the temporal coverage

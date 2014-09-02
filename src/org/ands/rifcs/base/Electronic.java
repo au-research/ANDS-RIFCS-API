@@ -26,7 +26,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * Class representing a RIF-CS electronic address object
+ * Class representing a RIF-CS electronic address object.
  *
  * @author Scott Yeadon
  *
@@ -35,7 +35,7 @@ public class Electronic extends RIFCSElement {
     List<Arg> args = new ArrayList<Arg>();
 
     /**
-     * Construct an Electronic address object
+     * Construct an Electronic address object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -49,7 +49,7 @@ public class Electronic extends RIFCSElement {
 
 
     /**
-     * Set the type
+     * Set the type.
      *
      * @param type
      *      The electronic address type
@@ -60,7 +60,7 @@ public class Electronic extends RIFCSElement {
 
 
     /**
-     * return the type
+     * return the type.
      *
      * @return
      *      The type attribute value or empty string if attribute
@@ -89,7 +89,7 @@ public class Electronic extends RIFCSElement {
 
 
     /**
-     * Add an argument to the electroinc address object
+     * Add an argument to the electroinc address object.
      *
      * @param name
      *    the name of the argument
@@ -114,7 +114,7 @@ public class Electronic extends RIFCSElement {
 
 
     /**
-     * Obtain the arguments for this electronic address
+     * Obtain the arguments for this electronic address.
      *
      * @return
      *      A list of Arg objects
@@ -125,7 +125,7 @@ public class Electronic extends RIFCSElement {
 
 
     /**
-     * Add an argument to the electronic address object
+     * Add an argument to the electronic address object.
      *
      * @param arg
      *    a completed Arg object
@@ -137,7 +137,7 @@ public class Electronic extends RIFCSElement {
 
 
     /**
-     * Set the electronic address URI
+     * Set the electronic address URI.
      *
      * @param valueUri
      *    a resolvable URI representing the electronic address
@@ -151,7 +151,7 @@ public class Electronic extends RIFCSElement {
 
 
     /**
-     * Return the electronic address URI
+     * Return the electronic address URI.
      *
      * @return
      *    a resolvable URI representing the electronic address

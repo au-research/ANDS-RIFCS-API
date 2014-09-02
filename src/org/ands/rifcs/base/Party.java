@@ -26,7 +26,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * Class representing a RIF-CS Activity registry object
+ * Class representing a RIF-CS Activity registry object.
  *
  * @author Scott Yeadon
  *
@@ -44,7 +44,7 @@ public class Party extends RIFCSElement {
 	private List<RelatedInfo> ris = new ArrayList<RelatedInfo>();
 
 	/**
-	 * Construct an Activity object
+	 * Construct an Activity object.
 	 *
 	 * @param n
 	 *            A w3c Node, typically an Element
@@ -57,7 +57,7 @@ public class Party extends RIFCSElement {
 	}
 
 	/**
-	 * Set the type
+	 * Set the type.
 	 *
 	 * @param type
 	 *            The type of party being described
@@ -67,7 +67,7 @@ public class Party extends RIFCSElement {
 	}
 
 	/**
-	 * return the type
+	 * return the type.
 	 *
 	 * @return The type attribute value or empty string if attribute is empty or
 	 *         not present
@@ -77,7 +77,7 @@ public class Party extends RIFCSElement {
 	}
 
 	/**
-	 * Set the date the party metadata was modified
+	 * Set the date the party metadata was modified.
 	 *
 	 * @param date
 	 *            A date object representing the date the party metadata was
@@ -89,7 +89,7 @@ public class Party extends RIFCSElement {
 	}
 
 	/**
-	 * Set the date the party metadata was last modified
+	 * Set the date the party metadata was last modified.
 	 *
 	 * @param date
 	 *            A string in UTC and of one of the forms described in section
@@ -101,7 +101,7 @@ public class Party extends RIFCSElement {
 	}
 
 	/**
-	 * return the date modified
+	 * return the date modified.
 	 *
 	 * @return The dateModified attribute value or empty string if attribute is
 	 *         empty or not present
@@ -127,7 +127,7 @@ public class Party extends RIFCSElement {
 	}
 
 	/**
-	 * Add an identifier to the party object
+	 * Add an identifier to the party object.
 	 *
 	 * @param identifier
 	 *            an Identifier object
@@ -138,7 +138,7 @@ public class Party extends RIFCSElement {
 	}
 
 	/**
-	 * Obtain the identifiers for this party
+	 * Obtain the identifiers for this party.
 	 *
 	 * @return A list of Identifier objects
 	 */
@@ -163,7 +163,7 @@ public class Party extends RIFCSElement {
 	}
 
 	/**
-	 * Add a name to the party object
+	 * Add a name to the party object.
 	 *
 	 * @param name
 	 *            a Name object
@@ -174,7 +174,7 @@ public class Party extends RIFCSElement {
 	}
 
 	/**
-	 * Obtain the names for this party
+	 * Obtain the names for this party.
 	 *
 	 * @return A list of Name objects
 	 */
@@ -199,7 +199,7 @@ public class Party extends RIFCSElement {
 	}
 
 	/**
-	 * Add a location to the party object
+	 * Add a location to the party object.
 	 *
 	 * @param location
 	 *            a Location object
@@ -210,7 +210,7 @@ public class Party extends RIFCSElement {
 	}
 
 	/**
-	 * Obtain the locations for this party
+	 * Obtain the locations for this party.
 	 *
 	 * @return A list of Location objects
 	 */
@@ -235,7 +235,7 @@ public class Party extends RIFCSElement {
 	}
 
 	/**
-	 * Add a coverage element to the party object
+	 * Add a coverage element to the party object.
 	 *
 	 * @param coverage
 	 *            a Coverage object
@@ -246,7 +246,7 @@ public class Party extends RIFCSElement {
 	}
 
 	/**
-	 * Obtain the coverage for this party
+	 * Obtain the coverage for this party.
 	 *
 	 * @return A list of coverage objects
 	 */
@@ -272,7 +272,7 @@ public class Party extends RIFCSElement {
 	}
 
 	/**
-	 * Add a related object to the party object
+	 * Add a related object to the party object.
 	 *
 	 * @param relatedObject
 	 *            an RelatedObject object
@@ -283,7 +283,7 @@ public class Party extends RIFCSElement {
 	}
 
 	/**
-	 * Obtain the related objects for this party
+	 * Obtain the related objects for this party.
 	 *
 	 * @return A list of RelatedObject objects
 	 */
@@ -308,7 +308,7 @@ public class Party extends RIFCSElement {
 	}
 
 	/**
-	 * Add a subject to the party object
+	 * Add a subject to the party object.
 	 *
 	 * @param subject
 	 *            a Subject object
@@ -320,7 +320,7 @@ public class Party extends RIFCSElement {
 
 
     /**
-     * Add a subject to the activity object
+     * Add a subject to the activity object.
      * @param value
      * @param type
      * @param termIdentifier
@@ -352,7 +352,7 @@ public class Party extends RIFCSElement {
 
 
     /**
-	 * Obtain the subjects for this party
+	 * Obtain the subjects for this party.
 	 *
 	 * @return A list of Subject objects
 	 */
@@ -377,7 +377,7 @@ public class Party extends RIFCSElement {
 	}
 
 	/**
-	 * Add a description to the party object
+	 * Add a description to the party object.
 	 *
 	 * @param description
 	 *            a Description object
@@ -388,7 +388,7 @@ public class Party extends RIFCSElement {
 	}
 
 	/**
-	 * Convenience method to add a description to the collection object
+	 * Convenience method to add a description to the collection object.
 	 *
 	 * @param description
 	 *            a description string
@@ -412,7 +412,7 @@ public class Party extends RIFCSElement {
 
 
 	/**
-	 * Obtain the description for this party
+	 * Obtain the description for this party.
 	 *
 	 * @return A list of Description objects
 	 */
@@ -425,7 +425,7 @@ public class Party extends RIFCSElement {
 	}
 
 	/**
-	 * Add a description to the activity object
+	 * Add a description to the activity object.
 	 *
 	 * @param right
 	 *            a Right object
@@ -440,7 +440,7 @@ public class Party extends RIFCSElement {
 	}
 
 	/**
-	 * Obtain the description for this activity
+	 * Obtain the description for this activity.
 	 *
 	 * @return A list of Description objects
 	 */
@@ -454,7 +454,7 @@ public class Party extends RIFCSElement {
 	}
 
 	/**
-	 * Add a description to the activity object
+	 * Add a description to the activity object.
 	 *
 	 * @param existenceDate
 	 *            an ExistenceDate object
@@ -470,7 +470,7 @@ public class Party extends RIFCSElement {
 
 
     /**
-     * Add a description to the activity object
+     * Add a description to the activity object.
      * @param startVal
      * @param startDateFormat
      * @param endVal
@@ -496,7 +496,7 @@ public class Party extends RIFCSElement {
     }
 
     /**
-	 * Obtain the description for this activity
+	 * Obtain the description for this activity.
 	 *
 	 * @return A list of Description objects
 	 */
@@ -521,7 +521,7 @@ public class Party extends RIFCSElement {
 	}
 
 	/**
-	 * Add related info to the party object
+	 * Add related info to the party object.
 	 *
 	 * @param relatedInfo
 	 *            a relatedInfo object
@@ -532,7 +532,7 @@ public class Party extends RIFCSElement {
 	}
 
 	/**
-	 * Obtain the related info for this party
+	 * Obtain the related info for this party.
 	 *
 	 * @return A list of RelatedInfo objects
 	 */

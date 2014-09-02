@@ -30,7 +30,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * super class of all RIF-CS elements
+ * super class of all RIF-CS elements.
  *
  * @author Scott Yeadon
  *
@@ -39,7 +39,7 @@ public class RIFCSElement {
     private Element e = null;
 
     /**
-     * Construct a RIF-CS element
+     * Construct a RIF-CS element.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -68,7 +68,7 @@ public class RIFCSElement {
 
 
     /**
-     * Obtain an attribute value
+     * Obtain an attribute value.
      *
      * @param name
      *      The name of the attribute
@@ -83,7 +83,7 @@ public class RIFCSElement {
 
 
     /**
-     * Set an attribute value
+     * Set an attribute value.
      *
      * @param name
      *      The name of the attribute
@@ -98,7 +98,7 @@ public class RIFCSElement {
 
 
     /**
-     * Set an attribute value with namespace
+     * Set an attribute value with namespace.
      *
      * @param ns
      *      The namespace URL of the attribute
@@ -115,7 +115,7 @@ public class RIFCSElement {
 
 
     /**
-     * Get an attribute value with namespace
+     * Get an attribute value with namespace.
      *
      * @param ns
      *      The namespace URL of the attribute
@@ -130,7 +130,7 @@ public class RIFCSElement {
 
     /**
      * Obtain an attribute value where the attribute has a
-     * namespace
+     * namespace.
      *
      * @param ns
      *      The attribute namespace URL
@@ -148,7 +148,7 @@ public class RIFCSElement {
 
 
     /**
-     * Obtain the text content of the RIFCS Element
+     * Obtain the text content of the RIFCS Element.
      *
      * @return
      *      The text content of the element
@@ -159,7 +159,7 @@ public class RIFCSElement {
 
 
     /**
-     * Set the text content of the RIFCS Element
+     * Set the text content of the RIFCS Element.
      *
      * @param value
      *      The text content of the element
@@ -170,7 +170,7 @@ public class RIFCSElement {
 
 
     /**
-     * Obtain a list of descendant RIFCS elements with the given name
+     * Obtain a list of descendant RIFCS elements with the given name.
      *
      * @param localName
      *      Obtain a list of descendant RIF-CS elements
@@ -184,7 +184,7 @@ public class RIFCSElement {
 
 
     /**
-     * Obtain a list of child RIFCS elements
+     * Obtain a list of child RIFCS elements.
      *
      * @param localName
      *      An element name
@@ -208,7 +208,7 @@ public class RIFCSElement {
 
 
     /**
-     * Obtain all child elements
+     * Obtain all child elements.
      *
      * @return
      *      A list of RIFCS elements
@@ -227,7 +227,7 @@ public class RIFCSElement {
 
 
     /**
-     * Obtain the w3c dom element this object represents
+     * Obtain the w3c dom element this object represents.
      *
      * @return
      *      A w3c dom element
@@ -239,7 +239,7 @@ public class RIFCSElement {
 
     /**
      * Return null, this class should be overridden by subclasses if sub-elements
-     * are permitted
+     * are permitted.
      *
      * @return
      *      an element with the given name

@@ -26,7 +26,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * Class representing a RIF-CS name object
+ * Class representing a RIF-CS name object.
  *
  * @author Scott Yeadon
  *
@@ -35,7 +35,7 @@ public class Name extends RIFCSElement {
     private List<NamePart> nameParts = new ArrayList<NamePart>();
 
     /**
-     * Construct a Name object
+     * Construct a Name object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -49,7 +49,7 @@ public class Name extends RIFCSElement {
 
 
     /**
-     * Set the type
+     * Set the type.
      *
      * @param type
      *          The type of name
@@ -60,7 +60,7 @@ public class Name extends RIFCSElement {
 
 
     /**
-     * return the type
+     * return the type.
      *
      * @return
      *      The type attribute value or empty string if attribute
@@ -72,7 +72,7 @@ public class Name extends RIFCSElement {
 
 
    /**
-    * Set the language
+    * Set the language.
     *
     * @param lang
     *      The xml:lang attribute value
@@ -83,7 +83,7 @@ public class Name extends RIFCSElement {
 
 
     /**
-     * Obtain the language
+     * Obtain the language.
      *
      * @return String
      *      The type attribute value or empty string if attribute
@@ -95,7 +95,7 @@ public class Name extends RIFCSElement {
 
 
     /**
-     * Set the date the name was relevant from
+     * Set the date the name was relevant from.
      *
      * @param dateFrom
      *      A date object representing the date the name
@@ -107,7 +107,7 @@ public class Name extends RIFCSElement {
 
 
     /**
-     * Set the date the name was relevant from
+     * Set the date the name was relevant from.
      *
      * @param dateFrom
      *      A string in UTC and of one of the forms described in section 3.2.7
@@ -120,7 +120,7 @@ public class Name extends RIFCSElement {
 
 
     /**
-     * Set the date the name was relevant from
+     * Set the date the name was relevant from.
      */
     public String getDateFrom() {
         return super.getAttributeValue(Constants.ATTRIBUTE_DATE_FROM);
@@ -128,7 +128,7 @@ public class Name extends RIFCSElement {
 
 
     /**
-     * Set the date the name was relevant to
+     * Set the date the name was relevant to.
      *
      * @param dateTo
      *      A date object representing the date the name was valid to
@@ -139,7 +139,7 @@ public class Name extends RIFCSElement {
 
 
     /**
-     * Set the date the name was relevant to
+     * Set the date the name was relevant to.
      *
      * @param dateTo
      *      A string in UTC and of one of the forms described in section 3.2.7
@@ -152,7 +152,7 @@ public class Name extends RIFCSElement {
 
 
     /**
-     * Set the date the name was relevant to
+     * Set the date the name was relevant to.
      */
     public String getDateTo() {
         return super.getAttributeValue(Constants.ATTRIBUTE_DATE_TO);
@@ -177,7 +177,7 @@ public class Name extends RIFCSElement {
 
 
     /**
-     * Add a name part to a name object
+     * Add a name part to a name object.
      *
      * @param namePart
      *    a completed NamePart object
@@ -189,7 +189,7 @@ public class Name extends RIFCSElement {
 
 
     /**
-     * Convenience method to add a name part to a name object
+     * Convenience method to add a name part to a name object.
      *
      * @param namePart
      *    String with the name value
@@ -207,7 +207,7 @@ public class Name extends RIFCSElement {
 
 
     /**
-     * Obtain the name parts for this name
+     * Obtain the name parts for this name.
      *
      * @return
      *      A list of NamePart objects

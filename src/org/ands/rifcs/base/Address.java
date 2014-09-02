@@ -25,7 +25,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * Class representing a RIF-CS address
+ * Class representing a RIF-CS address.
  *
  * @author Scott Yeadon
  *
@@ -36,7 +36,7 @@ public class Address extends RIFCSElement {
 
 
     /**
-     * Construct an Address object
+     * Construct an Address object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -67,7 +67,7 @@ public class Address extends RIFCSElement {
 
 
     /**
-     * Add an electronic address to the address object
+     * Add an electronic address to the address object.
      *
      * @param electronic
      *    an ElectronicAddress object
@@ -79,7 +79,7 @@ public class Address extends RIFCSElement {
 
 
     /**
-     * Obtain the electronic addresses for this address
+     * Obtain the electronic addresses for this address.
      *
      * @return
      *      A list of all electronic addresses within this address.
@@ -107,7 +107,7 @@ public class Address extends RIFCSElement {
 
 
     /**
-     * Add a physical address to the address object
+     * Add a physical address to the address object.
      *
      * @param physical
      *    a PhysicalAddress object
@@ -123,7 +123,7 @@ public class Address extends RIFCSElement {
 
 
     /**
-     * Obtain the physical addresses for this address
+     * Obtain the physical addresses for this address.
      *
      * @return
      *      A list of all physical addresses within this address.

@@ -33,7 +33,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 /**
- * The root level RIF-CS class
+ * The root level RIF-CS class.
  *
  * @author Scott Yeadon
  *
@@ -101,7 +101,7 @@ public class RIFCS {
 
 
     /**
-     * Obtain the DOM document
+     * Obtain the DOM document.
      *
      * @return A w3c Document representing the RIF-CS DOM
      */
@@ -111,7 +111,7 @@ public class RIFCS {
 
 
     /**
-     * Obtain all registry objects representing collections
+     * Obtain all registry objects representing collections.
      *
      * @return A List of RegistryObject objects, all of which are collections.
      *        Empty List if no collections exist.
@@ -122,7 +122,7 @@ public class RIFCS {
 
 
     /**
-     * Obtain all registry objects representing activities
+     * Obtain all registry objects representing activities.
      *
      * @return A List of RegistryObject objects, all of which are activities.
      *        Empty List if no activities exist.
@@ -133,7 +133,7 @@ public class RIFCS {
 
 
     /**
-     * Obtain all registry objects representing parties
+     * Obtain all registry objects representing parties.
      *
      * @return A List of RegistryObject objects, all of which are parties.
      *        Empty List if no parties exist.
@@ -144,7 +144,7 @@ public class RIFCS {
 
 
     /**
-     * Obtain all registry objects representing services
+     * Obtain all registry objects representing services.
      *
      * @return
      *        A List of RegistryObject objects, all of which are services.
@@ -156,7 +156,7 @@ public class RIFCS {
 
 
     /**
-     * Obtain all registry objects
+     * Obtain all registry objects.
      *
      * @return A Map of RegistryObject objects or empty Map if none exist. The
      *        Map key is the content of the RegistryObject "key" element.
@@ -167,7 +167,7 @@ public class RIFCS {
 
 
     /**
-     * Add a registry object to the RIF-CS document
+     * Add a registry object to the RIF-CS document.
      *
      * @param r
      *    A RegistryObject
@@ -180,7 +180,7 @@ public class RIFCS {
 
 
     /**
-     * For existing DOM, initialise and create all the supporting structures
+     * For existing DOM, initialise and create all the supporting structures.
      */
     private void initRegistryObjects() throws RIFCSException {
         NodeList nl = doc.getElementsByTagNameNS(Constants.NS_RIFCS, Constants.ELEMENT_REGISTRY_OBJECT);
@@ -194,7 +194,7 @@ public class RIFCS {
 
 
     /**
-     * Initialise the object class cache
+     * Initialise the object class cache.
      */
     private void initObjectClassMap() {
         rosByClass.put(Constants.ELEMENT_COLLECTION, new ArrayList());

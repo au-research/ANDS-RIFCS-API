@@ -23,14 +23,14 @@ import java.util.Date;
 import org.w3c.dom.Node;
 
 /**
- * Class representing a RIF-CS description object
+ * Class representing a RIF-CS description object.
  *
  * @author Scott Yeadon
  *
  */
 public class TemporalCoverageDate extends RIFCSElement {
     /**
-     * Construct a TemporalCoverageDate object
+     * Construct a TemporalCoverageDate object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -42,7 +42,7 @@ public class TemporalCoverageDate extends RIFCSElement {
     }
 
     /**
-     * Set the dateFormat
+     * Set the dateFormat.
      *
      * @param dateFormat
      *          The date format
@@ -53,7 +53,7 @@ public class TemporalCoverageDate extends RIFCSElement {
 
 
     /**
-     * return the dateFormat
+     * return the dateFormat.
      *
      * @return
      *      The date format value or empty string if attribute
@@ -66,7 +66,7 @@ public class TemporalCoverageDate extends RIFCSElement {
 
 
     /**
-     * Set the type
+     * Set the type.
      *
      * @param type
      *          The type of date
@@ -77,7 +77,7 @@ public class TemporalCoverageDate extends RIFCSElement {
 
 
     /**
-     * return the type
+     * return the type.
      *
      * @return
      *      The type attribute value or empty string if attribute
@@ -89,7 +89,7 @@ public class TemporalCoverageDate extends RIFCSElement {
 
 
     /**
-     * Set the content
+     * Set the content.
      *
      * @param value
      *      The content of the date
@@ -100,7 +100,7 @@ public class TemporalCoverageDate extends RIFCSElement {
 
 
     /**
-     * Set the content
+     * Set the content.
      *
      * @param value
      *      The content of the date
@@ -111,7 +111,7 @@ public class TemporalCoverageDate extends RIFCSElement {
 
 
     /**
-     * Obtain the content
+     * Obtain the content.
      *
      * @return
      *      The description string

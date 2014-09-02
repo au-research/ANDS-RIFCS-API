@@ -26,7 +26,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * Class representing a RIF-CS Activity registry object
+ * Class representing a RIF-CS Activity registry object.
  *
  * @author Scott Yeadon
  *
@@ -44,7 +44,7 @@ public class Activity extends RIFCSElement {
     private List<RelatedInfo> ris =  new ArrayList<RelatedInfo>();
 
     /**
-     * Construct an Activity object
+     * Construct an Activity object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -58,7 +58,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Set the type
+     * Set the type.
      *
      * @param type
      *      The type of activity being described
@@ -69,7 +69,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * return the type
+     * return the type.
      *
      * @return
      *      The type attribute value or empty string if attribute
@@ -81,7 +81,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Set the date the activity metadata was modified
+     * Set the date the activity metadata was modified.
      *
      * @param date
      *      A date object representing the date the activity metadata
@@ -93,7 +93,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Set the date the activity metadata was last modified
+     * Set the date the activity metadata was last modified.
      *
      * @param date
      *      A string in UTC and of one of the forms described in section 3.2.7
@@ -106,7 +106,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * return the date modified
+     * return the date modified.
      *
      * @return
      *      The dateModified attribute value or empty string if attribute
@@ -135,7 +135,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Add an identifier to the activity object
+     * Add an identifier to the activity object.
      *
      * @param identifier
      *    an Identifier object
@@ -152,7 +152,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Obtain the identifiers for this activity
+     * Obtain the identifiers for this activity.
      *
      * @return
      *      A list of Identifier objects
@@ -180,7 +180,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Add a name to the activity object
+     * Add a name to the activity object.
      *
      * @param name
      *    a Name object
@@ -197,7 +197,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Obtain the names for this activity
+     * Obtain the names for this activity.
      *
      * @return List<Name>
      *      A list of Name objects
@@ -225,7 +225,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Add a location to the activity object
+     * Add a location to the activity object.
      *
      * @param location
      *    a Location object
@@ -242,7 +242,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Obtain the locations for this activity
+     * Obtain the locations for this activity.
      *
      * @return
      *      A list of Location objects
@@ -270,7 +270,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Add a coverage element to the activity object
+     * Add a coverage element to the activity object.
      *
      * @param coverage
      *    a Coverage object
@@ -282,7 +282,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Obtain the coverage for this activity
+     * Obtain the coverage for this activity.
      *
      * @return
      *      A list of coverage objects
@@ -310,7 +310,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Add a related object to the activity object
+     * Add a related object to the activity object.
      *
      * @param relatedObject
      *    an RelatedObject object
@@ -327,7 +327,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Obtain the related objects for this activity
+     * Obtain the related objects for this activity.
      *
      * @return
      *      A list of RelatedObject objects
@@ -355,7 +355,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Add a subject to the activity object
+     * Add a subject to the activity object.
      *
      * @param subject
      *    a Subject object
@@ -372,7 +372,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Add a subject to the activity object
+     * Add a subject to the activity object.
      * @param value
      * @param type
      * @param termIdentifier
@@ -404,7 +404,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Obtain the subjects for this activity
+     * Obtain the subjects for this activity.
      *
      * @return
      *      A list of Subject objects
@@ -432,7 +432,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Add a description to the activity object
+     * Add a description to the activity object.
      *
      * @param description
      *    a Description object
@@ -448,7 +448,7 @@ public class Activity extends RIFCSElement {
     }
 
 	/**
-	 * Convenience method to add a description to the activity object
+	 * Convenience method to add a description to the activity object.
 	 *
 	 * @param description
 	 *            a description string
@@ -472,7 +472,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Obtain the description for this activity
+     * Obtain the description for this activity.
      *
      * @return
      *      A list of Description objects
@@ -487,7 +487,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Add a right to the activity object
+     * Add a right to the activity object.
      *
      * @param right
      *    a Right object
@@ -504,7 +504,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Obtain the rights for this activity
+     * Obtain the rights for this activity.
      *
      * @return
      *      A list of Right objects
@@ -521,7 +521,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Add an existence date to the activity object
+     * Add an existence date to the activity object.
      *
      * @param existenceDate
      *    an ExistenceDate object
@@ -537,7 +537,7 @@ public class Activity extends RIFCSElement {
     }
 
     /**
-     * Add an existence date to the activity object
+     * Add an existence date to the activity object.
      * @param startVal
      * @param startDateFormat
      * @param endVal
@@ -563,7 +563,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Obtain the description for this activity
+     * Obtain the description for this activity.
      *
      * @return
      *      A list of Description objects
@@ -591,7 +591,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Add related info to the activity object
+     * Add related info to the activity object.
      *
      * @param relatedInfo
      *    a relatedInfo object
@@ -603,7 +603,7 @@ public class Activity extends RIFCSElement {
 
 
     /**
-     * Obtain the related info for this activity
+     * Obtain the related info for this activity.
      *
      * @return List<RelatedInfo>
      *      A list of RelatedInfo objects

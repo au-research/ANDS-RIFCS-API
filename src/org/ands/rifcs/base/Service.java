@@ -26,7 +26,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * Class representing a RIF-CS Activity registry object
+ * Class representing a RIF-CS Activity registry object.
  *
  * @author Scott Yeadon
  *
@@ -45,7 +45,7 @@ public class Service extends RIFCSElement {
     private List<AccessPolicy> aps =  new ArrayList<AccessPolicy>();
 
     /**
-     * Construct an Activity object
+     * Construct an Activity object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -59,7 +59,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Set the type
+     * Set the type.
      *
      * @param type
      *          The type of service being described
@@ -70,7 +70,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * return the type
+     * return the type.
      *
      * @return
      *      The type attribute value or empty string if attribute
@@ -82,7 +82,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Set the date the service metadata was modified
+     * Set the date the service metadata was modified.
      *
      * @param date
      *      A date object representing the date the service metadata
@@ -94,7 +94,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Set the date the service metadata was last modified
+     * Set the date the service metadata was last modified.
      *
      * @param date
      *      A string in UTC and of one of the forms described in section 3.2.7
@@ -107,7 +107,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * return the date modified
+     * return the date modified.
      *
      * @return
      *      The dateModified attribute value or empty string if attribute
@@ -136,7 +136,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Add an identifier to the service object
+     * Add an identifier to the service object.
      *
      * @param identifier
      *    an Identifier object
@@ -148,7 +148,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Obtain the identifiers for this service
+     * Obtain the identifiers for this service.
      *
      * @return
      *      A list of Identifier objects
@@ -176,7 +176,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Add a name to the service object
+     * Add a name to the service object.
      *
      * @param name
      *    a Name object
@@ -188,7 +188,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Obtain the names for this service
+     * Obtain the names for this service.
      *
      * @return
      *      A list of Name objects
@@ -216,7 +216,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Add a location to the service object
+     * Add a location to the service object.
      *
      * @param location
      *    a Location object
@@ -228,7 +228,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Obtain the locations for this service
+     * Obtain the locations for this service.
      *
      * @return
      *      A list of Location objects
@@ -256,7 +256,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Add a coverage element to the activity object
+     * Add a coverage element to the activity object.
      *
      * @param coverage
      *    a Coverage object
@@ -268,7 +268,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Obtain the coverage for this activity
+     * Obtain the coverage for this activity.
      *
      * @return
      *      A list of coverage objects
@@ -296,7 +296,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Add a related object to the service object
+     * Add a related object to the service object.
      *
      * @param relatedObject
      *    an RelatedObject object
@@ -308,7 +308,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Obtain the related objects for this service
+     * Obtain the related objects for this service.
      *
      * @return
      *      A list of RelatedObject objects
@@ -336,7 +336,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Add a subject to the service object
+     * Add a subject to the service object.
      *
      * @param subject
      *    a Subject object
@@ -348,7 +348,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Add a subject to the activity object
+     * Add a subject to the activity object.
      * @param value
      * @param type
      * @param termIdentifier
@@ -379,7 +379,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Obtain the subjects for this service
+     * Obtain the subjects for this service.
      *
      * @return
      *      A list of Subject objects
@@ -407,7 +407,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Add a description to the service object
+     * Add a description to the service object.
      *
      * @param description
      *    a Description object
@@ -419,7 +419,7 @@ public class Service extends RIFCSElement {
 
 
 	/**
-	 * Convenience method to add a description to the collection object
+	 * Convenience method to add a description to the collection object.
 	 *
 	 * @param description
 	 *            a description string
@@ -442,7 +442,7 @@ public class Service extends RIFCSElement {
 	}
 
     /**
-     * Obtain the description for this service
+     * Obtain the description for this service.
      *
      * @return
      *      A list of Description objects
@@ -457,7 +457,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Add a description to the activity object
+     * Add a description to the activity object.
      *
      * @param right
      *    a Right object
@@ -474,7 +474,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Obtain the description for this activity
+     * Obtain the description for this activity.
      *
      * @return
      *      A list of Description objects
@@ -491,7 +491,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Add a description to the activity object
+     * Add a description to the activity object.
      *
      * @param existenceDate
      *    an ExistenceDate object
@@ -508,7 +508,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Add a description to the activity object
+     * Add a description to the activity object.
      * @param startVal
      * @param startDateFormat
      * @param endVal
@@ -533,7 +533,7 @@ public class Service extends RIFCSElement {
     }
 
     /**
-     * Obtain the description for this activity
+     * Obtain the description for this activity.
      *
      * @return
      *      A list of Description objects
@@ -562,7 +562,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Add an access policy to the service object
+     * Add an access policy to the service object.
      *
      * @param accessPolicy
      *    an AccessPolicy object
@@ -573,7 +573,7 @@ public class Service extends RIFCSElement {
     }
 
     /**
-     * Add an access policy to the service object
+     * Add an access policy to the service object.
      *
      * @param accessPolicyVal
      *    the name of an AccessPolicy
@@ -592,7 +592,7 @@ public class Service extends RIFCSElement {
     }
 
     /**
-     * Obtain the access policies for this service
+     * Obtain the access policies for this service.
      *
      * @return
      *      A list of AccessPolicy objects
@@ -620,7 +620,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Add related info to the service object
+     * Add related info to the service object.
      *
      * @param relatedInfo
      *    a relatedInfo object
@@ -632,7 +632,7 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Obtain the related info for this service
+     * Obtain the related info for this service.
      *
      * @return
      *      A list of RelatedInfo objects

@@ -21,14 +21,14 @@ package org.ands.rifcs.base;
 import org.w3c.dom.Node;
 
 /**
- * Class representing a RIF-CS Spatial object
+ * Class representing a RIF-CS Spatial object.
  *
  * @author Scott Yeadon
  *
  */
 public class Spatial extends RIFCSElement {
     /**
-     * Construct a Spatial object
+     * Construct a Spatial object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -41,7 +41,7 @@ public class Spatial extends RIFCSElement {
 
 
     /**
-     * Set the type
+     * Set the type.
      *
      * @param type
      *          The type of spatial information
@@ -52,7 +52,7 @@ public class Spatial extends RIFCSElement {
 
 
     /**
-     * return the type
+     * return the type.
      *
      * @return
      *      The type attribute value or empty string if attribute
@@ -64,7 +64,7 @@ public class Spatial extends RIFCSElement {
 
 
    /**
-    * Set the language
+    * Set the language.
     *
     * @param lang
     *      The xml:lang attribute value
@@ -75,7 +75,7 @@ public class Spatial extends RIFCSElement {
 
 
     /**
-     * Obtain the language
+     * Obtain the language.
      *
      * @return
      *      The language or empty string if attribute
@@ -87,7 +87,7 @@ public class Spatial extends RIFCSElement {
 
     // TODO: Add XML data option
     /**
-     * Set the content
+     * Set the content.
      *
      * @param value
      *      The spatial value
@@ -98,7 +98,7 @@ public class Spatial extends RIFCSElement {
 
 
     /**
-     * Obtain the content
+     * Obtain the content.
      *
      * @return
      *      The spatial

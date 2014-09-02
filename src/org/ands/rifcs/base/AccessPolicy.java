@@ -21,14 +21,14 @@ package org.ands.rifcs.base;
 import org.w3c.dom.Node;
 
 /**
- * Class representing a service access policy
+ * Class representing a service access policy.
  *
  * @author Scott Yeadon
  *
  */
 public class AccessPolicy extends RIFCSElement {
     /**
-     * Construct an AccessPolicy object
+     * Construct an AccessPolicy object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -41,7 +41,7 @@ public class AccessPolicy extends RIFCSElement {
 
 
     /**
-     * Set the access policy URI
+     * Set the access policy URI.
      *
      * @param value
      *      The access policy URI
@@ -52,7 +52,7 @@ public class AccessPolicy extends RIFCSElement {
 
 
     /**
-     * Obtain the access policy URI
+     * Obtain the access policy URI.
      *
      * @return The access policy URI
      */

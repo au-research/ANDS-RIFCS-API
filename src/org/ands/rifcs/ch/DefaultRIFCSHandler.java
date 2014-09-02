@@ -44,20 +44,20 @@ import org.w3c.dom.Element;
  */
 public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
 {
-    /** character buffer size */
+    /** character buffer size. */
     private static final int BUFFER_SIZE = 4096;
 
-    /** the DOM document */
+    /** the DOM document. */
     private Document doc = null;
 
-    /** Element stack to assist in building the DOM */
+    /** Element stack to assist in building the DOM. */
     private Stack<Element> elements = new Stack<Element>();
 
-    /** Locator (for future use) */
+    /** Locator (for future use). */
     private Locator locator;
 
     /**
-     * Set the locator
+     * Set the locator.
      *
      * @param aLocator
      *        The Locator object used to track the parsing location
@@ -68,7 +68,7 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
 
 
     /**
-     * Create an empty DOM document when the startDocument event is received
+     * Create an empty DOM document when the startDocument event is received.
      *
      * @exception SAXException
      *
@@ -202,7 +202,7 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
 
     /**
      * Print parser location. This may be used in future for debugging
-     * purposes
+     * purposes.
      *
      * @param s
      *      Parser message text
@@ -219,7 +219,7 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
 
 
     /**
-     * Get the DOM document
+     * Get the DOM document.
      *
      *  @return
      *      The DOM document. May be null if called before parsing and empty

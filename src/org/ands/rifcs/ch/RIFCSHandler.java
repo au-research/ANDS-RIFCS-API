@@ -21,13 +21,13 @@ package org.ands.rifcs.ch;
 
 import org.w3c.dom.Document;
 /**
- * Interface which any RIF-CS Content Handler must implement
+ * Interface which any RIF-CS Content Handler must implement.
  *
  * @author Scott Yeadon
  */
 public interface RIFCSHandler {
     /**
-     * Get a DOM document resulting from a SAX parse
+     * Get a DOM document resulting from a SAX parse.
      *
      *  @return
      *      The DOM document. May be null if called before parsing and empty

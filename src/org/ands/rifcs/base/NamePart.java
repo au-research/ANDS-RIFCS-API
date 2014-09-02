@@ -21,14 +21,14 @@ package org.ands.rifcs.base;
 import org.w3c.dom.Node;
 
 /**
- * Class representing a RIF-CS namePart object
+ * Class representing a RIF-CS namePart object.
  *
  * @author Scott Yeadon
  *
  */
 public class NamePart extends RIFCSElement {
     /**
-     * Construct a NamePart object
+     * Construct a NamePart object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -41,7 +41,7 @@ public class NamePart extends RIFCSElement {
 
 
     /**
-     * Set the type
+     * Set the type.
      *
      * @param type
      *          The type of namePart being described
@@ -52,7 +52,7 @@ public class NamePart extends RIFCSElement {
 
 
     /**
-     * return the type
+     * return the type.
      *
      * @return
      *      The type attribute value or empty string if attribute
@@ -64,7 +64,7 @@ public class NamePart extends RIFCSElement {
 
 
     /**
-     * Set the content
+     * Set the content.
      *
      * @param value
      *      The content of the namePart
@@ -75,7 +75,7 @@ public class NamePart extends RIFCSElement {
 
 
     /**
-     * Obtain the content
+     * Obtain the content.
      *
      * @return
      *      The namePart string

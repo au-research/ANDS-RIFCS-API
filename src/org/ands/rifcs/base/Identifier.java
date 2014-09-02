@@ -21,14 +21,14 @@ package org.ands.rifcs.base;
 import org.w3c.dom.Node;
 
 /**
- * Class representing a RIF-CS identifier object
+ * Class representing a RIF-CS identifier object.
  *
  * @author Scott Yeadon
  *
  */
 public class Identifier extends RIFCSElement {
     /**
-     * Construct an Identifier object
+     * Construct an Identifier object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -41,7 +41,7 @@ public class Identifier extends RIFCSElement {
 
 
     /**
-     * Set the type
+     * Set the type.
      *
      * @param type
      *      The location type
@@ -52,7 +52,7 @@ public class Identifier extends RIFCSElement {
 
 
     /**
-     * return the type
+     * return the type.
      *
      * @return
      *      The type attribute value or empty string if attribute
@@ -64,7 +64,7 @@ public class Identifier extends RIFCSElement {
 
 
     /**
-     * Set the content
+     * Set the content.
      *
      * @param value
      *      The content of the identifier
@@ -75,7 +75,7 @@ public class Identifier extends RIFCSElement {
 
 
     /**
-     * Obtain the content
+     * Obtain the content.
      *
      * @return
      *      The identifier string

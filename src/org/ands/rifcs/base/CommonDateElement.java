@@ -23,14 +23,14 @@ import java.util.Date;
 import org.w3c.dom.Node;
 
 /**
- * Class representing a RIF-CS description object
+ * Class representing a RIF-CS description object.
  *
  * @author Scott Yeadon
  *
  */
 public class CommonDateElement extends RIFCSElement {
     /**
-     * Construct a CommonDateElement object
+     * Construct a CommonDateElement object.
      *
      * @param n
      *        A w3c Node, typically an Element
@@ -43,7 +43,7 @@ public class CommonDateElement extends RIFCSElement {
 
 
 	/**
-     * Set the type
+     * Set the type.
      *
      * @param type
      *          The type of date
@@ -54,7 +54,7 @@ public class CommonDateElement extends RIFCSElement {
 
 
     /**
-     * return the type
+     * return the type.
      *
      * @return
      *      The type attribute value or empty string if attribute
@@ -66,7 +66,7 @@ public class CommonDateElement extends RIFCSElement {
 
 
     /**
-     * Set the content
+     * Set the content.
      *
      * @param value
      *      The content of the date
@@ -77,7 +77,7 @@ public class CommonDateElement extends RIFCSElement {
 
 
     /**
-     * Set the content
+     * Set the content.
      *
      * @param value
      *      The content of the date
@@ -88,7 +88,7 @@ public class CommonDateElement extends RIFCSElement {
 
 
     /**
-     * Obtain the content
+     * Obtain the content.
      *
      * @return
      *      The description string

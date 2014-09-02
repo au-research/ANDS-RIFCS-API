@@ -21,7 +21,7 @@ package org.ands.rifcs.base;
 import org.w3c.dom.Node;
 
 /**
- * Class representing registry object existence date
+ * Class representing registry object existence date.
  *
  * @author Mahmoud Sadeghi
  *
@@ -32,7 +32,7 @@ public class ExistenceDate extends RIFCSElement {
 	protected CommonDateElement endDate = null;
 
 	/**
-	 * Construct an ExistenceDate object
+	 * Construct an ExistenceDate object.
 	 *
 	 * @param n
 	 *            A w3c Node, typically an Element
@@ -44,7 +44,7 @@ public class ExistenceDate extends RIFCSElement {
 	}
 
 	/**
-	 * Set the startDate
+	 * Set the startDate.
 	 *
 	 * @param value
 	 * @param dateFormat
@@ -58,7 +58,7 @@ public class ExistenceDate extends RIFCSElement {
 		this.getElement().appendChild(this.startDate.getElement());
 	}
 	/**
-	 * return the StartDate
+	 * return the StartDate.
 	 *
 	 * @return The StartDate
 	 */
@@ -67,7 +67,7 @@ public class ExistenceDate extends RIFCSElement {
 	}
 
 	/**
-	 * Set the endDate
+	 * Set the endDate.
 	 *
 	 * @param value
 	 * @param dateFormat
@@ -83,7 +83,7 @@ public class ExistenceDate extends RIFCSElement {
 
 
 	/**
-	 * return the EndDate
+	 * return the EndDate.
 	 *
 	 * @return The EndDate
 	 */

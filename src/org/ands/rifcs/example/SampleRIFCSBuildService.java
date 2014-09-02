@@ -32,7 +32,7 @@ public class SampleRIFCSBuildService {
 
     private static RIFCS rifcs = null;
 
-    public SampleRIFCSBuildService() {
+    private SampleRIFCSBuildService() {
 
     }
 

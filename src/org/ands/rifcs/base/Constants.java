@@ -25,6 +25,11 @@ package org.ands.rifcs.base;
  *
  */
 public class Constants {
+
+    /** This class can not be instantiated. */
+    private Constants() {
+    }
+
     /** Name of the date accessioned attribute. */
     public static final String ATTRIBUTE_DATE_ACCESSIONED = "dateAccessioned";
 

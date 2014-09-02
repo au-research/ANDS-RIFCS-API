@@ -36,6 +36,10 @@ import org.xml.sax.SAXException;
 public class SampleRIFCSRead {
     private static RIFCS rifcs = null;
 
+    /** This class can not be instantiated. */
+    private SampleRIFCSRead() {
+    }
+
     public static void main(final String[] args) throws RIFCSException, FileNotFoundException, SAXException, ParserConfigurationException, IOException, MalformedURLException
     {
         RIFCSReader rr = new RIFCSReader();

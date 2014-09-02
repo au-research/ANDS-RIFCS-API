@@ -32,7 +32,7 @@ public class SampleRIFCSBuildParty {
 
     private static RIFCS rifcs = null;
 
-    public SampleRIFCSBuildParty() {
+    private SampleRIFCSBuildParty() {
 
     }
 

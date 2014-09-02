@@ -32,7 +32,7 @@ public class SampleRIFCSBuildCollection {
 
     private static RIFCS rifcs = null;
 
-    public SampleRIFCSBuildCollection() {
+    private SampleRIFCSBuildCollection() {
 
     }
 

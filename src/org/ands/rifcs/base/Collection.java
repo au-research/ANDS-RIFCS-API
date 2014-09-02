@@ -1,7 +1,7 @@
 /**
  * Date Modified: $Date: 2012-04-04 12:13:39 +1000 (Wed, 04 Apr 2012) $
  * Version: $Revision: 1695 $
- * 
+ *
  * Copyright 2009 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,9 +27,9 @@ import org.w3c.dom.NodeList;
 
 /**
  * Class representing a RIF-CS Collection registry object
- * 
+ *
  * @author Scott Yeadon
- * 
+ *
  */
 public class Collection extends RIFCSElement {
 	private List<Identifier> identifiers = new ArrayList<Identifier>();
@@ -45,10 +45,10 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Construct a Collection object
-	 * 
+	 *
 	 * @param n
 	 *            A w3c Node, typically an Element
-	 * 
+	 *
 	 * @exception RIFCSException
 	 */
 	protected Collection(Node n) throws RIFCSException {
@@ -58,7 +58,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Set the type
-	 * 
+	 *
 	 * @param type
 	 *            The type of collection being described
 	 */
@@ -68,7 +68,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * return the type
-	 * 
+	 *
 	 * @return The type attribute value or empty string if attribute is empty or
 	 *         not present
 	 */
@@ -79,7 +79,7 @@ public class Collection extends RIFCSElement {
 	/**
 	 * Set the date the collection metadata was recorded in the system from
 	 * which the RIF-CS is being constructed
-	 * 
+	 *
 	 * @param date
 	 *            A date object representing the date the collection metadata
 	 *            was recorded in the catalog system
@@ -91,7 +91,7 @@ public class Collection extends RIFCSElement {
 	/**
 	 * Set the date the collection metadata was recorded in the system from
 	 * which the RIF-CS is being constructed
-	 * 
+	 *
 	 * @param date
 	 *            A string in UTC and of one of the forms described in section
 	 *            3.2.7 of the <a href="http://www.w3.org/TR/xmlschema-2/">W3C's
@@ -103,7 +103,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * return the date accessioned
-	 * 
+	 *
 	 * @return The dateAccessioned attribute value or empty string if attribute
 	 *         is empty or not present
 	 */
@@ -113,7 +113,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Set the date the collection metadata was modified
-	 * 
+	 *
 	 * @param date
 	 *            A date object representing the date the collection metadata
 	 *            was last modified
@@ -124,7 +124,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Set the date the collection metadata was last modified
-	 * 
+	 *
 	 * @param date
 	 *            A string in UTC and of one of the forms described in section
 	 *            3.2.7 of the <a href="http://www.w3.org/TR/xmlschema-2/">W3C's
@@ -136,7 +136,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * return the date modified
-	 * 
+	 *
 	 * @return The dateModified attribute value or empty string if attribute is
 	 *         empty or not present
 	 */
@@ -146,15 +146,15 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Create and return an empty Identifier object.
-	 * 
+	 *
 	 * The returned object has no properties or content and is not part of the
 	 * RIF-CS document, it is essentially a constructor of an object owned by
 	 * the RIF-CS document. The returned object needs to be "filled out" (e.g.
 	 * with properties, additional sub-elements, etc) before being added to the
 	 * RIF-CS document.
-	 * 
+	 *
 	 * @exception RIFCSException
-	 * 
+	 *
 	 */
 	public Identifier newIdentifier() throws RIFCSException {
 		return new Identifier(this.newElement(Constants.ELEMENT_IDENTIFIER));
@@ -162,7 +162,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Add an identifier to the collection object
-	 * 
+	 *
 	 * @param identifier
 	 *            an Identifier object
 	 */
@@ -173,14 +173,14 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Convenience method to add an identifier to the collection object
-	 * 
+	 *
 	 * @param identifier
 	 *            an identifier string
 	 * @param type
 	 *            the identifier type
-	 * 
+	 *
 	 * @exception RIFCSException
-	 * 
+	 *
 	 */
 	public void addIdentifier(String identifier, String type) throws RIFCSException {
 		Identifier i = newIdentifier();
@@ -192,7 +192,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Obtain the identifiers for this collection
-	 * 
+	 *
 	 * @return A list of Identifier objects
 	 */
 	public List<Identifier> getIdentifiers() {
@@ -201,15 +201,15 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Create and return an empty Name object.
-	 * 
+	 *
 	 * The returned object has no properties or content and is not part of the
 	 * RIF-CS document, it is essentially a constructor of an object owned by
 	 * the RIF-CS document. The returned object needs to be "filled out" (e.g.
 	 * with properties, additional sub-elements, etc) before being added to the
 	 * RIF-CS document.
-	 * 
+	 *
 	 * @exception RIFCSException
-	 * 
+	 *
 	 */
 	public Name newName() throws RIFCSException {
 		return new Name(this.newElement(Constants.ELEMENT_NAME));
@@ -217,7 +217,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Add a name to the collection object
-	 * 
+	 *
 	 * @param name
 	 *            a Name object
 	 */
@@ -228,7 +228,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Obtain the names for this collection
-	 * 
+	 *
 	 * @return A list of Name objects
 	 */
 	public List<Name> getNames() {
@@ -237,15 +237,15 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Create and return an empty Location object.
-	 * 
+	 *
 	 * The returned object has no properties or content and is not part of the
 	 * RIF-CS document, it is essentially a constructor of an object owned by
 	 * the RIF-CS document. The returned object needs to be "filled out" (e.g.
 	 * with properties, additional sub-elements, etc) before being added to the
 	 * RIF-CS document.
-	 * 
+	 *
 	 * @exception RIFCSException
-	 * 
+	 *
 	 */
 	public Location newLocation() throws RIFCSException {
 		return new Location(this.newElement(Constants.ELEMENT_LOCATION));
@@ -253,7 +253,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Add a location to the collection object
-	 * 
+	 *
 	 * @param location
 	 *            a Location object
 	 */
@@ -264,7 +264,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Obtain the locations for this collection
-	 * 
+	 *
 	 * @return A list of Location objects
 	 */
 	public List<Location> getLocations() {
@@ -273,15 +273,15 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Create and return an empty Coverage object.
-	 * 
+	 *
 	 * The returned object has no properties or content and is not part of the
 	 * RIF-CS document, it is essentially a constructor of an object owned by
 	 * the RIF-CS document. The returned object needs to be "filled out" (e.g.
 	 * with properties, additional sub-elements, etc) before being added to the
 	 * RIF-CS document.
-	 * 
+	 *
 	 * @exception RIFCSException
-	 * 
+	 *
 	 */
 	public Coverage newCoverage() throws RIFCSException {
 		return new Coverage(this.newElement(Constants.ELEMENT_COVERAGE));
@@ -289,7 +289,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Add a coverage element to the collection object
-	 * 
+	 *
 	 * @param coverage
 	 *            a Coverage object
 	 */
@@ -300,7 +300,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Obtain the coverage for this collection
-	 * 
+	 *
 	 * @return A list of coverage objects
 	 */
 	public List<Coverage> getCoverage() {
@@ -309,15 +309,15 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Create and return an empty RelatedObject object.
-	 * 
+	 *
 	 * The returned object has no properties or content and is not part of the
 	 * RIF-CS document, it is essentially a constructor of an object owned by
 	 * the RIF-CS document. The returned object needs to be "filled out" (e.g.
 	 * with properties, additional sub-elements, etc) before being added to the
 	 * RIF-CS document.
-	 * 
+	 *
 	 * @exception RIFCSException
-	 * 
+	 *
 	 */
 	public RelatedObject newRelatedObject() throws RIFCSException {
 		return new RelatedObject(this.newElement(Constants.ELEMENT_RELATED_OBJECT));
@@ -325,7 +325,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Add a related object to the collection object
-	 * 
+	 *
 	 * @param relatedObject
 	 *            an RelatedObject object
 	 */
@@ -336,7 +336,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Obtain the related objects for this collection
-	 * 
+	 *
 	 * @return A list of RelatedObject objects
 	 */
 	public List<RelatedObject> getRelatedObjects() {
@@ -345,15 +345,15 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Create and return an empty Subject object.
-	 * 
+	 *
 	 * The returned object has no properties or content and is not part of the
 	 * RIF-CS document, it is essentially a constructor of an object owned by
 	 * the RIF-CS document. The returned object needs to be "filled out" (e.g.
 	 * with properties, additional sub-elements, etc) before being added to the
 	 * RIF-CS document.
-	 * 
+	 *
 	 * @exception RIFCSException
-	 * 
+	 *
 	 */
 	public Subject newSubject() throws RIFCSException {
 		return new Subject(this.newElement(Constants.ELEMENT_SUBJECT));
@@ -361,7 +361,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Add a subject to the collection object
-	 * 
+	 *
 	 * @param subject
 	 *            a Subject object
 	 */
@@ -372,14 +372,14 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Convenience method to add a subject to the collection object
-	 * 
+	 *
 	 * @param subject
 	 *            a subject string
 	 * @param type
 	 *            the subject type
 	 * @param language
 	 *            the subject language or null
-	 * 
+	 *
 	 * @exception RIFCSException
 	 */
 	public void addSubject(String subject, String type, String language) throws RIFCSException {
@@ -395,7 +395,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Obtain the subjects for this collection
-	 * 
+	 *
 	 * @return A list of Subject objects
 	 */
 	public List<Subject> getSubjects() {
@@ -404,15 +404,15 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Create and return an empty Description object.
-	 * 
+	 *
 	 * The returned object has no properties or content and is not part of the
 	 * RIF-CS document, it is essentially a constructor of an object owned by
 	 * the RIF-CS document. The returned object needs to be "filled out" (e.g.
 	 * with properties, additional sub-elements, etc) before being added to the
 	 * RIF-CS document.
-	 * 
+	 *
 	 * @exception RIFCSException
-	 * 
+	 *
 	 */
 	public Description newDescription() throws RIFCSException {
 		return new Description(this.newElement(Constants.ELEMENT_DESCRIPTION));
@@ -420,7 +420,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Add a description to the collection object
-	 * 
+	 *
 	 * @param description
 	 *            a Description object
 	 */
@@ -431,14 +431,14 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Convenience method to add a description to the collection object
-	 * 
+	 *
 	 * @param description
 	 *            a description string
 	 * @param type
 	 *            the description type
 	 * @param language
 	 *            the description language or null
-	 * 
+	 *
 	 * @exception RIFCSException
 	 */
 	public void addDescription(String description, String type, String language) throws RIFCSException {
@@ -454,7 +454,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Obtain the description for this collection
-	 * 
+	 *
 	 * @return A list of Description objects
 	 */
 	public List<Description> getDescriptions() {
@@ -474,7 +474,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Add a Rights element to the collection object
-	 * 
+	 *
 	 * @param right
 	 *            a Rights object
 	 */
@@ -486,7 +486,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Obtain the Rights for this collection
-	 * 
+	 *
 	 * @return A list of Rights objects
 	 */
 	public List<Right> getRightsList() {
@@ -495,15 +495,15 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Create and return an empty RelatedInfo object.
-	 * 
+	 *
 	 * The returned object has no properties or content and is not part of the
 	 * RIF-CS document, it is essentially a constructor of an object owned by
 	 * the RIF-CS document. The returned object needs to be "filled out" (e.g.
 	 * with properties, additional sub-elements, etc) before being added to the
 	 * RIF-CS document.
-	 * 
+	 *
 	 * @exception RIFCSException
-	 * 
+	 *
 	 */
 	public RelatedInfo newRelatedInfo() throws RIFCSException {
 		return new RelatedInfo(this.newElement(Constants.ELEMENT_RELATED_INFO));
@@ -511,7 +511,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Add related info to the collection object
-	 * 
+	 *
 	 * @param relatedInfo
 	 *            a relatedInfo object
 	 */
@@ -523,10 +523,10 @@ public class Collection extends RIFCSElement {
 	/**
 	 * Convenience method to add related info containing a single URL identifier
 	 * to the collection object
-	 * 
+	 *
 	 * @param relatedInfoURI
 	 *            a relatedInfo URI
-	 * 
+	 *
 	 * @exception RIFCSException
 	 * @deprecated Use the newRelatedInfo() method to construct relatedInfo.
 	 *             This method will be removed in a future release. If used it
@@ -543,7 +543,7 @@ public class Collection extends RIFCSElement {
 
 	/**
 	 * Obtain the related info for this collection
-	 * 
+	 *
 	 * @return A list of RelatedInfo objects
 	 */
 	public List<RelatedInfo> getRelatedInfo() {

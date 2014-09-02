@@ -1,7 +1,7 @@
 /**
  * Date Modified: $Date: 2012-04-10 10:06:16 +1100 (TUE, 10 Apr 2012) $
  * Version: $Revision: 288 $
- * 
+ *
  * Copyright 2009 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,19 +22,19 @@ import org.w3c.dom.Node;
 
 /**
  * Class representing a RIF-CS RightsInfo object
- * 
+ *
  * @author Mahmoud Sadeghi
  *
  */
 public class RightsInfo extends RIFCSElement {
     /**
      * Construct a RightsInfo object
-     * 
-     * @param n 
+     *
+     * @param n
      *        A w3c Node, typically an Element
-     *        
+     *
      * @exception RIFCSException
-     */     
+     */
     protected RightsInfo(Node n) throws RIFCSException {
         super(n, n.getNodeName());
     }
@@ -42,10 +42,10 @@ public class RightsInfo extends RIFCSElement {
 
     /**
      * Set the rightsUri
-     * 
+     *
      * @param rightsUri
      *          The rightsUri of RightsInfo
-     */      
+     */
     public void setRightsUri(String rightsUri) {
         super.setAttributeValue(Constants.ATTRIBUTE_RIGHTS_URI, rightsUri);
     }
@@ -53,7 +53,7 @@ public class RightsInfo extends RIFCSElement {
 
     /**
      * return the rightsUri
-     * 
+     *
      * @return
      *      The type attribute value or empty string if attribute
      *      is empty or not present
@@ -61,12 +61,12 @@ public class RightsInfo extends RIFCSElement {
     public String getRightsUri() {
         return super.getAttributeValue(Constants.ATTRIBUTE_RIGHTS_URI);
     }
-    
-    
+
+
     /**
      * Set the content
-     * 
-     * @param value 
+     *
+     * @param value
      *      The content of the RightsInfo
      */
     public void setValue(String value) {
@@ -76,10 +76,10 @@ public class RightsInfo extends RIFCSElement {
 
     /**
      * Obtain the content
-     * 
-     * @return 
+     *
+     * @return
      *      The RightsInfo string
-     */  
+     */
     public String getValue() {
         return super.getTextContent();
     }

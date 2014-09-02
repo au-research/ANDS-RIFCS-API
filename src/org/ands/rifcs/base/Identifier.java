@@ -1,7 +1,7 @@
 /**
  * Date Modified: $Date: 2010-01-18 10:22:16 +1100 (Mon, 18 Jan 2010) $
  * Version: $Revision: 288 $
- * 
+ *
  * Copyright 2009 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,64 +22,64 @@ import org.w3c.dom.Node;
 
 /**
  * Class representing a RIF-CS identifier object
- * 
+ *
  * @author Scott Yeadon
  *
  */
 public class Identifier extends RIFCSElement {
     /**
      * Construct an Identifier object
-     * 
+     *
      * @param n
      *        A w3c Node, typically an Element
-     *        
+     *
      * @exception RIFCSException
-     */     
+     */
     protected Identifier(Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_IDENTIFIER);
     }
-    
-    
+
+
     /**
      * Set the type
-     * 
-     * @param type 
+     *
+     * @param type
      *      The location type</a>
-     */      
+     */
     public void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
-    
+
     /**
      * return the type
-     * 
-     * @return 
+     *
+     * @return
      *      The type attribute value or empty string if attribute
      *      is empty or not present
-     */  
+     */
     public String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
 
-    
+
     /**
      * Set the content
-     * 
-     * @param value 
+     *
+     * @param value
      *      The content of the identifier
      */
     public void setValue(String value) {
         super.setTextContent(value);
     }
-    
-    
+
+
     /**
      * Obtain the content
-     * 
-     * @return 
+     *
+     * @return
      *      The identifier string
-     */  
+     */
     public String getValue() {
         return super.getTextContent();
     }

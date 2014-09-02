@@ -1,7 +1,7 @@
 /**
  * Date Modified: $Date: 2010-01-18 10:22:16 +1100 (Mon, 18 Jan 2010) $
  * Version: $Revision: 288 $
- * 
+ *
  * Copyright 2009 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,21 +27,21 @@ import org.w3c.dom.NodeList;
 
 /**
  * Class representing a RIF-CS electronic address object
- * 
+ *
  * @author Scott Yeadon
  *
  */
 public class Electronic extends RIFCSElement {
     List<Arg> args = new ArrayList<Arg>();
-    
+
     /**
      * Construct an Electronic address object
-     * 
+     *
      * @param n
      *        A w3c Node, typically an Element
-     *        
+     *
      * @exception RIFCSException
-     */     
+     */
     protected Electronic(Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_ELECTRONIC);
         initStructures();
@@ -50,10 +50,10 @@ public class Electronic extends RIFCSElement {
 
     /**
      * Set the type
-     * 
-     * @param type 
+     *
+     * @param type
      *      The electronic address type
-     */      
+     */
     public void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
@@ -61,25 +61,25 @@ public class Electronic extends RIFCSElement {
 
     /**
      * return the type
-     * 
-     * @return 
+     *
+     * @return
      *      The type attribute value or empty string if attribute
      *      is empty or not present
-     */  
+     */
     public String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
 
-    
+
     /**
      * Create and return an empty Arg object.
-     * 
+     *
      * The returned object has no properties or content and is not part
      * of the RIF-CS document, it is essentially a constructor of an object
      * owned by the RIF-CS document. The returned object needs to be
-     * "filled out" (e.g. with properties, additional sub-elements, etc) 
+     * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
-     * 
+     *
      * @exception RIFCSException
      *
      */
@@ -87,16 +87,16 @@ public class Electronic extends RIFCSElement {
         return new Arg(this.newElement(Constants.ELEMENT_ARG));
     }
 
-    
+
     /**
-     * Add an argument to the electroinc address object 
-     * 
+     * Add an argument to the electroinc address object
+     *
      * @param name
-     *    the name of the argument      
+     *    the name of the argument
      * @param required
-     *    <code>true</true> if the argument is required else <code>false</code>      
+     *    <code>true</true> if the argument is required else <code>false</code>
      * @param type
-     *    the argument type      
+     *    the argument type
      * @param use
      *    the argument use
      */
@@ -111,37 +111,37 @@ public class Electronic extends RIFCSElement {
         arg.setUse(use);
         addArg(arg);
     }
-    
-    
+
+
     /**
      * Obtain the arguments for this electronic address
-     * 
-     * @return 
+     *
+     * @return
      *      A list of Arg objects
-     */          
+     */
     public List<Arg> getArgs() {
         return args;
     }
-    
-    
+
+
     /**
-     * Add an argument to the electronic address object 
-     * 
+     * Add an argument to the electronic address object
+     *
      * @param arg
-     *    a completed Arg object      
+     *    a completed Arg object
      */
     public void addArg(Arg arg) {
        this.getElement().appendChild(arg.getElement());
        this.args.add(arg);
     }
-    
-    
+
+
     /**
-     * Set the electronic address URI 
-     * 
+     * Set the electronic address URI
+     *
      * @param valueUri
      *    a resolvable URI representing the electronic address
-     *    of the containing registry object      
+     *    of the containing registry object
      */
     public void setValue(String valueUri) {
         Element value = this.newElement(Constants.ELEMENT_VALUE);
@@ -151,22 +151,22 @@ public class Electronic extends RIFCSElement {
 
 
     /**
-     * Return the electronic address URI 
-     * 
+     * Return the electronic address URI
+     *
      * @return
      *    a resolvable URI representing the electronic address
-     *    of the containing registry object      
+     *    of the containing registry object
      */
     public String getValue() {
         NodeList nl = super.getElements(Constants.ELEMENT_VALUE);
         if (nl.getLength() == 1) {
             return nl.item(0).getTextContent();
         }
-        
+
         return null;
     }
-    
-    
+
+
     /* initialisation code for existing documents */
     private void initStructures() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_ARG);

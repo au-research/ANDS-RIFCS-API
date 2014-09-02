@@ -1,7 +1,7 @@
 /**
  * Date Modified: $Date: 2012-04-04 12:13:39 +1000 (Wed, 04 Apr 2012) $
  * Version: $Revision: 1695 $
- * 
+ *
  * Copyright 2008 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +20,7 @@ package org.ands.rifcs.base;
 
 /**
  * Class containing constants
- * 
+ *
  * @author Scott Yeadon
  *
  */
@@ -33,7 +33,7 @@ public class Constants {
 
     /** Name of the dateGenerated attribute */
     public static final String ATTRIBUTE_DATE_GENERATED = "dateGenerated";
-    
+
     /** Name of the date modified attribute */
     public static final String ATTRIBUTE_DATE_MODIFIED = "dateModified";
 
@@ -51,40 +51,40 @@ public class Constants {
 
     /** Name of the required attribute */
     public static final String ATTRIBUTE_REQUIRED = "required";
-    
+
     /** The XML schemaLocation attribute name */
     public static final String ATTRIBUTE_SCHEMA_LOCATION = "xsi:schemaLocation";
-    
+
     /** The seq attribute name */
     public static final String ATTRIBUTE_SEQ = "seq";
-    
+
     /** The style attribute name */
     public static final String ATTRIBUTE_STYLE = "style";
 
     /** Name of the type attribute */
     public static final String ATTRIBUTE_TYPE = "type";
-    
+
     /** Name of the dateFormat attribute */
     public static final String ATTRIBUTE_DATE_FORMAT = "dateFormat";
 
     /** Name of the use attribute */
     public static final String ATTRIBUTE_USE = "use";
-    
+
     /** Name of the access policy element */
     public static final String ELEMENT_ACCESS_POLICY = "accessPolicy";
-    
+
     /** Name of the activity element */
     public static final String ELEMENT_ACTIVITY = "activity";
-    
+
     /** Name of the address element */
     public static final String ELEMENT_ADDRESS = "address";
-    
+
     /** Name of the addressPart element */
     public static final String ELEMENT_ADDRESSPART = "addressPart";
-    
+
     /** Name of the arg element */
     public static final String ELEMENT_ARG = "arg";
-    
+
     /** Name of the desc element */
     public static final String ELEMENT_DESCRIPTION = "description";
 
@@ -231,7 +231,7 @@ public class Constants {
 
     /** XML schema instance namespace location */
     public static final String NS_SCHEMA = "http://www.w3.org/2001/XMLSchema-instance";
-    
+
     /** XML namespace location */
     public static final String NS_XML = "http://www.w3.org/XML/1998/namespace";
 
@@ -242,7 +242,7 @@ public class Constants {
     public static final String SCHEMA_COLLECTION = "http://services.ands.org.au/home/orca/schemata/collection.xsd";
     public static final String SCHEMA_PARTY = "http://services.ands.org.au/home/orca/schemata/party.xsd";
     public static final String SCHEMA_SERVICE = "http://services.ands.org.au/home/orca/schemata/service.xsd";
-    
+
     /** Java Date Format for UTC dates */
     public static final String TIMESTAMP_UTC_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
 }

@@ -1,7 +1,7 @@
 /**
  * Date Modified: $Date: 2010-01-19 16:00:56 +1100 (Tue, 19 Jan 2010) $
  * Version: $Revision: 290 $
- * 
+ *
  * Copyright 2008 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -31,24 +31,24 @@ import org.w3c.dom.NodeList;
 
 /**
  * super class of all RIF-CS elements
- * 
+ *
  * @author Scott Yeadon
  *
  */
 public class RIFCSElement {
     private Element e = null;
-    
+
     /**
      * Construct a RIF-CS element
-     * 
-     * @param n 
+     *
+     * @param n
      *        A w3c Node, typically an Element
-     * @param name 
+     * @param name
      *        The name of the RIF-CS Element
-     *        
+     *
      * @exception RIFCSException
      *
-     */ 
+     */
     protected RIFCSElement(Node n,
                            String name) throws RIFCSException {
         if (n == null) {
@@ -69,14 +69,14 @@ public class RIFCSElement {
 
     /**
      * Obtain an attribute value
-     * 
+     *
      * @param name
      *      The name of the attribute
-     *      
+     *
      * @return
      *      The attribute value or empty string if attribute
      *      is empty or not present
-     */  
+     */
     protected String getAttributeValue(String name) {
         return e.getAttribute(name);
     }
@@ -84,13 +84,13 @@ public class RIFCSElement {
 
     /**
      * Set an attribute value
-     * 
+     *
      * @param name
      *      The name of the attribute
-     *      
-     * @param value 
+     *
+     * @param value
      *      The attribute value
-     */  
+     */
     protected void setAttributeValue(String name,
                                      String value) {
         e.setAttribute(name, value);
@@ -99,100 +99,100 @@ public class RIFCSElement {
 
     /**
      * Set an attribute value with namespace
-     * 
+     *
      * @param ns
      *      The namespace URL of the attribute
-     * @param name 
+     * @param name
      *      The attribute name
-     * @param value 
+     * @param value
      *      The attribute value
-     */  
+     */
     protected void setAttributeValueNS(String ns,
                                         String name,
                                      String value) {
         e.setAttributeNS(ns, name, value);
     }
-    
+
 
     /**
      * Get an attribute value with namespace
-     * 
+     *
      * @param ns
      *      The namespace URL of the attribute
-     * @param name 
+     * @param name
      *      The attribute name
-     */  
+     */
     protected String getAttributeValueNS(String ns,
                                          String name) {
         return e.getAttributeNS(ns, name);
     }
-    
-    
+
+
     /**
      * Obtain an attribute value where the attribute has a
      * namespace
-     * 
+     *
      * @param ns
      *      The attribute namespace URL
      * @param localName
      *      The unqualified attribute name
-     *      
-     * @return String 
+     *
+     * @return String
      *      The attribute value or empty string if attribute
      *      is empty or not present
-     */  
+     */
     protected String getAttributeValue(String ns,
                                        String localName) {
         return e.getAttributeNS(ns, localName);
     }
-    
-    
+
+
     /**
      * Obtain the text content of the RIFCS Element
-     * 
-     * @return 
+     *
+     * @return
      *      The text content of the element
-     */  
+     */
     protected String getTextContent() {
         return e.getTextContent();
     }
-    
-    
+
+
     /**
      * Set the text content of the RIFCS Element
-     * 
-     * @param value 
+     *
+     * @param value
      *      The text content of the element
-     */  
+     */
     protected void setTextContent(String value) {
         e.setTextContent(value);
     }
 
-    
+
     /**
      * Obtain a list of descendant RIFCS elements with the given name
-     * 
+     *
      * @param localName
      *      Obtain a list of descendant RIF-CS elements
-     *      
-     * @return 
+     *
+     * @return
      *      The text content of the element
-     */  
+     */
     protected NodeList getElements(String localName) {
         return e.getElementsByTagNameNS(Constants.NS_RIFCS, localName);
     }
-    
-    
+
+
     /**
      * Obtain a list of child RIFCS elements
-     * 
+     *
      * @param localName
      *      An element name
-     *      
-     * @return 
+     *
+     * @return
      *      A list of RIFCS elements whose tag name matches
      *      the localName
-     */  
+     */
     protected List<Node> getChildElements(String localName) {
         NodeList nl = e.getChildNodes();
         List<Node> l = new ArrayList<Node>();
@@ -202,17 +202,17 @@ public class RIFCSElement {
                 l.add(nl.item(i));
             }
         }
-        
+
         return l;
     }
-    
-    
+
+
     /**
      * Obtain all child elements
-     *       
-     * @return 
+     *
+     * @return
      *      A list of RIFCS elements
-     */  
+     */
     protected List<Node> getChildElements() {
         NodeList nl = e.getChildNodes();
         List<Node> l = new ArrayList<Node>();
@@ -221,40 +221,40 @@ public class RIFCSElement {
                 l.add(nl.item(i));
             }
         }
-        
+
         return l;
     }
 
-    
+
     /**
      * Obtain the w3c dom element this object represents
-     * 
-     * @return 
+     *
+     * @return
      *      A w3c dom element
-     */  
+     */
     protected Element getElement() {
         return e;
     }
-    
-    
+
+
     /**
      * Return null, this class should be overridden by subclasses if sub-elements
      * are permitted
-     * 
+     *
      * @return
      *      an element with the given name
-     */  
+     */
     protected Element newElement(String elementName) {
         return this.getElement().getOwnerDocument().createElementNS(Constants.NS_RIFCS, elementName);
     }
-    
-    
+
+
     /**
      * Format a date to the required RIF-CS format (yyyy-MM-dd'T'HH:mm:ss'Z').
-     *      
+     *
      * @return
      *      The date in UTC format
-     */  
+     */
     protected static String formatDate(Date date) {
         SimpleDateFormat df = new SimpleDateFormat(Constants.TIMESTAMP_UTC_FORMAT);
         Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));

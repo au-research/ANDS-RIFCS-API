@@ -1,7 +1,7 @@
 /**
  * Date Modified: $Date: 2010-07-08 14:54:07 +1000 (Thu, 08 Jul 2010) $
  * Version: $Revision: 463 $
- * 
+ *
  * Copyright 2009 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,9 +22,9 @@ import org.w3c.dom.Node;
 
 /**
  * Class representing registry object existence date
- * 
+ *
  * @author Mahmoud Sadeghi
- * 
+ *
  */
 public class ExistenceDate extends RIFCSElement {
 
@@ -33,10 +33,10 @@ public class ExistenceDate extends RIFCSElement {
 
 	/**
 	 * Construct an ExistenceDate object
-	 * 
+	 *
 	 * @param n
 	 *            A w3c Node, typically an Element
-	 * 
+	 *
 	 * @exception RIFCSException
 	 */
 	protected ExistenceDate(Node n) throws RIFCSException {
@@ -45,7 +45,7 @@ public class ExistenceDate extends RIFCSElement {
 
 	/**
 	 * Set the startDate
-	 * 
+	 *
 	 * @param value
 	 * @param dateFormat
 	 * @throws RIFCSException
@@ -59,7 +59,7 @@ public class ExistenceDate extends RIFCSElement {
 	}
 	/**
 	 * return the StartDate
-	 * 
+	 *
 	 * @return The StartDate
 	 */
 	public CommonDateElement getStartDate() {
@@ -68,7 +68,7 @@ public class ExistenceDate extends RIFCSElement {
 
 	/**
 	 * Set the endDate
-	 * 
+	 *
 	 * @param value
 	 * @param dateFormat
 	 * @throws RIFCSException
@@ -84,7 +84,7 @@ public class ExistenceDate extends RIFCSElement {
 
 	/**
 	 * return the EndDate
-	 * 
+	 *
 	 * @return The EndDate
 	 */
 	public CommonDateElement getEndDate() {

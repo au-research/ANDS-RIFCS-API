@@ -1,7 +1,7 @@
 /**
  * Date Modified: $Date: 2012-04-04 12:13:39 +1000 (Wed, 04 Apr 2012) $
  * Version: $Revision: 1695 $
- * 
+ *
  * Copyright 2009 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -31,7 +31,7 @@ import org.w3c.dom.NodeList;
 
 /**
  * Class representing a RIF-CS address
- * 
+ *
  * @author Scott Yeadon
  *
  */
@@ -41,26 +41,26 @@ public class Temporal extends RIFCSElement {
 
     /**
      * Construct a Temporal object
-     * 
-     * @param n 
+     *
+     * @param n
      *        A w3c Node, typically an Element
-     *        
+     *
      * @exception RIFCSException
-     */ 
+     */
     protected Temporal(Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_TEMPORAL);
     }
 
-    
+
     /**
      * Create and return an empty DateElement object.
-     * 
+     *
      * The returned object has no properties or content and is not part
      * of the RIF-CS document, it is essentially a constructor of an object
      * owned by the RIF-CS document. The returned object needs to be
-     * "filled out" (e.g. with properties, additional sub-elements, etc) 
+     * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
-     * 
+     *
      * @exception RIFCSException
      *
      */
@@ -68,29 +68,29 @@ public class Temporal extends RIFCSElement {
    // {
    //     return new DateElement(this.newElement(Constants.ELEMENT_DATE));
    // }
-    
+
     public TemporalCoverageDate newDate() throws RIFCSException {
     return new TemporalCoverageDate(this.newElement(Constants.ELEMENT_DATE));
     }
 
-    
+
     /**
      * Obtain the date information for this temporal coverage
-     * 
-     * @return 
+     *
+     * @return
      *      A list of DateElement objects
-     */          
+     */
     public List<TemporalCoverageDate> getDates() {
         return this.dates;
     }
 
-    
+
     /**
      * Obtain the text information for this temporal coverage
-     * 
-     * @return 
+     *
+     * @return
      *      A list of string values
-     */          
+     */
     public List<String> getText() {
         ArrayList al = new ArrayList<String>();
         for (Iterator<Element> i = texts.iterator(); i.hasNext();) {
@@ -99,10 +99,10 @@ public class Temporal extends RIFCSElement {
         return al;
     }
 
-    
+
     /**
-     * Add text information to the temporal object 
-     * 
+     * Add text information to the temporal object
+     *
      * @param text
      *    a text description of the temporal coverage
      */
@@ -112,34 +112,34 @@ public class Temporal extends RIFCSElement {
         this.getElement().appendChild(e);
         this.texts.add((Element) e);
     }
-     
+
 
     /**
      * Add temporal date to the coverage object. A convenience method
-     * creating a single temporal element with a date element. 
-     * 
+     * creating a single temporal element with a date element.
+     *
      * @param date
      *      The date to add to the date element.
      * @param type
      *      The type of date
-     *    
-     */    
-    
+     *
+     */
+
 
     public void addDate(String date, String type) throws RIFCSException {
     	this.addDate(date, type, "W3C");
 	}
     /**
      * Add temporal date to the coverage object. A convenience method
-     * creating a single temporal element with a date element. 
-     * 
+     * creating a single temporal element with a date element.
+     *
      * @param date
      *      The date to add to the date element.
      * @param type
      *      The type of date
-     *    
-     */    
-    
+     *
+     */
+
 
     public void addDate(String date, String type, String dateFormat) throws RIFCSException {
 	    TemporalCoverageDate de = this.newDate();
@@ -149,22 +149,22 @@ public class Temporal extends RIFCSElement {
 	    this.getElement().appendChild(de.getElement());
 	    this.dates.add((TemporalCoverageDate) de);
 	}
-    
+
     /**
      * Add temporal date to the coverage object. A convenience method
-     * creating a single temporal element with a date element. 
-     * 
+     * creating a single temporal element with a date element.
+     *
      * @param date
      *      The date to add to the date element.
      * @param type
      *      The type of date
-     *    
-     */    
-    
+     *
+     */
+
 
     public void addDate(Date date, String type) throws RIFCSException {
-    	DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");  
-    	String text = df.format(date);  
+    	DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+    	String text = df.format(date);
     	String result = text.substring(0, 22) + ":" + text.substring(22);
     	this.addDate(result, type);
 	}
@@ -175,10 +175,10 @@ public class Temporal extends RIFCSElement {
         initTexts();
         initDates();
     }
-    
+
     private void initTexts() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_TEXT);
-        
+
         for (int i = 0; i < nl.getLength(); i++) {
             texts.add((Element) nl.item(i));
         }
@@ -186,7 +186,7 @@ public class Temporal extends RIFCSElement {
 
     private void initDates() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_DATE);
-        
+
         for (int i = 0; i < nl.getLength(); i++) {
             dates.add(new TemporalCoverageDate(nl.item(i)));
         }

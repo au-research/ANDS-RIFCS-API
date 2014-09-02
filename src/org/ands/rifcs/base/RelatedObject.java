@@ -1,7 +1,7 @@
 /**
  * Date Modified: $Date: 2010-01-18 10:22:16 +1100 (Mon, 18 Jan 2010) $
  * Version: $Revision: 288 $
- * 
+ *
  * Copyright 2009 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,65 +27,65 @@ import org.w3c.dom.NodeList;
 
 /**
  * Class representing related object information
- * 
+ *
  * @author Scott Yeadon
  *
  */
 public class RelatedObject extends RIFCSElement {
     List<Relation> relations = new ArrayList<Relation>();
-    
+
     /**
      * Construct a RelatedObject object
-     * 
+     *
      * @param n
      *        A w3c Node, typically an Element
-     *        
+     *
      * @exception RIFCSException
-     */     
+     */
     protected RelatedObject(Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_RELATED_OBJECT);
         initStructures();
     }
 
-    
+
     /**
      * Set the related object key value
-     * 
+     *
      * @param keyValue
      *      The key uniquely identifying the related registry object
-     */          
+     */
     public void setKey(String keyValue) {
         Element key = this.newElement(Constants.ELEMENT_KEY);
         key.setTextContent(keyValue);
         this.getElement().appendChild(key);
     }
-    
-    
+
+
     /**
      * Get the related object key value
-     * 
+     *
      * @return
      *     The key uniquely identifying the related registry object
-     */          
+     */
     public String getKey() {
         NodeList nl = super.getElements(Constants.ELEMENT_KEY);
         if (nl.getLength() == 1) {
             return nl.item(0).getTextContent();
         }
-        
+
         return null;
     }
-    
+
 
     /**
      * Create and return an empty Relation object.
-     * 
+     *
      * The returned object has no properties or content and is not part
      * of the RIF-CS document, it is essentially a constructor of an object
      * owned by the RIF-CS document. The returned object needs to be
-     * "filled out" (e.g. with properties, additional sub-elements, etc) 
+     * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
-     * 
+     *
      * @exception RIFCSException
      *
      */
@@ -93,10 +93,10 @@ public class RelatedObject extends RIFCSElement {
         return new Relation(this.newElement(Constants.ELEMENT_RELATION));
     }
 
-    
+
     /**
-     * Add a related object relation 
-     * 
+     * Add a related object relation
+     *
      * @param type
      *          The type of relation being described
      * @param url
@@ -111,39 +111,39 @@ public class RelatedObject extends RIFCSElement {
                             String description,
                             String descriptionLanguage) throws RIFCSException {
         Relation relation = newRelation();
-        
+
         relation.setType(type);
-        
+
         if (url != null) {
             relation.setURL(url);
         }
-        
+
         if (description != null) {
             relation.setDescription(description);
         }
-        
+
         if (descriptionLanguage != null) {
             relation.setDescriptionLanguage(descriptionLanguage);
         }
-        
+
         addRelation(relation);
     }
-    
-    
+
+
     /**
      * Obtain the relations for this collection
-     * 
-     * @return 
+     *
+     * @return
      *      A list of Relation objects
-     */          
+     */
     public List<Relation> getRelations() {
         return relations;
     }
-    
-    
+
+
     /**
-     * Add a related object relation 
-     * 
+     * Add a related object relation
+     *
      * @param relation
      *    A Relation object
      */
@@ -152,13 +152,13 @@ public class RelatedObject extends RIFCSElement {
         this.relations.add(relation);
     }
 
-    
+
     /* initialisation code for existing documents */
     private void initStructures() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_RELATION);
-        
+
         for (int i = 0; i < nl.getLength(); i++) {
             relations.add(new Relation(nl.item(i)));
-        }        
+        }
     }
 }

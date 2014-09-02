@@ -1,7 +1,7 @@
 /**
  * Date Modified: $Date: 2012-04-04 12:13:39 +1000 (Wed, 04 Apr 2012) $
  * Version: $Revision: 1695 $
- * 
+ *
  * Copyright 2008 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");

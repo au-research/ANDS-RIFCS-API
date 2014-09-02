@@ -1,7 +1,7 @@
 /**
  * Date Modified: $Date: 2010-01-18 10:22:16 +1100 (Mon, 18 Jan 2010) $
  * Version: $Revision: 288 $
- * 
+ *
  * Copyright 2009 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,19 +22,19 @@ import org.w3c.dom.Node;
 
 /**
  * Class representing a RIF-CS description object
- * 
+ *
  * @author Scott Yeadon
  *
  */
 public class Description extends RIFCSElement {
     /**
      * Construct a Description object
-     * 
-     * @param n 
+     *
+     * @param n
      *        A w3c Node, typically an Element
-     *        
+     *
      * @exception RIFCSException
-     */     
+     */
     protected Description(Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_DESCRIPTION);
     }
@@ -42,10 +42,10 @@ public class Description extends RIFCSElement {
 
     /**
      * Set the type
-     * 
-     * @param type 
+     *
+     * @param type
      *          The type of description
-     */      
+     */
     public void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
@@ -53,7 +53,7 @@ public class Description extends RIFCSElement {
 
     /**
      * return the type
-     * 
+     *
      * @return
      *      The type attribute value or empty string if attribute
      *      is empty or not present
@@ -61,26 +61,26 @@ public class Description extends RIFCSElement {
     public String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
-    
-    
+
+
     /**
      * Set the language
-     * 
-     * @param lang 
+     *
+     * @param lang
      *      The xml:lang attribute value
-     */  
+     */
     public void setLanguage(String lang) {
         super.setAttributeValueNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG, lang);
     }
 
-    
+
     /**
      * Obtain the language
-     * 
-     * @return 
+     *
+     * @return
      *      The type attribute value or empty string if attribute
      *      is empty or not present
-     */  
+     */
     public String getLanguage() {
         return super.getAttributeValueNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG);
     }
@@ -88,8 +88,8 @@ public class Description extends RIFCSElement {
 
     /**
      * Set the content
-     * 
-     * @param value 
+     *
+     * @param value
      *      The content of the description
      */
     public void setValue(String value) {
@@ -99,10 +99,10 @@ public class Description extends RIFCSElement {
 
     /**
      * Obtain the content
-     * 
-     * @return 
+     *
+     * @return
      *      The description string
-     */  
+     */
     public String getValue() {
         return super.getTextContent();
     }

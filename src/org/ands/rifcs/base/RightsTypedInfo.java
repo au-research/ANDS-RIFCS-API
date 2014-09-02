@@ -1,7 +1,7 @@
 /**
  * Date Modified: $Date: 2012-04-10 15:45:16 +1100 (TUE, 10 APR 2012) $
  * Version: $Revision: 288 $
- * 
+ *
  * Copyright 2009 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,19 +22,19 @@ import org.w3c.dom.Node;
 
 /**
  * Class representing a RIF-CS rightsTypedInfo object
- * 
+ *
  * @author Mahmoud Sadeghi
  *
  */
 public class RightsTypedInfo extends RIFCSElement {
     /**
      * Construct a rightsTypedInfo object
-     * 
-     * @param n 
+     *
+     * @param n
      *        A w3c Node, typically an Element
-     *        
+     *
      * @exception RIFCSException
-     */     
+     */
     protected RightsTypedInfo(Node n) throws RIFCSException {
         super(n, n.getNodeName());
     }
@@ -42,10 +42,10 @@ public class RightsTypedInfo extends RIFCSElement {
 
     /**
      * Set the type
-     * 
-     * @param type 
+     *
+     * @param type
      *          The type of rightsTypedInfo
-     */      
+     */
     public void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
@@ -53,7 +53,7 @@ public class RightsTypedInfo extends RIFCSElement {
 
     /**
      * return the type
-     * 
+     *
      * @return
      *      The type attribute value or empty string if attribute
      *      is empty or not present
@@ -61,14 +61,14 @@ public class RightsTypedInfo extends RIFCSElement {
     public String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
-    
-    
+
+
     /**
      * Set the rightsUri
-     * 
+     *
      * @param rightsUri
      *          The rightsUri of RightsInfo
-     */      
+     */
     public void setRightsUri(String rightsUri) {
         super.setAttributeValue(Constants.ATTRIBUTE_RIGHTS_URI, rightsUri);
     }
@@ -76,7 +76,7 @@ public class RightsTypedInfo extends RIFCSElement {
 
     /**
      * return the rightsUri
-     * 
+     *
      * @return
      *      The type attribute value or empty string if attribute
      *      is empty or not present
@@ -84,12 +84,12 @@ public class RightsTypedInfo extends RIFCSElement {
     public String getRightsUri() {
         return super.getAttributeValue(Constants.ATTRIBUTE_RIGHTS_URI);
     }
-    
+
 
     /**
      * Set the content
-     * 
-     * @param value 
+     *
+     * @param value
      *      The content of the rightsTypedInfo
      */
     public void setValue(String value) {
@@ -99,10 +99,10 @@ public class RightsTypedInfo extends RIFCSElement {
 
     /**
      * Obtain the content
-     * 
-     * @return 
+     *
+     * @return
      *      The rightsTypedInfo string
-     */  
+     */
     public String getValue() {
         return super.getTextContent();
     }

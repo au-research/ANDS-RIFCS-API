@@ -1,7 +1,7 @@
 /**
  * Date Modified: $Date: 2012-04-04 12:13:39 +1000 (Wed, 04 Apr 2012) $
  * Version: $Revision: 1695 $
- * 
+ *
  * Copyright 2008 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -31,9 +31,9 @@ import org.xml.sax.SAXException;
 public class SampleRIFCSBuildService {
 
 	private static RIFCS rifcs = null;
-	
+
     public SampleRIFCSBuildService() {
-    
+
     }
 
     public static void main(String[] args) throws RIFCSException, FileNotFoundException, SAXException, ParserConfigurationException, IOException {
@@ -45,19 +45,19 @@ public class SampleRIFCSBuildService {
         r.setOriginatingSource("http://myrepository.au.edu");
         Service s = r.newService();
         s.setType("service");
-        
+
         Identifier identifier = s.newIdentifier();
         identifier.setType("handle");
         identifier.setValue("hdl:7651/myhandlesuffix");
         s.addIdentifier(identifier);
-        
+
         Name n = s.newName();
         n.setType("primary");
         NamePart np = n.newNamePart();
         np.setValue("Sample Collection");
         n.addNamePart(np);
         s.addName(n);
-        
+
         Location l = s.newLocation();
         Address ad = l.newAddress();
         Electronic e = ad.newElectronic();
@@ -66,7 +66,7 @@ public class SampleRIFCSBuildService {
         ad.addElectronic(e);
         l.addAddress(ad);
         s.addLocation(l);
-        
+
         Coverage cov = s.newCoverage();
         Spatial sp = cov.newSpatial();
         Temporal tmp = cov.newTemporal();
@@ -77,7 +77,7 @@ public class SampleRIFCSBuildService {
         cov.addSpatial(sp);
         cov.addTemporal(tmp);
         s.addCoverage(cov);
-        
+
         RelatedObject ro = s.newRelatedObject();
         ro.setKey("collection1");
         ro.addRelation("isOutputOf", null, null, null);
@@ -90,14 +90,14 @@ public class SampleRIFCSBuildService {
         ro3.setKey("service1");
         ro3.addRelation("supports", null, null, null);
         s.addRelatedObject(ro3);
-        
+
         s.addSubject("subject1", "local", "identifier1" , "en");
         s.addSubject("subject2", "local", "identifier2" , "en");
 
         s.addDescription("This is a sample description", "brief", null);
-        
+
         s.addAccessPolicy("Access Policy");
-        
+
         Right right = s.newRight();
         right.setAccessRights("Access Right Value", "Access Rights Uri", "Access Right Type");
         right.setLicence("Licence Value", "Licence Uri", "Licence Type");
@@ -110,7 +110,7 @@ public class SampleRIFCSBuildService {
         s.addRight(right);
 
         s.addExistenceDate("01-01-01", "dd-mm-yy", "12-12-12", "dd-mm-yy");
-        
+
         RelatedInfo relatedInfo = s.newRelatedInfo();
         relatedInfo.setIdentifier("related info", "text");
         relatedInfo.setNotes("Notes");

@@ -1,7 +1,7 @@
 /**
  * Date Modified: $Date: 2010-07-07 16:14:13 +1000 (Wed, 07 Jul 2010) $
  * Version: $Revision: 458 $
- * 
+ *
  * Copyright 2009 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,29 +24,29 @@ import org.w3c.dom.Node;
 
 /**
  * Class representing a RIF-CS description object
- * 
+ *
  * @author Scott Yeadon
  *
  */
 public class TemporalCoverageDate extends RIFCSElement {
     /**
      * Construct a TemporalCoverageDate object
-     * 
-     * @param n 
+     *
+     * @param n
      *        A w3c Node, typically an Element
-     *        
+     *
      * @exception RIFCSException
-     */     
+     */
     protected TemporalCoverageDate(Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_DATE);
     }
 
     /**
      * Set the dateFormat
-     * 
+     *
      * @param dateFormat
      *          The date format
-     */      
+     */
     public void setDateFormat(String dateFormat) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_FORMAT, dateFormat);
     }
@@ -54,7 +54,7 @@ public class TemporalCoverageDate extends RIFCSElement {
 
     /**
      * return the dateFormat
-     * 
+     *
      * @return
      *      The date format value or empty string if attribute
      *      is empty or not present
@@ -62,15 +62,15 @@ public class TemporalCoverageDate extends RIFCSElement {
     public String DateFormat() {
         return super.getAttributeValue(Constants.ATTRIBUTE_DATE_FORMAT);
     }
-    
-    
-    
+
+
+
     /**
      * Set the type
-     * 
-     * @param type 
+     *
+     * @param type
      *          The type of date
-     */      
+     */
     public void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
@@ -78,7 +78,7 @@ public class TemporalCoverageDate extends RIFCSElement {
 
     /**
      * return the type
-     * 
+     *
      * @return
      *      The type attribute value or empty string if attribute
      *      is empty or not present
@@ -90,8 +90,8 @@ public class TemporalCoverageDate extends RIFCSElement {
 
     /**
      * Set the content
-     * 
-     * @param value 
+     *
+     * @param value
      *      The content of the date
      */
     public void setValue(String value) {
@@ -101,21 +101,21 @@ public class TemporalCoverageDate extends RIFCSElement {
 
     /**
      * Set the content
-     * 
-     * @param value 
+     *
+     * @param value
      *      The content of the date
      */
     public void setValue(Date value) {
         super.setTextContent(RegistryObject.formatDate(value));
     }
 
-    
+
     /**
      * Obtain the content
-     * 
-     * @return 
+     *
+     * @return
      *      The description string
-     */  
+     */
     public String getValue() {
         return super.getTextContent();
     }

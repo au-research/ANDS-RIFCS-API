@@ -1,7 +1,7 @@
 /**
  * Date Modified: $Date: 2012-04-04 12:13:39 +1000 (Wed, 04 Apr 2012) $
  * Version: $Revision: 1695 $
- * 
+ *
  * Copyright 2008 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -31,9 +31,9 @@ import org.xml.sax.SAXException;
 public class SampleRIFCSBuildCollection {
 
 	private static RIFCS rifcs = null;
-	
+
     public SampleRIFCSBuildCollection() {
-    
+
     }
 
     public static void main(String[] args) throws RIFCSException, FileNotFoundException, SAXException, ParserConfigurationException, IOException {
@@ -55,7 +55,7 @@ public class SampleRIFCSBuildCollection {
         right.setAccessRights("Access Right Value2", "Access Rights Uri2", "Access Right Type2");
         right.setLicence("Licence Value2", "Licence Uri2", "Licence Type2");
         right.setRightsStatement("Right Statement Value2", "Right Statement Uri2");
-        c.addRight(right);      
+        c.addRight(right);
         Name n = c.newName();
         n.setType("primary");
         NamePart np = n.newNamePart();

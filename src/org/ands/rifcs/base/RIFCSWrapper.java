@@ -1,7 +1,7 @@
 /**
  * Date Modified: $Date: 2012-04-04 12:13:39 +1000 (Wed, 04 Apr 2012) $
  * Version: $Revision: 1695 $
- * 
+ *
  * Copyright 2008 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  */
 package org.ands.rifcs.base;
 
@@ -51,26 +51,26 @@ import org.xml.sax.SAXException;
 
 /**
  * Class for wrapping RIFCS documents.
- * 
+ *
  * Because different profiles will have different requirements only a DOM
  * Document object get is currently supported.
- * 
+ *
  * @author Scott Yeadon
  *
  */
 public class RIFCSWrapper {
     private Document doc = null;
     private RIFCS rifcs = null;
-    
-    
+
+
     /**
      * Construct a RIFCS wrapper containing an empty RIFCS document.
      * The RIFCS document will consist only of a RIFCS element with
-     * no attributes set and no sub-elements. Used when creating a 
+     * no attributes set and no sub-elements. Used when creating a
      * new RIFCS document.
-     * 
+     *
      * @exception RIFCSException
-     */     
+     */
     public RIFCSWrapper() throws RIFCSException {
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -85,54 +85,54 @@ public class RIFCSWrapper {
             throw new RIFCSException(pce);
         }
     }
-    
-    
+
+
     /**
      * Construct a RIFCS wrapper for an existing RIFCS document.
-     * 
-     * @param d 
+     *
+     * @param d
      *        A w3c Document representing a RIFCS DOM
-     *        
+     *
      * @exception RIFCSException
      */
     public RIFCSWrapper(Document d) throws RIFCSException {
         this.doc = d;
         rifcs = new RIFCS(d);
     }
-    
-    
+
+
     /**
      * Obtain the DOM document
-     * 
-     * @return 
+     *
+     * @return
      *        A w3c Document representing a RIFCS DOM
      */
     public Document getRIFCSDocument() {
        return this.doc;
     }
-    
-    
+
+
     /**
      * Obtain a RIFCS object
-     * 
-     * @return 
+     *
+     * @return
      *        a RIFCS object representing a RIFCS root element
-     */     
+     */
     public RIFCS getRIFCSObject() {
         return this.rifcs;
     }
-    
-    
+
+
     /**
      * Write a RIFCS document to an output stream
-     * 
-     * @param os 
+     *
+     * @param os
      *        The OutputStream to write the data to
      */
     public void write(OutputStream os) {
         DOMImplementation impl = doc.getImplementation();
         DOMImplementationLS implLS = (DOMImplementationLS) impl.getFeature("LS", "3.0");
-        
+
         LSOutput lso = implLS.createLSOutput();
         lso.setByteStream(os);
         LSSerializer writer = implLS.createLSSerializer();
@@ -140,14 +140,14 @@ public class RIFCSWrapper {
         domConfig.setParameter("format-pretty-print", Boolean.valueOf(true));
         writer.write(doc, lso);
     }
-    
-    
+
+
     /**
      * Output a RIFCS document in string form.
-     * 
-     * @return 
+     *
+     * @return
      *        The RIFCS document in string form or <code>null</code> if an exception occurs
-     */     
+     */
     public String toString() {
         try {
             TransformerFactory factory = TransformerFactory.newInstance();
@@ -170,20 +170,20 @@ public class RIFCSWrapper {
         //writer.getDomConfig().setParameter("xml-declaration", false);
         //return writer.writeToString(doc);
     }
-    
-    
+
+
     /**
      * Validate against the most recent rif-cs schema. The schema is
      * accessed remotely from the production site. If wanting to use a
      * local cached schema use the other validate method.
-     * 
+     *
      * @exception SAXException
      *      if document is invalid
      * @exception MalformedURLException
      *      if schema URL is invalid
      * @exception IOException
      *      if URL stream cannot be accessed
-     */     
+     */
     public void validate() throws SAXException, MalformedURLException, IOException, ParserConfigurationException {
         // create a SchemaFactory capable of understanding WXS schemas
         SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
@@ -215,22 +215,22 @@ public class RIFCSWrapper {
         xmlImport.setAttribute("schemaLocation", "http://www.w3.org/2001/xml.xsd");
         Element root = docRO.getDocumentElement();
         root.insertBefore(xmlImport, root.getElementsByTagName("xsd:element").item(0));
-        
+
         removeElements(docActivity, "xsd:include");
         removeElements(docCollection, "xsd:include");
         removeElements(docParty, "xsd:include");
         removeElements(docService, "xsd:include");
         removeElements(docTypes, "xsd:import");
-        
+
         addToSchema(docRO, docActivity);
         addToSchema(docRO, docCollection);
         addToSchema(docRO, docParty);
         addToSchema(docRO, docService);
         addToSchema(docRO, docTypes);
-                
+
         return new DOMSource(docRO);
     }
-    
+
 
     // Only to be called from Xerces workaround
     private void removeElements(Document targetDoc,
@@ -244,13 +244,13 @@ public class RIFCSWrapper {
         for (int i = 0; i < nl.getLength(); i++) {
             n[i] = nl.item(i);
         }
-        
+
         for (int i = 0; i < n.length; i++) {
             targetDoc.getDocumentElement().removeChild(n[i]);
-        }        
+        }
     }
-    
-    
+
+
     // Only to be called from Xerces workaround
     private void addToSchema(Document targetDoc,
                              Document sourceDoc) {
@@ -258,26 +258,26 @@ public class RIFCSWrapper {
         for (int i = 0; i < nl.getLength(); i++) {
             Node n = targetDoc.importNode(nl.item(i), true);
             targetDoc.getDocumentElement().appendChild(n);
-        }                
+        }
     }
-    
-    
+
+
     /**
      * Validate against the user-provided in schema. Note that Xerces
      * cannot handle schema include directives where the fragments are
      * in the same namespace so a single schema file will need to be
      * provided in these cases.
-     * 
+     *
      * @param schemaUrl
      *          the URL of a schema to validate the RIF-CS document against
-     *          
+     *
      * @exception SAXException
      *      if document is invalid
      * @exception MalformedURLException
      *      if schema URL is invalid
      * @exception IOException
      *      if URL stream cannot be accessed
-     */     
+     */
     public void validate(String schemaUrl) throws SAXException, MalformedURLException, IOException {
         // create a SchemaFactory capable of understanding WXS schemas
         SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);

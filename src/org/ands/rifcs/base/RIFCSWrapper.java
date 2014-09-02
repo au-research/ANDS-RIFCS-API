@@ -107,7 +107,7 @@ public class RIFCSWrapper {
      * @return
      *        A w3c Document representing a RIFCS DOM
      */
-    public Document getRIFCSDocument() {
+    public final Document getRIFCSDocument() {
        return this.doc;
     }
 
@@ -118,7 +118,7 @@ public class RIFCSWrapper {
      * @return
      *        a RIFCS object representing a RIFCS root element
      */
-    public RIFCS getRIFCSObject() {
+    public final RIFCS getRIFCSObject() {
         return this.rifcs;
     }
 
@@ -129,7 +129,7 @@ public class RIFCSWrapper {
      * @param os
      *        The OutputStream to write the data to
      */
-    public void write(OutputStream os) {
+    public final void write(OutputStream os) {
         DOMImplementation impl = doc.getImplementation();
         DOMImplementationLS implLS = (DOMImplementationLS) impl.getFeature("LS", "3.0");
 
@@ -148,7 +148,7 @@ public class RIFCSWrapper {
      * @return
      *        The RIFCS document in string form or <code>null</code> if an exception occurs
      */
-    public String toString() {
+    public final String toString() {
         try {
             TransformerFactory factory = TransformerFactory.newInstance();
             Transformer transformer = factory.newTransformer();
@@ -184,7 +184,7 @@ public class RIFCSWrapper {
      * @exception IOException
      *      if URL stream cannot be accessed
      */
-    public void validate() throws SAXException, MalformedURLException, IOException, ParserConfigurationException {
+    public final void validate() throws SAXException, MalformedURLException, IOException, ParserConfigurationException {
         // create a SchemaFactory capable of understanding WXS schemas
         SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 
@@ -278,7 +278,7 @@ public class RIFCSWrapper {
      * @exception IOException
      *      if URL stream cannot be accessed
      */
-    public void validate(String schemaUrl) throws SAXException, MalformedURLException, IOException {
+    public final void validate(String schemaUrl) throws SAXException, MalformedURLException, IOException {
         // create a SchemaFactory capable of understanding WXS schemas
         SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 

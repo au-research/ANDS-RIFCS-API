@@ -54,7 +54,7 @@ public class Electronic extends RIFCSElement {
      * @param type
      *      The electronic address type
      */
-    public void setType(String type) {
+    public final void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -66,7 +66,7 @@ public class Electronic extends RIFCSElement {
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-    public String getType() {
+    public final String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
 
@@ -83,7 +83,7 @@ public class Electronic extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Arg newArg() throws RIFCSException {
+    public final Arg newArg() throws RIFCSException {
         return new Arg(this.newElement(Constants.ELEMENT_ARG));
     }
 
@@ -100,7 +100,7 @@ public class Electronic extends RIFCSElement {
      * @param use
      *    the argument use
      */
-    public void addArg(String name,
+    public final void addArg(String name,
                        String required,
                        String type,
                        String use) throws RIFCSException {
@@ -119,7 +119,7 @@ public class Electronic extends RIFCSElement {
      * @return
      *      A list of Arg objects
      */
-    public List<Arg> getArgs() {
+    public final List<Arg> getArgs() {
         return args;
     }
 
@@ -130,7 +130,7 @@ public class Electronic extends RIFCSElement {
      * @param arg
      *    a completed Arg object
      */
-    public void addArg(Arg arg) {
+    public final void addArg(Arg arg) {
        this.getElement().appendChild(arg.getElement());
        this.args.add(arg);
     }
@@ -143,7 +143,7 @@ public class Electronic extends RIFCSElement {
      *    a resolvable URI representing the electronic address
      *    of the containing registry object
      */
-    public void setValue(String valueUri) {
+    public final void setValue(String valueUri) {
         Element value = this.newElement(Constants.ELEMENT_VALUE);
         value.setTextContent(valueUri);
         this.getElement().appendChild(value);
@@ -157,7 +157,7 @@ public class Electronic extends RIFCSElement {
      *    a resolvable URI representing the electronic address
      *    of the containing registry object
      */
-    public String getValue() {
+    public final String getValue() {
         NodeList nl = super.getElements(Constants.ELEMENT_VALUE);
         if (nl.getLength() == 1) {
             return nl.item(0).getTextContent();

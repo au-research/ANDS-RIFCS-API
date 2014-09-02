@@ -62,7 +62,7 @@ public class Coverage extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Spatial newSpatial() throws RIFCSException {
+    public final Spatial newSpatial() throws RIFCSException {
         return new Spatial(this.newElement(Constants.ELEMENT_SPATIAL));
     }
 
@@ -73,7 +73,7 @@ public class Coverage extends RIFCSElement {
      * @param spatial
      *    a completed Spatial object
      */
-    public void addSpatial(Spatial spatial) {
+    public final void addSpatial(Spatial spatial) {
         this.getElement().appendChild(spatial.getElement());
         this.spatials.add(spatial);
     }
@@ -85,7 +85,7 @@ public class Coverage extends RIFCSElement {
      * @return
      *      A list of Spatial objects
      */
-    public List<Spatial> getSpatials() {
+    public final List<Spatial> getSpatials() {
         return this.spatials;
     }
 
@@ -102,7 +102,7 @@ public class Coverage extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Temporal newTemporal() throws RIFCSException {
+    public final Temporal newTemporal() throws RIFCSException {
         return new Temporal(this.newElement(Constants.ELEMENT_TEMPORAL));
     }
 
@@ -113,7 +113,7 @@ public class Coverage extends RIFCSElement {
      * @param temporal
      *    a completed Temporal object
      */
-    public void addTemporal(Temporal temporal) {
+    public final void addTemporal(Temporal temporal) {
         this.getElement().appendChild(temporal.getElement());
         this.temporals.add(temporal);
     }
@@ -127,7 +127,7 @@ public class Coverage extends RIFCSElement {
      *      The value to add to the text element
      *
      */
-    public void addTemporal(String text) throws RIFCSException {
+    public final void addTemporal(String text) throws RIFCSException {
         Temporal t = newTemporal();
         t.addText(text);
         this.getElement().appendChild(t.getElement());
@@ -145,7 +145,7 @@ public class Coverage extends RIFCSElement {
      *      The type of date
      *
      */
-    public void addTemporalDate(Date date,
+    public final void addTemporalDate(Date date,
                                 String type) throws RIFCSException {
         Temporal t = newTemporal();
         t.addDate(date, type);
@@ -164,7 +164,7 @@ public class Coverage extends RIFCSElement {
      *      The type of date
      *
      */
-    public void addTemporalDate(String date,
+    public final void addTemporalDate(String date,
                                 String type) throws RIFCSException {
         Temporal t = newTemporal();
         t.addDate(date, type);
@@ -179,7 +179,7 @@ public class Coverage extends RIFCSElement {
      * @return
      *      A list of Temporal objects
      */
-    public List<Temporal> getTemporals() {
+    public final List<Temporal> getTemporals() {
         return this.temporals;
     }
 

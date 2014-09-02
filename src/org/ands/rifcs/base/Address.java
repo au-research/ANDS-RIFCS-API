@@ -61,7 +61,7 @@ public class Address extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Electronic newElectronic() throws RIFCSException {
+    public final Electronic newElectronic() throws RIFCSException {
         return new Electronic(this.newElement(Constants.ELEMENT_ELECTRONIC));
     }
 
@@ -72,7 +72,7 @@ public class Address extends RIFCSElement {
      * @param electronic
      *    an ElectronicAddress object
      */
-    public void addElectronic(Electronic electronic) {
+    public final void addElectronic(Electronic electronic) {
         this.getElement().appendChild(electronic.getElement());
         this.electronics.add(electronic);
     }
@@ -84,7 +84,7 @@ public class Address extends RIFCSElement {
      * @return
      *      A list of all electronic addresses within this address.
      */
-    public List<Electronic> getElectronics() {
+    public final List<Electronic> getElectronics() {
         return this.electronics;
     }
 
@@ -101,7 +101,7 @@ public class Address extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Physical newPhysical() throws RIFCSException {
+    public final Physical newPhysical() throws RIFCSException {
         return new Physical(this.newElement(Constants.ELEMENT_PHYSICAL));
     }
 
@@ -112,7 +112,7 @@ public class Address extends RIFCSElement {
      * @param physical
      *    a PhysicalAddress object
      */
-    public void addPhysical(Physical physical) {
+    public final void addPhysical(Physical physical) {
         if (this.physicals == null) {
             this.physicals = new ArrayList<Physical>();
         }
@@ -128,7 +128,7 @@ public class Address extends RIFCSElement {
      * @return
      *      A list of all physical addresses within this address.
      */
-    public List<Physical> getPhysicalAddresses() {
+    public final List<Physical> getPhysicalAddresses() {
         return this.physicals;
     }
 

@@ -46,7 +46,7 @@ public class Arg extends RIFCSElement {
      * @param type
      *          The type of argument
      */
-    public void setType(String type) {
+    public final void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -58,7 +58,7 @@ public class Arg extends RIFCSElement {
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-    public String getType() {
+    public final String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
 
@@ -69,7 +69,7 @@ public class Arg extends RIFCSElement {
      * @param required
      *      <code>true</code> or <code>false</code>
      */
-    public void setRequired(String required) {
+    public final void setRequired(String required) {
         super.setAttributeValue(Constants.ATTRIBUTE_REQUIRED, required);
     }
 
@@ -81,7 +81,7 @@ public class Arg extends RIFCSElement {
      *  The attribute value or empty string if attribute
      *  is empty or not present
      */
-    public String getRequired() {
+    public final String getRequired() {
         return super.getAttributeValue(Constants.ATTRIBUTE_REQUIRED);
     }
 
@@ -92,7 +92,7 @@ public class Arg extends RIFCSElement {
      * @param use
      *          term indicating the use of the argument
      */
-    public void setUse(String use) {
+    public final void setUse(String use) {
         super.setAttributeValue(Constants.ATTRIBUTE_USE, use);
     }
 
@@ -104,7 +104,7 @@ public class Arg extends RIFCSElement {
      *  The attribute value or empty string if attribute
      *  is empty or not present
      */
-    public String getUse() {
+    public final String getUse() {
         return super.getAttributeValue(Constants.ATTRIBUTE_USE);
     }
 
@@ -115,7 +115,7 @@ public class Arg extends RIFCSElement {
      * @param name
      *      The argument name
      */
-    public void setName(String name) {
+    public final void setName(String name) {
         super.setTextContent(name);
     }
 
@@ -126,7 +126,7 @@ public class Arg extends RIFCSElement {
      * @return
      *      The name or empty string if not set
      */
-    public String getName() {
+    public final String getName() {
         return super.getTextContent();
     }
 }

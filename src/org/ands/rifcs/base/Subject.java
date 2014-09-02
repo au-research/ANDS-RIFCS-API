@@ -46,7 +46,7 @@ public class Subject extends RIFCSElement {
      * @param type
      *          The type of subject
      */
-    public void setType(String type) {
+    public final void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -58,7 +58,7 @@ public class Subject extends RIFCSElement {
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-   public String getType() {
+   public final String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
 
@@ -68,7 +68,7 @@ public class Subject extends RIFCSElement {
     * @param termIdentifier
     *          The termIdentifier of subject
     */
-   public void setTermIdentifier(String termIdentifier) {
+   public final void setTermIdentifier(String termIdentifier) {
        super.setAttributeValue(Constants.ATTRIBUTE_TERM_IDENTIFIER, termIdentifier);
    }
 
@@ -80,7 +80,7 @@ public class Subject extends RIFCSElement {
     *      The termIdentifier attribute value or empty string if attribute
     *      is empty or not present
     */
-  public String getTermIdentifier() {
+  public final String getTermIdentifier() {
        return super.getAttributeValue(Constants.ATTRIBUTE_TERM_IDENTIFIER);
    }
 
@@ -91,7 +91,7 @@ public class Subject extends RIFCSElement {
     * @param lang
     *      The xml:lang attribute value
     */
-    public void setLanguage(String lang) {
+    public final void setLanguage(String lang) {
         super.setAttributeValueNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG, lang);
     }
 
@@ -103,7 +103,7 @@ public class Subject extends RIFCSElement {
      *      The language or empty string if attribute
      *      is empty or not present
      */
-    public String getLanguage() {
+    public final String getLanguage() {
         return super.getAttributeValueNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG);
     }
 
@@ -114,7 +114,7 @@ public class Subject extends RIFCSElement {
      * @param value
      *      The content of the subject
      */
-    public void setValue(String value) {
+    public final void setValue(String value) {
         super.setTextContent(value);
     }
 
@@ -125,7 +125,7 @@ public class Subject extends RIFCSElement {
      * @return
      *      The subject string
      */
-    public String getValue() {
+    public final String getValue() {
         return super.getTextContent();
     }
 }

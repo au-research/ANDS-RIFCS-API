@@ -62,7 +62,7 @@ public class Collection extends RIFCSElement {
      * @param type
      *            The type of collection being described
      */
-    public void setType(String type) {
+    public final void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -72,7 +72,7 @@ public class Collection extends RIFCSElement {
      * @return The type attribute value or empty string if attribute is empty or
      *         not present
      */
-    public String getType() {
+    public final String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
 
@@ -84,7 +84,7 @@ public class Collection extends RIFCSElement {
      *            A date object representing the date the collection metadata
      *            was recorded in the catalog system
      */
-    public void setDateAccessioned(Date date) {
+    public final void setDateAccessioned(Date date) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_ACCESSIONED, RegistryObject.formatDate(date));
     }
 
@@ -97,7 +97,7 @@ public class Collection extends RIFCSElement {
      *            3.2.7 of the <a href="http://www.w3.org/TR/xmlschema-2/">W3C's
      *            Schema Data Types document</a>
      */
-    public void setDateAccessioned(String date) {
+    public final void setDateAccessioned(String date) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_ACCESSIONED, date);
     }
 
@@ -107,7 +107,7 @@ public class Collection extends RIFCSElement {
      * @return The dateAccessioned attribute value or empty string if attribute
      *         is empty or not present
      */
-    public String getDateAccessioned() {
+    public final String getDateAccessioned() {
         return super.getAttributeValue(Constants.ATTRIBUTE_DATE_ACCESSIONED);
     }
 
@@ -118,7 +118,7 @@ public class Collection extends RIFCSElement {
      *            A date object representing the date the collection metadata
      *            was last modified
      */
-    public void setDateModified(Date date) {
+    public final void setDateModified(Date date) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_MODIFIED, RegistryObject.formatDate(date));
     }
 
@@ -130,7 +130,7 @@ public class Collection extends RIFCSElement {
      *            3.2.7 of the <a href="http://www.w3.org/TR/xmlschema-2/">W3C's
      *            Schema Data Types document</a>
      */
-    public void setDateModified(String date) {
+    public final void setDateModified(String date) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_MODIFIED, date);
     }
 
@@ -140,7 +140,7 @@ public class Collection extends RIFCSElement {
      * @return The dateModified attribute value or empty string if attribute is
      *         empty or not present
      */
-    public String getDateModified() {
+    public final String getDateModified() {
         return super.getAttributeValue(Constants.ATTRIBUTE_DATE_MODIFIED);
     }
 
@@ -156,7 +156,7 @@ public class Collection extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Identifier newIdentifier() throws RIFCSException {
+    public final Identifier newIdentifier() throws RIFCSException {
         return new Identifier(this.newElement(Constants.ELEMENT_IDENTIFIER));
     }
 
@@ -166,7 +166,7 @@ public class Collection extends RIFCSElement {
      * @param identifier
      *            an Identifier object
      */
-    public void addIdentifier(Identifier identifier) {
+    public final void addIdentifier(Identifier identifier) {
         this.getElement().appendChild(identifier.getElement());
         this.identifiers.add(identifier);
     }
@@ -182,7 +182,7 @@ public class Collection extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public void addIdentifier(String identifier, String type) throws RIFCSException {
+    public final void addIdentifier(String identifier, String type) throws RIFCSException {
         Identifier i = newIdentifier();
         i.setType(type);
         i.setValue(identifier);
@@ -195,7 +195,7 @@ public class Collection extends RIFCSElement {
      *
      * @return A list of Identifier objects
      */
-    public List<Identifier> getIdentifiers() {
+    public final List<Identifier> getIdentifiers() {
         return identifiers;
     }
 
@@ -211,7 +211,7 @@ public class Collection extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Name newName() throws RIFCSException {
+    public final Name newName() throws RIFCSException {
         return new Name(this.newElement(Constants.ELEMENT_NAME));
     }
 
@@ -221,7 +221,7 @@ public class Collection extends RIFCSElement {
      * @param name
      *            a Name object
      */
-    public void addName(Name name) {
+    public final void addName(Name name) {
         this.getElement().appendChild(name.getElement());
         this.names.add(name);
     }
@@ -231,7 +231,7 @@ public class Collection extends RIFCSElement {
      *
      * @return A list of Name objects
      */
-    public List<Name> getNames() {
+    public final List<Name> getNames() {
         return names;
     }
 
@@ -247,7 +247,7 @@ public class Collection extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Location newLocation() throws RIFCSException {
+    public final Location newLocation() throws RIFCSException {
         return new Location(this.newElement(Constants.ELEMENT_LOCATION));
     }
 
@@ -257,7 +257,7 @@ public class Collection extends RIFCSElement {
      * @param location
      *            a Location object
      */
-    public void addLocation(Location location) {
+    public final void addLocation(Location location) {
         this.getElement().appendChild(location.getElement());
         this.locations.add(location);
     }
@@ -267,7 +267,7 @@ public class Collection extends RIFCSElement {
      *
      * @return A list of Location objects
      */
-    public List<Location> getLocations() {
+    public final List<Location> getLocations() {
         return locations;
     }
 
@@ -283,7 +283,7 @@ public class Collection extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Coverage newCoverage() throws RIFCSException {
+    public final Coverage newCoverage() throws RIFCSException {
         return new Coverage(this.newElement(Constants.ELEMENT_COVERAGE));
     }
 
@@ -293,7 +293,7 @@ public class Collection extends RIFCSElement {
      * @param coverage
      *            a Coverage object
      */
-    public void addCoverage(Coverage coverage) {
+    public final void addCoverage(Coverage coverage) {
         this.getElement().appendChild(coverage.getElement());
         this.coverages.add(coverage);
     }
@@ -303,7 +303,7 @@ public class Collection extends RIFCSElement {
      *
      * @return A list of coverage objects
      */
-    public List<Coverage> getCoverage() {
+    public final List<Coverage> getCoverage() {
         return coverages;
     }
 
@@ -319,7 +319,7 @@ public class Collection extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public RelatedObject newRelatedObject() throws RIFCSException {
+    public final RelatedObject newRelatedObject() throws RIFCSException {
         return new RelatedObject(this.newElement(Constants.ELEMENT_RELATED_OBJECT));
     }
 
@@ -329,7 +329,7 @@ public class Collection extends RIFCSElement {
      * @param relatedObject
      *            an RelatedObject object
      */
-    public void addRelatedObject(RelatedObject relatedObject) {
+    public final void addRelatedObject(RelatedObject relatedObject) {
         this.getElement().appendChild(relatedObject.getElement());
         this.relatedObjects.add(relatedObject);
     }
@@ -339,7 +339,7 @@ public class Collection extends RIFCSElement {
      *
      * @return A list of RelatedObject objects
      */
-    public List<RelatedObject> getRelatedObjects() {
+    public final List<RelatedObject> getRelatedObjects() {
         return relatedObjects;
     }
 
@@ -355,7 +355,7 @@ public class Collection extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Subject newSubject() throws RIFCSException {
+    public final Subject newSubject() throws RIFCSException {
         return new Subject(this.newElement(Constants.ELEMENT_SUBJECT));
     }
 
@@ -365,7 +365,7 @@ public class Collection extends RIFCSElement {
      * @param subject
      *            a Subject object
      */
-    public void addSubject(Subject subject) {
+    public final void addSubject(Subject subject) {
         this.getElement().appendChild(subject.getElement());
         this.subjects.add(subject);
     }
@@ -382,7 +382,7 @@ public class Collection extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    public void addSubject(String subject, String type, String language) throws RIFCSException {
+    public final void addSubject(String subject, String type, String language) throws RIFCSException {
         Subject s = newSubject();
         s.setType(type);
         s.setValue(subject);
@@ -398,7 +398,7 @@ public class Collection extends RIFCSElement {
      *
      * @return A list of Subject objects
      */
-    public List<Subject> getSubjects() {
+    public final List<Subject> getSubjects() {
         return subjects;
     }
 
@@ -414,7 +414,7 @@ public class Collection extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Description newDescription() throws RIFCSException {
+    public final Description newDescription() throws RIFCSException {
         return new Description(this.newElement(Constants.ELEMENT_DESCRIPTION));
     }
 
@@ -424,7 +424,7 @@ public class Collection extends RIFCSElement {
      * @param description
      *            a Description object
      */
-    public void addDescription(Description description) {
+    public final void addDescription(Description description) {
         this.getElement().appendChild(description.getElement());
         this.descriptions.add(description);
     }
@@ -441,7 +441,7 @@ public class Collection extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    public void addDescription(String description, String type, String language) throws RIFCSException {
+    public final void addDescription(String description, String type, String language) throws RIFCSException {
         Description d = newDescription();
         d.setType(type);
         d.setValue(description);
@@ -457,11 +457,11 @@ public class Collection extends RIFCSElement {
      *
      * @return A list of Description objects
      */
-    public List<Description> getDescriptions() {
+    public final List<Description> getDescriptions() {
         return descriptions;
     }
 
-    public Right newRight() {
+    public final Right newRight() {
         Right right = null;
         try {
             right = new Right(this.newElement(Constants.ELEMENT_RIGHTS));
@@ -478,7 +478,7 @@ public class Collection extends RIFCSElement {
      * @param right
      *            a Rights object
      */
-    public void addRight(Right right) {
+    public final void addRight(Right right) {
         this.getElement().appendChild(right.getElement());
         this.rightsList.add(right);
     }
@@ -489,7 +489,7 @@ public class Collection extends RIFCSElement {
      *
      * @return A list of Rights objects
      */
-    public List<Right> getRightsList() {
+    public final List<Right> getRightsList() {
         return rightsList;
     }
 
@@ -505,7 +505,7 @@ public class Collection extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public RelatedInfo newRelatedInfo() throws RIFCSException {
+    public final RelatedInfo newRelatedInfo() throws RIFCSException {
         return new RelatedInfo(this.newElement(Constants.ELEMENT_RELATED_INFO));
     }
 
@@ -515,7 +515,7 @@ public class Collection extends RIFCSElement {
      * @param relatedInfo
      *            a relatedInfo object
      */
-    public void addRelatedInfo(RelatedInfo relatedInfo) {
+    public final void addRelatedInfo(RelatedInfo relatedInfo) {
         this.getElement().appendChild(relatedInfo.getElement());
         this.ris.add(relatedInfo);
     }
@@ -534,7 +534,7 @@ public class Collection extends RIFCSElement {
      *             related info element.
      */
     @Deprecated
-    public void addRelatedInfo(String relatedInfoURI) throws RIFCSException {
+    public final void addRelatedInfo(String relatedInfoURI) throws RIFCSException {
         RelatedInfo ri = newRelatedInfo();
         ri.setIdentifier(relatedInfoURI, "uri");
         this.getElement().appendChild(ri.getElement());
@@ -546,20 +546,20 @@ public class Collection extends RIFCSElement {
      *
      * @return A list of RelatedInfo objects
      */
-    public List<RelatedInfo> getRelatedInfo() {
+    public final List<RelatedInfo> getRelatedInfo() {
         return ris;
     }
 
-    public CitationInfo newCitationInfo() throws RIFCSException {
+    public final CitationInfo newCitationInfo() throws RIFCSException {
         return new CitationInfo(this.newElement(Constants.ELEMENT_CITATIONINFO));
     }
 
-    public void addCitationInfo(CitationInfo citationInfo) {
+    public final void addCitationInfo(CitationInfo citationInfo) {
         this.getElement().appendChild(citationInfo.getElement());
         this.cis.add(citationInfo);
     }
 
-    public List<CitationInfo> getCitationInfos() {
+    public final List<CitationInfo> getCitationInfos() {
         return this.cis;
     }
 

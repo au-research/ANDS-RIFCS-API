@@ -48,7 +48,7 @@ public class Relation extends RIFCSElement {
      * @param type
      *          The type of relation being described
      */
-    public void setType(String type) {
+    public final void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -60,7 +60,7 @@ public class Relation extends RIFCSElement {
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-    public String getType() {
+    public final String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
 
@@ -71,7 +71,7 @@ public class Relation extends RIFCSElement {
      * @param descValue
      *      A plain text description of the relation
      */
-    public void setDescription(String descValue) {
+    public final void setDescription(String descValue) {
         Element desc = this.newElement(Constants.ELEMENT_DESCRIPTION);
         desc.setTextContent(descValue);
         this.getElement().appendChild(desc);
@@ -84,7 +84,7 @@ public class Relation extends RIFCSElement {
      * @return
      *      The relation description
      */
-    public String getDescription() {
+    public final String getDescription() {
         NodeList nl = super.getElements(Constants.ELEMENT_DESCRIPTION);
         if (nl.getLength() == 1) {
             return nl.item(0).getTextContent();
@@ -100,7 +100,7 @@ public class Relation extends RIFCSElement {
      * @param lang
      *      The xml:lang attribute value
      */
-    public void setDescriptionLanguage(String lang) {
+    public final void setDescriptionLanguage(String lang) {
         NodeList nl = super.getElements(Constants.ELEMENT_DESCRIPTION);
         if (nl.getLength() == 1) {
             ((Element) nl.item(0)).setAttributeNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG, lang);
@@ -115,7 +115,7 @@ public class Relation extends RIFCSElement {
      *      The language value or empty string if attribute
      *      is empty or null if not present
      */
-    public String getDescriptionLanguage() {
+    public final String getDescriptionLanguage() {
         NodeList nl = super.getElements(Constants.ELEMENT_DESCRIPTION);
         if (nl.getLength() == 1) {
             return ((Element) nl.item(0)).getAttributeNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG);
@@ -132,7 +132,7 @@ public class Relation extends RIFCSElement {
      *      A URL expressing or implementing the relationship
      *      between registry objects
      */
-    public void setURL(String urlValue) {
+    public final void setURL(String urlValue) {
         Element url = this.newElement(Constants.ELEMENT_URL);
         url.setTextContent(urlValue);
         this.getElement().appendChild(url);
@@ -146,7 +146,7 @@ public class Relation extends RIFCSElement {
      *      The URL expressing or implementing the relationship
      *      between registry objects or null if not present
      */
-    public String getURL() {
+    public final String getURL() {
         NodeList nl = super.getElements(Constants.ELEMENT_URL);
         if (nl.getLength() == 1) {
             return nl.item(0).getTextContent();

@@ -79,7 +79,7 @@ public class RIFCS {
      * @exception RIFCSException
      *
      */
-    public RegistryObject newRegistryObject() throws RIFCSException {
+    public final RegistryObject newRegistryObject() throws RIFCSException {
         Element ro = doc.createElementNS(Constants.NS_RIFCS, Constants.ELEMENT_REGISTRY_OBJECT);
         return new RegistryObject(ro);
     }
@@ -105,7 +105,7 @@ public class RIFCS {
      *
      * @return A w3c Document representing the RIF-CS DOM
      */
-    public Document getDocument() {
+    public final Document getDocument() {
        return this.doc;
     }
 
@@ -116,7 +116,7 @@ public class RIFCS {
      * @return A List of RegistryObject objects, all of which are collections.
      *        Empty List if no collections exist.
      */
-    public List<RegistryObject> getCollections() {
+    public final List<RegistryObject> getCollections() {
         return rosByClass.get(Constants.ELEMENT_COLLECTION);
     }
 
@@ -127,7 +127,7 @@ public class RIFCS {
      * @return A List of RegistryObject objects, all of which are activities.
      *        Empty List if no activities exist.
      */
-    public List<RegistryObject> getActivities() {
+    public final List<RegistryObject> getActivities() {
         return rosByClass.get(Constants.ELEMENT_ACTIVITY);
     }
 
@@ -138,7 +138,7 @@ public class RIFCS {
      * @return A List of RegistryObject objects, all of which are parties.
      *        Empty List if no parties exist.
      */
-    public List<RegistryObject> getParties() {
+    public final List<RegistryObject> getParties() {
         return rosByClass.get(Constants.ELEMENT_PARTY);
     }
 
@@ -150,7 +150,7 @@ public class RIFCS {
      *        A List of RegistryObject objects, all of which are services.
      *        Empty List if no services exist.
      */
-    public List<RegistryObject> getServices() {
+    public final List<RegistryObject> getServices() {
         return rosByClass.get(Constants.ELEMENT_SERVICE);
     }
 
@@ -161,7 +161,7 @@ public class RIFCS {
      * @return A Map of RegistryObject objects or empty Map if none exist. The
      *        Map key is the content of the RegistryObject "key" element.
      */
-    public Map<String, RegistryObject> getRegistryObjects() {
+    public final Map<String, RegistryObject> getRegistryObjects() {
         return ros;
     }
 
@@ -172,7 +172,7 @@ public class RIFCS {
      * @param r
      *    A RegistryObject
      */
-    public void addRegistryObject(RegistryObject r) throws RIFCSException {
+    public final void addRegistryObject(RegistryObject r) throws RIFCSException {
         doc.getDocumentElement().appendChild(r.getElement());
         ros.put(r.getKey(), r);
         rosByClass.get(r.getObjectClassName()).add(r);

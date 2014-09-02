@@ -48,7 +48,7 @@ public class CommonDateElement extends RIFCSElement {
      * @param type
      *          The type of date
      */
-    public void setDateFormat(String type) {
+    public final void setDateFormat(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_FORMAT, type);
     }
 
@@ -60,7 +60,7 @@ public class CommonDateElement extends RIFCSElement {
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-    public String getDateFormat() {
+    public final String getDateFormat() {
         return super.getAttributeValue(Constants.ATTRIBUTE_DATE_FORMAT);
     }
 
@@ -71,7 +71,7 @@ public class CommonDateElement extends RIFCSElement {
      * @param value
      *      The content of the date
      */
-    public void setValue(String value) {
+    public final void setValue(String value) {
         super.setTextContent(value);
     }
 
@@ -82,7 +82,7 @@ public class CommonDateElement extends RIFCSElement {
      * @param value
      *      The content of the date
      */
-    public void setValue(Date value) {
+    public final void setValue(Date value) {
         super.setTextContent(RegistryObject.formatDate(value));
     }
 
@@ -93,7 +93,7 @@ public class CommonDateElement extends RIFCSElement {
      * @return
      *      The description string
      */
-    public String getValue() {
+    public final String getValue() {
         return super.getTextContent();
     }
 }

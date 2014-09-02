@@ -46,7 +46,7 @@ public class Identifier extends RIFCSElement {
      * @param type
      *      The location type
      */
-    public void setType(String type) {
+    public final void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -58,7 +58,7 @@ public class Identifier extends RIFCSElement {
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-    public String getType() {
+    public final String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
 
@@ -69,7 +69,7 @@ public class Identifier extends RIFCSElement {
      * @param value
      *      The content of the identifier
      */
-    public void setValue(String value) {
+    public final void setValue(String value) {
         super.setTextContent(value);
     }
 
@@ -80,7 +80,7 @@ public class Identifier extends RIFCSElement {
      * @return
      *      The identifier string
      */
-    public String getValue() {
+    public final String getValue() {
         return super.getTextContent();
     }
 }

@@ -53,7 +53,7 @@ public class Physical extends RIFCSElement {
      * @param type
      *          The type of physical address
      */
-    public void setType(String type) {
+    public final void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -65,7 +65,7 @@ public class Physical extends RIFCSElement {
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-   public String getType() {
+   public final String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
 
@@ -76,7 +76,7 @@ public class Physical extends RIFCSElement {
     * @param lang
     *      The xml:lang attribute value
     */
-    public void setLanguage(String lang) {
+    public final void setLanguage(String lang) {
         super.setAttributeValueNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG, lang);
     }
 
@@ -88,7 +88,7 @@ public class Physical extends RIFCSElement {
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-    public String getLanguage() {
+    public final String getLanguage() {
         return super.getAttributeValueNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG);
     }
 
@@ -105,7 +105,7 @@ public class Physical extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public AddressPart newAddressPart() throws RIFCSException {
+    public final AddressPart newAddressPart() throws RIFCSException {
         return new AddressPart(this.newElement(Constants.ELEMENT_ADDRESSPART));
     }
 
@@ -116,7 +116,7 @@ public class Physical extends RIFCSElement {
      * @param addressPart
      *    a completed AddressPart object
      */
-    public void addAddressPart(AddressPart addressPart) {
+    public final void addAddressPart(AddressPart addressPart) {
         /*if (addressParts == null)
         {
             addressParts = new ArrayList<AddressPart>();
@@ -133,7 +133,7 @@ public class Physical extends RIFCSElement {
      * @return
      *      A list of AddressPart objects
      */
-    public List<AddressPart> getAddressParts() {
+    public final List<AddressPart> getAddressParts() {
         return addressParts;
     }
 

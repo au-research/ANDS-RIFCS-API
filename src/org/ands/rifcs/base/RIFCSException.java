@@ -67,7 +67,7 @@ public class RIFCSException extends Exception {
      * @return
      *          The message text of the exception
      */
-    public String getMessage() {
+    public final String getMessage() {
         return super.getMessage();
     }
 }

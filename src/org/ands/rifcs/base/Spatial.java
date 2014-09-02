@@ -46,7 +46,7 @@ public class Spatial extends RIFCSElement {
      * @param type
      *          The type of spatial information
      */
-    public void setType(String type) {
+    public final void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -58,7 +58,7 @@ public class Spatial extends RIFCSElement {
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-   public String getType() {
+   public final String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
 
@@ -69,7 +69,7 @@ public class Spatial extends RIFCSElement {
     * @param lang
     *      The xml:lang attribute value
     */
-    public void setLanguage(String lang) {
+    public final void setLanguage(String lang) {
         super.setAttributeValueNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG, lang);
     }
 
@@ -81,7 +81,7 @@ public class Spatial extends RIFCSElement {
      *      The language or empty string if attribute
      *      is empty or not present
      */
-    public String getLanguage() {
+    public final String getLanguage() {
         return super.getAttributeValueNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG);
     }
 
@@ -92,7 +92,7 @@ public class Spatial extends RIFCSElement {
      * @param value
      *      The spatial value
      */
-    public void setValue(String value) {
+    public final void setValue(String value) {
         super.setTextContent(value);
     }
 
@@ -103,7 +103,7 @@ public class Spatial extends RIFCSElement {
      * @return
      *      The spatial
      */
-    public String getValue() {
+    public final String getValue() {
         return super.getTextContent();
     }
 

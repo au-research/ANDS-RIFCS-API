@@ -62,7 +62,7 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
      * @param aLocator
      *        The Locator object used to track the parsing location
      */
-    public void setDocumentLocator(Locator aLocator) {
+    public final void setDocumentLocator(Locator aLocator) {
         this.locator = aLocator;
     }
 
@@ -73,7 +73,7 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
      * @exception SAXException
      *
      */
-    public void startDocument() throws SAXException {
+    public final void startDocument() throws SAXException {
         try {
             doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
         } catch (Exception e) {
@@ -102,7 +102,7 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
      * @exception SAXException
      *
      */
-    public void startElement(String uri,
+    public final void startElement(String uri,
                              String localName,
                              String qName,
                              Attributes attributes) throws SAXException {
@@ -137,7 +137,7 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
      * @exception SAXException
      *
      */
-    public void characters(char[] chars,
+    public final void characters(char[] chars,
                            int start,
                            int length) throws SAXException {
         String s = new String(chars, start, length);
@@ -165,7 +165,7 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
      * @exception SAXException
      *
      */
-    public void skippedEntity(String name) throws SAXException {
+    public final void skippedEntity(String name) throws SAXException {
         String s = "&" + name + ";";
         char[] text = s.toCharArray();
         this.characters(text, 0, text.length);
@@ -187,7 +187,7 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
      * @exception SAXException
      *
      */
-    public void endElement(String uri,
+    public final void endElement(String uri,
                            String localName,
                            String qName) throws SAXException {
         Element e = elements.pop();
@@ -225,7 +225,7 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
      *      The DOM document. May be null if called before parsing and empty
      *      if parsing exception caught.
      */
-    public Document getDocument() {
+    public final Document getDocument() {
         return this.doc;
     }
 }

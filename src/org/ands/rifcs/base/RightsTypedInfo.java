@@ -46,7 +46,7 @@ public class RightsTypedInfo extends RIFCSElement {
      * @param type
      *          The type of rightsTypedInfo
      */
-    public void setType(String type) {
+    public final void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -58,7 +58,7 @@ public class RightsTypedInfo extends RIFCSElement {
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-    public String getType() {
+    public final String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
 
@@ -69,7 +69,7 @@ public class RightsTypedInfo extends RIFCSElement {
      * @param rightsUri
      *          The rightsUri of RightsInfo
      */
-    public void setRightsUri(String rightsUri) {
+    public final void setRightsUri(String rightsUri) {
         super.setAttributeValue(Constants.ATTRIBUTE_RIGHTS_URI, rightsUri);
     }
 
@@ -81,7 +81,7 @@ public class RightsTypedInfo extends RIFCSElement {
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-    public String getRightsUri() {
+    public final String getRightsUri() {
         return super.getAttributeValue(Constants.ATTRIBUTE_RIGHTS_URI);
     }
 
@@ -92,7 +92,7 @@ public class RightsTypedInfo extends RIFCSElement {
      * @param value
      *      The content of the rightsTypedInfo
      */
-    public void setValue(String value) {
+    public final void setValue(String value) {
         super.setTextContent(value);
     }
 
@@ -103,7 +103,7 @@ public class RightsTypedInfo extends RIFCSElement {
      * @return
      *      The rightsTypedInfo string
      */
-    public String getValue() {
+    public final String getValue() {
         return super.getTextContent();
     }
 }

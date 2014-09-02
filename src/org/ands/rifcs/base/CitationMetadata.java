@@ -62,7 +62,7 @@ public class CitationMetadata extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Contributor newContributor() throws RIFCSException {
+    public final Contributor newContributor() throws RIFCSException {
         return new Contributor(this.newElement(Constants.ELEMENT_CONTRIBUTOR));
     }
 
@@ -79,7 +79,7 @@ public class CitationMetadata extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public CitationDate newCitationDate() throws RIFCSException {
+    public final CitationDate newCitationDate() throws RIFCSException {
         return new CitationDate(this.newElement(Constants.ELEMENT_DATE));
     }
 
@@ -96,7 +96,7 @@ public class CitationMetadata extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Identifier newIdentifier() throws RIFCSException {
+    public final Identifier newIdentifier() throws RIFCSException {
         return new Identifier(this.newElement(Constants.ELEMENT_IDENTIFIER));
     }
 
@@ -110,7 +110,7 @@ public class CitationMetadata extends RIFCSElement {
      *      The type of the identifier
      *
      */
-    public void setIdentifier(String anIdentifier,
+    public final void setIdentifier(String anIdentifier,
                               String type) throws RIFCSException {
         this.identifier = this.newIdentifier();
         this.identifier.setValue(anIdentifier);
@@ -126,7 +126,7 @@ public class CitationMetadata extends RIFCSElement {
      *      The identifier of the resource or
      *     <code>null</code> if no identifier is present
      */
-    public Identifier getIdentifier() {
+    public final Identifier getIdentifier() {
         return identifier;
     }
 
@@ -137,7 +137,7 @@ public class CitationMetadata extends RIFCSElement {
      * @param title
      *    The title of the related information resource
      */
-    public void setTitle(String title) {
+    public final void setTitle(String title) {
         Element e = this.newElement(Constants.ELEMENT_TITLE);
         e.setTextContent(title);
         this.getElement().appendChild(e);
@@ -151,7 +151,7 @@ public class CitationMetadata extends RIFCSElement {
      *    The title of the related information resource or
      *    <code>null</code> if no title is present
      */
-    public String getTitle() {
+    public final String getTitle() {
         NodeList nl = super.getElements(Constants.ELEMENT_TITLE);
         if (nl.getLength() == 1) {
             return nl.item(0).getTextContent();
@@ -167,7 +167,7 @@ public class CitationMetadata extends RIFCSElement {
      * @param url
      *    an actionable URL where the resource can be located
      */
-    public void setURL(String url) {
+    public final void setURL(String url) {
         Element value = this.newElement(Constants.ELEMENT_URL);
         value.setTextContent(url);
         this.getElement().appendChild(value);
@@ -180,7 +180,7 @@ public class CitationMetadata extends RIFCSElement {
      * @return String
      *    an actionable URI where the resource can be located
      */
-    public String getURL() {
+    public final String getURL() {
         NodeList nl = super.getElements(Constants.ELEMENT_URL);
         if (nl.getLength() == 1) {
             return nl.item(0).getTextContent();
@@ -196,7 +196,7 @@ public class CitationMetadata extends RIFCSElement {
      * @param edition
      *    the resource edition
      */
-    public void setEdition(String edition) {
+    public final void setEdition(String edition) {
         Element e = this.newElement(Constants.ELEMENT_EDITION);
         e.setTextContent(edition);
         this.getElement().appendChild(e);
@@ -209,7 +209,7 @@ public class CitationMetadata extends RIFCSElement {
      * @return String
      *    the resource edition
      */
-    public String getEdition() {
+    public final String getEdition() {
         NodeList nl = super.getElements(Constants.ELEMENT_EDITION);
         if (nl.getLength() == 1) {
             return nl.item(0).getTextContent();
@@ -224,7 +224,7 @@ public class CitationMetadata extends RIFCSElement {
      * @param publisher
      *    the resource publisher
      */
-    public void setPublisher(String publisher) {
+    public final void setPublisher(String publisher) {
         Element e = this.newElement(Constants.ELEMENT_PUBLISHER);
         e.setTextContent(publisher);
         this.getElement().appendChild(e);
@@ -237,7 +237,7 @@ public class CitationMetadata extends RIFCSElement {
      * @return String
      *    the resource publisher
      */
-    public String getPublisher() {
+    public final String getPublisher() {
         NodeList nl = super.getElements(Constants.ELEMENT_PUBLISHER);
         if (nl.getLength() == 1) {
             return nl.item(0).getTextContent();
@@ -253,7 +253,7 @@ public class CitationMetadata extends RIFCSElement {
      * @param placePublished
      *    the place the resource was published
      */
-    public void setPlacePublished(String placePublished) {
+    public final void setPlacePublished(String placePublished) {
         Element e = this.newElement(Constants.ELEMENT_PLACE_PUBLISHED);
         e.setTextContent(placePublished);
         this.getElement().appendChild(e);
@@ -266,7 +266,7 @@ public class CitationMetadata extends RIFCSElement {
      * @return String
      *    the place the resource was published
      */
-    public String getPlacePublished() {
+    public final String getPlacePublished() {
         NodeList nl = super.getElements(Constants.ELEMENT_PLACE_PUBLISHED);
         if (nl.getLength() == 1) {
             return nl.item(0).getTextContent();
@@ -283,7 +283,7 @@ public class CitationMetadata extends RIFCSElement {
      *    the context of the resource (for example if the resource is
      *    a smaller part of a larger context)
      */
-    public void setContext(String context) {
+    public final void setContext(String context) {
         Element e = this.newElement(Constants.ELEMENT_CONTEXT);
         e.setTextContent(context);
         this.getElement().appendChild(e);
@@ -297,7 +297,7 @@ public class CitationMetadata extends RIFCSElement {
      *    the context of the resource (for example if the resource is
      *    a smaller part of a larger context)
      */
-    public String getContext() {
+    public final String getContext() {
         NodeList nl = super.getElements(Constants.ELEMENT_CONTEXT);
         if (nl.getLength() == 1) {
             return nl.item(0).getTextContent();
@@ -313,7 +313,7 @@ public class CitationMetadata extends RIFCSElement {
      * @param contributor
      *    a Contributor object
      */
-    public void addContributor(Contributor contributor) {
+    public final void addContributor(Contributor contributor) {
         this.getElement().appendChild(contributor.getElement());
         this.names.add(contributor);
     }
@@ -326,7 +326,7 @@ public class CitationMetadata extends RIFCSElement {
      * @return
      *      A list of Contributor objects
      */
-    public List<Contributor> getContributors() {
+    public final List<Contributor> getContributors() {
         return names;
     }
 
@@ -337,7 +337,7 @@ public class CitationMetadata extends RIFCSElement {
      * @param date
      *    a CitationDate object
      */
-    public void addDate(CitationDate date) {
+    public final void addDate(CitationDate date) {
         this.getElement().appendChild(date.getElement());
         this.dates.add(date);
     }
@@ -350,7 +350,7 @@ public class CitationMetadata extends RIFCSElement {
      * @return
      *      A list of Contributor objects
      */
-    public List<CitationDate> getDates() {
+    public final List<CitationDate> getDates() {
         return dates;
     }
 

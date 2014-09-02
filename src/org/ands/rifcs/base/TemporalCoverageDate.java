@@ -47,7 +47,7 @@ public class TemporalCoverageDate extends RIFCSElement {
      * @param dateFormat
      *          The date format
      */
-    public void setDateFormat(String dateFormat) {
+    public final void setDateFormat(String dateFormat) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_FORMAT, dateFormat);
     }
 
@@ -59,7 +59,7 @@ public class TemporalCoverageDate extends RIFCSElement {
      *      The date format value or empty string if attribute
      *      is empty or not present
      */
-    public String DateFormat() {
+    public final String DateFormat() {
         return super.getAttributeValue(Constants.ATTRIBUTE_DATE_FORMAT);
     }
 
@@ -71,7 +71,7 @@ public class TemporalCoverageDate extends RIFCSElement {
      * @param type
      *          The type of date
      */
-    public void setType(String type) {
+    public final void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -83,7 +83,7 @@ public class TemporalCoverageDate extends RIFCSElement {
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-    public String getType() {
+    public final String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
 
@@ -94,7 +94,7 @@ public class TemporalCoverageDate extends RIFCSElement {
      * @param value
      *      The content of the date
      */
-    public void setValue(String value) {
+    public final void setValue(String value) {
         super.setTextContent(value);
     }
 
@@ -105,7 +105,7 @@ public class TemporalCoverageDate extends RIFCSElement {
      * @param value
      *      The content of the date
      */
-    public void setValue(Date value) {
+    public final void setValue(Date value) {
         super.setTextContent(RegistryObject.formatDate(value));
     }
 
@@ -116,7 +116,7 @@ public class TemporalCoverageDate extends RIFCSElement {
      * @return
      *      The description string
      */
-    public String getValue() {
+    public final String getValue() {
         return super.getTextContent();
     }
 }

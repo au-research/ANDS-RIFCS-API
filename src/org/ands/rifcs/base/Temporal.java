@@ -80,7 +80,7 @@ public class Temporal extends RIFCSElement {
      * @return
      *      A list of DateElement objects
      */
-    public List<TemporalCoverageDate> getDates() {
+    public final List<TemporalCoverageDate> getDates() {
         return this.dates;
     }
 
@@ -91,7 +91,7 @@ public class Temporal extends RIFCSElement {
      * @return
      *      A list of string values
      */
-    public List<String> getText() {
+    public final List<String> getText() {
         ArrayList al = new ArrayList<String>();
         for (Iterator<Element> i = texts.iterator(); i.hasNext();) {
             al.add(i.next().getTextContent());
@@ -106,7 +106,7 @@ public class Temporal extends RIFCSElement {
      * @param text
      *    a text description of the temporal coverage
      */
-    public void addText(String text) {
+    public final void addText(String text) {
         Element e = this.newElement(Constants.ELEMENT_TEXT);
         e.setTextContent(text);
         this.getElement().appendChild(e);
@@ -126,7 +126,7 @@ public class Temporal extends RIFCSElement {
      */
 
 
-    public void addDate(String date, String type) throws RIFCSException {
+    public final void addDate(String date, String type) throws RIFCSException {
         this.addDate(date, type, "W3C");
     }
     /**
@@ -141,7 +141,7 @@ public class Temporal extends RIFCSElement {
      */
 
 
-    public void addDate(String date, String type, String dateFormat) throws RIFCSException {
+    public final void addDate(String date, String type, String dateFormat) throws RIFCSException {
         TemporalCoverageDate de = this.newDate();
         de.setType(type);
         de.setDateFormat(dateFormat);
@@ -162,7 +162,7 @@ public class Temporal extends RIFCSElement {
      */
 
 
-    public void addDate(Date date, String type) throws RIFCSException {
+    public final void addDate(Date date, String type) throws RIFCSException {
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
         String text = df.format(date);
         String result = text.substring(0, 22) + ":" + text.substring(22);

@@ -54,7 +54,7 @@ public class Contributor extends RIFCSElement {
      *          an integer sequence number indicating the order
      *          a contributor would appear in a citation
      */
-    public void setSeq(int seq) {
+    public final void setSeq(int seq) {
         super.setAttributeValue(Constants.ATTRIBUTE_SEQ, String.valueOf(seq));
     }
 
@@ -67,7 +67,7 @@ public class Contributor extends RIFCSElement {
      *          a contributor would appear in a citation or -1 if not
      *          set
      */
-    public int getSeq() {
+    public final int getSeq() {
        String seq = super.getAttributeValue(Constants.ATTRIBUTE_SEQ);
        if (seq == null || seq.equals("")) {
            return -1;
@@ -88,7 +88,7 @@ public class Contributor extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public NamePart newNamePart() throws RIFCSException {
+    public final NamePart newNamePart() throws RIFCSException {
         return new NamePart(this.newElement(Constants.ELEMENT_NAMEPART));
     }
 
@@ -99,7 +99,7 @@ public class Contributor extends RIFCSElement {
      * @param namePart
      *    a completed NamePart object
      */
-    public void addNamePart(NamePart namePart) {
+    public final void addNamePart(NamePart namePart) {
        this.getElement().appendChild(namePart.getElement());
        this.nameParts.add(namePart);
     }
@@ -113,7 +113,7 @@ public class Contributor extends RIFCSElement {
      * @param type
      *    namePart type (e.g. surname, middle name) or null
      */
-    public void addNamePart(String namePart,
+    public final void addNamePart(String namePart,
                             String type) throws RIFCSException {
         NamePart np = newNamePart();
         np.setValue(namePart);
@@ -129,7 +129,7 @@ public class Contributor extends RIFCSElement {
      * @return
      *      A list of NamePart objects
      */
-    public List<NamePart> getNameParts() {
+    public final List<NamePart> getNameParts() {
         return nameParts;
     }
 

@@ -64,7 +64,7 @@ public class Service extends RIFCSElement {
      * @param type
      *          The type of service being described
      */
-    public void setType(String type) {
+    public final void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -76,7 +76,7 @@ public class Service extends RIFCSElement {
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-    public String getType() {
+    public final String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
 
@@ -88,7 +88,7 @@ public class Service extends RIFCSElement {
      *      A date object representing the date the service metadata
      *      was last modified
      */
-    public void setDateModified(Date date) {
+    public final void setDateModified(Date date) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_MODIFIED, RegistryObject.formatDate(date));
     }
 
@@ -101,7 +101,7 @@ public class Service extends RIFCSElement {
      *      of the <a href="http://www.w3.org/TR/xmlschema-2/">W3C's Schema
      *      Data Types document</a>
      */
-    public void setDateModified(String date) {
+    public final void setDateModified(String date) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_MODIFIED, date);
     }
 
@@ -113,7 +113,7 @@ public class Service extends RIFCSElement {
      *      The dateModified attribute value or empty string if attribute
      *      is empty or not present
      */
-    public String getDateModified() {
+    public final String getDateModified() {
         return super.getAttributeValue(Constants.ATTRIBUTE_DATE_MODIFIED);
     }
 
@@ -130,7 +130,7 @@ public class Service extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Identifier newIdentifier() throws RIFCSException {
+    public final Identifier newIdentifier() throws RIFCSException {
         return new Identifier(this.newElement(Constants.ELEMENT_IDENTIFIER));
     }
 
@@ -141,7 +141,7 @@ public class Service extends RIFCSElement {
      * @param identifier
      *    an Identifier object
      */
-    public void addIdentifier(Identifier identifier) {
+    public final void addIdentifier(Identifier identifier) {
         this.getElement().appendChild(identifier.getElement());
         this.identifiers.add(identifier);
     }
@@ -153,7 +153,7 @@ public class Service extends RIFCSElement {
      * @return
      *      A list of Identifier objects
      */
-    public List<Identifier> getIdentifiers() {
+    public final List<Identifier> getIdentifiers() {
         return identifiers;
     }
 
@@ -170,7 +170,7 @@ public class Service extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Name newName() throws RIFCSException {
+    public final Name newName() throws RIFCSException {
         return new Name(this.newElement(Constants.ELEMENT_NAME));
     }
 
@@ -181,7 +181,7 @@ public class Service extends RIFCSElement {
      * @param name
      *    a Name object
      */
-    public void addName(Name name) {
+    public final void addName(Name name) {
         this.getElement().appendChild(name.getElement());
         this.names.add(name);
     }
@@ -193,7 +193,7 @@ public class Service extends RIFCSElement {
      * @return
      *      A list of Name objects
      */
-    public List<Name> getNames() {
+    public final List<Name> getNames() {
         return names;
     }
 
@@ -210,7 +210,7 @@ public class Service extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Location newLocation() throws RIFCSException {
+    public final Location newLocation() throws RIFCSException {
         return new Location(this.newElement(Constants.ELEMENT_LOCATION));
     }
 
@@ -221,7 +221,7 @@ public class Service extends RIFCSElement {
      * @param location
      *    a Location object
      */
-    public void addLocation(Location location) {
+    public final void addLocation(Location location) {
         this.getElement().appendChild(location.getElement());
         this.locations.add(location);
     }
@@ -233,7 +233,7 @@ public class Service extends RIFCSElement {
      * @return
      *      A list of Location objects
      */
-    public List<Location> getLocations() {
+    public final List<Location> getLocations() {
         return locations;
     }
 
@@ -250,7 +250,7 @@ public class Service extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Coverage newCoverage() throws RIFCSException {
+    public final Coverage newCoverage() throws RIFCSException {
         return new Coverage(this.newElement(Constants.ELEMENT_COVERAGE));
     }
 
@@ -261,7 +261,7 @@ public class Service extends RIFCSElement {
      * @param coverage
      *    a Coverage object
      */
-    public void addCoverage(Coverage coverage) {
+    public final void addCoverage(Coverage coverage) {
         this.getElement().appendChild(coverage.getElement());
         this.coverages.add(coverage);
     }
@@ -273,7 +273,7 @@ public class Service extends RIFCSElement {
      * @return
      *      A list of coverage objects
      */
-    public List<Coverage> getCoverage() {
+    public final List<Coverage> getCoverage() {
         return coverages;
     }
 
@@ -290,7 +290,7 @@ public class Service extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public RelatedObject newRelatedObject() throws RIFCSException {
+    public final RelatedObject newRelatedObject() throws RIFCSException {
         return new RelatedObject(this.newElement(Constants.ELEMENT_RELATED_OBJECT));
     }
 
@@ -301,7 +301,7 @@ public class Service extends RIFCSElement {
      * @param relatedObject
      *    an RelatedObject object
      */
-    public void addRelatedObject(RelatedObject relatedObject) {
+    public final void addRelatedObject(RelatedObject relatedObject) {
         this.getElement().appendChild(relatedObject.getElement());
         this.relatedObjects.add(relatedObject);
     }
@@ -313,7 +313,7 @@ public class Service extends RIFCSElement {
      * @return
      *      A list of RelatedObject objects
      */
-    public List<RelatedObject> getRelatedObjects() {
+    public final List<RelatedObject> getRelatedObjects() {
         return relatedObjects;
     }
 
@@ -330,7 +330,7 @@ public class Service extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Subject newSubject() throws RIFCSException {
+    public final Subject newSubject() throws RIFCSException {
         return new Subject(this.newElement(Constants.ELEMENT_SUBJECT));
     }
 
@@ -341,7 +341,7 @@ public class Service extends RIFCSElement {
      * @param subject
      *    a Subject object
      */
-    public void addSubject(Subject subject) {
+    public final void addSubject(Subject subject) {
         this.getElement().appendChild(subject.getElement());
         this.subjects.add(subject);
     }
@@ -354,7 +354,7 @@ public class Service extends RIFCSElement {
      * @param termIdentifier
      * @param lang
      */
-    public void addSubject(String value, String type, String termIdentifier, String lang) {
+    public final void addSubject(String value, String type, String termIdentifier, String lang) {
         /*   if (subjects == null)
              {
              subjects = new ArrayList<Subject>();
@@ -384,7 +384,7 @@ public class Service extends RIFCSElement {
      * @return
      *      A list of Subject objects
      */
-    public List<Subject> getSubjects() {
+    public final List<Subject> getSubjects() {
         return subjects;
     }
 
@@ -401,7 +401,7 @@ public class Service extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Description newDescription() throws RIFCSException {
+    public final Description newDescription() throws RIFCSException {
         return new Description(this.newElement(Constants.ELEMENT_DESCRIPTION));
     }
 
@@ -412,7 +412,7 @@ public class Service extends RIFCSElement {
      * @param description
      *    a Description object
      */
-    public void addDescription(Description description) {
+    public final void addDescription(Description description) {
         this.getElement().appendChild(description.getElement());
         this.descriptions.add(description);
     }
@@ -430,7 +430,7 @@ public class Service extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    public void addDescription(String description, String type, String language) throws RIFCSException {
+    public final void addDescription(String description, String type, String language) throws RIFCSException {
         Description d = newDescription();
         d.setType(type);
         d.setValue(description);
@@ -447,11 +447,11 @@ public class Service extends RIFCSElement {
      * @return
      *      A list of Description objects
      */
-    public List<Description> getDescriptions() {
+    public final List<Description> getDescriptions() {
         return descriptions;
     }
 
-    public Right newRight() throws RIFCSException {
+    public final Right newRight() throws RIFCSException {
         return new Right(this.newElement(Constants.ELEMENT_RIGHTS));
     }
 
@@ -462,7 +462,7 @@ public class Service extends RIFCSElement {
      * @param right
      *    a Right object
      */
-    public void addRight(Right right) {
+    public final void addRight(Right right) {
         /*    if (descriptions == null)
               {
               descriptions = new ArrayList<Description>();
@@ -479,13 +479,13 @@ public class Service extends RIFCSElement {
      * @return
      *      A list of Description objects
      */
-    public List<Right> getRights() {
+    public final List<Right> getRights() {
         return rights;
     }
 
 
 
-    public ExistenceDate newExistenceDate() throws RIFCSException {
+    public final ExistenceDate newExistenceDate() throws RIFCSException {
         return new ExistenceDate(this.newElement(Constants.ELEMENT_EXISTENSE_DATES));
     }
 
@@ -496,7 +496,7 @@ public class Service extends RIFCSElement {
      * @param existenceDate
      *    an ExistenceDate object
      */
-    public void addExistenceDate(ExistenceDate existenceDate) {
+    public final void addExistenceDate(ExistenceDate existenceDate) {
         /*    if (descriptions == null)
               {
               descriptions = new ArrayList<Description>();
@@ -514,7 +514,7 @@ public class Service extends RIFCSElement {
      * @param endVal
      * @param endDateFormat
      */
-    public void addExistenceDate(String startVal, String startDateFormat, String endVal, String endDateFormat) {
+    public final void addExistenceDate(String startVal, String startDateFormat, String endVal, String endDateFormat) {
         /*    if (descriptions == null)
               {
               descriptions = new ArrayList<Description>();
@@ -538,7 +538,7 @@ public class Service extends RIFCSElement {
      * @return
      *      A list of Description objects
      */
-    public List<ExistenceDate> getExistenceDates() {
+    public final List<ExistenceDate> getExistenceDates() {
         return existenceDates;
     }
 
@@ -556,7 +556,7 @@ public class Service extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public AccessPolicy newAccessPolicy() throws RIFCSException {
+    public final AccessPolicy newAccessPolicy() throws RIFCSException {
         return new AccessPolicy(this.newElement(Constants.ELEMENT_ACCESS_POLICY));
     }
 
@@ -567,7 +567,7 @@ public class Service extends RIFCSElement {
      * @param accessPolicy
      *    an AccessPolicy object
      */
-    public void addAccessPolicy(AccessPolicy accessPolicy) {
+    public final void addAccessPolicy(AccessPolicy accessPolicy) {
         this.getElement().appendChild(accessPolicy.getElement());
         this.aps.add(accessPolicy);
     }
@@ -578,7 +578,7 @@ public class Service extends RIFCSElement {
      * @param accessPolicyVal
      *    the name of an AccessPolicy
      */
-    public void addAccessPolicy(String accessPolicyVal) {
+    public final void addAccessPolicy(String accessPolicyVal) {
         AccessPolicy policy = null;
         try {
             policy = this.newAccessPolicy();
@@ -597,7 +597,7 @@ public class Service extends RIFCSElement {
      * @return
      *      A list of AccessPolicy objects
      */
-    public List<AccessPolicy> getAccessPolicies() {
+    public final List<AccessPolicy> getAccessPolicies() {
         return aps;
     }
 
@@ -614,7 +614,7 @@ public class Service extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public RelatedInfo newRelatedInfo() throws RIFCSException {
+    public final RelatedInfo newRelatedInfo() throws RIFCSException {
         return new RelatedInfo(this.newElement(Constants.ELEMENT_RELATED_INFO));
     }
 
@@ -625,7 +625,7 @@ public class Service extends RIFCSElement {
      * @param relatedInfo
      *    a relatedInfo object
      */
-    public void addRelatedInfo(RelatedInfo relatedInfo) {
+    public final void addRelatedInfo(RelatedInfo relatedInfo) {
         this.getElement().appendChild(relatedInfo.getElement());
         this.ris.add(relatedInfo);
     }
@@ -637,7 +637,7 @@ public class Service extends RIFCSElement {
      * @return
      *      A list of RelatedInfo objects
      */
-    public List<RelatedInfo> getRelatedInfo() {
+    public final List<RelatedInfo> getRelatedInfo() {
         return ris;
     }
 

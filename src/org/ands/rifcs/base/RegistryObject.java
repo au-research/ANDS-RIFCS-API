@@ -56,7 +56,7 @@ public class RegistryObject extends RIFCSElement {
      * @param keyValue
      *      The key uniquely identifying the registry object
      */
-    public void setKey(String keyValue) {
+    public final void setKey(String keyValue) {
         Element key = this.newElement(Constants.ELEMENT_KEY);
         key.setTextContent(keyValue);
         this.getElement().appendChild(key);
@@ -69,7 +69,7 @@ public class RegistryObject extends RIFCSElement {
      * @return
      *     The key uniquely identifying the registry object
      */
-    public String getKey() {
+    public final String getKey() {
         List<Node> nl = super.getChildElements(Constants.ELEMENT_KEY);
         if (nl.size() == 1) {
             return nl.get(0).getTextContent();
@@ -85,7 +85,7 @@ public class RegistryObject extends RIFCSElement {
      * @param sourceValue
      *      A string identifying the source of this RIF-CS data
      */
-    public void setOriginatingSource(String sourceValue) {
+    public final void setOriginatingSource(String sourceValue) {
         Element source = this.newElement(Constants.ELEMENT_ORIG_SOURCE);
         source.setTextContent(sourceValue);
         this.getElement().appendChild(source);
@@ -101,7 +101,7 @@ public class RegistryObject extends RIFCSElement {
      *      A string clarifying the type of source e.g. to flag
      *      whether the source is authoritative
      */
-    public void setOriginatingSource(String sourceValue,
+    public final void setOriginatingSource(String sourceValue,
                                      String type) {
         Element source = this.newElement(Constants.ELEMENT_ORIG_SOURCE);
         source.setTextContent(sourceValue);
@@ -117,7 +117,7 @@ public class RegistryObject extends RIFCSElement {
      *      A string clarifying the type of source e.g. to flag
      *      whether the source is authoritative
      */
-    public void setOriginatingSourceType(String type) {
+    public final void setOriginatingSourceType(String type) {
         NodeList nl = super.getElements(Constants.ELEMENT_ORIG_SOURCE);
         if (nl.getLength() == 1) {
            ((Element) nl.item(0)).setAttribute(Constants.ATTRIBUTE_TYPE, type);
@@ -131,7 +131,7 @@ public class RegistryObject extends RIFCSElement {
      * @return
      *     A string identifying the source of this RIF-CS data
      */
-    public String getOriginatingSource() {
+    public final String getOriginatingSource() {
         NodeList nl = super.getElements(Constants.ELEMENT_ORIG_SOURCE);
         if (nl.getLength() == 1) {
             return nl.item(0).getTextContent();
@@ -147,7 +147,7 @@ public class RegistryObject extends RIFCSElement {
      * @return
      *      A string clarifying the type of source
      */
-    public String getOriginatingSourceType() {
+    public final String getOriginatingSourceType() {
         NodeList nl = super.getElements(Constants.ELEMENT_ORIG_SOURCE);
         if (nl.getLength() == 1) {
            if (((Element) nl.item(0)).hasAttribute(Constants.ATTRIBUTE_TYPE)) {
@@ -168,7 +168,7 @@ public class RegistryObject extends RIFCSElement {
      *      A string identifying the group this registry object
      *      is associated with
      */
-    public void setGroup(String group) {
+    public final void setGroup(String group) {
         super.setAttributeValue(Constants.ATTRIBUTE_GROUP, group);
     }
 
@@ -180,7 +180,7 @@ public class RegistryObject extends RIFCSElement {
      *      A string identifying the group this registry object
      *      is associated with
      */
-    public String getGroup() {
+    public final String getGroup() {
         return super.getAttributeValue(Constants.ATTRIBUTE_GROUP);
     }
 
@@ -197,7 +197,7 @@ public class RegistryObject extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Collection newCollection() throws RIFCSException {
+    public final Collection newCollection() throws RIFCSException {
         Element coll = this.newElement(Constants.ELEMENT_COLLECTION);
         return new Collection(coll);
     }
@@ -215,7 +215,7 @@ public class RegistryObject extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Activity newActivity() throws RIFCSException {
+    public final Activity newActivity() throws RIFCSException {
         Element activity = this.newElement(Constants.ELEMENT_ACTIVITY);
         return new Activity(activity);
     }
@@ -233,7 +233,7 @@ public class RegistryObject extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Party newParty() throws RIFCSException {
+    public final Party newParty() throws RIFCSException {
         Element party = this.newElement(Constants.ELEMENT_PARTY);
         return new Party(party);
     }
@@ -251,7 +251,7 @@ public class RegistryObject extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Service newService() throws RIFCSException {
+    public final Service newService() throws RIFCSException {
         Element service = this.newElement(Constants.ELEMENT_SERVICE);
         return new Service(service);
     }
@@ -263,7 +263,7 @@ public class RegistryObject extends RIFCSElement {
      *  @param collection
      *      A Collection object
      */
-    public void addCollection(Collection collection) {
+    public final void addCollection(Collection collection) {
         this.getElement().appendChild(collection.getElement());
         this.objectClass = Constants.ELEMENT_COLLECTION;
     }
@@ -275,7 +275,7 @@ public class RegistryObject extends RIFCSElement {
      *  @param activity
      *      An Activity object
      */
-    public void addActivity(Activity activity) {
+    public final void addActivity(Activity activity) {
         this.getElement().appendChild(activity.getElement());
         this.objectClass = Constants.ELEMENT_PARTY;
     }
@@ -287,7 +287,7 @@ public class RegistryObject extends RIFCSElement {
      *  @param party
      *      A Party object
      */
-    public void addParty(Party party) {
+    public final void addParty(Party party) {
         this.getElement().appendChild(party.getElement());
         this.objectClass = Constants.ELEMENT_PARTY;
     }
@@ -299,7 +299,7 @@ public class RegistryObject extends RIFCSElement {
      *  @param service
      *      A Service object
      */
-    public void addService(Service service) {
+    public final void addService(Service service) {
         this.getElement().appendChild(service.getElement());
         this.objectClass = Constants.ELEMENT_SERVICE;
     }
@@ -312,7 +312,7 @@ public class RegistryObject extends RIFCSElement {
      *      The element name of the object class (i.e. collection, service,
      *      activity, party)
      */
-    public String getObjectClassName() {
+    public final String getObjectClassName() {
         return this.objectClass;
     }
 
@@ -328,7 +328,7 @@ public class RegistryObject extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    public RIFCSElement getClassObject() throws RIFCSException {
+    public final RIFCSElement getClassObject() throws RIFCSException {
         NodeList nl = super.getElements(objectClass);
 
         if (nl.getLength() != 1) {

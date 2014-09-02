@@ -77,7 +77,7 @@ public class RIFCSElement {
      *      The attribute value or empty string if attribute
      *      is empty or not present
      */
-    protected String getAttributeValue(String name) {
+    protected final String getAttributeValue(String name) {
         return e.getAttribute(name);
     }
 
@@ -91,7 +91,7 @@ public class RIFCSElement {
      * @param value
      *      The attribute value
      */
-    protected void setAttributeValue(String name,
+    protected final void setAttributeValue(String name,
                                      String value) {
         e.setAttribute(name, value);
     }
@@ -107,7 +107,7 @@ public class RIFCSElement {
      * @param value
      *      The attribute value
      */
-    protected void setAttributeValueNS(String ns,
+    protected final void setAttributeValueNS(String ns,
                                        String name,
                                        String value) {
         e.setAttributeNS(ns, name, value);
@@ -122,7 +122,7 @@ public class RIFCSElement {
      * @param name
      *      The attribute name
      */
-    protected String getAttributeValueNS(String ns,
+    protected final String getAttributeValueNS(String ns,
                                          String name) {
         return e.getAttributeNS(ns, name);
     }
@@ -141,7 +141,7 @@ public class RIFCSElement {
      *      The attribute value or empty string if attribute
      *      is empty or not present
      */
-    protected String getAttributeValue(String ns,
+    protected final String getAttributeValue(String ns,
                                        String localName) {
         return e.getAttributeNS(ns, localName);
     }
@@ -153,7 +153,7 @@ public class RIFCSElement {
      * @return
      *      The text content of the element
      */
-    protected String getTextContent() {
+    protected final String getTextContent() {
         return e.getTextContent();
     }
 
@@ -164,7 +164,7 @@ public class RIFCSElement {
      * @param value
      *      The text content of the element
      */
-    protected void setTextContent(String value) {
+    protected final void setTextContent(String value) {
         e.setTextContent(value);
     }
 
@@ -178,7 +178,7 @@ public class RIFCSElement {
      * @return
      *      The text content of the element
      */
-    protected NodeList getElements(String localName) {
+    protected final NodeList getElements(String localName) {
         return e.getElementsByTagNameNS(Constants.NS_RIFCS, localName);
     }
 
@@ -193,7 +193,7 @@ public class RIFCSElement {
      *      A list of RIFCS elements whose tag name matches
      *      the localName
      */
-    protected List<Node> getChildElements(String localName) {
+    protected final List<Node> getChildElements(String localName) {
         NodeList nl = e.getChildNodes();
         List<Node> l = new ArrayList<Node>();
         for (int i = 0; i < nl.getLength(); i++) {
@@ -213,7 +213,7 @@ public class RIFCSElement {
      * @return
      *      A list of RIFCS elements
      */
-    protected List<Node> getChildElements() {
+    protected final List<Node> getChildElements() {
         NodeList nl = e.getChildNodes();
         List<Node> l = new ArrayList<Node>();
         for (int i = 0; i < nl.getLength(); i++) {
@@ -232,7 +232,7 @@ public class RIFCSElement {
      * @return
      *      A w3c dom element
      */
-    protected Element getElement() {
+    protected final Element getElement() {
         return e;
     }
 
@@ -244,7 +244,7 @@ public class RIFCSElement {
      * @return
      *      an element with the given name
      */
-    protected Element newElement(String elementName) {
+    protected final Element newElement(String elementName) {
         return this.getElement().getOwnerDocument().createElementNS(Constants.NS_RIFCS, elementName);
     }
 

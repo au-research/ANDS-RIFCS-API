@@ -46,7 +46,7 @@ public class RightsInfo extends RIFCSElement {
      * @param rightsUri
      *          The rightsUri of RightsInfo
      */
-    public void setRightsUri(String rightsUri) {
+    public final void setRightsUri(String rightsUri) {
         super.setAttributeValue(Constants.ATTRIBUTE_RIGHTS_URI, rightsUri);
     }
 
@@ -58,7 +58,7 @@ public class RightsInfo extends RIFCSElement {
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-    public String getRightsUri() {
+    public final String getRightsUri() {
         return super.getAttributeValue(Constants.ATTRIBUTE_RIGHTS_URI);
     }
 
@@ -69,7 +69,7 @@ public class RightsInfo extends RIFCSElement {
      * @param value
      *      The content of the RightsInfo
      */
-    public void setValue(String value) {
+    public final void setValue(String value) {
         super.setTextContent(value);
     }
 
@@ -80,7 +80,7 @@ public class RightsInfo extends RIFCSElement {
      * @return
      *      The RightsInfo string
      */
-    public String getValue() {
+    public final String getValue() {
         return super.getTextContent();
     }
 }

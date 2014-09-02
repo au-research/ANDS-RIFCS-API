@@ -46,7 +46,7 @@ public class AccessPolicy extends RIFCSElement {
      * @param value
      *      The access policy URI
      */
-    public void setValue(String value) {
+    public final void setValue(String value) {
         super.setTextContent(value);
     }
 
@@ -56,7 +56,7 @@ public class AccessPolicy extends RIFCSElement {
      *
      * @return The access policy URI
      */
-    public String getValue() {
+    public final String getValue() {
         return super.getTextContent();
     }
 }

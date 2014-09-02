@@ -77,7 +77,7 @@ public class ROElement {
      *      The attribute value or empty string if attribute
      *      is empty or not present
      */
-    protected String getAttributeValue(String name) {
+    protected final String getAttributeValue(String name) {
         return e.getAttribute(name);
     }
 
@@ -91,7 +91,7 @@ public class ROElement {
      * @param value
      *      The attribute value
      */
-    protected void setAttributeValue(String name,
+    protected final void setAttributeValue(String name,
                                      String value) {
         e.setAttribute(name, value);
     }
@@ -107,7 +107,7 @@ public class ROElement {
      * @param value
      *      The attribute value
      */
-    protected void setAttributeValueNS(String ns,
+    protected final void setAttributeValueNS(String ns,
                                         String name,
                                      String value) {
         e.setAttributeNS(ns, name, value);
@@ -127,7 +127,7 @@ public class ROElement {
      *      The attribute value or empty string if attribute
      *      is empty or not present
      */
-    protected String getAttributeValue(String ns,
+    protected final String getAttributeValue(String ns,
                                        String localName) {
         return e.getAttributeNS(ns, localName);
     }
@@ -139,7 +139,7 @@ public class ROElement {
      * @return
      *      The text content of the element
      */
-    protected String getText() {
+    protected final String getText() {
         return e.getTextContent();
     }
 
@@ -150,7 +150,7 @@ public class ROElement {
      * @param value
      *      The text content of the element
      */
-    protected void setText(String value) {
+    protected final void setText(String value) {
         e.setTextContent(value);
     }
 
@@ -164,7 +164,7 @@ public class ROElement {
      * @return org.w3c.dom.NodeList
      *      The text content of the element
      */
-    protected NodeList getElements(String localName) {
+    protected final NodeList getElements(String localName) {
         return e.getElementsByTagNameNS(Constants.NS_RIFCS, localName);
     }
 
@@ -179,7 +179,7 @@ public class ROElement {
      *      A list of RIFCS elements whose tag name matches
      *      the localName
      */
-    protected List<Node> getChildElements(String localName) {
+    protected final List<Node> getChildElements(String localName) {
         NodeList nl = e.getChildNodes();
         List<Node> l = new ArrayList<Node>();
         for (int i = 0; i < nl.getLength(); i++) {
@@ -199,7 +199,7 @@ public class ROElement {
      * @return
      *      A w3c dom element
      */
-    protected Element getElement() {
+    protected final Element getElement() {
         return e;
     }
 
@@ -211,7 +211,7 @@ public class ROElement {
      * @return
      *      an element with the given name
      */
-    protected Element newElement(String elementName) {
+    protected final Element newElement(String elementName) {
         return this.getElement().getOwnerDocument().createElementNS(Constants.NS_RIFCS, elementName);
     }
 }

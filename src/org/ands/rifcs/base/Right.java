@@ -50,7 +50,7 @@ public class Right extends RIFCSElement {
          * @param aRightsStatement
          * @throws RIFCSException
          */
-        public void setRightsStatement(RightsInfo aRightsStatement) throws RIFCSException {
+        public final void setRightsStatement(RightsInfo aRightsStatement) throws RIFCSException {
                 this.rightsStatement = aRightsStatement;
                 this.getElement().appendChild(this.rightsStatement.getElement());
         }
@@ -61,7 +61,7 @@ public class Right extends RIFCSElement {
          * @param value
          * @throws RIFCSException
          */
-        public void setRightsStatement(String value) throws RIFCSException {
+        public final void setRightsStatement(String value) throws RIFCSException {
                 this.setRightsStatement(value, null);
         }
 
@@ -72,7 +72,7 @@ public class Right extends RIFCSElement {
          * @param rightsUri
          * @throws RIFCSException
          */
-        public void setRightsStatement(String value, String rightsUri) throws RIFCSException {
+        public final void setRightsStatement(String value, String rightsUri) throws RIFCSException {
                 RightsInfo aRightsStatement = new RightsInfo(this.newElement(Constants.ELEMENT_RIGHTS_STATEMENT));
                 aRightsStatement.setValue(value);
                 if (rightsUri != null) {
@@ -86,7 +86,7 @@ public class Right extends RIFCSElement {
          *
          * @return The rightsStatement
          */
-        public RightsInfo getRightsStatement() {
+        public final RightsInfo getRightsStatement() {
                 return this.rightsStatement;
         }
         /**
@@ -95,7 +95,7 @@ public class Right extends RIFCSElement {
          * @param aLicence
          * @throws RIFCSException
          */
-        public void setLicence(RightsTypedInfo aLicence) throws RIFCSException {
+        public final void setLicence(RightsTypedInfo aLicence) throws RIFCSException {
                 this.licence = aLicence;
                 this.getElement().appendChild(this.licence.getElement());
         }
@@ -106,7 +106,7 @@ public class Right extends RIFCSElement {
          * @param value
          * @throws RIFCSException
          */
-        public void setLicence(String value) throws RIFCSException {
+        public final void setLicence(String value) throws RIFCSException {
                 this.setLicence(value, null);
         }
 
@@ -117,7 +117,7 @@ public class Right extends RIFCSElement {
          * @param type
          * @throws RIFCSException
          */
-        public void setLicence(String value, String type) throws RIFCSException {
+        public final void setLicence(String value, String type) throws RIFCSException {
                 this.setLicence(value, type, null);
         }
 
@@ -129,7 +129,7 @@ public class Right extends RIFCSElement {
          * @param type
          * @throws RIFCSException
          */
-        public void setLicence(String value, String rightsUri, String type) throws RIFCSException {
+        public final void setLicence(String value, String rightsUri, String type) throws RIFCSException {
                 RightsTypedInfo aLicence = new RightsTypedInfo(this.newElement(Constants.ELEMENT_LICENCE));
                 aLicence.setValue(value);
                 if (rightsUri != null) {
@@ -146,7 +146,7 @@ public class Right extends RIFCSElement {
          *
          * @return The licence
          */
-        public RightsTypedInfo getLicence() {
+        public final RightsTypedInfo getLicence() {
                 return this.licence;
         }
 
@@ -156,7 +156,7 @@ public class Right extends RIFCSElement {
          * @param anAccessRights
          * @throws RIFCSException
          */
-        public void setAccessRights(RightsTypedInfo anAccessRights) throws RIFCSException {
+        public final void setAccessRights(RightsTypedInfo anAccessRights) throws RIFCSException {
                 this.accessRights = anAccessRights;
                 this.getElement().appendChild(this.accessRights.getElement());
         }
@@ -167,7 +167,7 @@ public class Right extends RIFCSElement {
          * @param value
          * @throws RIFCSException
          */
-        public void setAccessRights(String value) throws RIFCSException {
+        public final void setAccessRights(String value) throws RIFCSException {
                 this.setAccessRights(value, null);
         }
 
@@ -178,7 +178,7 @@ public class Right extends RIFCSElement {
          * @param type
          * @throws RIFCSException
          */
-        public void setAccessRights(String value, String type) throws RIFCSException {
+        public final void setAccessRights(String value, String type) throws RIFCSException {
                 this.setAccessRights(value, type, null);
         }
 
@@ -190,7 +190,7 @@ public class Right extends RIFCSElement {
          * @param type
          * @throws RIFCSException
          */
-        public void setAccessRights(String value, String rightsUri, String type) throws RIFCSException {
+        public final void setAccessRights(String value, String rightsUri, String type) throws RIFCSException {
                 RightsTypedInfo anAccessRights = new RightsTypedInfo(this.newElement(Constants.ELEMENT_ACCESS_RIGHTS));
                 anAccessRights.setValue(value);
                 if (rightsUri != null) {
@@ -207,7 +207,7 @@ public class Right extends RIFCSElement {
          *
          * @return The accessRights
          */
-        public RightsTypedInfo getAccessRights() {
+        public final RightsTypedInfo getAccessRights() {
                 return this.accessRights;
         }
 

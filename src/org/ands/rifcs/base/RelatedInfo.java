@@ -51,7 +51,7 @@ public class RelatedInfo extends RIFCSElement {
      * @param type
      *          The type of related information
      */
-    public void setType(String type) {
+    public final void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -63,7 +63,7 @@ public class RelatedInfo extends RIFCSElement {
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-    public String getType() {
+    public final String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
 
@@ -80,7 +80,7 @@ public class RelatedInfo extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Identifier newIdentifier() throws RIFCSException {
+    public final Identifier newIdentifier() throws RIFCSException {
         return new Identifier(this.newElement(Constants.ELEMENT_IDENTIFIER));
     }
 
@@ -94,7 +94,7 @@ public class RelatedInfo extends RIFCSElement {
      *      The type of the identifier
      *
      */
-    public void setIdentifier(String anIdentifier,
+    public final void setIdentifier(String anIdentifier,
                               String type) throws RIFCSException {
         this.identifier = this.newIdentifier();
         this.identifier.setValue(anIdentifier);
@@ -109,7 +109,7 @@ public class RelatedInfo extends RIFCSElement {
      * @return Identifier
      *      The identifier of the related information resource
      */
-    public Identifier getIdentifier() {
+    public final Identifier getIdentifier() {
         return identifier;
     }
 
@@ -120,7 +120,7 @@ public class RelatedInfo extends RIFCSElement {
      * @param title
      *    The title of the related information resource
      */
-    public void setTitle(String title) {
+    public final void setTitle(String title) {
         Element e = this.newElement(Constants.ELEMENT_TITLE);
         e.setTextContent(title);
         this.getElement().appendChild(e);
@@ -133,7 +133,7 @@ public class RelatedInfo extends RIFCSElement {
      * @return String
      *    The title of the related information resource
      */
-    public String getTitle() {
+    public final String getTitle() {
         NodeList nl = super.getElements(Constants.ELEMENT_TITLE);
         if (nl.getLength() == 1) {
             return nl.item(0).getTextContent();
@@ -149,7 +149,7 @@ public class RelatedInfo extends RIFCSElement {
      * @param notes
      *    Notes relevant to the related information resource
      */
-    public void setNotes(String notes) {
+    public final void setNotes(String notes) {
         Element e = this.newElement(Constants.ELEMENT_NOTES);
         e.setTextContent(notes);
         this.getElement().appendChild(e);
@@ -162,7 +162,7 @@ public class RelatedInfo extends RIFCSElement {
      * @return String
      *    The title of the related information resource
      */
-    public String getNotes() {
+    public final String getNotes() {
         NodeList nl = super.getElements(Constants.ELEMENT_NOTES);
         if (nl.getLength() == 1) {
             return nl.item(0).getTextContent();

@@ -57,7 +57,7 @@ public class Location extends RIFCSElement {
      *      A date object representing the date the contained location
      *      information was valid from
      */
-    public void setDateFrom(Date dateFrom) {
+    public final void setDateFrom(Date dateFrom) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_FROM, RegistryObject.formatDate(dateFrom));
     }
 
@@ -70,7 +70,7 @@ public class Location extends RIFCSElement {
      *      of the <a href="http://www.w3.org/TR/xmlschema-2/">W3C's Schema
      *      Data Types document</a>
      */
-    public void setDateFrom(String dateFrom) {
+    public final void setDateFrom(String dateFrom) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_FROM, dateFrom);
     }
 
@@ -78,7 +78,7 @@ public class Location extends RIFCSElement {
     /**
      * Set the date the location was relevant from.
      */
-    public String getDateFrom() {
+    public final String getDateFrom() {
         return super.getAttributeValue(Constants.ATTRIBUTE_DATE_FROM);
     }
 
@@ -90,7 +90,7 @@ public class Location extends RIFCSElement {
      *      A date object representing the date the contained location
      *      information was valid to
      */
-    public void setDateTo(Date dateTo) {
+    public final void setDateTo(Date dateTo) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_TO, RegistryObject.formatDate(dateTo));
     }
 
@@ -103,7 +103,7 @@ public class Location extends RIFCSElement {
      *      of the <a href="http://www.w3.org/TR/xmlschema-2/">W3C's Schema
      *      Data Types document</a>
      */
-    public void setDateTo(String dateTo) {
+    public final void setDateTo(String dateTo) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_TO, dateTo);
     }
 
@@ -111,7 +111,7 @@ public class Location extends RIFCSElement {
     /**
      * Set the date the location was relevant to.
      */
-    public String getDateTo() {
+    public final String getDateTo() {
         return super.getAttributeValue(Constants.ATTRIBUTE_DATE_TO);
     }
 
@@ -128,7 +128,7 @@ public class Location extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Address newAddress() throws RIFCSException {
+    public final Address newAddress() throws RIFCSException {
         return new Address(this.newElement(Constants.ELEMENT_ADDRESS));
     }
 
@@ -139,7 +139,7 @@ public class Location extends RIFCSElement {
      * @param address
      *    a completed Address object
      */
-    public void addAddress(Address address) {
+    public final void addAddress(Address address) {
         this.getElement().appendChild(address.getElement());
         this.addresses.add(address);
     }
@@ -151,7 +151,7 @@ public class Location extends RIFCSElement {
      * @return List<Address>
      *      A list of Address objects
      */
-    public List<Address> getAddresses() {
+    public final List<Address> getAddresses() {
         return this.addresses;
     }
 
@@ -168,7 +168,7 @@ public class Location extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Spatial newSpatial() throws RIFCSException {
+    public final Spatial newSpatial() throws RIFCSException {
         return new Spatial(this.newElement(Constants.ELEMENT_SPATIAL));
     }
 
@@ -179,7 +179,7 @@ public class Location extends RIFCSElement {
      * @param spatial
      *    a completed Spatial object.
      */
-    public void addSpatial(Spatial spatial) {
+    public final void addSpatial(Spatial spatial) {
         this.getElement().appendChild(spatial.getElement());
         this.spatials.add(spatial);
     }
@@ -191,7 +191,7 @@ public class Location extends RIFCSElement {
      * @return
      *      A list of Spatial objects
      */
-    public List<Spatial> getSpatials() {
+    public final List<Spatial> getSpatials() {
         return this.spatials;
     }
 

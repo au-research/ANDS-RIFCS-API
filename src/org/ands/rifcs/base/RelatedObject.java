@@ -54,7 +54,7 @@ public class RelatedObject extends RIFCSElement {
      * @param keyValue
      *      The key uniquely identifying the related registry object
      */
-    public void setKey(String keyValue) {
+    public final void setKey(String keyValue) {
         Element key = this.newElement(Constants.ELEMENT_KEY);
         key.setTextContent(keyValue);
         this.getElement().appendChild(key);
@@ -67,7 +67,7 @@ public class RelatedObject extends RIFCSElement {
      * @return
      *     The key uniquely identifying the related registry object
      */
-    public String getKey() {
+    public final String getKey() {
         NodeList nl = super.getElements(Constants.ELEMENT_KEY);
         if (nl.getLength() == 1) {
             return nl.item(0).getTextContent();
@@ -89,7 +89,7 @@ public class RelatedObject extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public Relation newRelation() throws RIFCSException {
+    public final Relation newRelation() throws RIFCSException {
         return new Relation(this.newElement(Constants.ELEMENT_RELATION));
     }
 
@@ -106,7 +106,7 @@ public class RelatedObject extends RIFCSElement {
      * @param descriptionLanguage
      *    The xml:lang attribute value
      */
-    public void addRelation(String type,
+    public final void addRelation(String type,
                             String url,
                             String description,
                             String descriptionLanguage) throws RIFCSException {
@@ -136,7 +136,7 @@ public class RelatedObject extends RIFCSElement {
      * @return
      *      A list of Relation objects
      */
-    public List<Relation> getRelations() {
+    public final List<Relation> getRelations() {
         return relations;
     }
 
@@ -147,7 +147,7 @@ public class RelatedObject extends RIFCSElement {
      * @param relation
      *    A Relation object
      */
-    public void addRelation(Relation relation) {
+    public final void addRelation(Relation relation) {
         this.getElement().appendChild(relation.getElement());
         this.relations.add(relation);
     }

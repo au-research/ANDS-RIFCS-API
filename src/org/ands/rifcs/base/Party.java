@@ -327,8 +327,8 @@ public class Party extends RIFCSElement {
      * @param lang
      */
     public final void addSubject(final String value,
-            final String type, final String termIdentifier, final String lang)
-    {
+            final String type, final String termIdentifier,
+            final String lang) {
         /*   if (subjects == null)
              {
              subjects = new ArrayList<Subject>();
@@ -480,8 +480,7 @@ public class Party extends RIFCSElement {
      */
     public final void addExistenceDate(final String startVal,
             final String startDateFormat, final String endVal,
-            final String endDateFormat)
-    {
+            final String endDateFormat) {
         /*    if (descriptions == null)
               {
               descriptions = new ArrayList<Description>();

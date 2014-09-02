@@ -48,8 +48,7 @@ public final class SampleRIFCSRead {
 
     public static void main(final String[] args) throws RIFCSException,
     FileNotFoundException, SAXException, ParserConfigurationException,
-    IOException, MalformedURLException
-    {
+    IOException, MalformedURLException {
         RIFCSReader rr = new RIFCSReader();
         rr.mapToDOM(new FileInputStream(args[0]));
         RIFCSWrapper rw = new RIFCSWrapper(rr.getDocument());

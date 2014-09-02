@@ -75,8 +75,9 @@ public class Right extends RIFCSElement {
 	public void setRightsStatement(String value, String rightsUri) throws RIFCSException {
 		RightsInfo rightsStatement = new RightsInfo(this.newElement(Constants.ELEMENT_RIGHTS_STATEMENT));
 		rightsStatement.setValue(value);
-		if (rightsUri != null)
+		if (rightsUri != null) {
 			rightsStatement.setRightsUri(rightsUri);
+		}
 		setRightsStatement(rightsStatement);
 	}
 
@@ -131,10 +132,12 @@ public class Right extends RIFCSElement {
 	public void setLicence(String value, String rightsUri, String type) throws RIFCSException {
 		RightsTypedInfo licence = new RightsTypedInfo(this.newElement(Constants.ELEMENT_LICENCE));
 		licence.setValue(value);
-		if (rightsUri != null)
+		if (rightsUri != null) {
 			licence.setRightsUri(rightsUri);
-		if (type != null)
+		}
+		if (type != null) {
 			licence.setType(type);
+		}
 		setLicence(licence);
 	}
 
@@ -190,10 +193,12 @@ public class Right extends RIFCSElement {
 	public void setAccessRights(String value, String rightsUri, String type) throws RIFCSException {
 		RightsTypedInfo accessRights = new RightsTypedInfo(this.newElement(Constants.ELEMENT_ACCESS_RIGHTS));
 		accessRights.setValue(value);
-		if (rightsUri != null)
+		if (rightsUri != null) {
 			accessRights.setRightsUri(rightsUri);
-		if (type != null)
+		}
+		if (type != null) {
 			accessRights.setType(type);
+		}
 		setLicence(accessRights);
 	}
 

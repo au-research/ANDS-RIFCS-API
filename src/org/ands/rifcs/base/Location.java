@@ -150,7 +150,7 @@ public class Location extends RIFCSElement {
     /**
      * Obtain the addresses for this location.
      *
-     * @return List<Address>
+     * @return
      *      A list of Address objects
      */
     public final List<Address> getAddresses() {

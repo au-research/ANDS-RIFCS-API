@@ -28,8 +28,11 @@ import org.w3c.dom.Node;
  */
 public class Right extends RIFCSElement {
 
+    /** The rightsStatement of this Right. */
     protected RightsInfo rightsStatement = null;
+    /** The licence of the Right. */
     protected RightsTypedInfo licence = null;
+    /** The accessRights of this Right. */
     protected RightsTypedInfo accessRights = null;
 
     /**
@@ -47,7 +50,8 @@ public class Right extends RIFCSElement {
     /**
      * Set the rightsStatement.
      *
-     * @param aRightsStatement
+     * @param aRightsStatement The rightsStatement object
+     *        will be set to this value.
      * @throws RIFCSException A RIFCSException
      */
     public final void setRightsStatement(
@@ -60,7 +64,7 @@ public class Right extends RIFCSElement {
     /**
      * Set the rightsStatement Value.
      *
-     * @param value
+     * @param value The value to be set.
      * @throws RIFCSException A RIFCSException
      */
     public final void setRightsStatement(final String value)
@@ -71,8 +75,8 @@ public class Right extends RIFCSElement {
     /**
      * Set the rightsStatement Value and URI.
      *
-     * @param value
-     * @param rightsUri
+     * @param value The value to be set.
+     * @param rightsUri The rightsUri to be set.
      * @throws RIFCSException A RIFCSException
      */
     public final void setRightsStatement(final String value,
@@ -98,7 +102,7 @@ public class Right extends RIFCSElement {
     /**
      * Set the licence.
      *
-     * @param aLicence
+     * @param aLicence The licence to be set.
      * @throws RIFCSException A RIFCSException
      */
     public final void setLicence(final RightsTypedInfo aLicence)
@@ -110,7 +114,7 @@ public class Right extends RIFCSElement {
     /**
      * Set the licence Value.
      *
-     * @param value
+     * @param value The licence value to be set.
      * @throws RIFCSException A RIFCSException
      */
     public final void setLicence(final String value)
@@ -121,8 +125,8 @@ public class Right extends RIFCSElement {
     /**
      * Set the licence Value and Type.
      *
-     * @param value
-     * @param type
+     * @param value The licence value to be set.
+     * @param type The licence type to be set.
      * @throws RIFCSException A RIFCSException
      */
     public final void setLicence(final String value,
@@ -133,9 +137,9 @@ public class Right extends RIFCSElement {
     /**
      * Set the licence Value, URI and Type.
      *
-     * @param value
-     * @param rightsUri
-     * @param type
+     * @param value The licence value to be set.
+     * @param rightsUri The rightsUri to be set.
+     * @param type The licence type to be set.
      * @throws RIFCSException A RIFCSException
      */
     public final void setLicence(final String value,
@@ -165,7 +169,7 @@ public class Right extends RIFCSElement {
     /**
      * Set the accessRights.
      *
-     * @param anAccessRights
+     * @param anAccessRights The accessRights to be set.
      * @throws RIFCSException A RIFCSException
      */
     public final void setAccessRights(
@@ -177,7 +181,7 @@ public class Right extends RIFCSElement {
     /**
      * Set the accessRightsValue.
      *
-     * @param value
+     * @param value The accessRights value to be set.
      * @throws RIFCSException A RIFCSException
      */
     public final void setAccessRights(final String value)
@@ -188,8 +192,8 @@ public class Right extends RIFCSElement {
     /**
      * Set the accessRights Value and Type.
      *
-     * @param value
-     * @param type
+     * @param value The accessRights value to be set.
+     * @param type The accessRights type to be set.
      * @throws RIFCSException A RIFCSException
      */
     public final void setAccessRights(final String value,
@@ -200,9 +204,9 @@ public class Right extends RIFCSElement {
     /**
      * Set the accessRights Value, URI and Type.
      *
-     * @param value
-     * @param rightsUri
-     * @param type
+     * @param value The accessRights value to be set.
+     * @param rightsUri The rightsUri to be set.
+     * @param type The accessRights type to be set.
      * @throws RIFCSException A RIFCSException
      */
     public final void setAccessRights(final String value,

@@ -27,9 +27,15 @@ import java.util.List;
 
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.ands.rifcs.base.Collection;
+import org.ands.rifcs.base.Name;
+import org.ands.rifcs.base.NamePart;
+import org.ands.rifcs.base.RIFCS;
+import org.ands.rifcs.base.RIFCSException;
+import org.ands.rifcs.base.RIFCSWrapper;
+import org.ands.rifcs.base.RegistryObject;
 
-import org.ands.rifcs.base.*;
-import org.ands.rifcs.ch.*;
+import org.ands.rifcs.ch.RIFCSReader;
 
 import org.xml.sax.SAXException;
 

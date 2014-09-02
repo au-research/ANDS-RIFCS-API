@@ -23,8 +23,25 @@ import java.io.IOException;
 
 import javax.xml.parsers.ParserConfigurationException;
 
-
-import org.ands.rifcs.base.*;
+import org.ands.rifcs.base.Address;
+import org.ands.rifcs.base.CitationInfo;
+import org.ands.rifcs.base.CitationMetadata;
+import org.ands.rifcs.base.Collection;
+import org.ands.rifcs.base.Contributor;
+import org.ands.rifcs.base.Coverage;
+import org.ands.rifcs.base.Electronic;
+import org.ands.rifcs.base.Location;
+import org.ands.rifcs.base.Name;
+import org.ands.rifcs.base.NamePart;
+import org.ands.rifcs.base.RIFCS;
+import org.ands.rifcs.base.RIFCSException;
+import org.ands.rifcs.base.RIFCSWrapper;
+import org.ands.rifcs.base.RegistryObject;
+import org.ands.rifcs.base.RelatedInfo;
+import org.ands.rifcs.base.RelatedObject;
+import org.ands.rifcs.base.Right;
+import org.ands.rifcs.base.Spatial;
+import org.ands.rifcs.base.Temporal;
 
 import org.xml.sax.SAXException;
 

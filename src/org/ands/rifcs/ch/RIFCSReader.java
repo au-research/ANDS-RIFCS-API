@@ -38,16 +38,14 @@ import org.xml.sax.SAXException;
  * 
  * @author Scott Yeadon
  */
-public class RIFCSReader
-{
+public class RIFCSReader {
     private Document doc = null;
     
     /**
      * Create a RIFCS Reader
      * 
      */
-    public RIFCSReader()
-    {
+    public RIFCSReader() {
         // do nothing constructor
     }
     
@@ -63,8 +61,7 @@ public class RIFCSReader
      * @throws IOException
      * 
      */
-    public void mapToDOM(InputStream is) throws SAXException, ParserConfigurationException, IOException
-    {
+    public void mapToDOM(InputStream is) throws SAXException, ParserConfigurationException, IOException {
         SAXParserFactory spf = SAXParserFactory.newInstance();
         spf.setFeature("http://xml.org/sax/features/namespaces", true);
         spf.setFeature("http://xml.org/sax/features/namespace-prefixes", true);
@@ -93,8 +90,7 @@ public class RIFCSReader
      * 
      */
     public void mapToDOM(InputStream is,
-                DefaultRIFCSHandler ch) throws SAXException, ParserConfigurationException, IOException
-    {
+                DefaultRIFCSHandler ch) throws SAXException, ParserConfigurationException, IOException {
         SAXParserFactory spf = SAXParserFactory.newInstance();
         spf.setFeature("http://xml.org/sax/features/namespaces", true);
         spf.setFeature("http://xml.org/sax/features/namespace-prefixes", true);
@@ -113,8 +109,7 @@ public class RIFCSReader
      *      The DOM document. May be null if called before parsing and empty
      *      if parsing exception caught.
      */
-    public Document getDocument()
-    {
+    public Document getDocument() {
        return this.doc;
     }
 }

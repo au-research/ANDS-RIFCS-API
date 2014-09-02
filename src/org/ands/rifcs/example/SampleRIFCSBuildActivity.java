@@ -28,18 +28,15 @@ import org.ands.rifcs.base.*;
 
 import org.xml.sax.SAXException;
 
-public class SampleRIFCSBuildActivity
-{
+public class SampleRIFCSBuildActivity {
 
 	private static RIFCS rifcs = null;
 	
-    public SampleRIFCSBuildActivity()
-    {
+    public SampleRIFCSBuildActivity()  {
     
     }
 
-    public static void main(String args[]) throws RIFCSException, FileNotFoundException, SAXException, ParserConfigurationException, IOException
-    {
+    public static void main(String args[]) throws RIFCSException, FileNotFoundException, SAXException, ParserConfigurationException, IOException {
         RIFCSWrapper mw = new RIFCSWrapper();
         rifcs = mw.getRIFCSObject();
         RegistryObject r = rifcs.newRegistryObject();

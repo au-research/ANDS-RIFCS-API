@@ -38,10 +38,9 @@ import org.w3c.dom.NodeList;
  * @author Scott Yeadon
  *
  */
-public class RIFCS
-{
+public class RIFCS {
     private Document doc = null;
-    private HashMap<String,RegistryObject> ros = new HashMap<String,RegistryObject>();
+    private HashMap<String, RegistryObject> ros = new HashMap<String, RegistryObject>();
     private HashMap<String, ArrayList<RegistryObject>> rosByClass = new HashMap<String, ArrayList<RegistryObject>>();
 
     
@@ -52,10 +51,8 @@ public class RIFCS
      * 
      * @exception RIFCSException
      */     
-    public RIFCS() throws RIFCSException
-    {
-        try
-        {
+    public RIFCS() throws RIFCSException {
+        try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             factory.setNamespaceAware(true);
             DocumentBuilder builder = factory.newDocumentBuilder();
@@ -64,9 +61,7 @@ public class RIFCS
             root.setAttributeNS(Constants.NS_SCHEMA, Constants.ATTRIBUTE_SCHEMA_LOCATION, Constants.NS_RIFCS + " " + Constants.SCHEMA_REGISTRY_OBJECTS);
             doc.appendChild(root);
             initObjectClassMap();
-        }
-        catch (ParserConfigurationException pce)
-        {
+        } catch (ParserConfigurationException pce) {
             throw new RIFCSException(pce);
         }
     }
@@ -84,8 +79,7 @@ public class RIFCS
      * @exception RIFCSException
      *
      */
-    public RegistryObject newRegistryObject() throws RIFCSException
-    {
+    public RegistryObject newRegistryObject() throws RIFCSException {
         Element ro = doc.createElementNS(Constants.NS_RIFCS, Constants.ELEMENT_REGISTRY_OBJECT);
         return new RegistryObject(ro);
     }
@@ -99,8 +93,7 @@ public class RIFCS
      *        
      * @exception RIFCSException
      */
-    public RIFCS(Document d) throws RIFCSException
-    {
+    public RIFCS(Document d) throws RIFCSException {
         this.doc = d;
         initObjectClassMap();
         initRegistryObjects();
@@ -112,8 +105,7 @@ public class RIFCS
      * 
      * @return A w3c Document representing the RIF-CS DOM
      */
-    public Document getDocument()
-    {
+    public Document getDocument() {
        return this.doc;
     }
 
@@ -124,8 +116,7 @@ public class RIFCS
      * @return A List of RegistryObject objects, all of which are collections.
      *        Empty List if no collections exist.
      */
-    public List<RegistryObject> getCollections()
-    {
+    public List<RegistryObject> getCollections() {
         return rosByClass.get(Constants.ELEMENT_COLLECTION);
     }
     
@@ -136,8 +127,7 @@ public class RIFCS
      * @return A List of RegistryObject objects, all of which are activities.
      *        Empty List if no activities exist.
      */
-    public List<RegistryObject> getActivities()
-    {
+    public List<RegistryObject> getActivities() {
         return rosByClass.get(Constants.ELEMENT_ACTIVITY);
     }
 
@@ -148,8 +138,7 @@ public class RIFCS
      * @return A List of RegistryObject objects, all of which are parties.
      *        Empty List if no parties exist.
      */
-    public List<RegistryObject> getParties()
-    {
+    public List<RegistryObject> getParties() {
         return rosByClass.get(Constants.ELEMENT_PARTY);
     }
     
@@ -161,8 +150,7 @@ public class RIFCS
      *        A List of RegistryObject objects, all of which are services.
      *        Empty List if no services exist.
      */
-    public List<RegistryObject> getServices()
-    {
+    public List<RegistryObject> getServices() {
         return rosByClass.get(Constants.ELEMENT_SERVICE);
     }
     
@@ -173,8 +161,7 @@ public class RIFCS
      * @return A Map of RegistryObject objects or empty Map if none exist. The 
      *        Map key is the content of the RegistryObject "key" element.
      */
-    public Map<String,RegistryObject> getRegistryObjects()
-    {
+    public Map<String, RegistryObject> getRegistryObjects() {
         return ros;
     }
 
@@ -185,8 +172,7 @@ public class RIFCS
      * @param r
      *    A RegistryObject
      */
-    public void addRegistryObject(RegistryObject r) throws RIFCSException
-    {
+    public void addRegistryObject(RegistryObject r) throws RIFCSException {
         doc.getDocumentElement().appendChild(r.getElement());
         ros.put(r.getKey(), r);        
         rosByClass.get(r.getObjectClassName()).add(r);
@@ -196,12 +182,10 @@ public class RIFCS
     /**
      * For existing DOM, initialise and create all the supporting structures
      */
-    private void initRegistryObjects() throws RIFCSException
-    {
+    private void initRegistryObjects() throws RIFCSException {
         NodeList nl = doc.getElementsByTagNameNS(Constants.NS_RIFCS, Constants.ELEMENT_REGISTRY_OBJECT);
 
-        for (int i = 0; i < nl.getLength(); i++)
-        {
+        for (int i = 0; i < nl.getLength(); i++) {
             RegistryObject ro = new RegistryObject(nl.item(i));
             ros.put(ro.getKey(), ro);
             rosByClass.get(ro.getObjectClassName()).add(ro);
@@ -212,8 +196,7 @@ public class RIFCS
     /**
      * Initialise the object class cache
      */
-    private void initObjectClassMap()
-    {
+    private void initObjectClassMap() {
         rosByClass.put(Constants.ELEMENT_COLLECTION, new ArrayList());
         rosByClass.put(Constants.ELEMENT_ACTIVITY, new ArrayList());
         rosByClass.put(Constants.ELEMENT_PARTY, new ArrayList());

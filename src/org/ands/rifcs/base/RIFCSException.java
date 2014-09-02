@@ -24,16 +24,14 @@ package org.ands.rifcs.base;
  * 
  * @author Scott Yeadon, ANU 
  */
-public class RIFCSException extends Exception
-{
+public class RIFCSException extends Exception {
     /**
      * create a ROException
      * 
      * @param reason
      *            string describing reason for the exception
      */
-    public RIFCSException(String reason)
-    {
+    public RIFCSException(String reason) {
         super(reason);
     }
     
@@ -47,8 +45,7 @@ public class RIFCSException extends Exception
      *            A Throwable describing the cause of the exception
      */
     public RIFCSException(String reason,
-                        Throwable cause)
-    {
+                        Throwable cause) {
         super(reason, cause);
     }
     
@@ -59,8 +56,7 @@ public class RIFCSException extends Exception
      * @param cause
      *            A Throwable describing the cause of the exception
      */
-    public RIFCSException(Throwable cause)
-    {
+    public RIFCSException(Throwable cause) {
         super(cause);
     }
     
@@ -71,8 +67,7 @@ public class RIFCSException extends Exception
      * @return
      *          The message text of the exception
      */
-    public String getMessage()
-    {
+    public String getMessage() {
         return super.getMessage();
     }
 }

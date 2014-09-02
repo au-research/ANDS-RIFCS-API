@@ -26,8 +26,7 @@ import org.w3c.dom.Node;
  * @author Scott Yeadon
  *
  */
-public class NamePart extends RIFCSElement
-{
+public class NamePart extends RIFCSElement {
     /**
      * Construct a NamePart object
      * 
@@ -36,8 +35,7 @@ public class NamePart extends RIFCSElement
      *        
      * @exception RIFCSException
      */     
-    protected NamePart(Node n) throws RIFCSException
-    {
+    protected NamePart(Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_NAMEPART);
     }
 
@@ -48,8 +46,7 @@ public class NamePart extends RIFCSElement
      * @param type 
      *          The type of namePart being described
      */
-    public void setType(String type)
-    {
+    public void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -61,8 +58,7 @@ public class NamePart extends RIFCSElement
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */  
-   public String getType()
-    {
+   public String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
 
@@ -73,8 +69,7 @@ public class NamePart extends RIFCSElement
      * @param value 
      *      The content of the namePart
      */
-    public void setValue(String value)
-    {
+    public void setValue(String value) {
         super.setTextContent(value);
     }
 
@@ -85,8 +80,7 @@ public class NamePart extends RIFCSElement
      * @return 
      *      The namePart string
      */  
-    public String getValue()
-    {
+    public String getValue() {
         return super.getTextContent();
     }
 }

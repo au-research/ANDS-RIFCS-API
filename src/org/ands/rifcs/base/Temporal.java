@@ -35,8 +35,7 @@ import org.w3c.dom.NodeList;
  * @author Scott Yeadon
  *
  */
-public class Temporal extends RIFCSElement
-{
+public class Temporal extends RIFCSElement {
     private List<TemporalCoverageDate> dates = new ArrayList<TemporalCoverageDate>();
     private List<Element> texts = new ArrayList<Element>();
 
@@ -48,8 +47,7 @@ public class Temporal extends RIFCSElement
      *        
      * @exception RIFCSException
      */ 
-    protected Temporal(Node n) throws RIFCSException
-    {
+    protected Temporal(Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_TEMPORAL);
     }
 
@@ -71,8 +69,7 @@ public class Temporal extends RIFCSElement
    //     return new DateElement(this.newElement(Constants.ELEMENT_DATE));
    // }
     
-    public TemporalCoverageDate newDate() throws RIFCSException
-    {
+    public TemporalCoverageDate newDate() throws RIFCSException {
     return new TemporalCoverageDate(this.newElement(Constants.ELEMENT_DATE));
     }
 
@@ -83,8 +80,7 @@ public class Temporal extends RIFCSElement
      * @return 
      *      A list of DateElement objects
      */          
-    public List<TemporalCoverageDate> getDates()
-    {
+    public List<TemporalCoverageDate> getDates() {
         return this.dates;
     }
 
@@ -95,11 +91,9 @@ public class Temporal extends RIFCSElement
      * @return 
      *      A list of string values
      */          
-    public List<String> getText()
-    {
+    public List<String> getText() {
         ArrayList al = new ArrayList<String>();
-        for (Iterator<Element> i = texts.iterator(); i.hasNext();)
-        {
+        for (Iterator<Element> i = texts.iterator(); i.hasNext();) {
             al.add(i.next().getTextContent());
         }
         return al;
@@ -112,8 +106,7 @@ public class Temporal extends RIFCSElement
      * @param text
      *    a text description of the temporal coverage
      */
-    public void addText(String text)
-    {
+    public void addText(String text) {
         Element e = this.newElement(Constants.ELEMENT_TEXT);
         e.setTextContent(text);
         this.getElement().appendChild(e);
@@ -133,9 +126,8 @@ public class Temporal extends RIFCSElement
      */    
     
 
-    public void addDate(String date, String type) throws RIFCSException
-	{
-    	this.addDate(date, type,"W3C");
+    public void addDate(String date, String type) throws RIFCSException {
+    	this.addDate(date, type, "W3C");
 	}
     /**
      * Add temporal date to the coverage object. A convenience method
@@ -149,8 +141,7 @@ public class Temporal extends RIFCSElement
      */    
     
 
-    public void addDate(String date, String type, String dateFormat) throws RIFCSException
-	{
+    public void addDate(String date, String type, String dateFormat) throws RIFCSException {
 	    TemporalCoverageDate de = this.newDate();
 	    de.setType(type);
 	    de.setDateFormat(dateFormat);
@@ -171,8 +162,7 @@ public class Temporal extends RIFCSElement
      */    
     
 
-    public void addDate(Date date, String type) throws RIFCSException
-	{
+    public void addDate(Date date, String type) throws RIFCSException {
     	DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");  
     	String text = df.format(date);  
     	String result = text.substring(0, 22) + ":" + text.substring(22);
@@ -181,28 +171,23 @@ public class Temporal extends RIFCSElement
 
 
     /* initialisation code for existing documents */
-    private void initStructures() throws RIFCSException
-    {
+    private void initStructures() throws RIFCSException {
         initTexts();
         initDates();
     }
     
-    private void initTexts() throws RIFCSException
-    {
+    private void initTexts() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_TEXT);
         
-        for (int i = 0; i < nl.getLength(); i++)
-        {
+        for (int i = 0; i < nl.getLength(); i++) {
             texts.add((Element)nl.item(i));
         }
     }
 
-    private void initDates() throws RIFCSException
-    {
+    private void initDates() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_DATE);
         
-        for (int i = 0; i < nl.getLength(); i++)
-        {
+        for (int i = 0; i < nl.getLength(); i++) {
             dates.add(new TemporalCoverageDate(nl.item(i)));
         }
     }

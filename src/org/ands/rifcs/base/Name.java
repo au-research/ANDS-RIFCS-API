@@ -31,8 +31,7 @@ import org.w3c.dom.NodeList;
  * @author Scott Yeadon
  *
  */
-public class Name extends RIFCSElement
-{
+public class Name extends RIFCSElement {
     private List<NamePart> nameParts = new ArrayList<NamePart>();
 
     /**
@@ -43,8 +42,7 @@ public class Name extends RIFCSElement
      *        
      * @exception RIFCSException
      */     
-    protected Name(Node n) throws RIFCSException
-    {
+    protected Name(Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_NAME);
         initStructures();
     }
@@ -56,8 +54,7 @@ public class Name extends RIFCSElement
      * @param type 
      *          The type of name
      */      
-    public void setType(String type)
-    {
+    public void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -69,8 +66,7 @@ public class Name extends RIFCSElement
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */  
-   public String getType()
-    {
+   public String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
     
@@ -81,8 +77,7 @@ public class Name extends RIFCSElement
     * @param lang 
     *      The xml:lang attribute value
     */  
-    public void setLanguage(String lang)
-    {
+    public void setLanguage(String lang) {
         super.setAttributeValueNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG, lang);
     }
 
@@ -94,8 +89,7 @@ public class Name extends RIFCSElement
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */  
-    public String getLanguage()
-    {
+    public String getLanguage() {
         return super.getAttributeValueNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG);
     }
 
@@ -107,8 +101,7 @@ public class Name extends RIFCSElement
      *      A date object representing the date the name
      *      information was valid from
      */          
-    public void setDateFrom(Date dateFrom)
-    {
+    public void setDateFrom(Date dateFrom) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_FROM, RegistryObject.formatDate(dateFrom));
     }
 
@@ -121,8 +114,7 @@ public class Name extends RIFCSElement
      *      of the <a href="http://www.w3.org/TR/xmlschema-2/">W3C's Schema 
      *      Data Types document</a> 
      */          
-    public void setDateFrom(String dateFrom)
-    {
+    public void setDateFrom(String dateFrom) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_FROM, dateFrom);
     }
 
@@ -130,8 +122,7 @@ public class Name extends RIFCSElement
     /**
      * Set the date the name was relevant from
      */
-    public String getDateFrom()
-    {
+    public String getDateFrom() {
         return super.getAttributeValue(Constants.ATTRIBUTE_DATE_FROM);
     }
 
@@ -142,8 +133,7 @@ public class Name extends RIFCSElement
      * @param dateTo
      *      A date object representing the date the name was valid to
      */          
-    public void setDateTo(Date dateTo)
-    { 
+    public void setDateTo(Date dateTo) { 
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_TO, RegistryObject.formatDate(dateTo));
     }
 
@@ -156,8 +146,7 @@ public class Name extends RIFCSElement
      *      of the <a href="http://www.w3.org/TR/xmlschema-2/">W3C's Schema 
      *      Data Types document</a> 
      */          
-    public void setDateTo(String dateTo)
-    {
+    public void setDateTo(String dateTo) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_TO, dateTo);
     }
     
@@ -165,8 +154,7 @@ public class Name extends RIFCSElement
     /**
      * Set the date the name was relevant to
      */
-    public String getDateTo()
-    {
+    public String getDateTo() {
         return super.getAttributeValue(Constants.ATTRIBUTE_DATE_TO);
     }
     
@@ -183,8 +171,7 @@ public class Name extends RIFCSElement
      * @exception RIFCSException
      *
      */
-    public NamePart newNamePart() throws RIFCSException
-    {
+    public NamePart newNamePart() throws RIFCSException {
         return new NamePart(this.newElement(Constants.ELEMENT_NAMEPART));
     }
     
@@ -195,8 +182,7 @@ public class Name extends RIFCSElement
      * @param namePart
      *    a completed NamePart object
      */
-    public void addNamePart(NamePart namePart)
-    {
+    public void addNamePart(NamePart namePart) {
        this.getElement().appendChild(namePart.getElement());
        this.nameParts.add(namePart);
     }
@@ -211,8 +197,7 @@ public class Name extends RIFCSElement
      *    namePart type (e.g. surname, middle name) or null
      */
     public void addNamePart(String namePart,
-                            String type) throws RIFCSException
-    {
+                            String type) throws RIFCSException {
         NamePart np = newNamePart();
         np.setValue(namePart);
         np.setType(type);
@@ -227,19 +212,16 @@ public class Name extends RIFCSElement
      * @return 
      *      A list of NamePart objects
      */
-    public List<NamePart> getNameParts()
-    {
+    public List<NamePart> getNameParts() {
         return nameParts;
     }
     
     
     /* initialisation code for existing documents */
-    private void initStructures() throws RIFCSException
-    {
+    private void initStructures() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_NAMEPART);
         
-        for (int i = 0; i < nl.getLength(); i++)
-        {
+        for (int i = 0; i < nl.getLength(); i++) {
             nameParts.add(new NamePart(nl.item(i)));
         }        
     }

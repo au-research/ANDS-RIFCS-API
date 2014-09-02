@@ -58,8 +58,7 @@ import org.xml.sax.SAXException;
  * @author Scott Yeadon
  *
  */
-public class RIFCSWrapper
-{
+public class RIFCSWrapper {
     private Document doc = null;
     private RIFCS rifcs = null;
     
@@ -72,10 +71,8 @@ public class RIFCSWrapper
      * 
      * @exception RIFCSException
      */     
-    public RIFCSWrapper() throws RIFCSException
-    {
-        try
-        {
+    public RIFCSWrapper() throws RIFCSException {
+        try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             factory.setNamespaceAware(true);
             DocumentBuilder builder = factory.newDocumentBuilder();
@@ -84,9 +81,7 @@ public class RIFCSWrapper
             root.setAttributeNS(Constants.NS_SCHEMA, Constants.ATTRIBUTE_SCHEMA_LOCATION, Constants.NS_RIFCS + " " + Constants.SCHEMA_REGISTRY_OBJECTS);
             doc.appendChild(root);
             rifcs = new RIFCS(doc);
-        }
-        catch (ParserConfigurationException pce)
-        {
+        } catch (ParserConfigurationException pce) {
             throw new RIFCSException(pce);
         }
     }
@@ -100,8 +95,7 @@ public class RIFCSWrapper
      *        
      * @exception RIFCSException
      */
-    public RIFCSWrapper(Document d) throws RIFCSException
-    {
+    public RIFCSWrapper(Document d) throws RIFCSException {
         this.doc = d;
         rifcs = new RIFCS(d);
     }
@@ -113,8 +107,7 @@ public class RIFCSWrapper
      * @return 
      *        A w3c Document representing a RIFCS DOM
      */
-    public Document getRIFCSDocument()
-    {
+    public Document getRIFCSDocument() {
        return this.doc;
     }
     
@@ -125,8 +118,7 @@ public class RIFCSWrapper
      * @return 
      *        a RIFCS object representing a RIFCS root element
      */     
-    public RIFCS getRIFCSObject()
-    {
+    public RIFCS getRIFCSObject() {
         return this.rifcs;
     }
     
@@ -137,10 +129,9 @@ public class RIFCSWrapper
      * @param os 
      *        The OutputStream to write the data to
      */
-    public void write(OutputStream os)
-    {
+    public void write(OutputStream os) {
         DOMImplementation impl = doc.getImplementation();
-        DOMImplementationLS implLS = (DOMImplementationLS)impl.getFeature("LS","3.0");
+        DOMImplementationLS implLS = (DOMImplementationLS)impl.getFeature("LS", "3.0");
         
         LSOutput lso = implLS.createLSOutput();
         lso.setByteStream(os);
@@ -157,10 +148,8 @@ public class RIFCSWrapper
      * @return 
      *        The RIFCS document in string form or <code>null</code> if an exception occurs
      */     
-    public String toString()
-    {
-        try
-        {
+    public String toString() {
+        try {
             TransformerFactory factory = TransformerFactory.newInstance();
             Transformer transformer = factory.newTransformer();
             StringWriter writer = new StringWriter();
@@ -169,13 +158,9 @@ public class RIFCSWrapper
             transformer.transform(source, result);
             writer.close();
             return writer.toString();
-        }
-        catch (TransformerException te)
-        {
+        } catch (TransformerException te) {
             return null;
-        }
-        catch (IOException ioe)
-        {
+        } catch (IOException ioe) {
             return null;
         }
         //DOMImplementation impl = doc.getImplementation();
@@ -199,8 +184,7 @@ public class RIFCSWrapper
      * @exception IOException
      *      if URL stream cannot be accessed
      */     
-    public void validate() throws SAXException, MalformedURLException, IOException, ParserConfigurationException
-    {
+    public void validate() throws SAXException, MalformedURLException, IOException, ParserConfigurationException {
         // create a SchemaFactory capable of understanding WXS schemas
         SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 
@@ -213,8 +197,7 @@ public class RIFCSWrapper
 
     // Xerces cannot handle multiple schema files with same namespace so
     // need to work around this
-    private Source doXercesWorkaround() throws SAXException, MalformedURLException, IOException, ParserConfigurationException
-    {
+    private Source doXercesWorkaround() throws SAXException, MalformedURLException, IOException, ParserConfigurationException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         factory.setNamespaceAware(true);
         DocumentBuilder builder = factory.newDocumentBuilder();
@@ -251,21 +234,18 @@ public class RIFCSWrapper
 
     // Only to be called from Xerces workaround
     private void removeElements(Document targetDoc,
-                                String element)
-    {
+                                String element) {
         NodeList nl = targetDoc.getDocumentElement().getElementsByTagName(element);
 
         Node[] n = new Node[nl.getLength()];
 
         // xerces updates nodelist dynamically so need to keep
         // references in a temp array in order to remove elements
-        for (int i=0; i < nl.getLength(); i++)
-        {
+        for (int i=0; i < nl.getLength(); i++) {
             n[i] = nl.item(i);
         }
         
-        for (int i=0; i < n.length; i++)
-        {
+        for (int i=0; i < n.length; i++) {
             targetDoc.getDocumentElement().removeChild(n[i]);
         }        
     }
@@ -273,11 +253,9 @@ public class RIFCSWrapper
     
     // Only to be called from Xerces workaround
     private void addToSchema(Document targetDoc,
-                             Document sourceDoc)
-    {
+                             Document sourceDoc) {
         NodeList nl = sourceDoc.getDocumentElement().getChildNodes();
-        for (int i=0; i < nl.getLength(); i++)
-        {
+        for (int i=0; i < nl.getLength(); i++) {
             Node n = targetDoc.importNode(nl.item(i), true);
             targetDoc.getDocumentElement().appendChild(n);
         }                
@@ -300,8 +278,7 @@ public class RIFCSWrapper
      * @exception IOException
      *      if URL stream cannot be accessed
      */     
-    public void validate(String schemaUrl) throws SAXException, MalformedURLException, IOException
-    {
+    public void validate(String schemaUrl) throws SAXException, MalformedURLException, IOException {
         // create a SchemaFactory capable of understanding WXS schemas
         SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 

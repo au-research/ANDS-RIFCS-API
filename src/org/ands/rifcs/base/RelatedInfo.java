@@ -28,8 +28,7 @@ import org.w3c.dom.NodeList;
  * @author Scott Yeadon
  *
  */
-public class RelatedInfo extends RIFCSElement
-{
+public class RelatedInfo extends RIFCSElement {
     private Identifier identifier = null;
     
     /**
@@ -40,8 +39,7 @@ public class RelatedInfo extends RIFCSElement
      *        
      * @exception RIFCSException
      */     
-    protected RelatedInfo(Node n) throws RIFCSException
-    {
+    protected RelatedInfo(Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_RELATED_INFO);
         initStructures();
     }
@@ -53,8 +51,7 @@ public class RelatedInfo extends RIFCSElement
      * @param type 
      *          The type of related information
      */      
-    public void setType(String type)
-    {
+    public void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -66,8 +63,7 @@ public class RelatedInfo extends RIFCSElement
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-    public String getType()
-    {
+    public String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
 
@@ -84,8 +80,7 @@ public class RelatedInfo extends RIFCSElement
      * @exception RIFCSException
      *
      */
-    public Identifier newIdentifier() throws RIFCSException
-    {
+    public Identifier newIdentifier() throws RIFCSException {
         return new Identifier(this.newElement(Constants.ELEMENT_IDENTIFIER));
     }
 
@@ -100,8 +95,7 @@ public class RelatedInfo extends RIFCSElement
      * 
      */
     public void setIdentifier(String identifier,
-                              String type) throws RIFCSException
-    {
+                              String type) throws RIFCSException {
         this.identifier = this.newIdentifier(); 
         this.identifier.setValue(identifier);
         this.identifier.setType(type);
@@ -115,8 +109,7 @@ public class RelatedInfo extends RIFCSElement
      * @return Identifier
      *      The identifier of the related information resource
      */  
-    public Identifier getIdentifier()
-    {
+    public Identifier getIdentifier() {
         return identifier;
     }
     
@@ -127,8 +120,7 @@ public class RelatedInfo extends RIFCSElement
      * @param title
      *    The title of the related information resource
      */
-    public void setTitle(String title)
-    {
+    public void setTitle(String title) {
         Element e = this.newElement(Constants.ELEMENT_TITLE);
         e.setTextContent(title);
         this.getElement().appendChild(e);
@@ -141,11 +133,9 @@ public class RelatedInfo extends RIFCSElement
      * @return String
      *    The title of the related information resource
      */
-    public String getTitle()
-    {
+    public String getTitle() {
         NodeList nl = super.getElements(Constants.ELEMENT_TITLE);
-        if (nl.getLength() == 1)
-        {
+        if (nl.getLength() == 1) {
             return nl.item(0).getTextContent();
         }
         
@@ -159,8 +149,7 @@ public class RelatedInfo extends RIFCSElement
      * @param notes
      *    Notes relevant to the related information resource
      */
-    public void setNotes(String notes)
-    {
+    public void setNotes(String notes) {
         Element e = this.newElement(Constants.ELEMENT_NOTES);
         e.setTextContent(notes);
         this.getElement().appendChild(e);
@@ -173,11 +162,9 @@ public class RelatedInfo extends RIFCSElement
      * @return String
      *    The title of the related information resource
      */
-    public String getNotes()
-    {
+    public String getNotes() {
         NodeList nl = super.getElements(Constants.ELEMENT_NOTES);
-        if (nl.getLength() == 1)
-        {
+        if (nl.getLength() == 1) {
             return nl.item(0).getTextContent();
         }
         
@@ -186,12 +173,10 @@ public class RelatedInfo extends RIFCSElement
     
     
     /* initialisation code for existing documents */
-    private void initStructures() throws RIFCSException
-    {
+    private void initStructures() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_IDENTIFIER);
         
-        if (nl.getLength() > 0)
-        {
+        if (nl.getLength() > 0) {
             this.identifier = new Identifier(nl.item(0));
         }
     }

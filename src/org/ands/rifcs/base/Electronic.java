@@ -31,8 +31,7 @@ import org.w3c.dom.NodeList;
  * @author Scott Yeadon
  *
  */
-public class Electronic extends RIFCSElement
-{
+public class Electronic extends RIFCSElement {
     List<Arg> args = new ArrayList<Arg>();
     
     /**
@@ -43,8 +42,7 @@ public class Electronic extends RIFCSElement
      *        
      * @exception RIFCSException
      */     
-    protected Electronic(Node n) throws RIFCSException
-    {
+    protected Electronic(Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_ELECTRONIC);
         initStructures();
     }
@@ -56,8 +54,7 @@ public class Electronic extends RIFCSElement
      * @param type 
      *      The electronic address type
      */      
-    public void setType(String type)
-    {
+    public void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -69,8 +66,7 @@ public class Electronic extends RIFCSElement
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */  
-    public String getType()
-    {
+    public String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
 
@@ -87,8 +83,7 @@ public class Electronic extends RIFCSElement
      * @exception RIFCSException
      *
      */
-    public Arg newArg() throws RIFCSException
-    {
+    public Arg newArg() throws RIFCSException {
         return new Arg(this.newElement(Constants.ELEMENT_ARG));
     }
 
@@ -108,8 +103,7 @@ public class Electronic extends RIFCSElement
     public void addArg(String name,
                        String required,
                        String type,
-                       String use) throws RIFCSException
-    {
+                       String use) throws RIFCSException {
         Arg arg = newArg();
         arg.setName(name);
         arg.setRequired(required);
@@ -125,8 +119,7 @@ public class Electronic extends RIFCSElement
      * @return 
      *      A list of Arg objects
      */          
-    public List<Arg> getArgs()
-    {
+    public List<Arg> getArgs() {
         return args;
     }
     
@@ -137,8 +130,7 @@ public class Electronic extends RIFCSElement
      * @param arg
      *    a completed Arg object      
      */
-    public void addArg(Arg arg)
-    {
+    public void addArg(Arg arg) {
        this.getElement().appendChild(arg.getElement());
        this.args.add(arg);
     }
@@ -151,8 +143,7 @@ public class Electronic extends RIFCSElement
      *    a resolvable URI representing the electronic address
      *    of the containing registry object      
      */
-    public void setValue(String valueUri)
-    {
+    public void setValue(String valueUri) {
         Element value = this.newElement(Constants.ELEMENT_VALUE);
         value.setTextContent(valueUri);
         this.getElement().appendChild(value);
@@ -166,11 +157,9 @@ public class Electronic extends RIFCSElement
      *    a resolvable URI representing the electronic address
      *    of the containing registry object      
      */
-    public String getValue()
-    {
+    public String getValue() {
         NodeList nl = super.getElements(Constants.ELEMENT_VALUE);
-        if (nl.getLength() == 1)
-        {
+        if (nl.getLength() == 1) {
             return nl.item(0).getTextContent();
         }
         
@@ -179,12 +168,10 @@ public class Electronic extends RIFCSElement
     
     
     /* initialisation code for existing documents */
-    private void initStructures() throws RIFCSException
-    {
+    private void initStructures() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_ARG);
 
-        for (int i = 0; i < nl.getLength(); i++)
-        {
+        for (int i = 0; i < nl.getLength(); i++) {
             args.add(new Arg(nl.item(i)));
         }
     }

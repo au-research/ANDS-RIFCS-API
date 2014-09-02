@@ -31,8 +31,7 @@ import org.w3c.dom.NodeList;
  * @author Scott Yeadon
  *
  */
-public class Coverage extends RIFCSElement
-{
+public class Coverage extends RIFCSElement {
     private List<Spatial> spatials = new ArrayList<Spatial>();
     private List<Temporal> temporals = new ArrayList<Temporal>();
 
@@ -45,8 +44,7 @@ public class Coverage extends RIFCSElement
      *        
      * @exception RIFCSException
      */ 
-    protected Coverage(Node n) throws RIFCSException
-    {
+    protected Coverage(Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_COVERAGE);
         initStructures();
     }
@@ -64,8 +62,7 @@ public class Coverage extends RIFCSElement
      * @exception RIFCSException
      *
      */
-    public Spatial newSpatial() throws RIFCSException
-    {
+    public Spatial newSpatial() throws RIFCSException {
         return new Spatial(this.newElement(Constants.ELEMENT_SPATIAL));
     }
   
@@ -76,8 +73,7 @@ public class Coverage extends RIFCSElement
      * @param spatial
      *    a completed Spatial object
      */
-    public void addSpatial(Spatial spatial)
-    {
+    public void addSpatial(Spatial spatial) {
         this.getElement().appendChild(spatial.getElement());
         this.spatials.add(spatial);
     }
@@ -89,8 +85,7 @@ public class Coverage extends RIFCSElement
      * @return 
      *      A list of Spatial objects
      */          
-    public List<Spatial> getSpatials()
-    {
+    public List<Spatial> getSpatials() {
         return this.spatials;
     }
 
@@ -107,8 +102,7 @@ public class Coverage extends RIFCSElement
      * @exception RIFCSException
      *
      */
-    public Temporal newTemporal() throws RIFCSException
-    {
+    public Temporal newTemporal() throws RIFCSException {
         return new Temporal(this.newElement(Constants.ELEMENT_TEMPORAL));
     }
   
@@ -119,8 +113,7 @@ public class Coverage extends RIFCSElement
      * @param temporal
      *    a completed Temporal object
      */
-    public void addTemporal(Temporal temporal)
-    {
+    public void addTemporal(Temporal temporal) {
         this.getElement().appendChild(temporal.getElement());
         this.temporals.add(temporal);
     }
@@ -134,8 +127,7 @@ public class Coverage extends RIFCSElement
      *      The value to add to the text element
      *    
      */
-    public void addTemporal(String text) throws RIFCSException
-    {
+    public void addTemporal(String text) throws RIFCSException {
         Temporal t = newTemporal();
         t.addText(text);
         this.getElement().appendChild(t.getElement());
@@ -154,8 +146,7 @@ public class Coverage extends RIFCSElement
      *    
      */    
     public void addTemporalDate(Date date,
-                                String type) throws RIFCSException
-    {
+                                String type) throws RIFCSException {
         Temporal t = newTemporal();
         t.addDate(date, type);
         this.getElement().appendChild(t.getElement());
@@ -174,8 +165,7 @@ public class Coverage extends RIFCSElement
      *    
      */    
     public void addTemporalDate(String date,
-                                String type) throws RIFCSException
-    {
+                                String type) throws RIFCSException {
         Temporal t = newTemporal();
         t.addDate(date, type);
         this.getElement().appendChild(t.getElement());
@@ -189,35 +179,29 @@ public class Coverage extends RIFCSElement
      * @return 
      *      A list of Temporal objects
      */
-    public List<Temporal> getTemporals()
-    {
+    public List<Temporal> getTemporals() {
         return this.temporals;
     }
     
     
     /* initialisation code for existing documents */
-    private void initStructures() throws RIFCSException
-    {
+    private void initStructures() throws RIFCSException {
         initSpatials();
         initTemporals();
     }
     
-    private void initSpatials() throws RIFCSException
-    {
+    private void initSpatials() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_SPATIAL);
         
-        for (int i = 0; i < nl.getLength(); i++)
-        {
+        for (int i = 0; i < nl.getLength(); i++) {
             spatials.add(new Spatial(nl.item(i)));
         }
     }
 
-    private void initTemporals() throws RIFCSException
-    {
+    private void initTemporals() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_TEMPORAL);
         
-        for (int i = 0; i < nl.getLength(); i++)
-        {
+        for (int i = 0; i < nl.getLength(); i++) {
             temporals.add(new Temporal(nl.item(i)));
         }
     }

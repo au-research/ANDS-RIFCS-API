@@ -26,8 +26,7 @@ import org.w3c.dom.Node;
  * @author Scott Yeadon
  *
  */
-public class AccessPolicy extends RIFCSElement
-{
+public class AccessPolicy extends RIFCSElement {
     /**
      * Construct an AccessPolicy object
      * 
@@ -36,8 +35,7 @@ public class AccessPolicy extends RIFCSElement
      *        
      * @exception RIFCSException
      */     
-    protected AccessPolicy(Node n) throws RIFCSException
-    {
+    protected AccessPolicy(Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_ACCESS_POLICY);
     }
 
@@ -48,8 +46,7 @@ public class AccessPolicy extends RIFCSElement
      * @param value 
      *      The access policy URI
      */
-    public void setValue(String value)
-    {
+    public void setValue(String value) {
         super.setTextContent(value);
     }
 
@@ -59,8 +56,7 @@ public class AccessPolicy extends RIFCSElement
      * 
      * @return The access policy URI
      */  
-    public String getValue()
-    {
+    public String getValue() {
         return super.getTextContent();
     }
 }

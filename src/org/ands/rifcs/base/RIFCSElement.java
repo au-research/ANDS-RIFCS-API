@@ -35,8 +35,7 @@ import org.w3c.dom.NodeList;
  * @author Scott Yeadon
  *
  */
-public class RIFCSElement
-{
+public class RIFCSElement {
     private Element e = null;
     
     /**
@@ -51,22 +50,16 @@ public class RIFCSElement
      *
      */ 
     protected RIFCSElement(Node n,
-                           String name) throws RIFCSException
-    {
-        if (n == null)
-        {
+                           String name) throws RIFCSException {
+        if (n == null) {
             throw new RIFCSException("Null Node passed to constructor");
         }
 
-        if (n instanceof Element)
-        {
-            if (!n.getNodeName().endsWith(name))
-            {
+        if (n instanceof Element) {
+            if (!n.getNodeName().endsWith(name)) {
                 throw new RIFCSException("Mismatch tag name. Node tag is: " + n.getNodeName() + ", expected: " + name);
             }
-        }
-        else
-        {
+        } else {
             throw new RIFCSException("Node of type Element required in constructor");
         }
 
@@ -84,8 +77,7 @@ public class RIFCSElement
      *      The attribute value or empty string if attribute
      *      is empty or not present
      */  
-    protected String getAttributeValue(String name)
-    {
+    protected String getAttributeValue(String name) {
         return e.getAttribute(name);
     }
 
@@ -100,8 +92,7 @@ public class RIFCSElement
      *      The attribute value
      */  
     protected void setAttributeValue(String name,
-                                     String value)
-    {
+                                     String value) {
         e.setAttribute(name, value);
     }
 
@@ -118,8 +109,7 @@ public class RIFCSElement
      */  
     protected void setAttributeValueNS(String ns,
                                         String name,
-                                     String value)
-    {
+                                     String value) {
         e.setAttributeNS(ns, name, value);
     }
     
@@ -133,8 +123,7 @@ public class RIFCSElement
      *      The attribute name
      */  
     protected String getAttributeValueNS(String ns,
-                                         String name)
-    {
+                                         String name) {
         return e.getAttributeNS(ns, name);
     }
     
@@ -153,8 +142,7 @@ public class RIFCSElement
      *      is empty or not present
      */  
     protected String getAttributeValue(String ns,
-                                       String localName)
-    {
+                                       String localName) {
         return e.getAttributeNS(ns, localName);
     }
     
@@ -165,8 +153,7 @@ public class RIFCSElement
      * @return 
      *      The text content of the element
      */  
-    protected String getTextContent()
-    {
+    protected String getTextContent() {
         return e.getTextContent();
     }
     
@@ -177,8 +164,7 @@ public class RIFCSElement
      * @param value 
      *      The text content of the element
      */  
-    protected void setTextContent(String value)
-    {
+    protected void setTextContent(String value) {
         e.setTextContent(value);
     }
 
@@ -192,8 +178,7 @@ public class RIFCSElement
      * @return 
      *      The text content of the element
      */  
-    protected NodeList getElements(String localName)
-    {
+    protected NodeList getElements(String localName) {
         return e.getElementsByTagNameNS(Constants.NS_RIFCS, localName);
     }
     
@@ -208,15 +193,12 @@ public class RIFCSElement
      *      A list of RIFCS elements whose tag name matches
      *      the localName
      */  
-    protected List<Node> getChildElements(String localName)
-    {
+    protected List<Node> getChildElements(String localName) {
         NodeList nl = e.getChildNodes();
         List<Node> l = new ArrayList<Node>();
-        for (int i = 0; i < nl.getLength(); i++)
-        {
+        for (int i = 0; i < nl.getLength(); i++) {
             if (nl.item(i).getNodeType() == Node.ELEMENT_NODE &&
-                nl.item(i).getLocalName().equals(localName))
-            {
+                nl.item(i).getLocalName().equals(localName)) {
                 l.add(nl.item(i));
             }
         }
@@ -231,14 +213,11 @@ public class RIFCSElement
      * @return 
      *      A list of RIFCS elements
      */  
-    protected List<Node> getChildElements()
-    {
+    protected List<Node> getChildElements() {
         NodeList nl = e.getChildNodes();
         List<Node> l = new ArrayList<Node>();
-        for (int i = 0; i < nl.getLength(); i++)
-        {
-            if (nl.item(i).getNodeType() == Node.ELEMENT_NODE)
-            {
+        for (int i = 0; i < nl.getLength(); i++) {
+            if (nl.item(i).getNodeType() == Node.ELEMENT_NODE) {
                 l.add(nl.item(i));
             }
         }
@@ -253,8 +232,7 @@ public class RIFCSElement
      * @return 
      *      A w3c dom element
      */  
-    protected Element getElement()
-    {
+    protected Element getElement() {
         return e;
     }
     
@@ -266,8 +244,7 @@ public class RIFCSElement
      * @return
      *      an element with the given name
      */  
-    protected Element newElement(String elementName)
-    {
+    protected Element newElement(String elementName) {
         return this.getElement().getOwnerDocument().createElementNS(Constants.NS_RIFCS, elementName);
     }
     
@@ -278,8 +255,7 @@ public class RIFCSElement
      * @return
      *      The date in UTC format
      */  
-    protected static String formatDate(Date date)
-    {
+    protected static String formatDate(Date date) {
         SimpleDateFormat df = new SimpleDateFormat(Constants.TIMESTAMP_UTC_FORMAT);
         Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
         cal.setTime(date);

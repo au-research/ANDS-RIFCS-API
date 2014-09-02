@@ -30,8 +30,7 @@ import org.w3c.dom.NodeList;
  * @author Scott Yeadon
  *
  */
-public class Contributor extends RIFCSElement
-{
+public class Contributor extends RIFCSElement {
     private List<NamePart> nameParts = new ArrayList<NamePart>();
 
     /**
@@ -42,8 +41,7 @@ public class Contributor extends RIFCSElement
      *        
      * @exception RIFCSException
      */     
-    protected Contributor(Node n) throws RIFCSException
-    {
+    protected Contributor(Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_CONTRIBUTOR);
         initStructures();
     }
@@ -56,8 +54,7 @@ public class Contributor extends RIFCSElement
      *          an integer sequence number indicating the order
      *          a contributor would appear in a citation
      */      
-    public void setSeq(int seq)
-    {
+    public void setSeq(int seq) {
         super.setAttributeValue(Constants.ATTRIBUTE_SEQ, String.valueOf(seq));
     }
 
@@ -70,11 +67,9 @@ public class Contributor extends RIFCSElement
      *          a contributor would appear in a citation or -1 if not
      *          set
      */  
-    public int getSeq()
-    {
+    public int getSeq() {
        String seq = super.getAttributeValue(Constants.ATTRIBUTE_SEQ);
-       if (seq == null || seq.equals(""))
-       {
+       if (seq == null || seq.equals("")) {
            return -1;
        }
        return Integer.valueOf(seq);
@@ -93,8 +88,7 @@ public class Contributor extends RIFCSElement
      * @exception RIFCSException
      *
      */
-    public NamePart newNamePart() throws RIFCSException
-    {
+    public NamePart newNamePart() throws RIFCSException {
         return new NamePart(this.newElement(Constants.ELEMENT_NAMEPART));
     }
     
@@ -105,8 +99,7 @@ public class Contributor extends RIFCSElement
      * @param namePart
      *    a completed NamePart object
      */
-    public void addNamePart(NamePart namePart)
-    {
+    public void addNamePart(NamePart namePart) {
        this.getElement().appendChild(namePart.getElement());
        this.nameParts.add(namePart);
     }
@@ -121,8 +114,7 @@ public class Contributor extends RIFCSElement
      *    namePart type (e.g. surname, middle name) or null
      */
     public void addNamePart(String namePart,
-                            String type) throws RIFCSException
-    {
+                            String type) throws RIFCSException {
         NamePart np = newNamePart();
         np.setValue(namePart);
         np.setType(type);
@@ -137,19 +129,16 @@ public class Contributor extends RIFCSElement
      * @return 
      *      A list of NamePart objects
      */
-    public List<NamePart> getNameParts()
-    {
+    public List<NamePart> getNameParts() {
         return nameParts;
     }
     
     
     /* initialisation code for existing documents */
-    private void initStructures() throws RIFCSException
-    {
+    private void initStructures() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_NAMEPART);
         
-        for (int i = 0; i < nl.getLength(); i++)
-        {
+        for (int i = 0; i < nl.getLength(); i++) {
             nameParts.add(new NamePart(nl.item(i)));
         }        
     }

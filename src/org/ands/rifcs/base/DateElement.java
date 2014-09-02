@@ -28,8 +28,7 @@ import org.w3c.dom.Node;
  * @author Scott Yeadon
  *
  */
-public class DateElement extends RIFCSElement
-{
+public class DateElement extends RIFCSElement {
     /**
      * Construct a DateElement object
      * 
@@ -38,8 +37,7 @@ public class DateElement extends RIFCSElement
      *        
      * @exception RIFCSException
      */     
-    protected DateElement(Node n) throws RIFCSException
-    {
+    protected DateElement(Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_DATE);
     }
 
@@ -55,8 +53,7 @@ public class DateElement extends RIFCSElement
      * @param type 
      *          The type of date
      */      
-    public void setType(String type)
-    {
+    public void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -68,8 +65,7 @@ public class DateElement extends RIFCSElement
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-    public String getType()
-    {
+    public String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
 
@@ -80,8 +76,7 @@ public class DateElement extends RIFCSElement
      * @param value 
      *      The content of the date
      */
-    public void setValue(String value)
-    {
+    public void setValue(String value) {
         super.setTextContent(value);
     }
 
@@ -92,8 +87,7 @@ public class DateElement extends RIFCSElement
      * @param value 
      *      The content of the date
      */
-    public void setValue(Date value)
-    {
+    public void setValue(Date value) {
         super.setTextContent(RegistryObject.formatDate(value));
     }
 
@@ -104,8 +98,7 @@ public class DateElement extends RIFCSElement
      * @return 
      *      The description string
      */  
-    public String getValue()
-    {
+    public String getValue() {
         return super.getTextContent();
     }
 }

@@ -50,7 +50,7 @@ public class ExistenceDate extends RIFCSElement {
 	 * @param dateFormat
 	 * @throws RIFCSException
 	 */
-	public void setStartDate(String value, String dateFormat ) throws RIFCSException {
+	public void setStartDate(String value, String dateFormat) throws RIFCSException {
 		CommonDateElement dateElement =  new CommonDateElement(this.newElement(Constants.ELEMENT_START_DATE));
 		dateElement.setDateFormat(dateFormat);
 		dateElement.setValue(value);
@@ -73,7 +73,7 @@ public class ExistenceDate extends RIFCSElement {
 	 * @param dateFormat
 	 * @throws RIFCSException
 	 */
-	public void setEndDate(String value, String dateFormat ) throws RIFCSException {
+	public void setEndDate(String value, String dateFormat) throws RIFCSException {
 		CommonDateElement dateElement =  new CommonDateElement(this.newElement(Constants.ELEMENT_END_DATE));
 		dateElement.setDateFormat(dateFormat);
 		dateElement.setValue(value);

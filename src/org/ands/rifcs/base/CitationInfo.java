@@ -28,8 +28,7 @@ import org.w3c.dom.NodeList;
  * @author Scott Yeadon
  *
  */
-public class CitationInfo extends RIFCSElement
-{
+public class CitationInfo extends RIFCSElement {
     private CitationMetadata cm = null;
     
     /**
@@ -40,8 +39,7 @@ public class CitationInfo extends RIFCSElement
      *        
      * @exception RIFCSException
      */     
-    protected CitationInfo(Node n) throws RIFCSException
-    {
+    protected CitationInfo(Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_CITATIONINFO);
         initStructures();
     }
@@ -59,8 +57,7 @@ public class CitationInfo extends RIFCSElement
      * @exception RIFCSException
      *
      */
-    public CitationMetadata newCitationMetadata() throws RIFCSException
-    {
+    public CitationMetadata newCitationMetadata() throws RIFCSException {
         return new CitationMetadata(this.newElement(Constants.ELEMENT_CITATION_METADATA));
     }
 
@@ -76,12 +73,10 @@ public class CitationInfo extends RIFCSElement
      * 
      */
     public void setCitation(String citation,
-                            String style) throws RIFCSException
-    {
+                            String style) throws RIFCSException {
         Element e = this.newElement(Constants.ELEMENT_FULL_CITATION);
         e.setTextContent(citation);
-        if (style != null)
-        {
+        if (style != null) {
             e.setAttribute(Constants.ATTRIBUTE_STYLE, style);
         }
         this.getElement().appendChild(e);
@@ -96,11 +91,9 @@ public class CitationInfo extends RIFCSElement
      *      or empty string if not present
      * 
      */
-    public String getCitation()
-    {
+    public String getCitation() {
         NodeList nl = super.getElements(Constants.ELEMENT_FULL_CITATION);
-        if (nl.getLength() > 0)
-        {
+        if (nl.getLength() > 0) {
             return nl.item(0).getTextContent();
         }
         
@@ -116,11 +109,9 @@ public class CitationInfo extends RIFCSElement
      *      there is no style associated with the citation text
      * 
      */
-    public String getCitationStyle()
-    {
+    public String getCitationStyle() {
         NodeList nl = super.getElements(Constants.ELEMENT_FULL_CITATION);
-        if (nl.getLength() > 0)
-        {
+        if (nl.getLength() > 0) {
             return ((Element)nl.item(0)).getAttribute(Constants.ATTRIBUTE_STYLE);
         }
         
@@ -134,8 +125,7 @@ public class CitationInfo extends RIFCSElement
      * @param citationMetadata
      *    a citationMetadata option      
      */
-    public void addCitationMetadata(CitationMetadata citationMetadata)
-    {
+    public void addCitationMetadata(CitationMetadata citationMetadata) {
         this.getElement().appendChild(citationMetadata.getElement());
         cm = citationMetadata;
     }
@@ -147,19 +137,16 @@ public class CitationInfo extends RIFCSElement
      * @return CitationMetadata
      *    a citationMetadata object      
      */
-    public CitationMetadata getCitationMetadata()
-    {
+    public CitationMetadata getCitationMetadata() {
         return cm;
     }
 
     
     // intialise structures for existing documents
-    private void initStructures() throws RIFCSException
-    {
+    private void initStructures() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_CITATION_METADATA);
         
-        if (nl.getLength() > 0)
-        {
+        if (nl.getLength() > 0) {
             this.cm = new CitationMetadata(nl.item(0));
         }
     }

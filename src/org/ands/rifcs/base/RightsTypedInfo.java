@@ -26,8 +26,7 @@ import org.w3c.dom.Node;
  * @author Mahmoud Sadeghi
  *
  */
-public class RightsTypedInfo extends RIFCSElement
-{
+public class RightsTypedInfo extends RIFCSElement {
     /**
      * Construct a rightsTypedInfo object
      * 
@@ -36,8 +35,7 @@ public class RightsTypedInfo extends RIFCSElement
      *        
      * @exception RIFCSException
      */     
-    protected RightsTypedInfo(Node n) throws RIFCSException
-    {
+    protected RightsTypedInfo(Node n) throws RIFCSException {
         super(n, n.getNodeName());
     }
 
@@ -48,8 +46,7 @@ public class RightsTypedInfo extends RIFCSElement
      * @param type 
      *          The type of rightsTypedInfo
      */      
-    public void setType(String type)
-    {
+    public void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -61,8 +58,7 @@ public class RightsTypedInfo extends RIFCSElement
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-    public String getType()
-    {
+    public String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
     
@@ -73,8 +69,7 @@ public class RightsTypedInfo extends RIFCSElement
      * @param rightsUri
      *          The rightsUri of RightsInfo
      */      
-    public void setRightsUri(String rightsUri)
-    {
+    public void setRightsUri(String rightsUri) {
         super.setAttributeValue(Constants.ATTRIBUTE_RIGHTS_URI, rightsUri);
     }
 
@@ -86,8 +81,7 @@ public class RightsTypedInfo extends RIFCSElement
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-    public String getRightsUri()
-    {
+    public String getRightsUri() {
         return super.getAttributeValue(Constants.ATTRIBUTE_RIGHTS_URI);
     }
     
@@ -98,8 +92,7 @@ public class RightsTypedInfo extends RIFCSElement
      * @param value 
      *      The content of the rightsTypedInfo
      */
-    public void setValue(String value)
-    {
+    public void setValue(String value) {
         super.setTextContent(value);
     }
 
@@ -110,8 +103,7 @@ public class RightsTypedInfo extends RIFCSElement
      * @return 
      *      The rightsTypedInfo string
      */  
-    public String getValue()
-    {
+    public String getValue() {
         return super.getTextContent();
     }
 }

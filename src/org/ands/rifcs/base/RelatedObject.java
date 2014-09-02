@@ -31,8 +31,7 @@ import org.w3c.dom.NodeList;
  * @author Scott Yeadon
  *
  */
-public class RelatedObject extends RIFCSElement
-{
+public class RelatedObject extends RIFCSElement {
     List<Relation> relations = new ArrayList<Relation>();
     
     /**
@@ -43,8 +42,7 @@ public class RelatedObject extends RIFCSElement
      *        
      * @exception RIFCSException
      */     
-    protected RelatedObject(Node n) throws RIFCSException
-    {
+    protected RelatedObject(Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_RELATED_OBJECT);
         initStructures();
     }
@@ -56,8 +54,7 @@ public class RelatedObject extends RIFCSElement
      * @param keyValue
      *      The key uniquely identifying the related registry object
      */          
-    public void setKey(String keyValue)
-    {
+    public void setKey(String keyValue) {
         Element key = this.newElement(Constants.ELEMENT_KEY);
         key.setTextContent(keyValue);
         this.getElement().appendChild(key);
@@ -70,11 +67,9 @@ public class RelatedObject extends RIFCSElement
      * @return
      *     The key uniquely identifying the related registry object
      */          
-    public String getKey()
-    {
+    public String getKey() {
         NodeList nl = super.getElements(Constants.ELEMENT_KEY);
-        if (nl.getLength() == 1)
-        {
+        if (nl.getLength() == 1) {
             return nl.item(0).getTextContent();
         }
         
@@ -94,8 +89,7 @@ public class RelatedObject extends RIFCSElement
      * @exception RIFCSException
      *
      */
-    public Relation newRelation() throws RIFCSException
-    {
+    public Relation newRelation() throws RIFCSException {
         return new Relation(this.newElement(Constants.ELEMENT_RELATION));
     }
 
@@ -115,24 +109,20 @@ public class RelatedObject extends RIFCSElement
     public void addRelation(String type,
                             String url,
                             String description,
-                            String descriptionLanguage) throws RIFCSException
-    {
+                            String descriptionLanguage) throws RIFCSException {
         Relation relation = newRelation();
         
         relation.setType(type);
         
-        if (url != null)
-        {
+        if (url != null) {
             relation.setURL(url);
         }
         
-        if (description != null)
-        {
+        if (description != null) {
             relation.setDescription(description);
         }
         
-        if (descriptionLanguage != null)
-        {
+        if (descriptionLanguage != null) {
             relation.setDescriptionLanguage(descriptionLanguage);
         }
         
@@ -146,8 +136,7 @@ public class RelatedObject extends RIFCSElement
      * @return 
      *      A list of Relation objects
      */          
-    public List<Relation> getRelations()
-    {
+    public List<Relation> getRelations() {
         return relations;
     }
     
@@ -158,20 +147,17 @@ public class RelatedObject extends RIFCSElement
      * @param relation
      *    A Relation object
      */
-    public void addRelation(Relation relation)
-    {
+    public void addRelation(Relation relation) {
         this.getElement().appendChild(relation.getElement());
         this.relations.add(relation);
     }
 
     
     /* initialisation code for existing documents */
-    private void initStructures() throws RIFCSException
-    {
+    private void initStructures() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_RELATION);
         
-        for (int i = 0; i < nl.getLength(); i++)
-        {
+        for (int i = 0; i < nl.getLength(); i++) {
             relations.add(new Relation(nl.item(i)));
         }        
     }

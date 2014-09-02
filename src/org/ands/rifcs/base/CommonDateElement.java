@@ -28,8 +28,7 @@ import org.w3c.dom.Node;
  * @author Scott Yeadon
  *
  */
-public class CommonDateElement extends RIFCSElement
-{
+public class CommonDateElement extends RIFCSElement {
     /**
      * Construct a CommonDateElement object
      * 
@@ -38,8 +37,7 @@ public class CommonDateElement extends RIFCSElement
      *        
      * @exception RIFCSException
      */     
-    protected CommonDateElement(Node n) throws RIFCSException
-    {
+    protected CommonDateElement(Node n) throws RIFCSException {
         super(n, n.getNodeName());
     }
 
@@ -50,8 +48,7 @@ public class CommonDateElement extends RIFCSElement
      * @param type 
      *          The type of date
      */      
-    public void setDateFormat(String type)
-    {
+    public void setDateFormat(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_FORMAT, type);
     }
 
@@ -63,8 +60,7 @@ public class CommonDateElement extends RIFCSElement
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-    public String getDateFormat()
-    {
+    public String getDateFormat() {
         return super.getAttributeValue(Constants.ATTRIBUTE_DATE_FORMAT);
     }
 
@@ -75,8 +71,7 @@ public class CommonDateElement extends RIFCSElement
      * @param value 
      *      The content of the date
      */
-    public void setValue(String value)
-    {
+    public void setValue(String value) {
         super.setTextContent(value);
     }
 
@@ -87,8 +82,7 @@ public class CommonDateElement extends RIFCSElement
      * @param value 
      *      The content of the date
      */
-    public void setValue(Date value)
-    {
+    public void setValue(Date value) {
         super.setTextContent(RegistryObject.formatDate(value));
     }
 
@@ -99,8 +93,7 @@ public class CommonDateElement extends RIFCSElement
      * @return 
      *      The description string
      */  
-    public String getValue()
-    {
+    public String getValue() {
         return super.getTextContent();
     }
 }

@@ -26,8 +26,7 @@ import org.w3c.dom.Node;
  * @author Scott Yeadon
  *
  */
-public class Description extends RIFCSElement
-{
+public class Description extends RIFCSElement {
     /**
      * Construct a Description object
      * 
@@ -36,8 +35,7 @@ public class Description extends RIFCSElement
      *        
      * @exception RIFCSException
      */     
-    protected Description(Node n) throws RIFCSException
-    {
+    protected Description(Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_DESCRIPTION);
     }
 
@@ -48,8 +46,7 @@ public class Description extends RIFCSElement
      * @param type 
      *          The type of description
      */      
-    public void setType(String type)
-    {
+    public void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -61,8 +58,7 @@ public class Description extends RIFCSElement
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-    public String getType()
-    {
+    public String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
     
@@ -73,8 +69,7 @@ public class Description extends RIFCSElement
      * @param lang 
      *      The xml:lang attribute value
      */  
-    public void setLanguage(String lang)
-    {
+    public void setLanguage(String lang) {
         super.setAttributeValueNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG, lang);
     }
 
@@ -86,8 +81,7 @@ public class Description extends RIFCSElement
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */  
-    public String getLanguage()
-    {
+    public String getLanguage() {
         return super.getAttributeValueNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG);
     }
 
@@ -98,8 +92,7 @@ public class Description extends RIFCSElement
      * @param value 
      *      The content of the description
      */
-    public void setValue(String value)
-    {
+    public void setValue(String value) {
         super.setTextContent(value);
     }
 
@@ -110,8 +103,7 @@ public class Description extends RIFCSElement
      * @return 
      *      The description string
      */  
-    public String getValue()
-    {
+    public String getValue() {
         return super.getTextContent();
     }
 }

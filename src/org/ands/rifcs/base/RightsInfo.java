@@ -26,8 +26,7 @@ import org.w3c.dom.Node;
  * @author Mahmoud Sadeghi
  *
  */
-public class RightsInfo extends RIFCSElement
-{
+public class RightsInfo extends RIFCSElement {
     /**
      * Construct a RightsInfo object
      * 
@@ -36,8 +35,7 @@ public class RightsInfo extends RIFCSElement
      *        
      * @exception RIFCSException
      */     
-    protected RightsInfo(Node n) throws RIFCSException
-    {
+    protected RightsInfo(Node n) throws RIFCSException {
         super(n, n.getNodeName());
     }
 
@@ -48,8 +46,7 @@ public class RightsInfo extends RIFCSElement
      * @param rightsUri
      *          The rightsUri of RightsInfo
      */      
-    public void setRightsUri(String rightsUri)
-    {
+    public void setRightsUri(String rightsUri) {
         super.setAttributeValue(Constants.ATTRIBUTE_RIGHTS_URI, rightsUri);
     }
 
@@ -61,8 +58,7 @@ public class RightsInfo extends RIFCSElement
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-    public String getRightsUri()
-    {
+    public String getRightsUri() {
         return super.getAttributeValue(Constants.ATTRIBUTE_RIGHTS_URI);
     }
     
@@ -73,8 +69,7 @@ public class RightsInfo extends RIFCSElement
      * @param value 
      *      The content of the RightsInfo
      */
-    public void setValue(String value)
-    {
+    public void setValue(String value) {
         super.setTextContent(value);
     }
 
@@ -85,8 +80,7 @@ public class RightsInfo extends RIFCSElement
      * @return 
      *      The RightsInfo string
      */  
-    public String getValue()
-    {
+    public String getValue() {
         return super.getTextContent();
     }
 }

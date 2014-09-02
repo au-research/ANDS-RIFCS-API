@@ -24,8 +24,7 @@ package org.ands.rifcs.base;
  * @author Scott Yeadon
  *
  */
-public class Constants
-{
+public class Constants {
     /** Name of the date accessioned attribute */
     public static final String ATTRIBUTE_DATE_ACCESSIONED = "dateAccessioned";
 

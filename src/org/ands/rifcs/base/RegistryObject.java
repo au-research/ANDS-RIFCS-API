@@ -31,8 +31,7 @@ import org.w3c.dom.NodeList;
  * @author Scott Yeadon
  *
  */
-public class RegistryObject extends RIFCSElement
-{
+public class RegistryObject extends RIFCSElement {
 //    private List<Identifier> identifiers = new ArrayList<Identifier>();
 //    private List<Name> names = new ArrayList<Name>();
     private String objectClass = null;
@@ -45,8 +44,7 @@ public class RegistryObject extends RIFCSElement
      *        
      * @exception RIFCSException
      */     
-    protected RegistryObject(Node n) throws RIFCSException
-    {
+    protected RegistryObject(Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_REGISTRY_OBJECT);
         initStructures();
     }
@@ -58,8 +56,7 @@ public class RegistryObject extends RIFCSElement
      * @param keyValue
      *      The key uniquely identifying the registry object
      */          
-    public void setKey(String keyValue)
-    {
+    public void setKey(String keyValue) {
         Element key = this.newElement(Constants.ELEMENT_KEY);
         key.setTextContent(keyValue);
         this.getElement().appendChild(key);
@@ -72,11 +69,9 @@ public class RegistryObject extends RIFCSElement
      * @return
      *     The key uniquely identifying the registry object
      */          
-    public String getKey()
-    {
+    public String getKey() {
         List<Node> nl = super.getChildElements(Constants.ELEMENT_KEY);
-        if (nl.size() == 1)
-        {
+        if (nl.size() == 1) {
             return nl.get(0).getTextContent();
         }
         
@@ -90,8 +85,7 @@ public class RegistryObject extends RIFCSElement
      * @param sourceValue
      *      A string identifying the source of this RIF-CS data
      */          
-    public void setOriginatingSource(String sourceValue)
-    {
+    public void setOriginatingSource(String sourceValue) {
         Element source = this.newElement(Constants.ELEMENT_ORIG_SOURCE);
         source.setTextContent(sourceValue);
         this.getElement().appendChild(source);
@@ -108,8 +102,7 @@ public class RegistryObject extends RIFCSElement
      *      whether the source is authoritative
      */
     public void setOriginatingSource(String sourceValue,
-                                     String type)
-    {
+                                     String type) {
         Element source = this.newElement(Constants.ELEMENT_ORIG_SOURCE);
         source.setTextContent(sourceValue);
         source.setAttribute(Constants.ATTRIBUTE_TYPE, type);
@@ -124,11 +117,9 @@ public class RegistryObject extends RIFCSElement
      *      A string clarifying the type of source e.g. to flag
      *      whether the source is authoritative
      */
-    public void setOriginatingSourceType(String type)
-    {
+    public void setOriginatingSourceType(String type) {
         NodeList nl = super.getElements(Constants.ELEMENT_ORIG_SOURCE);
-        if (nl.getLength() == 1)
-        {
+        if (nl.getLength() == 1) {
            ((Element)nl.item(0)).setAttribute(Constants.ATTRIBUTE_TYPE, type);
         }
     }
@@ -140,11 +131,9 @@ public class RegistryObject extends RIFCSElement
      * @return
      *     A string identifying the source of this RIF-CS data
      */
-    public String getOriginatingSource()
-    {
+    public String getOriginatingSource() {
         NodeList nl = super.getElements(Constants.ELEMENT_ORIG_SOURCE);
-        if (nl.getLength() == 1)
-        {
+        if (nl.getLength() == 1) {
             return nl.item(0).getTextContent();
         }
         
@@ -158,17 +147,12 @@ public class RegistryObject extends RIFCSElement
      * @return
      *      A string clarifying the type of source
      */
-    public String getOriginatingSourceType()
-    {
+    public String getOriginatingSourceType() {
         NodeList nl = super.getElements(Constants.ELEMENT_ORIG_SOURCE);
-        if (nl.getLength() == 1)
-        {
-           if (((Element)nl.item(0)).hasAttribute(Constants.ATTRIBUTE_TYPE))
-           {
+        if (nl.getLength() == 1) {
+           if (((Element)nl.item(0)).hasAttribute(Constants.ATTRIBUTE_TYPE)) {
                return ((Element)nl.item(0)).getAttribute(Constants.ATTRIBUTE_TYPE);               
-           }
-           else
-           {
+           } else {
                return null;
            }
         }
@@ -184,8 +168,7 @@ public class RegistryObject extends RIFCSElement
      *      A string identifying the group this registry object
      *      is associated with
      */
-    public void setGroup(String group)
-    {
+    public void setGroup(String group) {
         super.setAttributeValue(Constants.ATTRIBUTE_GROUP, group);        
     }
 
@@ -197,8 +180,7 @@ public class RegistryObject extends RIFCSElement
      *      A string identifying the group this registry object
      *      is associated with
      */
-    public String getGroup()
-    {
+    public String getGroup() {
         return super.getAttributeValue(Constants.ATTRIBUTE_GROUP);        
     }
 
@@ -215,8 +197,7 @@ public class RegistryObject extends RIFCSElement
      * @exception RIFCSException
      *
      */
-    public Collection newCollection() throws RIFCSException
-    {
+    public Collection newCollection() throws RIFCSException {
         Element coll = this.newElement(Constants.ELEMENT_COLLECTION);
         return new Collection(coll);
     }
@@ -234,8 +215,7 @@ public class RegistryObject extends RIFCSElement
      * @exception RIFCSException
      *
      */
-    public Activity newActivity() throws RIFCSException
-    {
+    public Activity newActivity() throws RIFCSException {
         Element activity = this.newElement(Constants.ELEMENT_ACTIVITY);
         return new Activity(activity);
     }
@@ -253,8 +233,7 @@ public class RegistryObject extends RIFCSElement
      * @exception RIFCSException
      *
      */
-    public Party newParty() throws RIFCSException
-    {
+    public Party newParty() throws RIFCSException {
         Element party = this.newElement(Constants.ELEMENT_PARTY);
         return new Party(party);
     }
@@ -272,8 +251,7 @@ public class RegistryObject extends RIFCSElement
      * @exception RIFCSException
      *
      */
-    public Service newService() throws RIFCSException
-    {
+    public Service newService() throws RIFCSException {
         Element service = this.newElement(Constants.ELEMENT_SERVICE);
         return new Service(service);
     }
@@ -285,8 +263,7 @@ public class RegistryObject extends RIFCSElement
      *  @param collection
      *      A Collection object
      */
-    public void addCollection(Collection collection)
-    {
+    public void addCollection(Collection collection) {
         this.getElement().appendChild(collection.getElement());
         this.objectClass = Constants.ELEMENT_COLLECTION;
     }
@@ -298,8 +275,7 @@ public class RegistryObject extends RIFCSElement
      *  @param activity
      *      An Activity object
      */
-    public void addActivity(Activity activity)
-    {
+    public void addActivity(Activity activity) {
         this.getElement().appendChild(activity.getElement());
         this.objectClass = Constants.ELEMENT_PARTY;
     }
@@ -311,8 +287,7 @@ public class RegistryObject extends RIFCSElement
      *  @param party
      *      A Party object
      */
-    public void addParty(Party party)
-    {
+    public void addParty(Party party) {
         this.getElement().appendChild(party.getElement());
         this.objectClass = Constants.ELEMENT_PARTY;
     }
@@ -324,8 +299,7 @@ public class RegistryObject extends RIFCSElement
      *  @param service
      *      A Service object
      */
-    public void addService(Service service)
-    {
+    public void addService(Service service) {
         this.getElement().appendChild(service.getElement());
         this.objectClass = Constants.ELEMENT_SERVICE;
     }
@@ -338,8 +312,7 @@ public class RegistryObject extends RIFCSElement
      *      The element name of the object class (i.e. collection, service,
      *      activity, party)
      */
-    public String getObjectClassName()
-    {
+    public String getObjectClassName() {
         return this.objectClass;
     }
     
@@ -355,29 +328,20 @@ public class RegistryObject extends RIFCSElement
      *      
      * @exception RIFCSException
      */    
-    public RIFCSElement getClassObject() throws RIFCSException
-    {
+    public RIFCSElement getClassObject() throws RIFCSException {
         NodeList nl = super.getElements(objectClass);
         
-        if (nl.getLength() != 1)
-        {
+        if (nl.getLength() != 1) {
             return null;
         }
         
-        if (objectClass.equals(Constants.ELEMENT_COLLECTION))
-        {
+        if (objectClass.equals(Constants.ELEMENT_COLLECTION)) {
             return new Collection(nl.item(0));
-        }
-        else if (objectClass.equals(Constants.ELEMENT_PARTY))
-        {
+        } else if (objectClass.equals(Constants.ELEMENT_PARTY)) {
             return new Party(nl.item(0));
-        }
-        else if (objectClass.equals(Constants.ELEMENT_ACTIVITY))
-        {
+        } else if (objectClass.equals(Constants.ELEMENT_ACTIVITY)) {
             return new Activity(nl.item(0));
-        }
-        else if (objectClass.equals(Constants.ELEMENT_SERVICE))
-        {
+        } else if (objectClass.equals(Constants.ELEMENT_SERVICE)) {
             return new Service(nl.item(0));
         }
         
@@ -385,29 +349,20 @@ public class RegistryObject extends RIFCSElement
     }
     
     
-    private void initStructures()
-    {
+    private void initStructures() {
         List<Node> nl = super.getChildElements();
-        for (Iterator<Node> i=nl.iterator(); i.hasNext();)
-        {
+        for (Iterator<Node> i=nl.iterator(); i.hasNext();) {
             Node n = i.next();
-            if (n.getNodeName().equals(Constants.ELEMENT_COLLECTION))
-            {
+            if (n.getNodeName().equals(Constants.ELEMENT_COLLECTION)) {
                 objectClass = Constants.ELEMENT_COLLECTION;
                 break;
-            }
-            else if (n.getNodeName().equals(Constants.ELEMENT_PARTY))
-            {
+            } else if (n.getNodeName().equals(Constants.ELEMENT_PARTY)) {
                 objectClass = Constants.ELEMENT_PARTY;
                 break;
-            }
-            else if (n.getNodeName().equals(Constants.ELEMENT_ACTIVITY))
-            {
+            } else if (n.getNodeName().equals(Constants.ELEMENT_ACTIVITY)) {
                 objectClass = Constants.ELEMENT_ACTIVITY;
                 break;
-            }
-            else if (n.getNodeName().equals(Constants.ELEMENT_SERVICE))
-            {
+            } else if (n.getNodeName().equals(Constants.ELEMENT_SERVICE)) {
                 objectClass = Constants.ELEMENT_SERVICE;
                 break;
             }

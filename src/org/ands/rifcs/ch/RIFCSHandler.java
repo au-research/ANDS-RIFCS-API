@@ -25,8 +25,7 @@ import org.w3c.dom.Document;
  * 
  * @author Scott Yeadon
  */
-public interface RIFCSHandler
-{
+public interface RIFCSHandler {
     /**
      * Get a DOM document resulting from a SAX parse
      *  

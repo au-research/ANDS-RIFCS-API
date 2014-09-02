@@ -62,8 +62,7 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
      * @param locator 
      *        The Locator object used to track the parsing location
      */
-    public void setDocumentLocator(Locator locator)
-    {
+    public void setDocumentLocator(Locator locator) {
         this.locator = locator;
     }
         
@@ -74,14 +73,10 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
      * @exception SAXException
      *         
      */ 
-    public void startDocument() throws SAXException
-    {
-        try
-        {
+    public void startDocument() throws SAXException {
+        try {
             doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             throw new SAXException(e);
         }
     }
@@ -110,22 +105,17 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
     public void startElement(String uri,
                              String localName,
                              String qName,
-                             Attributes attributes) throws SAXException
-    {
+                             Attributes attributes) throws SAXException {
         Element e = null;
 
-        if (uri.length()>0)
-        {
-            e = doc.createElementNS(uri,qName);
-        }
-        else
-        {
+        if (uri.length()>0) {
+            e = doc.createElementNS(uri, qName);
+        } else {
             e = doc.createElement(qName);
         }
         
-        for (int i=0; i<attributes.getLength(); i++)
-        {
-            e.setAttribute(attributes.getQName(i),attributes.getValue(i));
+        for (int i=0; i<attributes.getLength(); i++) {
+            e.setAttribute(attributes.getQName(i), attributes.getValue(i));
         }
         
         elements.push(e);
@@ -149,19 +139,14 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
      */ 
     public void characters(char[] chars,
                            int start,
-                           int length) throws SAXException
-    {
+                           int length) throws SAXException {
         String s = new String(chars, start, length);
-        if (!s.matches("\\s+"))
-        {
+        if (!s.matches("\\s+")) {
             Element e = elements.peek();
 
-            if (e.getTextContent().length()==0)
-            {
+            if (e.getTextContent().length()==0) {
                 e.setTextContent(s);
-            }
-            else
-            {
+            } else {
                 e.setTextContent(e.getTextContent() + s);
             }
         }
@@ -180,8 +165,7 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
      * @exception SAXException
      *         
      */
-    public void skippedEntity(String name) throws SAXException
-    {
+    public void skippedEntity(String name) throws SAXException {
         String s = "&" + name + ";";
         char[] text = s.toCharArray();
         this.characters(text, 0, text.length);      
@@ -205,16 +189,12 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
      */ 
     public void endElement(String uri,
                            String localName,
-                           String qName) throws SAXException
-    {
+                           String qName) throws SAXException {
         Element e = elements.pop();
         
-        if (!elements.empty())
-        {
+        if (!elements.empty()) {
             elements.peek().appendChild(e);
-        }
-        else
-        {
+        } else {
             doc.appendChild(e);
         }
     }
@@ -231,8 +211,7 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
      *      Parser message with line/column location information
      * 
      */
-    private String printLocation(String s)
-    { 
+    private String printLocation(String s) { 
         int line = locator.getLineNumber();
         int column = locator.getColumnNumber();
         return s + " at line " + line + "; column " + column;
@@ -246,8 +225,7 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
      *      The DOM document. May be null if called before parsing and empty
      *      if parsing exception caught.
      */
-    public Document getDocument()
-    {
+    public Document getDocument() {
         return this.doc;
     }
 }

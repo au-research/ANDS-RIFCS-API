@@ -461,7 +461,7 @@ public class Collection extends RIFCSElement {
 		return descriptions;
 	}
 
-	public Right newRight(){
+	public Right newRight() {
 		Right right= null;
 		try {
 			right = new Right(this.newElement(Constants.ELEMENT_RIGHTS));

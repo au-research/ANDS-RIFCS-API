@@ -26,8 +26,7 @@ import org.w3c.dom.Node;
  * @author Scott Yeadon
  *
  */
-public class Identifier extends RIFCSElement
-{
+public class Identifier extends RIFCSElement {
     /**
      * Construct an Identifier object
      * 
@@ -36,8 +35,7 @@ public class Identifier extends RIFCSElement
      *        
      * @exception RIFCSException
      */     
-    protected Identifier(Node n) throws RIFCSException
-    {
+    protected Identifier(Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_IDENTIFIER);
     }
     
@@ -48,8 +46,7 @@ public class Identifier extends RIFCSElement
      * @param type 
      *      The location type</a>
      */      
-    public void setType(String type)
-    {
+    public void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -61,8 +58,7 @@ public class Identifier extends RIFCSElement
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */  
-    public String getType()
-    {
+    public String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
 
@@ -73,8 +69,7 @@ public class Identifier extends RIFCSElement
      * @param value 
      *      The content of the identifier
      */
-    public void setValue(String value)
-    {
+    public void setValue(String value) {
         super.setTextContent(value);
     }
     
@@ -85,8 +80,7 @@ public class Identifier extends RIFCSElement
      * @return 
      *      The identifier string
      */  
-    public String getValue()
-    {
+    public String getValue() {
         return super.getTextContent();
     }
 }

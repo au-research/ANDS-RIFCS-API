@@ -30,8 +30,7 @@ import org.w3c.dom.NodeList;
  * @author Scott Yeadon
  *
  */
-public class Address extends RIFCSElement
-{
+public class Address extends RIFCSElement {
     private List<Electronic> electronics = new ArrayList<Electronic>();
     private List<Physical> physicals = new ArrayList<Physical>();
 
@@ -44,8 +43,7 @@ public class Address extends RIFCSElement
      *        
      * @exception RIFCSException
      */ 
-    protected Address(Node n) throws RIFCSException
-    {
+    protected Address(Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_ADDRESS);
         initStructures();
     }
@@ -63,8 +61,7 @@ public class Address extends RIFCSElement
      * @exception RIFCSException
      *
      */
-    public Electronic newElectronic() throws RIFCSException
-    {
+    public Electronic newElectronic() throws RIFCSException {
         return new Electronic(this.newElement(Constants.ELEMENT_ELECTRONIC));
     }
     
@@ -75,8 +72,7 @@ public class Address extends RIFCSElement
      * @param electronic
      *    an ElectronicAddress object      
      */
-    public void addElectronic(Electronic electronic)
-    {
+    public void addElectronic(Electronic electronic) {
         this.getElement().appendChild(electronic.getElement());
         this.electronics.add(electronic);
     }
@@ -88,8 +84,7 @@ public class Address extends RIFCSElement
      * @return 
      *      A list of all electronic addresses within this address.
      */          
-    public List<Electronic> getElectronics()
-    {
+    public List<Electronic> getElectronics() {
         return this.electronics;
     }
 
@@ -106,8 +101,7 @@ public class Address extends RIFCSElement
      * @exception RIFCSException
      *
      */
-    public Physical newPhysical() throws RIFCSException
-    {
+    public Physical newPhysical() throws RIFCSException {
         return new Physical(this.newElement(Constants.ELEMENT_PHYSICAL));
     }
 
@@ -118,10 +112,8 @@ public class Address extends RIFCSElement
      * @param physical
      *    a PhysicalAddress object      
      */
-    public void addPhysical(Physical physical)
-    {
-        if (this.physicals == null)
-        {
+    public void addPhysical(Physical physical) {
+        if (this.physicals == null) {
             this.physicals = new ArrayList<Physical>();
         }
         
@@ -136,35 +128,29 @@ public class Address extends RIFCSElement
      * @return 
      *      A list of all physical addresses within this address.
      */              
-    public List<Physical> getPhysicalAddresses()
-    {
+    public List<Physical> getPhysicalAddresses() {
         return this.physicals;
     }
     
     
     /* initialisation code for existing documents */
-    private void initStructures() throws RIFCSException
-    {
+    private void initStructures() throws RIFCSException {
         initPhysicals();
         initElectronics();
     }
     
-    private void initPhysicals() throws RIFCSException
-    {
+    private void initPhysicals() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_PHYSICAL);
         
-        for (int i = 0; i < nl.getLength(); i++)
-        {
+        for (int i = 0; i < nl.getLength(); i++) {
             physicals.add(new Physical(nl.item(i)));
         }
     }
 
-    private void initElectronics() throws RIFCSException
-    {
+    private void initElectronics() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_ELECTRONIC);
         
-        for (int i = 0; i < nl.getLength(); i++)
-        {
+        for (int i = 0; i < nl.getLength(); i++) {
             electronics.add(new Electronic(nl.item(i)));
         }
     }

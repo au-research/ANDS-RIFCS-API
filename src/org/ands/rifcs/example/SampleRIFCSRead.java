@@ -33,8 +33,7 @@ import org.ands.rifcs.ch.*;
 
 import org.xml.sax.SAXException;
 
-public class SampleRIFCSRead
-{
+public class SampleRIFCSRead {
 	private static RIFCS rifcs = null;
 
     public static void main(String[] args) throws RIFCSException, FileNotFoundException, SAXException, ParserConfigurationException, IOException, MalformedURLException
@@ -46,16 +45,13 @@ public class SampleRIFCSRead
 	    RIFCS rifcs = rw.getRIFCSObject();
 
 	    List<RegistryObject> list = rifcs.getCollections();
-	    for (Iterator<RegistryObject> i=list.iterator(); i.hasNext();)
-        {
+	    for (Iterator<RegistryObject> i=list.iterator(); i.hasNext();) {
 	    	RegistryObject ro = (RegistryObject)i.next();
             Collection c = (Collection)ro.getClassObject();
             Iterator j = c.getNames().iterator();
-            while(j.hasNext()) 
-            {
+            while(j.hasNext()) {
                 Name n = (Name)j.next();
-                if(n.getType().equals("primary"))
-                {
+                if(n.getType().equals("primary")) {
                     Iterator k = n.getNameParts().iterator();
                     while(k.hasNext()) 
                         System.out.println((new StringBuilder()).append(((NamePart)k.next()).getValue()).append(" (").append(ro.getKey()).append(")").toString());

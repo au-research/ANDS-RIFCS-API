@@ -26,8 +26,7 @@ import org.w3c.dom.Node;
  * @author Scott Yeadon
  *
  */
-public class Arg extends RIFCSElement
-{
+public class Arg extends RIFCSElement {
     /**
      * Construct an Arg object
      * 
@@ -36,8 +35,7 @@ public class Arg extends RIFCSElement
      *        
      * @exception RIFCSException
      */ 
-    protected Arg(Node n) throws RIFCSException
-    {
+    protected Arg(Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_ARG);
     }
 
@@ -48,8 +46,7 @@ public class Arg extends RIFCSElement
      * @param type 
      *          The type of argument
      */  
-    public void setType(String type)
-    {
+    public void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
@@ -61,8 +58,7 @@ public class Arg extends RIFCSElement
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */  
-    public String getType()
-    {
+    public String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
 
@@ -73,8 +69,7 @@ public class Arg extends RIFCSElement
      * @param required
      *      <code>true</code> or <code>false</code>
      */  
-    public void setRequired(String required)
-    {
+    public void setRequired(String required) {
         super.setAttributeValue(Constants.ATTRIBUTE_REQUIRED, required);
     }
 
@@ -86,8 +81,7 @@ public class Arg extends RIFCSElement
      *  The attribute value or empty string if attribute
      *  is empty or not present
      */  
-    public String getRequired()
-    {
+    public String getRequired() {
         return super.getAttributeValue(Constants.ATTRIBUTE_REQUIRED);
     }
 
@@ -98,8 +92,7 @@ public class Arg extends RIFCSElement
      * @param use
      *          term indicating the use of the argument
      */  
-    public void setUse(String use)
-    {
+    public void setUse(String use) {
         super.setAttributeValue(Constants.ATTRIBUTE_USE, use);
     }
 
@@ -111,8 +104,7 @@ public class Arg extends RIFCSElement
      *  The attribute value or empty string if attribute
      *  is empty or not present
      */  
-    public String getUse()
-    {
+    public String getUse() {
         return super.getAttributeValue(Constants.ATTRIBUTE_USE);
     }
 
@@ -123,8 +115,7 @@ public class Arg extends RIFCSElement
      * @param name
      *      The argument name
      */      
-    public void setName(String name)
-    {
+    public void setName(String name) {
         super.setTextContent(name);
     }
 
@@ -135,8 +126,7 @@ public class Arg extends RIFCSElement
      * @return
      *      The name or empty string if not set
      */  
-    public String getName()
-    {
+    public String getName() {
         return super.getTextContent();
     }
 }

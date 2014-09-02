@@ -25,6 +25,12 @@ package org.ands.rifcs.base;
  * @author Scott Yeadon, ANU
  */
 public class RIFCSException extends Exception {
+
+    /**
+     * Serialization UID for this class.
+     */
+    private static final long serialVersionUID = 8917262045342086205L;
+
     /**
      * create a ROException.
      *

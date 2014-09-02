@@ -31,7 +31,9 @@ import org.w3c.dom.NodeList;
  *
  */
 public class Address extends RIFCSElement {
+    /** List of Electronic nodes. */
     private List<Electronic> electronics = new ArrayList<Electronic>();
+    /** List of Physical nodes. */
     private List<Physical> physicals = new ArrayList<Physical>();
 
 
@@ -57,6 +59,8 @@ public class Address extends RIFCSElement {
      * owned by the RIF-CS document. The returned object needs to be
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
+     *
+     * @return the new Electronic object
      *
      * @throws RIFCSException A RIFCSException
      *
@@ -98,6 +102,8 @@ public class Address extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
+     * @return the new Electronic object
+     *
      * @throws RIFCSException A RIFCSException
      *
      */
@@ -133,12 +139,22 @@ public class Address extends RIFCSElement {
     }
 
 
-    /* initialisation code for existing documents */
+    /** Initialisation code for existing documents. A wrapper that
+     *  invokes initPhysicals() and initElectronics() in turn.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initStructures() throws RIFCSException {
         initPhysicals();
         initElectronics();
     }
 
+    /** Initialisation code for physical elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initPhysicals() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_PHYSICAL);
 
@@ -147,6 +163,11 @@ public class Address extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for electronic elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initElectronics() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_ELECTRONIC);
 

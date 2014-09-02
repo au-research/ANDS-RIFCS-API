@@ -58,7 +58,8 @@ public class CitationInfo extends RIFCSElement {
      *
      */
     public final CitationMetadata newCitationMetadata() throws RIFCSException {
-        return new CitationMetadata(this.newElement(Constants.ELEMENT_CITATION_METADATA));
+        return new CitationMetadata(this.newElement(
+                Constants.ELEMENT_CITATION_METADATA));
     }
 
 
@@ -112,7 +113,8 @@ public class CitationInfo extends RIFCSElement {
     public final String getCitationStyle() {
         NodeList nl = super.getElements(Constants.ELEMENT_FULL_CITATION);
         if (nl.getLength() > 0) {
-            return ((Element) nl.item(0)).getAttribute(Constants.ATTRIBUTE_STYLE);
+            return ((Element) nl.item(0)).getAttribute(
+                    Constants.ATTRIBUTE_STYLE);
         }
 
         return null;
@@ -125,7 +127,8 @@ public class CitationInfo extends RIFCSElement {
      * @param citationMetadata
      *    a citationMetadata option
      */
-    public final void addCitationMetadata(final CitationMetadata citationMetadata) {
+    public final void addCitationMetadata(
+            final CitationMetadata citationMetadata) {
         this.getElement().appendChild(citationMetadata.getElement());
         cm = citationMetadata;
     }

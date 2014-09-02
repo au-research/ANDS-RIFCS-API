@@ -58,7 +58,8 @@ public class Location extends RIFCSElement {
      *      information was valid from
      */
     public final void setDateFrom(final Date dateFrom) {
-        super.setAttributeValue(Constants.ATTRIBUTE_DATE_FROM, RegistryObject.formatDate(dateFrom));
+        super.setAttributeValue(Constants.ATTRIBUTE_DATE_FROM,
+                RegistryObject.formatDate(dateFrom));
     }
 
 
@@ -91,7 +92,8 @@ public class Location extends RIFCSElement {
      *      information was valid to
      */
     public final void setDateTo(final Date dateTo) {
-        super.setAttributeValue(Constants.ATTRIBUTE_DATE_TO, RegistryObject.formatDate(dateTo));
+        super.setAttributeValue(Constants.ATTRIBUTE_DATE_TO,
+                RegistryObject.formatDate(dateTo));
     }
 
 

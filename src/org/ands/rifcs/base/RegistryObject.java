@@ -151,7 +151,8 @@ public class RegistryObject extends RIFCSElement {
         NodeList nl = super.getElements(Constants.ELEMENT_ORIG_SOURCE);
         if (nl.getLength() == 1) {
            if (((Element) nl.item(0)).hasAttribute(Constants.ATTRIBUTE_TYPE)) {
-               return ((Element) nl.item(0)).getAttribute(Constants.ATTRIBUTE_TYPE);
+               return ((Element) nl.item(0)).
+                       getAttribute(Constants.ATTRIBUTE_TYPE);
            } else {
                return null;
            }

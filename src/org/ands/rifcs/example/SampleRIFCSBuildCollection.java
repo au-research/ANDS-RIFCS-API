@@ -50,10 +50,11 @@ public final class SampleRIFCSBuildCollection {
     private static RIFCS rifcs = null;
 
     private SampleRIFCSBuildCollection() {
-
     }
 
-    public static void main(final String[] args) throws RIFCSException, FileNotFoundException, SAXException, ParserConfigurationException, IOException {
+    public static void main(final String[] args) throws
+    RIFCSException, FileNotFoundException, SAXException,
+    ParserConfigurationException, IOException {
         RIFCSWrapper mw = new RIFCSWrapper();
         rifcs = mw.getRIFCSObject();
         RegistryObject r = rifcs.newRegistryObject();
@@ -64,14 +65,18 @@ public final class SampleRIFCSBuildCollection {
         c.setType("collection");
         c.addIdentifier("hdl:7651/myhandlesuffix", "handle");
         Right right = c.newRight();
-        right.setAccessRights("Access Right Value", "Access Rights Uri", "Access Right Type");
+        right.setAccessRights("Access Right Value",
+                "Access Rights Uri", "Access Right Type");
         right.setLicence("Licence Value", "Licence Uri", "Licence Type");
-        right.setRightsStatement("Right Statement Value", "Right Statement Uri");
+        right.setRightsStatement("Right Statement Value",
+                "Right Statement Uri");
         c.addRight(right);
         right = c.newRight();
-        right.setAccessRights("Access Right Value2", "Access Rights Uri2", "Access Right Type2");
+        right.setAccessRights("Access Right Value2",
+                "Access Rights Uri2", "Access Right Type2");
         right.setLicence("Licence Value2", "Licence Uri2", "Licence Type2");
-        right.setRightsStatement("Right Statement Value2", "Right Statement Uri2");
+        right.setRightsStatement("Right Statement Value2",
+                "Right Statement Uri2");
         c.addRight(right);
         Name n = c.newName();
         n.setType("primary");
@@ -106,7 +111,12 @@ public final class SampleRIFCSBuildCollection {
         Temporal tmp = cov.newTemporal();
         tmp.addDate("1999-3-4", "dateFrom", "W3C");
         tmp.addDate("1999-3-4", "dateFrom", "W3C");
-        sp.setValue("126.773437,-23.598894 127.652343,-27.405585 131.519531,-27.093039 131.167968,-24.081241 130.464843,-20.503868 127.828124,-19.843884 123.960937,-20.339134 123.433593,-22.141282 123.433593,-25.040485 123.785156,-28.183080 126.773437,-23.598894");
+        sp.setValue("126.773437,-23.598894 127.652343,-27.405585 "
+                + "131.519531,-27.093039 131.167968,-24.081241 "
+                + "130.464843,-20.503868 127.828124,-19.843884 "
+                + "123.960937,-20.339134 123.433593,-22.141282 "
+                + "123.433593,-25.040485 123.785156,-28.183080 "
+                + "126.773437,-23.598894");
         sp.setType("kmlPolyCoords");
         cov.addSpatial(sp);
         cov.addTemporal(tmp);
@@ -118,7 +128,8 @@ public final class SampleRIFCSBuildCollection {
         ri.setNotes("Notes about the related information resource");
         c.addRelatedInfo(ri);
         CitationInfo ci = c.newCitationInfo();
-        ci.setCitation("sasdgasdgsdgasdgasdgasdgasdgasdgsadgasdgasdgsg", "howardsss");
+        ci.setCitation("sasdgasdgsdgasdgasdgasdgasdgasdgsadgasdgasdgsg",
+                "howardsss");
         c.addCitationInfo(ci);
         CitationInfo ci2 = c.newCitationInfo();
         CitationMetadata cim = ci2.newCitationMetadata();
@@ -135,7 +146,11 @@ public final class SampleRIFCSBuildCollection {
         cim.setContext("shdgjsgjasgjahdsgjsd");
         c.addCitationInfo(ci2);
         ci2.addCitationMetadata(cim);
-        c.addDescription("漢字仮名交じり文漢字仮名交じり文漢字仮名交じり文漢字仮名交じり文漢字仮名交じり文漢字仮名交じり文漢字仮名交じり文漢字仮名交じり文漢字仮名交じり文漢字仮名交じり文漢字仮名交じり文漢字仮名交じり文漢字仮名交じり文", "full", "eng");
+        c.addDescription("漢字仮名交じり文漢字仮名交じり文漢字仮名交じり"
+                + "文漢字仮名交じり文漢字仮名交じり文漢字仮名交じり"
+                + "文漢字仮名交じり文漢字仮名交じり文漢字仮名交じり"
+                + "文漢字仮名交じり文漢字仮名交じり文漢字仮名交じり"
+                + "文漢字仮名交じり文", "full", "eng");
         r.addCollection(c);
         rifcs.addRegistryObject(r);
         mw.write(System.out);

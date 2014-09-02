@@ -36,7 +36,8 @@ import org.w3c.dom.NodeList;
  *
  */
 public class Temporal extends RIFCSElement {
-    private List<TemporalCoverageDate> dates = new ArrayList<TemporalCoverageDate>();
+    private List<TemporalCoverageDate> dates =
+            new ArrayList<TemporalCoverageDate>();
     private List<Element> texts = new ArrayList<Element>();
 
     /**
@@ -70,7 +71,8 @@ public class Temporal extends RIFCSElement {
     // }
 
     public final TemporalCoverageDate newDate() throws RIFCSException {
-        return new TemporalCoverageDate(this.newElement(Constants.ELEMENT_DATE));
+        return new TemporalCoverageDate(this.newElement(
+                Constants.ELEMENT_DATE));
     }
 
 
@@ -124,11 +126,11 @@ public class Temporal extends RIFCSElement {
      *      The type of date
      *
      */
-
-
-    public final void addDate(final String date, final String type) throws RIFCSException {
+    public final void addDate(final String date, final String type)
+            throws RIFCSException {
         this.addDate(date, type, "W3C");
     }
+
     /**
      * Add temporal date to the coverage object. A convenience method
      * creating a single temporal element with a date element.
@@ -139,9 +141,8 @@ public class Temporal extends RIFCSElement {
      *      The type of date
      *
      */
-
-
-    public final void addDate(final String date, final String type, final String dateFormat) throws RIFCSException {
+    public final void addDate(final String date,
+            final String type, final String dateFormat) throws RIFCSException {
         TemporalCoverageDate de = this.newDate();
         de.setType(type);
         de.setDateFormat(dateFormat);
@@ -160,9 +161,8 @@ public class Temporal extends RIFCSElement {
      *      The type of date
      *
      */
-
-
-    public final void addDate(final Date date, final String type) throws RIFCSException {
+    public final void addDate(final Date date,
+            final String type) throws RIFCSException {
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
         String text = df.format(date);
         String result = text.substring(0, 22) + ":" + text.substring(22);

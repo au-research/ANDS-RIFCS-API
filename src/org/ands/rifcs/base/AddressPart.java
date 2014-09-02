@@ -70,7 +70,8 @@ public class AddressPart extends RIFCSElement {
      *      The xml:lang attribute value
      */
     public final void setLanguage(final String lang) {
-        super.setAttributeValueNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG, lang);
+        super.setAttributeValueNS(Constants.NS_XML,
+                Constants.ATTRIBUTE_LANG, lang);
     }
 
 
@@ -82,7 +83,8 @@ public class AddressPart extends RIFCSElement {
      *      is empty or not present
      */
     public final String getLanguage() {
-        return super.getAttributeValueNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG);
+        return super.getAttributeValueNS(Constants.NS_XML,
+                Constants.ATTRIBUTE_LANG);
     }
 
 

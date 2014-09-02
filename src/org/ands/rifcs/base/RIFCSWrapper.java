@@ -79,12 +79,17 @@ public class RIFCSWrapper {
      */
     public RIFCSWrapper() throws RIFCSException {
         try {
-            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilderFactory factory =
+                    DocumentBuilderFactory.newInstance();
             factory.setNamespaceAware(true);
             DocumentBuilder builder = factory.newDocumentBuilder();
             doc = builder.newDocument();
-            Element root = doc.createElementNS(Constants.NS_RIFCS, Constants.ELEMENT_REGISTRY_OBJECTS);
-            root.setAttributeNS(Constants.NS_SCHEMA, Constants.ATTRIBUTE_SCHEMA_LOCATION, Constants.NS_RIFCS + " " + Constants.SCHEMA_REGISTRY_OBJECTS);
+            Element root = doc.createElementNS(Constants.NS_RIFCS,
+                    Constants.ELEMENT_REGISTRY_OBJECTS);
+            root.setAttributeNS(Constants.NS_SCHEMA,
+                    Constants.ATTRIBUTE_SCHEMA_LOCATION,
+                    Constants.NS_RIFCS + " "
+                    + Constants.SCHEMA_REGISTRY_OBJECTS);
             doc.appendChild(root);
             rifcs = new RIFCS(doc);
         } catch (ParserConfigurationException pce) {
@@ -137,7 +142,8 @@ public class RIFCSWrapper {
      */
     public final void write(final OutputStream os) {
         DOMImplementation impl = doc.getImplementation();
-        DOMImplementationLS implLS = (DOMImplementationLS) impl.getFeature("LS", "3.0");
+        DOMImplementationLS implLS =
+                (DOMImplementationLS) impl.getFeature("LS", "3.0");
 
         LSOutput lso = implLS.createLSOutput();
         lso.setByteStream(os);
@@ -152,7 +158,8 @@ public class RIFCSWrapper {
      * Output a RIFCS document in string form.
      *
      * @return
-     *        The RIFCS document in string form or <code>null</code> if an exception occurs
+     *        The RIFCS document in string form
+     *        or <code>null</code> if an exception occurs
      */
     public final String toString() {
         try {
@@ -170,9 +177,11 @@ public class RIFCSWrapper {
             return null;
         }
         //DOMImplementation impl = doc.getImplementation();
-        //DOMImplementationLS implLS = (DOMImplementationLS) impl.getFeature("LS","3.0");
+        //DOMImplementationLS implLS =
+        //  (DOMImplementationLS) impl.getFeature("LS","3.0");
         //LSSerializer writer = implLS.createLSSerializer();
-        // This is to suppress the xml header, with version and the encoding being automatically generated
+        // This is to suppress the xml header, with version
+        // and the encoding being automatically generated
         //writer.getDomConfig().setParameter("xml-declaration", false);
         //return writer.writeToString(doc);
     }
@@ -190,37 +199,51 @@ public class RIFCSWrapper {
      * @exception IOException
      *      if URL stream cannot be accessed
      */
-    public final void validate() throws SAXException, MalformedURLException, IOException, ParserConfigurationException {
+    public final void validate() throws SAXException,
+    MalformedURLException, IOException, ParserConfigurationException {
         // create a SchemaFactory capable of understanding WXS schemas
-        SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+        SchemaFactory factory = SchemaFactory.newInstance(
+                XMLConstants.W3C_XML_SCHEMA_NS_URI);
 
         Schema schema = factory.newSchema(doXercesWorkaround());
 
-        // create a Validator instance, which can be used to validate an instance document
+        // create a Validator instance, which can be used
+        // to validate an instance document
         Validator validator = schema.newValidator();
         validator.validate(new DOMSource(doc));
     }
 
     // Xerces cannot handle multiple schema files with same namespace so
     // need to work around this
-    private Source doXercesWorkaround() throws SAXException, MalformedURLException, IOException, ParserConfigurationException {
+    private Source doXercesWorkaround() throws SAXException,
+    MalformedURLException, IOException, ParserConfigurationException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         factory.setNamespaceAware(true);
         DocumentBuilder builder = factory.newDocumentBuilder();
 
-        Document docRO = builder.parse(new URL(Constants.SCHEMA_REGISTRY_OBJECTS).openStream());
-        Document docActivity = builder.parse(new URL(Constants.SCHEMA_ACTIVITY).openStream());
-        Document docCollection = builder.parse(new URL(Constants.SCHEMA_COLLECTION).openStream());
-        Document docParty = builder.parse(new URL(Constants.SCHEMA_PARTY).openStream());
-        Document docService = builder.parse(new URL(Constants.SCHEMA_SERVICE).openStream());
-        Document docTypes = builder.parse(new URL(Constants.SCHEMA_REGISTRY_TYPES).openStream());
+        Document docRO = builder.parse(new URL(
+                Constants.SCHEMA_REGISTRY_OBJECTS).openStream());
+        Document docActivity = builder.parse(new URL(
+                Constants.SCHEMA_ACTIVITY).openStream());
+        Document docCollection = builder.parse(new URL(
+                Constants.SCHEMA_COLLECTION).openStream());
+        Document docParty = builder.parse(new URL(
+                Constants.SCHEMA_PARTY).openStream());
+        Document docService = builder.parse(new URL(
+                Constants.SCHEMA_SERVICE).openStream());
+        Document docTypes = builder.parse(new URL(
+                Constants.SCHEMA_REGISTRY_TYPES).openStream());
 
         removeElements(docRO, "xsd:include");
-        Element xmlImport = docRO.createElementNS("http://www.w3.org/2001/XMLSchema", "xsd:import");
-        xmlImport.setAttribute("namespace", "http://www.w3.org/XML/1998/namespace");
-        xmlImport.setAttribute("schemaLocation", "http://www.w3.org/2001/xml.xsd");
+        Element xmlImport = docRO.createElementNS(
+                "http://www.w3.org/2001/XMLSchema", "xsd:import");
+        xmlImport.setAttribute("namespace",
+                "http://www.w3.org/XML/1998/namespace");
+        xmlImport.setAttribute("schemaLocation",
+                "http://www.w3.org/2001/xml.xsd");
         Element root = docRO.getDocumentElement();
-        root.insertBefore(xmlImport, root.getElementsByTagName("xsd:element").item(0));
+        root.insertBefore(xmlImport,
+                root.getElementsByTagName("xsd:element").item(0));
 
         removeElements(docActivity, "xsd:include");
         removeElements(docCollection, "xsd:include");
@@ -241,7 +264,8 @@ public class RIFCSWrapper {
     // Only to be called from Xerces workaround
     private void removeElements(final Document targetDoc,
                                 final String element) {
-        NodeList nl = targetDoc.getDocumentElement().getElementsByTagName(element);
+        NodeList nl = targetDoc.getDocumentElement().
+                getElementsByTagName(element);
 
         Node[] n = new Node[nl.getLength()];
 
@@ -284,16 +308,19 @@ public class RIFCSWrapper {
      * @exception IOException
      *      if URL stream cannot be accessed
      */
-    public final void validate(final String schemaUrl) throws SAXException, MalformedURLException, IOException {
+    public final void validate(final String schemaUrl) throws
+    SAXException, MalformedURLException, IOException {
         // create a SchemaFactory capable of understanding WXS schemas
-        SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+        SchemaFactory factory = SchemaFactory.newInstance(
+                XMLConstants.W3C_XML_SCHEMA_NS_URI);
 
         URL theSchema = new URL(schemaUrl);
         // load a WXS schema, represented by a Schema instance
         Source schemaFile = new StreamSource(theSchema.openStream());
         Schema schema = factory.newSchema(schemaFile);
 
-        // create a Validator instance, which can be used to validate an instance document
+        // create a Validator instance, which can be used
+        // to validate an instance document
         Validator validator = schema.newValidator();
 
         validator.validate(new DOMSource(doc));

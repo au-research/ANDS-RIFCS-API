@@ -50,9 +50,11 @@ public class Right extends RIFCSElement {
          * @param aRightsStatement
          * @throws RIFCSException
          */
-        public final void setRightsStatement(final RightsInfo aRightsStatement) throws RIFCSException {
+        public final void setRightsStatement(
+                final RightsInfo aRightsStatement) throws RIFCSException {
                 this.rightsStatement = aRightsStatement;
-                this.getElement().appendChild(this.rightsStatement.getElement());
+                this.getElement().appendChild(
+                        this.rightsStatement.getElement());
         }
 
         /**
@@ -61,7 +63,8 @@ public class Right extends RIFCSElement {
          * @param value
          * @throws RIFCSException
          */
-        public final void setRightsStatement(final String value) throws RIFCSException {
+        public final void setRightsStatement(final String value)
+                throws RIFCSException {
                 this.setRightsStatement(value, null);
         }
 
@@ -72,8 +75,10 @@ public class Right extends RIFCSElement {
          * @param rightsUri
          * @throws RIFCSException
          */
-        public final void setRightsStatement(final String value, final String rightsUri) throws RIFCSException {
-                RightsInfo aRightsStatement = new RightsInfo(this.newElement(Constants.ELEMENT_RIGHTS_STATEMENT));
+        public final void setRightsStatement(final String value,
+                final String rightsUri) throws RIFCSException {
+                RightsInfo aRightsStatement = new RightsInfo(
+                        this.newElement(Constants.ELEMENT_RIGHTS_STATEMENT));
                 aRightsStatement.setValue(value);
                 if (rightsUri != null) {
                         aRightsStatement.setRightsUri(rightsUri);
@@ -95,7 +100,8 @@ public class Right extends RIFCSElement {
          * @param aLicence
          * @throws RIFCSException
          */
-        public final void setLicence(final RightsTypedInfo aLicence) throws RIFCSException {
+        public final void setLicence(final RightsTypedInfo aLicence)
+                throws RIFCSException {
                 this.licence = aLicence;
                 this.getElement().appendChild(this.licence.getElement());
         }
@@ -106,7 +112,8 @@ public class Right extends RIFCSElement {
          * @param value
          * @throws RIFCSException
          */
-        public final void setLicence(final String value) throws RIFCSException {
+        public final void setLicence(final String value)
+                throws RIFCSException {
                 this.setLicence(value, null);
         }
 
@@ -117,7 +124,8 @@ public class Right extends RIFCSElement {
          * @param type
          * @throws RIFCSException
          */
-        public final void setLicence(final String value, final String type) throws RIFCSException {
+        public final void setLicence(final String value,
+                final String type) throws RIFCSException {
                 this.setLicence(value, type, null);
         }
 
@@ -129,8 +137,11 @@ public class Right extends RIFCSElement {
          * @param type
          * @throws RIFCSException
          */
-        public final void setLicence(final String value, final String rightsUri, final String type) throws RIFCSException {
-                RightsTypedInfo aLicence = new RightsTypedInfo(this.newElement(Constants.ELEMENT_LICENCE));
+        public final void setLicence(final String value,
+                final String rightsUri, final String type)
+                        throws RIFCSException {
+                RightsTypedInfo aLicence = new RightsTypedInfo(
+                        this.newElement(Constants.ELEMENT_LICENCE));
                 aLicence.setValue(value);
                 if (rightsUri != null) {
                         aLicence.setRightsUri(rightsUri);
@@ -156,7 +167,8 @@ public class Right extends RIFCSElement {
          * @param anAccessRights
          * @throws RIFCSException
          */
-        public final void setAccessRights(final RightsTypedInfo anAccessRights) throws RIFCSException {
+        public final void setAccessRights(
+                final RightsTypedInfo anAccessRights) throws RIFCSException {
                 this.accessRights = anAccessRights;
                 this.getElement().appendChild(this.accessRights.getElement());
         }
@@ -167,7 +179,8 @@ public class Right extends RIFCSElement {
          * @param value
          * @throws RIFCSException
          */
-        public final void setAccessRights(final String value) throws RIFCSException {
+        public final void setAccessRights(final String value)
+                throws RIFCSException {
                 this.setAccessRights(value, null);
         }
 
@@ -178,7 +191,8 @@ public class Right extends RIFCSElement {
          * @param type
          * @throws RIFCSException
          */
-        public final void setAccessRights(final String value, final String type) throws RIFCSException {
+        public final void setAccessRights(final String value,
+                final String type) throws RIFCSException {
                 this.setAccessRights(value, type, null);
         }
 
@@ -190,8 +204,12 @@ public class Right extends RIFCSElement {
          * @param type
          * @throws RIFCSException
          */
-        public final void setAccessRights(final String value, final String rightsUri, final String type) throws RIFCSException {
-                RightsTypedInfo anAccessRights = new RightsTypedInfo(this.newElement(Constants.ELEMENT_ACCESS_RIGHTS));
+        public final void setAccessRights(final String value,
+                final String rightsUri, final String type)
+                        throws RIFCSException {
+                RightsTypedInfo anAccessRights =
+                    new RightsTypedInfo(
+                        this.newElement(Constants.ELEMENT_ACCESS_RIGHTS));
                 anAccessRights.setValue(value);
                 if (rightsUri != null) {
                         anAccessRights.setRightsUri(rightsUri);

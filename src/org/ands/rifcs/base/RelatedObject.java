@@ -100,7 +100,8 @@ public class RelatedObject extends RIFCSElement {
      * @param type
      *          The type of relation being described
      * @param url
-     *    A URL expressing or implementing the relationship between registry objects
+     *    A URL expressing or implementing the relationship
+     *    between registry objects
      * @param description
      *    String describing the relation or null
      * @param descriptionLanguage
@@ -109,7 +110,8 @@ public class RelatedObject extends RIFCSElement {
     public final void addRelation(final String type,
                             final String url,
                             final String description,
-                            final String descriptionLanguage) throws RIFCSException {
+                            final String descriptionLanguage)
+                                    throws RIFCSException {
         Relation relation = newRelation();
 
         relation.setType(type);

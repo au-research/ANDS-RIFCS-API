@@ -46,7 +46,9 @@ public final class SampleRIFCSRead {
     private SampleRIFCSRead() {
     }
 
-    public static void main(final String[] args) throws RIFCSException, FileNotFoundException, SAXException, ParserConfigurationException, IOException, MalformedURLException
+    public static void main(final String[] args) throws RIFCSException,
+    FileNotFoundException, SAXException, ParserConfigurationException,
+    IOException, MalformedURLException
     {
         RIFCSReader rr = new RIFCSReader();
         rr.mapToDOM(new FileInputStream(args[0]));
@@ -64,7 +66,11 @@ public final class SampleRIFCSRead {
                 if (n.getType().equals("primary")) {
                     Iterator k = n.getNameParts().iterator();
                     while (k.hasNext()) {
-                        System.out.println((new StringBuilder()).append(((NamePart) k.next()).getValue()).append(" (").append(ro.getKey()).append(")").toString());
+                        System.out.println((new StringBuilder()).
+                                append(((NamePart) k.next()).
+                                        getValue()).append(" (").
+                                        append(ro.getKey()).append(")").
+                                        toString());
                     }
                 }
             }

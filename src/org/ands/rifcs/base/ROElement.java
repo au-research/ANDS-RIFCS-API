@@ -50,7 +50,8 @@ public class ROElement {
         }
 
         if (!(n instanceof Element)) {
-            throw new RIFCSException("Node of type Element required in constructor");
+            throw new RIFCSException(
+                    "Node of type Element required in constructor");
         }
 
         String name = n.getNodeName();
@@ -62,7 +63,8 @@ public class ROElement {
             throw new RIFCSException("Invalid regsitry object type: " + name);
         }
 
-//        this.getElement().getOwnerDocument().createElementNS(Constants.NS_RIFCS, name);
+//        this.getElement().getOwnerDocument().
+//          createElementNS(Constants.NS_RIFCS, name);
         e = (Element) n;
     }
 
@@ -205,13 +207,15 @@ public class ROElement {
 
 
     /**
-     * Return null, this class should be overridden by subclasses if sub-elements
+     * Return null, this class should be overridden by subclasses
+     * if sub-elements
      * are permitted.
      *
      * @return
      *      an element with the given name
      */
     protected final Element newElement(final String elementName) {
-        return this.getElement().getOwnerDocument().createElementNS(Constants.NS_RIFCS, elementName);
+        return this.getElement().getOwnerDocument().
+                createElementNS(Constants.NS_RIFCS, elementName);
     }
 }

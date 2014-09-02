@@ -40,8 +40,10 @@ import org.w3c.dom.NodeList;
  */
 public class RIFCS {
     private Document doc = null;
-    private HashMap<String, RegistryObject> ros = new HashMap<String, RegistryObject>();
-    private HashMap<String, ArrayList<RegistryObject>> rosByClass = new HashMap<String, ArrayList<RegistryObject>>();
+    private HashMap<String, RegistryObject> ros =
+            new HashMap<String, RegistryObject>();
+    private HashMap<String, ArrayList<RegistryObject>> rosByClass =
+            new HashMap<String, ArrayList<RegistryObject>>();
 
 
     /**
@@ -53,12 +55,17 @@ public class RIFCS {
      */
     public RIFCS() throws RIFCSException {
         try {
-            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilderFactory factory =
+                    DocumentBuilderFactory.newInstance();
             factory.setNamespaceAware(true);
             DocumentBuilder builder = factory.newDocumentBuilder();
             doc = builder.newDocument();
-            Element root = doc.createElementNS(Constants.NS_RIFCS, Constants.ELEMENT_REGISTRY_OBJECTS);
-            root.setAttributeNS(Constants.NS_SCHEMA, Constants.ATTRIBUTE_SCHEMA_LOCATION, Constants.NS_RIFCS + " " + Constants.SCHEMA_REGISTRY_OBJECTS);
+            Element root = doc.createElementNS(Constants.NS_RIFCS,
+                    Constants.ELEMENT_REGISTRY_OBJECTS);
+            root.setAttributeNS(Constants.NS_SCHEMA,
+                    Constants.ATTRIBUTE_SCHEMA_LOCATION,
+                    Constants.NS_RIFCS + " "
+                    + Constants.SCHEMA_REGISTRY_OBJECTS);
             doc.appendChild(root);
             initObjectClassMap();
         } catch (ParserConfigurationException pce) {
@@ -80,7 +87,8 @@ public class RIFCS {
      *
      */
     public final RegistryObject newRegistryObject() throws RIFCSException {
-        Element ro = doc.createElementNS(Constants.NS_RIFCS, Constants.ELEMENT_REGISTRY_OBJECT);
+        Element ro = doc.createElementNS(Constants.NS_RIFCS,
+                Constants.ELEMENT_REGISTRY_OBJECT);
         return new RegistryObject(ro);
     }
 
@@ -172,7 +180,8 @@ public class RIFCS {
      * @param r
      *    A RegistryObject
      */
-    public final void addRegistryObject(final RegistryObject r) throws RIFCSException {
+    public final void addRegistryObject(final RegistryObject r)
+            throws RIFCSException {
         doc.getDocumentElement().appendChild(r.getElement());
         ros.put(r.getKey(), r);
         rosByClass.get(r.getObjectClassName()).add(r);
@@ -183,7 +192,8 @@ public class RIFCS {
      * For existing DOM, initialise and create all the supporting structures.
      */
     private void initRegistryObjects() throws RIFCSException {
-        NodeList nl = doc.getElementsByTagNameNS(Constants.NS_RIFCS, Constants.ELEMENT_REGISTRY_OBJECT);
+        NodeList nl = doc.getElementsByTagNameNS(Constants.NS_RIFCS,
+                Constants.ELEMENT_REGISTRY_OBJECT);
 
         for (int i = 0; i < nl.getLength(); i++) {
             RegistryObject ro = new RegistryObject(nl.item(i));

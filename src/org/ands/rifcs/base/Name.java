@@ -78,7 +78,8 @@ public class Name extends RIFCSElement {
     *      The xml:lang attribute value
     */
     public final void setLanguage(final String lang) {
-        super.setAttributeValueNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG, lang);
+        super.setAttributeValueNS(Constants.NS_XML,
+                Constants.ATTRIBUTE_LANG, lang);
     }
 
 
@@ -90,7 +91,8 @@ public class Name extends RIFCSElement {
      *      is empty or not present
      */
     public final String getLanguage() {
-        return super.getAttributeValueNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG);
+        return super.getAttributeValueNS(Constants.NS_XML,
+                Constants.ATTRIBUTE_LANG);
     }
 
 
@@ -102,7 +104,8 @@ public class Name extends RIFCSElement {
      *      information was valid from
      */
     public final void setDateFrom(final Date dateFrom) {
-        super.setAttributeValue(Constants.ATTRIBUTE_DATE_FROM, RegistryObject.formatDate(dateFrom));
+        super.setAttributeValue(Constants.ATTRIBUTE_DATE_FROM,
+                RegistryObject.formatDate(dateFrom));
     }
 
 
@@ -134,7 +137,8 @@ public class Name extends RIFCSElement {
      *      A date object representing the date the name was valid to
      */
     public final void setDateTo(final Date dateTo) {
-        super.setAttributeValue(Constants.ATTRIBUTE_DATE_TO, RegistryObject.formatDate(dateTo));
+        super.setAttributeValue(Constants.ATTRIBUTE_DATE_TO,
+                RegistryObject.formatDate(dateTo));
     }
 
 

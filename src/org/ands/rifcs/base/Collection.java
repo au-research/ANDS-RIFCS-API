@@ -36,7 +36,8 @@ public class Collection extends RIFCSElement {
     private List<Name> names = new ArrayList<Name>();
     private List<Location> locations = new ArrayList<Location>();
     private List<Coverage> coverages = new ArrayList<Coverage>();
-    private List<RelatedObject> relatedObjects = new ArrayList<RelatedObject>();
+    private List<RelatedObject> relatedObjects =
+            new ArrayList<RelatedObject>();
     private List<Subject> subjects = new ArrayList<Subject>();
     private List<Description> descriptions = new ArrayList<Description>();
     private List<Right> rightsList = new ArrayList<Right>();
@@ -85,7 +86,8 @@ public class Collection extends RIFCSElement {
      *            was recorded in the catalog system
      */
     public final void setDateAccessioned(final Date date) {
-        super.setAttributeValue(Constants.ATTRIBUTE_DATE_ACCESSIONED, RegistryObject.formatDate(date));
+        super.setAttributeValue(Constants.ATTRIBUTE_DATE_ACCESSIONED,
+                RegistryObject.formatDate(date));
     }
 
     /**
@@ -119,7 +121,8 @@ public class Collection extends RIFCSElement {
      *            was last modified
      */
     public final void setDateModified(final Date date) {
-        super.setAttributeValue(Constants.ATTRIBUTE_DATE_MODIFIED, RegistryObject.formatDate(date));
+        super.setAttributeValue(Constants.ATTRIBUTE_DATE_MODIFIED,
+                RegistryObject.formatDate(date));
     }
 
     /**
@@ -182,7 +185,8 @@ public class Collection extends RIFCSElement {
      * @exception RIFCSException
      *
      */
-    public final void addIdentifier(final String identifier, final String type) throws RIFCSException {
+    public final void addIdentifier(final String identifier,
+            final String type) throws RIFCSException {
         Identifier i = newIdentifier();
         i.setType(type);
         i.setValue(identifier);
@@ -320,7 +324,8 @@ public class Collection extends RIFCSElement {
      *
      */
     public final RelatedObject newRelatedObject() throws RIFCSException {
-        return new RelatedObject(this.newElement(Constants.ELEMENT_RELATED_OBJECT));
+        return new RelatedObject(this.newElement(
+                Constants.ELEMENT_RELATED_OBJECT));
     }
 
     /**
@@ -382,7 +387,8 @@ public class Collection extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    public final void addSubject(final String subject, final String type, final String language) throws RIFCSException {
+    public final void addSubject(final String subject,
+            final String type, final String language) throws RIFCSException {
         Subject s = newSubject();
         s.setType(type);
         s.setValue(subject);
@@ -441,7 +447,8 @@ public class Collection extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    public final void addDescription(final String description, final String type, final String language) throws RIFCSException {
+    public final void addDescription(final String description,
+            final String type, final String language) throws RIFCSException {
         Description d = newDescription();
         d.setType(type);
         d.setValue(description);
@@ -521,8 +528,9 @@ public class Collection extends RIFCSElement {
     }
 
     /**
-     * Convenience method to add related info containing a single URL identifier.
-     * to the collection object
+     * Convenience method to add related info
+     * containing a single URL identifier
+     * to the collection object.
      *
      * @param relatedInfoURI
      *            a relatedInfo URI
@@ -534,7 +542,8 @@ public class Collection extends RIFCSElement {
      *             related info element.
      */
     @Deprecated
-    public final void addRelatedInfo(final String relatedInfoURI) throws RIFCSException {
+    public final void addRelatedInfo(
+            final String relatedInfoURI) throws RIFCSException {
         RelatedInfo ri = newRelatedInfo();
         ri.setIdentifier(relatedInfoURI, "uri");
         this.getElement().appendChild(ri.getElement());
@@ -551,7 +560,8 @@ public class Collection extends RIFCSElement {
     }
 
     public final CitationInfo newCitationInfo() throws RIFCSException {
-        return new CitationInfo(this.newElement(Constants.ELEMENT_CITATIONINFO));
+        return new CitationInfo(this.newElement(
+                Constants.ELEMENT_CITATIONINFO));
     }
 
     public final void addCitationInfo(final CitationInfo citationInfo) {

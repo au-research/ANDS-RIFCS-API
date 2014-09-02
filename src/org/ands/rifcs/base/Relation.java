@@ -103,7 +103,8 @@ public class Relation extends RIFCSElement {
     public final void setDescriptionLanguage(final String lang) {
         NodeList nl = super.getElements(Constants.ELEMENT_DESCRIPTION);
         if (nl.getLength() == 1) {
-            ((Element) nl.item(0)).setAttributeNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG, lang);
+            ((Element) nl.item(0)).setAttributeNS(Constants.NS_XML,
+                    Constants.ATTRIBUTE_LANG, lang);
         }
     }
 
@@ -118,7 +119,8 @@ public class Relation extends RIFCSElement {
     public final String getDescriptionLanguage() {
         NodeList nl = super.getElements(Constants.ELEMENT_DESCRIPTION);
         if (nl.getLength() == 1) {
-            return ((Element) nl.item(0)).getAttributeNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG);
+            return ((Element) nl.item(0)).getAttributeNS(Constants.NS_XML,
+                    Constants.ATTRIBUTE_LANG);
         }
 
         return null;

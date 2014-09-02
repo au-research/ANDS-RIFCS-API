@@ -51,7 +51,9 @@ public final class SampleRIFCSBuildParty {
 
     }
 
-    public static void main(final String[] args) throws RIFCSException, FileNotFoundException, SAXException, ParserConfigurationException, IOException {
+    public static void main(final String[] args) throws
+    RIFCSException, FileNotFoundException, SAXException,
+    ParserConfigurationException, IOException {
         RIFCSWrapper mw = new RIFCSWrapper();
         rifcs = mw.getRIFCSObject();
         RegistryObject r = rifcs.newRegistryObject();
@@ -87,7 +89,12 @@ public final class SampleRIFCSBuildParty {
         Temporal tmp = cov.newTemporal();
         tmp.addDate("1999-3-4", "dateFrom", "W3C");
         tmp.addDate("1999-3-4", "dateFrom", "W3C");
-        sp.setValue("126.773437,-23.598894 127.652343,-27.405585 131.519531,-27.093039 131.167968,-24.081241 130.464843,-20.503868 127.828124,-19.843884 123.960937,-20.339134 123.433593,-22.141282 123.433593,-25.040485 123.785156,-28.183080 126.773437,-23.598894");
+        sp.setValue("126.773437,-23.598894 127.652343,-27.405585 "
+                + "131.519531,-27.093039 131.167968,-24.081241 "
+                + "130.464843,-20.503868 127.828124,-19.843884 "
+                + "123.960937,-20.339134 123.433593,-22.141282 "
+                + "123.433593,-25.040485 123.785156,-28.183080 "
+                + "126.773437,-23.598894");
         sp.setType("kmlPolyCoords");
         cov.addSpatial(sp);
         cov.addTemporal(tmp);
@@ -119,14 +126,18 @@ public final class SampleRIFCSBuildParty {
 
 
         Right right = p.newRight();
-        right.setAccessRights("Access Right Value", "Access Rights Uri", "Access Right Type");
+        right.setAccessRights("Access Right Value",
+                "Access Rights Uri", "Access Right Type");
         right.setLicence("Licence Value", "Licence Uri", "Licence Type");
-        right.setRightsStatement("Right Statement Value", "Right Statement Uri");
+        right.setRightsStatement("Right Statement Value",
+                "Right Statement Uri");
         p.addRight(right);
         right = p.newRight();
-        right.setAccessRights("Access Right Value2", "Access Rights Uri2", "Access Right Type2");
+        right.setAccessRights("Access Right Value2",
+                "Access Rights Uri2", "Access Right Type2");
         right.setLicence("Licence Value2", "Licence Uri2", "Licence Type2");
-        right.setRightsStatement("Right Statement Value2", "Right Statement Uri2");
+        right.setRightsStatement("Right Statement Value2",
+                "Right Statement Uri2");
         p.addRight(right);
         p.addExistenceDate("01-01-01", "dd-mm-yy", "12-12-12", "dd-mm-yy");
 

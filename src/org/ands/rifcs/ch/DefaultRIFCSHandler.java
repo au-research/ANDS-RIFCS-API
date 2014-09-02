@@ -75,7 +75,8 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
      */
     public final void startDocument() throws SAXException {
         try {
-            doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
+            doc = DocumentBuilderFactory.newInstance().
+                    newDocumentBuilder().newDocument();
         } catch (Exception e) {
             throw new SAXException(e);
         }
@@ -175,7 +176,8 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
     /**
      * Processing for the endElement event.
      *
-     * Pop the DOM element from the stack and insert it into the DOM document. For FContent we simply return as
+     * Pop the DOM element from the stack and insert it
+     * into the DOM document. For FContent we simply return as
      *
      * @param uri
      *      The element namespace

@@ -57,10 +57,12 @@ public class RIFCSElement {
 
         if (n instanceof Element) {
             if (!n.getNodeName().endsWith(name)) {
-                throw new RIFCSException("Mismatch tag name. Node tag is: " + n.getNodeName() + ", expected: " + name);
+                throw new RIFCSException("Mismatch tag name. Node tag is: "
+            + n.getNodeName() + ", expected: " + name);
             }
         } else {
-            throw new RIFCSException("Node of type Element required in constructor");
+            throw new RIFCSException(
+                    "Node of type Element required in constructor");
         }
 
         e = (Element) n;
@@ -238,14 +240,15 @@ public class RIFCSElement {
 
 
     /**
-     * Return null, this class should be overridden by subclasses if sub-elements
-     * are permitted.
+     * Return null, this class should be overridden by subclasses
+     * if sub-elements are permitted.
      *
      * @return
      *      an element with the given name
      */
     protected final Element newElement(final String elementName) {
-        return this.getElement().getOwnerDocument().createElementNS(Constants.NS_RIFCS, elementName);
+        return this.getElement().getOwnerDocument().
+                createElementNS(Constants.NS_RIFCS, elementName);
     }
 
 
@@ -256,7 +259,8 @@ public class RIFCSElement {
      *      The date in UTC format
      */
     protected static String formatDate(final Date date) {
-        SimpleDateFormat df = new SimpleDateFormat(Constants.TIMESTAMP_UTC_FORMAT);
+        SimpleDateFormat df =
+                new SimpleDateFormat(Constants.TIMESTAMP_UTC_FORMAT);
         Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
         cal.setTime(date);
         df.setCalendar(cal);

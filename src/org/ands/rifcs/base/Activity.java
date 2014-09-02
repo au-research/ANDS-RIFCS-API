@@ -33,15 +33,17 @@ import org.w3c.dom.NodeList;
  */
 public class Activity extends RIFCSElement {
     private List<Identifier> identifiers = new ArrayList<Identifier>();
-    private List<Name> names =  new ArrayList<Name>();
-    private List<Location> locations =  new ArrayList<Location>();
-    private List<Coverage> coverages =  new ArrayList<Coverage>();
-    private List<RelatedObject> relatedObjects =  new ArrayList<RelatedObject>();
-    private List<Subject> subjects =  new ArrayList<Subject>();
-    private List<Description> descriptions =  new ArrayList<Description>();
-    private List<Right> rights =  new ArrayList<Right>();
-    private List<ExistenceDate> existenceDates =  new ArrayList<ExistenceDate>();
-    private List<RelatedInfo> ris =  new ArrayList<RelatedInfo>();
+    private List<Name> names = new ArrayList<Name>();
+    private List<Location> locations = new ArrayList<Location>();
+    private List<Coverage> coverages = new ArrayList<Coverage>();
+    private List<RelatedObject> relatedObjects =
+            new ArrayList<RelatedObject>();
+    private List<Subject> subjects = new ArrayList<Subject>();
+    private List<Description> descriptions = new ArrayList<Description>();
+    private List<Right> rights = new ArrayList<Right>();
+    private List<ExistenceDate> existenceDates =
+            new ArrayList<ExistenceDate>();
+    private List<RelatedInfo> ris = new ArrayList<RelatedInfo>();
 
     /**
      * Construct an Activity object.
@@ -88,7 +90,8 @@ public class Activity extends RIFCSElement {
      *      was last modified
      */
     public final void setDateModified(final Date date) {
-        super.setAttributeValue(Constants.ATTRIBUTE_DATE_MODIFIED, RegistryObject.formatDate(date));
+        super.setAttributeValue(Constants.ATTRIBUTE_DATE_MODIFIED,
+                RegistryObject.formatDate(date));
     }
 
 
@@ -305,7 +308,8 @@ public class Activity extends RIFCSElement {
      *
      */
     public final RelatedObject newRelatedObject() throws RIFCSException {
-        return new RelatedObject(this.newElement(Constants.ELEMENT_RELATED_OBJECT));
+        return new RelatedObject(this.newElement(
+                Constants.ELEMENT_RELATED_OBJECT));
     }
 
 
@@ -378,7 +382,8 @@ public class Activity extends RIFCSElement {
      * @param termIdentifier
      * @param lang
      */
-    public final void addSubject(final String value, final String type, final String termIdentifier, final String lang) {
+    public final void addSubject(final String value, final String type,
+            final String termIdentifier, final String lang) {
      /*   if (subjects == null)
         {
             subjects = new ArrayList<Subject>();
@@ -459,7 +464,9 @@ public class Activity extends RIFCSElement {
          *
          * @exception RIFCSException
          */
-        public final void addDescription(final String description, final String type, final String language) throws RIFCSException {
+        public final void addDescription(final String description,
+                final String type, final String language)
+                        throws RIFCSException {
                 Description d = newDescription();
                 d.setType(type);
                 d.setValue(description);
@@ -516,7 +523,8 @@ public class Activity extends RIFCSElement {
 
 
     public final ExistenceDate newExistenceDate() throws RIFCSException {
-        return new ExistenceDate(this.newElement(Constants.ELEMENT_EXISTENSE_DATES));
+        return new ExistenceDate(this.newElement(
+                Constants.ELEMENT_EXISTENSE_DATES));
     }
 
 
@@ -543,7 +551,10 @@ public class Activity extends RIFCSElement {
      * @param endVal
      * @param endDateFormat
      */
-    public final void addExistenceDate(final String startVal, final String startDateFormat, final String endVal, final String endDateFormat) {
+    public final void addExistenceDate(final String startVal,
+            final String startDateFormat,
+            final String endVal,
+            final String endDateFormat) {
     /*    if (descriptions == null)
         {
             descriptions = new ArrayList<Description>();

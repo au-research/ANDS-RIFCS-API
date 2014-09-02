@@ -61,7 +61,8 @@ public class RIFCSReader {
      * @throws IOException
      *
      */
-    public final void mapToDOM(final InputStream is) throws SAXException, ParserConfigurationException, IOException {
+    public final void mapToDOM(final InputStream is) throws SAXException,
+    ParserConfigurationException, IOException {
         SAXParserFactory spf = SAXParserFactory.newInstance();
         spf.setFeature("http://xml.org/sax/features/namespaces", true);
         spf.setFeature("http://xml.org/sax/features/namespace-prefixes", true);
@@ -90,7 +91,8 @@ public class RIFCSReader {
      *
      */
     public final void mapToDOM(final InputStream is,
-                final DefaultRIFCSHandler ch) throws SAXException, ParserConfigurationException, IOException {
+                final DefaultRIFCSHandler ch) throws SAXException,
+                ParserConfigurationException, IOException {
         SAXParserFactory spf = SAXParserFactory.newInstance();
         spf.setFeature("http://xml.org/sax/features/namespaces", true);
         spf.setFeature("http://xml.org/sax/features/namespace-prefixes", true);

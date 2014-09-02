@@ -326,7 +326,8 @@ public class Party extends RIFCSElement {
      * @param termIdentifier
      * @param lang
      */
-    public final void addSubject(final String value, final String type, final String termIdentifier, final String lang)
+    public final void addSubject(final String value,
+            final String type, final String termIdentifier, final String lang)
     {
         /*   if (subjects == null)
              {
@@ -399,7 +400,8 @@ public class Party extends RIFCSElement {
      *
      * @exception RIFCSException
      */
-    public final void addDescription(final String description, final String type, final String language) throws RIFCSException {
+    public final void addDescription(final String description,
+            final String type, final String language) throws RIFCSException {
         Description d = newDescription();
         d.setType(type);
         d.setValue(description);
@@ -476,7 +478,9 @@ public class Party extends RIFCSElement {
      * @param endVal
      * @param endDateFormat
      */
-    public final void addExistenceDate(final String startVal, final String startDateFormat, final String endVal, final String endDateFormat)
+    public final void addExistenceDate(final String startVal,
+            final String startDateFormat, final String endVal,
+            final String endDateFormat)
     {
         /*    if (descriptions == null)
               {

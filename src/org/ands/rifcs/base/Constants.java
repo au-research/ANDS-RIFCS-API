@@ -58,7 +58,8 @@ public final class Constants {
     public static final String ATTRIBUTE_REQUIRED = "required";
 
     /** The XML schemaLocation attribute name. */
-    public static final String ATTRIBUTE_SCHEMA_LOCATION = "xsi:schemaLocation";
+    public static final String ATTRIBUTE_SCHEMA_LOCATION =
+            "xsi:schemaLocation";
 
     /** The seq attribute name. */
     public static final String ATTRIBUTE_SEQ = "seq";
@@ -232,22 +233,31 @@ public final class Constants {
     public static final String NS_PREFIX = "xmlns:rif";
 
     /** RIF-CS schema namespace location. */
-    public static final String NS_RIFCS = "http://ands.org.au/standards/rif-cs/registryObjects";
+    public static final String NS_RIFCS =
+            "http://ands.org.au/standards/rif-cs/registryObjects";
 
     /** XML schema instance namespace location. */
-    public static final String NS_SCHEMA = "http://www.w3.org/2001/XMLSchema-instance";
+    public static final String NS_SCHEMA =
+            "http://www.w3.org/2001/XMLSchema-instance";
 
     /** XML namespace location. */
     public static final String NS_XML = "http://www.w3.org/XML/1998/namespace";
 
     /** RIF-CS schema location base path. */
-    public static final String SCHEMA_REGISTRY_OBJECTS = "http://services.ands.org.au/home/orca/schemata/registryObjects.xsd";
-    public static final String SCHEMA_REGISTRY_TYPES = "http://services.ands.org.au/home/orca/schemata/registryTypes.xsd";
-    public static final String SCHEMA_ACTIVITY = "http://services.ands.org.au/home/orca/schemata/activity.xsd";
-    public static final String SCHEMA_COLLECTION = "http://services.ands.org.au/home/orca/schemata/collection.xsd";
-    public static final String SCHEMA_PARTY = "http://services.ands.org.au/home/orca/schemata/party.xsd";
-    public static final String SCHEMA_SERVICE = "http://services.ands.org.au/home/orca/schemata/service.xsd";
+    public static final String SCHEMA_REGISTRY_OBJECTS =
+        "http://services.ands.org.au/home/orca/schemata/registryObjects.xsd";
+    public static final String SCHEMA_REGISTRY_TYPES =
+        "http://services.ands.org.au/home/orca/schemata/registryTypes.xsd";
+    public static final String SCHEMA_ACTIVITY =
+        "http://services.ands.org.au/home/orca/schemata/activity.xsd";
+    public static final String SCHEMA_COLLECTION =
+        "http://services.ands.org.au/home/orca/schemata/collection.xsd";
+    public static final String SCHEMA_PARTY =
+        "http://services.ands.org.au/home/orca/schemata/party.xsd";
+    public static final String SCHEMA_SERVICE =
+        "http://services.ands.org.au/home/orca/schemata/service.xsd";
 
     /** Java Date Format for UTC dates. */
-    public static final String TIMESTAMP_UTC_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
+    public static final String TIMESTAMP_UTC_FORMAT =
+        "yyyy-MM-dd'T'HH:mm:ss'Z'";
 }

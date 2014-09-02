@@ -33,5 +33,5 @@ public interface RIFCSHandler {
      *      The DOM document. May be null if called before parsing and empty
      *      if parsing exception caught.
      */
-    public Document getDocument();
+    Document getDocument();
 }

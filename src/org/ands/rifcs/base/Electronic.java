@@ -94,7 +94,7 @@ public class Electronic extends RIFCSElement {
      * @param name
      *    the name of the argument
      * @param required
-     *    <code>true</true> if the argument is required else <code>false</code>
+     *    <code>true</code> if the argument is required else <code>false</code>
      * @param type
      *    the argument type
      * @param use

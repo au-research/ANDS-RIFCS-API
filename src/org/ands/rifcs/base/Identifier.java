@@ -44,7 +44,7 @@ public class Identifier extends RIFCSElement {
      * Set the type
      *
      * @param type
-     *      The location type</a>
+     *      The location type
      */
     public void setType(String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);

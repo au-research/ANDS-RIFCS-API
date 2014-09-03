@@ -215,9 +215,13 @@ public class RIFCS {
      * Initialise the object class cache.
      */
     private void initObjectClassMap() {
-        rosByClass.put(Constants.ELEMENT_COLLECTION, new ArrayList());
-        rosByClass.put(Constants.ELEMENT_ACTIVITY, new ArrayList());
-        rosByClass.put(Constants.ELEMENT_PARTY, new ArrayList());
-        rosByClass.put(Constants.ELEMENT_SERVICE, new ArrayList());
+        rosByClass.put(Constants.ELEMENT_COLLECTION,
+                new ArrayList<RegistryObject>());
+        rosByClass.put(Constants.ELEMENT_ACTIVITY,
+                new ArrayList<RegistryObject>());
+        rosByClass.put(Constants.ELEMENT_PARTY,
+                new ArrayList<RegistryObject>());
+        rosByClass.put(Constants.ELEMENT_SERVICE,
+                new ArrayList<RegistryObject>());
     }
 }

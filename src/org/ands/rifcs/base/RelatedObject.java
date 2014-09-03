@@ -33,7 +33,7 @@ import org.w3c.dom.NodeList;
  */
 public class RelatedObject extends RIFCSElement {
     /** List of Relation nodes. */
-    List<Relation> relations = new ArrayList<Relation>();
+    private List<Relation> relations = new ArrayList<Relation>();
 
     /**
      * Construct a RelatedObject object.

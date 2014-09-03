@@ -73,7 +73,7 @@ public class Contributor extends RIFCSElement {
        if (seq == null || seq.equals("")) {
            return -1;
        }
-       return Integer.valueOf(seq);
+       return Integer.parseInt(seq);
     }
 
 

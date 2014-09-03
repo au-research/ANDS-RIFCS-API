@@ -191,10 +191,10 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
                            final String qName) throws SAXException {
         Element e = elements.pop();
 
-        if (!elements.empty()) {
-            elements.peek().appendChild(e);
-        } else {
+        if (elements.empty()) {
             doc.appendChild(e);
+        } else {
+            elements.peek().appendChild(e);
         }
     }
 

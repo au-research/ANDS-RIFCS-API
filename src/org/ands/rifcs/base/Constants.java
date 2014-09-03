@@ -26,10 +26,6 @@ package org.ands.rifcs.base;
  */
 public final class Constants {
 
-    /** This class can not be instantiated. */
-    private Constants() {
-    }
-
     /** Name of the date accessioned attribute. */
     public static final String ATTRIBUTE_DATE_ACCESSIONED = "dateAccessioned";
 
@@ -265,4 +261,9 @@ public final class Constants {
     /** Java Date Format for UTC dates. */
     public static final String TIMESTAMP_UTC_FORMAT =
         "yyyy-MM-dd'T'HH:mm:ss'Z'";
+
+    /** This class can not be instantiated. */
+    private Constants() {
+    }
+
 }

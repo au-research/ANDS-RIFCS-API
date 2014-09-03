@@ -22,25 +22,24 @@ package org.ands.rifcs.base;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.StringWriter;
-import java.net.URL;
 import java.net.MalformedURLException;
+import java.net.URL;
 
+import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Source;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamSource;
-import javax.xml.validation.SchemaFactory;
-import javax.xml.validation.Schema;
-import javax.xml.validation.Validator;
-import javax.xml.XMLConstants;
-
 import javax.xml.transform.Result;
-import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
+import javax.xml.validation.Validator;
 
 import org.w3c.dom.DOMConfiguration;
 import org.w3c.dom.DOMImplementation;
@@ -65,6 +64,9 @@ import org.xml.sax.SAXException;
  *
  */
 public class RIFCSWrapper {
+    /** Schema include directive. Defined as a constant because it
+     *  is used multiple times throughout the class. */
+    private static final String XSD_INCLUDE = "xsd:include";
     /** The RIF-CS document. */
     private Document doc = null;
     /** The RIF-CS object. */
@@ -151,7 +153,7 @@ public class RIFCSWrapper {
         lso.setByteStream(os);
         LSSerializer writer = implLS.createLSSerializer();
         DOMConfiguration domConfig = writer.getDomConfig();
-        domConfig.setParameter("format-pretty-print", Boolean.valueOf(true));
+        domConfig.setParameter("format-pretty-print", Boolean.TRUE);
         writer.write(doc, lso);
     }
 
@@ -251,7 +253,7 @@ public class RIFCSWrapper {
         Document docTypes = builder.parse(new URL(
                 Constants.SCHEMA_REGISTRY_TYPES).openStream());
 
-        removeElements(docRO, "xsd:include");
+        removeElements(docRO, XSD_INCLUDE);
         Element xmlImport = docRO.createElementNS(
                 "http://www.w3.org/2001/XMLSchema", "xsd:import");
         xmlImport.setAttribute("namespace",
@@ -262,10 +264,10 @@ public class RIFCSWrapper {
         root.insertBefore(xmlImport,
                 root.getElementsByTagName("xsd:element").item(0));
 
-        removeElements(docActivity, "xsd:include");
-        removeElements(docCollection, "xsd:include");
-        removeElements(docParty, "xsd:include");
-        removeElements(docService, "xsd:include");
+        removeElements(docActivity, XSD_INCLUDE);
+        removeElements(docCollection, XSD_INCLUDE);
+        removeElements(docParty, XSD_INCLUDE);
+        removeElements(docService, XSD_INCLUDE);
         removeElements(docTypes, "xsd:import");
 
         addToSchema(docRO, docActivity);

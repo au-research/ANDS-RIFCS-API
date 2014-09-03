@@ -77,7 +77,7 @@ public final class SampleRIFCSRead {
                 if (n.getType().equals("primary")) {
                     Iterator<NamePart> k = n.getNameParts().iterator();
                     while (k.hasNext()) {
-                        System.out.println((new StringBuilder()).
+                        System.out.println(new StringBuilder().
                                 append(((NamePart) k.next()).
                                         getValue()).append(" (").
                                         append(ro.getKey()).append(")").

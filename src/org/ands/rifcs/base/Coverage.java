@@ -32,7 +32,9 @@ import org.w3c.dom.NodeList;
  *
  */
 public class Coverage extends RIFCSElement {
+    /** List of Spatial nodes. */
     private List<Spatial> spatials = new ArrayList<Spatial>();
+    /** List of Temporal nodes. */
     private List<Temporal> temporals = new ArrayList<Temporal>();
 
 
@@ -58,6 +60,8 @@ public class Coverage extends RIFCSElement {
      * owned by the RIF-CS document. The returned object needs to be
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
+     *
+     * @return the new Spatial object
      *
      * @throws RIFCSException A RIFCSException
      *
@@ -98,6 +102,8 @@ public class Coverage extends RIFCSElement {
      * owned by the RIF-CS document. The returned object needs to be
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
+     *
+     * @return the new Temporal object
      *
      * @throws RIFCSException A RIFCSException
      *
@@ -187,12 +193,22 @@ public class Coverage extends RIFCSElement {
     }
 
 
-    /* initialisation code for existing documents */
+    /** Initialisation code for existing documents. A wrapper that
+     *  invokes initSpatials() and initTemporals() in turn.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initStructures() throws RIFCSException {
         initSpatials();
         initTemporals();
     }
 
+    /** Initialisation code for spatial elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initSpatials() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_SPATIAL);
 
@@ -201,6 +217,11 @@ public class Coverage extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for temporal elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initTemporals() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_TEMPORAL);
 

@@ -31,6 +31,7 @@ import org.w3c.dom.NodeList;
  *
  */
 public class Physical extends RIFCSElement {
+    /** List of AddressPart nodes. */
     private List<AddressPart> addressParts = new ArrayList<AddressPart>();
 
     /**
@@ -104,6 +105,8 @@ public class Physical extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
+     * @return the new AddressPart object
+     *
      * @throws RIFCSException A RIFCSException
      *
      */
@@ -140,7 +143,11 @@ public class Physical extends RIFCSElement {
     }
 
 
-    /* initialisation code for existing documents */
+    /** Initialisation code for existing documents.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initStructures() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_ADDRESSPART);
 

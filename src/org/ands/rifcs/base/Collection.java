@@ -32,16 +32,26 @@ import org.w3c.dom.NodeList;
  *
  */
 public class Collection extends RIFCSElement {
+    /** List of Identifier nodes. */
     private List<Identifier> identifiers = new ArrayList<Identifier>();
+    /** List of Name nodes. */
     private List<Name> names = new ArrayList<Name>();
+    /** List of Location nodes. */
     private List<Location> locations = new ArrayList<Location>();
+    /** List of Coverage nodes. */
     private List<Coverage> coverages = new ArrayList<Coverage>();
+    /** List of RelatedObject nodes. */
     private List<RelatedObject> relatedObjects =
             new ArrayList<RelatedObject>();
+    /** List of Subject nodes. */
     private List<Subject> subjects = new ArrayList<Subject>();
+    /** List of Description nodes. */
     private List<Description> descriptions = new ArrayList<Description>();
+    /** List of Right nodes. */
     private List<Right> rightsList = new ArrayList<Right>();
+    /** List of RelatedInfo nodes. */
     private List<RelatedInfo> ris = new ArrayList<RelatedInfo>();
+    /** List of CitationInfo nodes. */
     private List<CitationInfo> cis = new ArrayList<CitationInfo>();
 
     /**
@@ -156,6 +166,8 @@ public class Collection extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
+     * @return the new Identifier object
+     *
      * @throws RIFCSException A RIFCSException
      *
      */
@@ -212,6 +224,8 @@ public class Collection extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
+     * @return the new Name object
+     *
      * @throws RIFCSException A RIFCSException
      *
      */
@@ -247,6 +261,8 @@ public class Collection extends RIFCSElement {
      * the RIF-CS document. The returned object needs to be "filled out" (e.g.
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
+     *
+     * @return the new Location object
      *
      * @throws RIFCSException A RIFCSException
      *
@@ -284,6 +300,8 @@ public class Collection extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
+     * @return the new Coverage object
+     *
      * @throws RIFCSException A RIFCSException
      *
      */
@@ -319,6 +337,8 @@ public class Collection extends RIFCSElement {
      * the RIF-CS document. The returned object needs to be "filled out" (e.g.
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
+     *
+     * @return the new RelatedObject object
      *
      * @throws RIFCSException A RIFCSException
      *
@@ -356,6 +376,8 @@ public class Collection extends RIFCSElement {
      * the RIF-CS document. The returned object needs to be "filled out" (e.g.
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
+     *
+     * @return the new Subject object
      *
      * @throws RIFCSException A RIFCSException
      *
@@ -417,6 +439,8 @@ public class Collection extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
+     * @return the new Description object
+     *
      * @throws RIFCSException A RIFCSException
      *
      */
@@ -468,6 +492,18 @@ public class Collection extends RIFCSElement {
         return descriptions;
     }
 
+    /**
+     * Create and return an empty Right object.
+     *
+     * The returned object has no properties or content and is not part of the
+     * RIF-CS document, it is essentially a constructor of an object owned by
+     * the RIF-CS document. The returned object needs to be "filled out" (e.g.
+     * with properties, additional sub-elements, etc) before being added to the
+     * RIF-CS document.
+     *
+     * @return the new Right object
+     *
+     */
     public final Right newRight() {
         Right right = null;
         try {
@@ -508,6 +544,8 @@ public class Collection extends RIFCSElement {
      * the RIF-CS document. The returned object needs to be "filled out" (e.g.
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
+     *
+     * @return the new RelatedInfo object
      *
      * @throws RIFCSException A RIFCSException
      *
@@ -559,21 +597,51 @@ public class Collection extends RIFCSElement {
         return ris;
     }
 
+    /**
+     * Create and return an empty CitationInfo object.
+     *
+     * The returned object has no properties or content and is not part of the
+     * RIF-CS document, it is essentially a constructor of an object owned by
+     * the RIF-CS document. The returned object needs to be "filled out" (e.g.
+     * with properties, additional sub-elements, etc) before being added to the
+     * RIF-CS document.
+     *
+     * @return the new CitationInfo object
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     public final CitationInfo newCitationInfo() throws RIFCSException {
         return new CitationInfo(this.newElement(
                 Constants.ELEMENT_CITATIONINFO));
     }
 
+    /**
+     * Convenience method to add a citation info to the collection object.
+     *
+     * @param citationInfo
+     *            the citationInfo
+     */
     public final void addCitationInfo(final CitationInfo citationInfo) {
         this.getElement().appendChild(citationInfo.getElement());
         this.cis.add(citationInfo);
     }
 
+    /**
+     * Obtain the citation info for this collection.
+     *
+     * @return A list of CitationInfo objects
+     */
     public final List<CitationInfo> getCitationInfos() {
         return this.cis;
     }
 
-    /* initialisation code for existing documents */
+    /** Initialisation code for existing documents. A wrapper that
+     *  invokes initIdentifiers(), initNames(), etc., in turn.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initStructures() throws RIFCSException {
         initIdentifiers();
         initNames();
@@ -587,6 +655,11 @@ public class Collection extends RIFCSElement {
 
     }
 
+    /** Initialisation code for identifier elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initIdentifiers() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_IDENTIFIER);
 
@@ -595,6 +668,11 @@ public class Collection extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for name elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initNames() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_NAME);
         for (int i = 0; i < nl.getLength(); i++) {
@@ -602,6 +680,11 @@ public class Collection extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for location elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initLocations() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_LOCATION);
 
@@ -610,6 +693,11 @@ public class Collection extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for coverage elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initCoverage() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_COVERAGE);
 
@@ -618,6 +706,11 @@ public class Collection extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for relatedObjects elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initRelatedObjects() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_RELATED_OBJECT);
 
@@ -626,6 +719,11 @@ public class Collection extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for subjects elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initSubjects() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_SUBJECT);
 
@@ -634,6 +732,11 @@ public class Collection extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for description elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initDescriptions() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_DESCRIPTION);
 
@@ -642,6 +745,11 @@ public class Collection extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for relatedInfo elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initRelatedInfo() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_RELATED_INFO);
 
@@ -650,6 +758,11 @@ public class Collection extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for citationInfo elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initCitationInfo() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_CITATIONINFO);
 

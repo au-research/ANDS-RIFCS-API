@@ -246,14 +246,19 @@ public final class Constants {
     /** RIF-CS schema location base path. */
     public static final String SCHEMA_REGISTRY_OBJECTS =
         "http://services.ands.org.au/home/orca/schemata/registryObjects.xsd";
+    /** RIF-CS schema location of types XSD. */
     public static final String SCHEMA_REGISTRY_TYPES =
         "http://services.ands.org.au/home/orca/schemata/registryTypes.xsd";
+    /** RIF-CS schema location of activity XSD. */
     public static final String SCHEMA_ACTIVITY =
         "http://services.ands.org.au/home/orca/schemata/activity.xsd";
+    /** RIF-CS schema location of collection XSD. */
     public static final String SCHEMA_COLLECTION =
         "http://services.ands.org.au/home/orca/schemata/collection.xsd";
+    /** RIF-CS schema location of party XSD. */
     public static final String SCHEMA_PARTY =
         "http://services.ands.org.au/home/orca/schemata/party.xsd";
+    /** RIF-CS schema location of service XSD. */
     public static final String SCHEMA_SERVICE =
         "http://services.ands.org.au/home/orca/schemata/service.xsd";
 

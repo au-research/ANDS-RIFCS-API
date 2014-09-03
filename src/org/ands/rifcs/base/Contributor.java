@@ -31,6 +31,7 @@ import org.w3c.dom.NodeList;
  *
  */
 public class Contributor extends RIFCSElement {
+    /** List of NamePart nodes. */
     private List<NamePart> nameParts = new ArrayList<NamePart>();
 
     /**
@@ -85,6 +86,8 @@ public class Contributor extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
+     * @return the new NamePart object
+     *
      * @throws RIFCSException A RIFCSException
      *
      */
@@ -135,7 +138,11 @@ public class Contributor extends RIFCSElement {
     }
 
 
-    /* initialisation code for existing documents */
+    /** Initialisation code for existing documents.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initStructures() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_NAMEPART);
 

@@ -32,6 +32,7 @@ import org.w3c.dom.NodeList;
  *
  */
 public class Name extends RIFCSElement {
+    /** List of NamePart nodes. */
     private List<NamePart> nameParts = new ArrayList<NamePart>();
 
     /**
@@ -123,7 +124,10 @@ public class Name extends RIFCSElement {
 
 
     /**
-     * Set the date the name was relevant from.
+     * Get the date the location was relevant from.
+     *
+     * @return The value of the dateFrom attribute.
+     *
      */
     public final String getDateFrom() {
         return super.getAttributeValue(Constants.ATTRIBUTE_DATE_FROM);
@@ -156,7 +160,10 @@ public class Name extends RIFCSElement {
 
 
     /**
-     * Set the date the name was relevant to.
+     * Get the date the location was relevant from.
+     *
+     * @return The value of the dateFrom attribute.
+     *
      */
     public final String getDateTo() {
         return super.getAttributeValue(Constants.ATTRIBUTE_DATE_TO);
@@ -171,6 +178,8 @@ public class Name extends RIFCSElement {
      * owned by the RIF-CS document. The returned object needs to be
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
+     *
+     * @return the new NamePart object
      *
      * @throws RIFCSException A RIFCSException
      *
@@ -222,7 +231,11 @@ public class Name extends RIFCSElement {
     }
 
 
-    /* initialisation code for existing documents */
+    /** Initialisation code for existing documents.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initStructures() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_NAMEPART);
 

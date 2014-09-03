@@ -65,7 +65,9 @@ import org.xml.sax.SAXException;
  *
  */
 public class RIFCSWrapper {
+    /** The RIF-CS document. */
     private Document doc = null;
+    /** The RIF-CS object. */
     private RIFCS rifcs = null;
 
 
@@ -215,8 +217,21 @@ public class RIFCSWrapper {
         validator.validate(new DOMSource(doc));
     }
 
-    // Xerces cannot handle multiple schema files with same namespace so
-    // need to work around this
+    /** Xerces cannot handle multiple schema files with the same namespace,
+     *  so we need to work around this.
+     *
+     * @return
+     *      The RIF-CS schema in a form usable by Xerces.
+     *
+     * @throws SAXException
+     *      if document is invalid
+     * @throws MalformedURLException
+     *      if schema URL is invalid
+     * @throws IOException
+     *      if URL stream cannot be accessed
+     * @throws ParserConfigurationException
+     *      A ParserConfigurationException
+    */
     private Source doXercesWorkaround() throws SAXException,
     MalformedURLException, IOException, ParserConfigurationException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -263,7 +278,12 @@ public class RIFCSWrapper {
     }
 
 
-    // Only to be called from Xerces workaround
+    /** Only to be called from Xerces workaround.
+     *  @param targetDoc
+     *      the document from which elements are to be removed
+     *  @param element
+     *      the name of the elements to be removed
+     */
     private void removeElements(final Document targetDoc,
                                 final String element) {
         NodeList nl = targetDoc.getDocumentElement().
@@ -283,7 +303,12 @@ public class RIFCSWrapper {
     }
 
 
-    // Only to be called from Xerces workaround
+    /** Only to be called from Xerces workaround.
+     *  @param targetDoc
+     *      the document to which elements are to be added
+     *  @param sourceDoc
+     *      the document from which elements are to be copied
+     */
     private void addToSchema(final Document targetDoc,
                              final Document sourceDoc) {
         NodeList nl = sourceDoc.getDocumentElement().getChildNodes();

@@ -34,6 +34,7 @@ import org.w3c.dom.NodeList;
 public class RegistryObject extends RIFCSElement {
 //    private List<Identifier> identifiers = new ArrayList<Identifier>();
 //    private List<Name> names = new ArrayList<Name>();
+    /** The type of this registry object. */
     private String objectClass = null;
 
     /**
@@ -195,6 +196,8 @@ public class RegistryObject extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
+     * @return the new Collection object
+     *
      * @throws RIFCSException A RIFCSException
      *
      */
@@ -212,6 +215,8 @@ public class RegistryObject extends RIFCSElement {
      * owned by the RIF-CS document. The returned object needs to be
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
+     *
+     * @return the new Activity object
      *
      * @throws RIFCSException A RIFCSException
      *
@@ -231,6 +236,8 @@ public class RegistryObject extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
+     * @return the new Party object
+     *
      * @throws RIFCSException A RIFCSException
      *
      */
@@ -248,6 +255,8 @@ public class RegistryObject extends RIFCSElement {
      * owned by the RIF-CS document. The returned object needs to be
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
+     *
+     * @return the new Service object
      *
      * @throws RIFCSException A RIFCSException
      *
@@ -350,6 +359,8 @@ public class RegistryObject extends RIFCSElement {
     }
 
 
+    /** Initialisation code for existing documents.
+     */
     private void initStructures() {
         List<Node> nl = super.getChildElements();
         for (Iterator<Node> i = nl.iterator(); i.hasNext();) {

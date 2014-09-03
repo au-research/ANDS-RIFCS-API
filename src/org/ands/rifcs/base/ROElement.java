@@ -33,6 +33,7 @@ import org.w3c.dom.NodeList;
  *
  */
 public class ROElement {
+    /** The element. */
     private Element e = null;
 
     /**
@@ -207,9 +208,16 @@ public class ROElement {
 
 
     /**
-     * Return null, this class should be overridden by subclasses
-     * if sub-elements
-     * are permitted.
+     * Create and return an empty generic Element object.
+     *
+     * The returned object has no properties or content and is not part
+     * of the RIF-CS document, it is essentially a constructor of an object
+     * owned by the RIF-CS document. The returned object needs to be
+     * "filled out" (e.g. with properties, additional sub-elements, etc)
+     * before being added to the RIF-CS document.
+     *
+     * @param elementName
+     *      the name of the element type
      *
      * @return
      *      an element with the given name

@@ -29,6 +29,7 @@ import org.w3c.dom.NodeList;
  *
  */
 public class RelatedInfo extends RIFCSElement {
+    /** The identifier of this related info. */
     private Identifier identifier = null;
 
     /**
@@ -76,6 +77,8 @@ public class RelatedInfo extends RIFCSElement {
      * owned by the RIF-CS document. The returned object needs to be
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
+     *
+     * @return the new Identifier object
      *
      * @throws RIFCSException A RIFCSException
      *
@@ -173,7 +176,11 @@ public class RelatedInfo extends RIFCSElement {
     }
 
 
-    /* initialisation code for existing documents */
+    /** Initialisation code for existing documents.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initStructures() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_IDENTIFIER);
 

@@ -32,15 +32,25 @@ import org.w3c.dom.NodeList;
  *
  */
 public class Party extends RIFCSElement {
+    /** List of Identifier nodes. */
     private List<Identifier> identifiers = new ArrayList<Identifier>();
+    /** List of Name nodes. */
     private List<Name> names = new ArrayList<Name>();
+    /** List of Location nodes. */
     private List<Location> locations = new ArrayList<Location>();
+    /** List of Coverage nodes. */
     private List<Coverage> coverages = new ArrayList<Coverage>();
+    /** List of RelatedObject nodes. */
     private List<RelatedObject> relatedObjects = new ArrayList<RelatedObject>();
+    /** List of Subject nodes. */
     private List<Subject> subjects = new ArrayList<Subject>();
+    /** List of Description nodes. */
     private List<Description> descriptions = new ArrayList<Description>();
+    /** List of Right nodes. */
     private List<Right> rights = new ArrayList<Right>();
+    /** List of ExistenceDate nodes. */
     private List<ExistenceDate> existenceDates = new ArrayList<ExistenceDate>();
+    /** List of RelatedInfo nodes. */
     private List<RelatedInfo> ris = new ArrayList<RelatedInfo>();
 
     /**
@@ -119,6 +129,8 @@ public class Party extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
+     * @return the new Identifier object
+     *
      * @throws RIFCSException A RIFCSException
      *
      */
@@ -154,6 +166,8 @@ public class Party extends RIFCSElement {
      * the RIF-CS document. The returned object needs to be "filled out" (e.g.
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
+     *
+     * @return the new Name object
      *
      * @throws RIFCSException A RIFCSException
      *
@@ -191,6 +205,8 @@ public class Party extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
+     * @return the new Location object
+     *
      * @throws RIFCSException A RIFCSException
      *
      */
@@ -227,6 +243,8 @@ public class Party extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
+     * @return the new Coverage object
+     *
      * @throws RIFCSException A RIFCSException
      *
      */
@@ -262,6 +280,8 @@ public class Party extends RIFCSElement {
      * the RIF-CS document. The returned object needs to be "filled out" (e.g.
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
+     *
+     * @return the new RelatedObject object
      *
      * @throws RIFCSException A RIFCSException
      *
@@ -300,6 +320,8 @@ public class Party extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
+     * @return the new Subject object
+     *
      * @throws RIFCSException A RIFCSException
      *
      */
@@ -321,10 +343,10 @@ public class Party extends RIFCSElement {
 
     /**
      * Add a subject to the activity object.
-     * @param value
-     * @param type
-     * @param termIdentifier
-     * @param lang
+     * @param value The value
+     * @param type The type
+     * @param termIdentifier The termIdentifier
+     * @param lang The lang
      */
     public final void addSubject(final String value,
             final String type, final String termIdentifier,
@@ -369,6 +391,8 @@ public class Party extends RIFCSElement {
      * the RIF-CS document. The returned object needs to be "filled out" (e.g.
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
+     *
+     * @return the new Description object
      *
      * @throws RIFCSException A RIFCSException
      *
@@ -422,6 +446,19 @@ public class Party extends RIFCSElement {
         return descriptions;
     }
 
+    /**
+     * Create and return an empty Right object.
+     *
+     * The returned object has no properties or content and is not part of the
+     * RIF-CS document, it is essentially a constructor of an object owned by
+     * the RIF-CS document. The returned object needs to be "filled out" (e.g.
+     * with properties, additional sub-elements, etc) before being added to the
+     * RIF-CS document.
+     *
+     * @return the new Right object
+     *
+     * @throws RIFCSException A RIFCSException
+     */
     public final Right newRight() throws RIFCSException {
         return new Right(this.newElement(Constants.ELEMENT_RIGHTS));
     }
@@ -450,6 +487,20 @@ public class Party extends RIFCSElement {
         return rights;
     }
 
+    /**
+     * Create and return an empty ExistenceDate object.
+     *
+     * The returned object has no properties or content and is not part
+     * of the RIF-CS document, it is essentially a constructor of an object
+     * owned by the RIF-CS document. The returned object needs to be
+     * "filled out" (e.g. with properties, additional sub-elements, etc)
+     * before being added to the RIF-CS document.
+     *
+     * @return the new ExistenceDate object
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     public final ExistenceDate newExistenceDate() throws RIFCSException {
         return new ExistenceDate(
             this.newElement(Constants.ELEMENT_EXISTENSE_DATES));
@@ -472,11 +523,11 @@ public class Party extends RIFCSElement {
 
 
     /**
-     * Add a description to the activity object.
-     * @param startVal
-     * @param startDateFormat
-     * @param endVal
-     * @param endDateFormat
+     * Add an existence date to the activity object.
+     * @param startVal The start date
+     * @param startDateFormat The start date format
+     * @param endVal The end date
+     * @param endDateFormat The end date format
      */
     public final void addExistenceDate(final String startVal,
             final String startDateFormat, final String endVal,
@@ -516,6 +567,8 @@ public class Party extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
+     * @return the new RelatedObject object
+     *
      * @throws RIFCSException A RIFCSException
      *
      */
@@ -543,7 +596,12 @@ public class Party extends RIFCSElement {
         return ris;
     }
 
-    /* initialisation code for existing documents */
+    /** Initialisation code for existing documents. A wrapper that
+     *  invokes initIdentifiers(), initNames(), etc., in turn.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initStructures() throws RIFCSException {
         initIdentifiers();
         initNames();
@@ -555,6 +613,11 @@ public class Party extends RIFCSElement {
         initRelatedInfo();
     }
 
+    /** Initialisation code for identifier elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initIdentifiers() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_IDENTIFIER);
 
@@ -563,6 +626,11 @@ public class Party extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for name elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initNames() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_NAME);
 
@@ -571,6 +639,11 @@ public class Party extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for location elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initLocations() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_LOCATION);
 
@@ -579,6 +652,11 @@ public class Party extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for coverage elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initCoverage() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_COVERAGE);
 
@@ -587,6 +665,11 @@ public class Party extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for relatedObject elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initRelatedObjects() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_RELATED_OBJECT);
 
@@ -595,6 +678,11 @@ public class Party extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for subject elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initSubjects() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_SUBJECT);
 
@@ -603,6 +691,11 @@ public class Party extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for description elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initDescriptions() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_DESCRIPTION);
 
@@ -611,6 +704,11 @@ public class Party extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for relatedInfo elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initRelatedInfo() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_RELATED_INFO);
 

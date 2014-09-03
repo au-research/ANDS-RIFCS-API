@@ -28,7 +28,9 @@ import org.w3c.dom.Node;
  */
 public class ExistenceDate extends RIFCSElement {
 
+    /** The start date. */
     protected CommonDateElement startDate = null;
+    /** The end date. */
     protected CommonDateElement endDate = null;
 
     /**
@@ -46,8 +48,8 @@ public class ExistenceDate extends RIFCSElement {
     /**
      * Set the startDate.
      *
-     * @param value
-     * @param dateFormat
+     * @param value The date to be set.
+     * @param dateFormat The date format to be used.
      * @throws RIFCSException A RIFCSException
      */
     public final void setStartDate(final String value,
@@ -71,8 +73,8 @@ public class ExistenceDate extends RIFCSElement {
     /**
      * Set the endDate.
      *
-     * @param value
-     * @param dateFormat
+     * @param value The date to be set.
+     * @param dateFormat The date format to be used.
      * @throws RIFCSException A RIFCSException
      */
     public final void setEndDate(final String value,

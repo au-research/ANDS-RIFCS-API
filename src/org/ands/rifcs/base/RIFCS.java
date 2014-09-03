@@ -39,9 +39,13 @@ import org.w3c.dom.NodeList;
  *
  */
 public class RIFCS {
+    /** Object representing the RIF-CS document. */
     private Document doc = null;
+    /** Map from name to registry object. */
     private HashMap<String, RegistryObject> ros =
             new HashMap<String, RegistryObject>();
+    /** Map from registry object type to list of registry objects of
+        that type. */
     private HashMap<String, ArrayList<RegistryObject>> rosByClass =
             new HashMap<String, ArrayList<RegistryObject>>();
 
@@ -82,6 +86,8 @@ public class RIFCS {
      * owned by the RIF-CS document. The returned object needs to be
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
+     *
+     * @return the new RegistryObject object
      *
      * @throws RIFCSException A RIFCSException
      *

@@ -39,6 +39,7 @@ import org.xml.sax.SAXException;
  * @author Scott Yeadon
  */
 public class RIFCSReader {
+    /** The RIF-CS document. */
     private Document doc = null;
 
     /**

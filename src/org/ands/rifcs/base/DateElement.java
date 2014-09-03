@@ -42,6 +42,16 @@ public class DateElement extends RIFCSElement {
     }
 
 
+    /**
+     * Construct a DateElement object.
+     *
+     * @param n
+     *        A w3c Node, typically an Element
+     * @param name
+     *        The name of the RIF-CS Element
+     *
+     * @throws RIFCSException A RIFCSException
+     */
     public DateElement(final Node n, final String name) throws RIFCSException {
         super(n, name);
     }

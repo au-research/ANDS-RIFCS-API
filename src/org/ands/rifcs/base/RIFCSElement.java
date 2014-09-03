@@ -36,6 +36,7 @@ import org.w3c.dom.NodeList;
  *
  */
 public class RIFCSElement {
+    /** The RIF-CS element. */
     private Element e = null;
 
     /**
@@ -123,6 +124,8 @@ public class RIFCSElement {
      *      The namespace URL of the attribute
      * @param name
      *      The attribute name
+     * @return
+     *      The attribute value
      */
     protected final String getAttributeValueNS(final String ns,
                                          final String name) {
@@ -240,8 +243,16 @@ public class RIFCSElement {
 
 
     /**
-     * Return null, this class should be overridden by subclasses
-     * if sub-elements are permitted.
+     * Create and return an empty generic Element object.
+     *
+     * The returned object has no properties or content and is not part
+     * of the RIF-CS document, it is essentially a constructor of an object
+     * owned by the RIF-CS document. The returned object needs to be
+     * "filled out" (e.g. with properties, additional sub-elements, etc)
+     * before being added to the RIF-CS document.
+     *
+     * @param elementName
+     *      the name of the element type
      *
      * @return
      *      an element with the given name
@@ -255,6 +266,8 @@ public class RIFCSElement {
     /**
      * Format a date to the required RIF-CS format (yyyy-MM-dd'T'HH:mm:ss'Z').
      *
+     * @param date
+     *      The date as an instance of Date
      * @return
      *      The date in UTC format
      */

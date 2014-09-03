@@ -32,6 +32,7 @@ import org.w3c.dom.NodeList;
  *
  */
 public class Electronic extends RIFCSElement {
+    /** List of Arg nodes. */
     List<Arg> args = new ArrayList<Arg>();
 
     /**
@@ -79,6 +80,8 @@ public class Electronic extends RIFCSElement {
      * owned by the RIF-CS document. The returned object needs to be
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
+     *
+     * @return the new Arg object
      *
      * @throws RIFCSException A RIFCSException
      *
@@ -168,7 +171,11 @@ public class Electronic extends RIFCSElement {
     }
 
 
-    /* initialisation code for existing documents */
+    /** Initialisation code for existing documents.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initStructures() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_ARG);
 

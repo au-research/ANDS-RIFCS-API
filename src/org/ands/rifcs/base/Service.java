@@ -483,9 +483,18 @@ public class Service extends RIFCSElement {
     }
 
     /**
-     * Create a new Right object.
-     * @return The new Right object.
+     * Create and return an empty Right object.
+     *
+     * The returned object has no properties or content and is not part of the
+     * RIF-CS document, it is essentially a constructor of an object owned by
+     * the RIF-CS document. The returned object needs to be "filled out" (e.g.
+     * with properties, additional sub-elements, etc) before being added to the
+     * RIF-CS document.
+     *
+     * @return the new Right object
+     *
      * @throws RIFCSException A RIFCSException
+     *
      */
     public final Right newRight() throws RIFCSException {
         return new Right(this.newElement(Constants.ELEMENT_RIGHTS));
@@ -522,9 +531,18 @@ public class Service extends RIFCSElement {
 
 
     /**
-     * Create a new ExistenceDate object.
-     * @return The new ExistenceDate object.
+     * Create and return an empty ExistenceDate object.
+     *
+     * The returned object has no properties or content and is not part
+     * of the RIF-CS document, it is essentially a constructor of an object
+     * owned by the RIF-CS document. The returned object needs to be
+     * "filled out" (e.g. with properties, additional sub-elements, etc)
+     * before being added to the RIF-CS document.
+     *
+     * @return the new ExistenceDate object
+     *
      * @throws RIFCSException A RIFCSException
+     *
      */
     public final ExistenceDate newExistenceDate() throws RIFCSException {
         return new ExistenceDate(this.newElement(

@@ -32,7 +32,9 @@ import org.w3c.dom.NodeList;
  *
  */
 public class Location extends RIFCSElement {
+    /** List of Address nodes. */
     private List<Address> addresses = new ArrayList<Address>();
+    /** List of Spatial nodes. */
     private List<Spatial> spatials = new ArrayList<Spatial>();
 
 
@@ -77,7 +79,10 @@ public class Location extends RIFCSElement {
 
 
     /**
-     * Set the date the location was relevant from.
+     * Get the date the location was relevant from.
+     *
+     * @return The value of the dateFrom attribute.
+     *
      */
     public final String getDateFrom() {
         return super.getAttributeValue(Constants.ATTRIBUTE_DATE_FROM);
@@ -111,7 +116,10 @@ public class Location extends RIFCSElement {
 
 
     /**
-     * Set the date the location was relevant to.
+     * Get the date the location was relevant from.
+     *
+     * @return The value of the dateTo attribute.
+     *
      */
     public final String getDateTo() {
         return super.getAttributeValue(Constants.ATTRIBUTE_DATE_TO);
@@ -126,6 +134,8 @@ public class Location extends RIFCSElement {
      * owned by the RIF-CS document. The returned object needs to be
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
+     *
+     * @return the new Address object
      *
      * @throws RIFCSException A RIFCSException
      *
@@ -167,6 +177,8 @@ public class Location extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
+     * @return the new Spatial object
+     *
      * @throws RIFCSException A RIFCSException
      *
      */
@@ -198,12 +210,22 @@ public class Location extends RIFCSElement {
     }
 
 
-    /* initialisation code for existing documents */
+    /** Initialisation code for existing documents. A wrapper that
+     *  invokes initSpatials() and initAddresses() in turn.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initStructures() throws RIFCSException {
         initSpatials();
         initAddresses();
     }
 
+    /** Initialisation code for spatial elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initSpatials() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_SPATIAL);
 
@@ -212,6 +234,11 @@ public class Location extends RIFCSElement {
         }
     }
 
+    /** Initialisation code for address elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
     private void initAddresses() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_ADDRESS);
 

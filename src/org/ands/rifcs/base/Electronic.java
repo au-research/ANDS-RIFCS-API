@@ -33,7 +33,7 @@ import org.w3c.dom.NodeList;
  */
 public class Electronic extends RIFCSElement {
     /** List of Arg nodes. */
-    List<Arg> args = new ArrayList<Arg>();
+    private List<Arg> args = new ArrayList<Arg>();
 
     /**
      * Construct an Electronic address object.

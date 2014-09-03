@@ -29,9 +29,9 @@ import org.w3c.dom.Node;
 public class ExistenceDate extends RIFCSElement {
 
     /** The start date. */
-    protected CommonDateElement startDate = null;
+    private CommonDateElement startDate = null;
     /** The end date. */
-    protected CommonDateElement endDate = null;
+    private CommonDateElement endDate = null;
 
     /**
      * Construct an ExistenceDate object.

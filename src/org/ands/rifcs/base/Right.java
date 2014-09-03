@@ -29,11 +29,11 @@ import org.w3c.dom.Node;
 public class Right extends RIFCSElement {
 
     /** The rightsStatement of this Right. */
-    protected RightsInfo rightsStatement = null;
+    private RightsInfo rightsStatement = null;
     /** The licence of the Right. */
-    protected RightsTypedInfo licence = null;
+    private RightsTypedInfo licence = null;
     /** The accessRights of this Right. */
-    protected RightsTypedInfo accessRights = null;
+    private RightsTypedInfo accessRights = null;
 
     /**
      * Construct a Rights object.

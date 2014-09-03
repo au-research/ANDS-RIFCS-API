@@ -43,14 +43,24 @@ import org.ands.rifcs.base.Temporal;
 
 import org.xml.sax.SAXException;
 
+/** Example of the API that builds a service registry object. */
 public final class SampleRIFCSBuildService {
 
+    /** The RIF-CS object. */
     private static RIFCS rifcs = null;
 
+    /** This class can not be instantiated. */
     private SampleRIFCSBuildService() {
-
     }
 
+    /** The main method.
+     *  @param args The command-line arguments.
+     *  @throws RIFCSException A RIFCSException
+     *  @throws FileNotFoundException A FileNotFoundException
+     *  @throws SAXException A SAXException
+     *  @throws ParserConfigurationException A ParserConfigurationException
+     *  @throws IOException An IOException
+     */
     public static void main(final String[] args) throws RIFCSException,
     FileNotFoundException, SAXException, ParserConfigurationException,
     IOException {

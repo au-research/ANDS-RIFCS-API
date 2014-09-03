@@ -45,13 +45,24 @@ import org.ands.rifcs.base.Temporal;
 
 import org.xml.sax.SAXException;
 
+/** Example of the API that builds a collection registry object. */
 public final class SampleRIFCSBuildCollection {
 
+    /** The RIF-CS object. */
     private static RIFCS rifcs = null;
 
+    /** This class can not be instantiated. */
     private SampleRIFCSBuildCollection() {
     }
 
+    /** The main method.
+     *  @param args The command-line arguments.
+     *  @throws RIFCSException A RIFCSException
+     *  @throws FileNotFoundException A FileNotFoundException
+     *  @throws SAXException A SAXException
+     *  @throws ParserConfigurationException A ParserConfigurationException
+     *  @throws IOException An IOException
+     */
     public static void main(final String[] args) throws
     RIFCSException, FileNotFoundException, SAXException,
     ParserConfigurationException, IOException {

@@ -39,13 +39,25 @@ import org.ands.rifcs.ch.RIFCSReader;
 
 import org.xml.sax.SAXException;
 
+/** Example of the API that reads RIF-CS data from a file. */
 public final class SampleRIFCSRead {
+    /** The RIF-CS object. */
     private static RIFCS rifcs = null;
 
     /** This class can not be instantiated. */
     private SampleRIFCSRead() {
     }
 
+    /** The main method.
+     *  @param args The command-line arguments. args[0] is the name
+     *          of a file to be read.
+     *  @throws RIFCSException A RIFCSException
+     *  @throws FileNotFoundException A FileNotFoundException
+     *  @throws SAXException A SAXException
+     *  @throws ParserConfigurationException A ParserConfigurationException
+     *  @throws IOException An IOException
+     *  @throws MalformedURLException A MalformedURLException
+     */
     public static void main(final String[] args) throws RIFCSException,
     FileNotFoundException, SAXException, ParserConfigurationException,
     IOException, MalformedURLException {

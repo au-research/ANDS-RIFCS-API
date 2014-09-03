@@ -87,7 +87,6 @@ public class Spatial extends RIFCSElement {
                 Constants.ATTRIBUTE_LANG);
     }
 
-    // TODO: Add XML data option
     /**
      * Set the content.
      *

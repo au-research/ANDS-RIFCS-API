@@ -59,7 +59,7 @@ public class TemporalCoverageDate extends RIFCSElement {
      *      The date format value or empty string if attribute
      *      is empty or not present
      */
-    public final String DateFormat() {
+    public final String getDateFormat() {
         return super.getAttributeValue(Constants.ATTRIBUTE_DATE_FORMAT);
     }
 

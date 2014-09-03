@@ -44,9 +44,6 @@ import org.w3c.dom.Element;
  */
 public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
 {
-    /** character buffer size. */
-    private static final int BUFFER_SIZE = 4096;
-
     /** the DOM document. */
     private Document doc = null;
 
@@ -54,7 +51,7 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
     private Stack<Element> elements = new Stack<Element>();
 
     /** Locator (for future use). */
-    private Locator locator;
+//    private Locator locator;
 
     /**
      * Set the locator.
@@ -63,7 +60,7 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
      *        The Locator object used to track the parsing location
      */
     public final void setDocumentLocator(final Locator aLocator) {
-        this.locator = aLocator;
+//        this.locator = aLocator;
     }
 
 
@@ -213,11 +210,11 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
      *      Parser message with line/column location information
      *
      */
-    private String printLocation(final String s) {
-        int line = locator.getLineNumber();
-        int column = locator.getColumnNumber();
-        return s + " at line " + line + "; column " + column;
-    }
+//    private String printLocation(final String s) {
+//        int line = locator.getLineNumber();
+//        int column = locator.getColumnNumber();
+//        return s + " at line " + line + "; column " + column;
+//    }
 
 
     /**

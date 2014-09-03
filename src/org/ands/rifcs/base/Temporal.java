@@ -62,6 +62,7 @@ public class Temporal extends RIFCSElement {
      */
     protected Temporal(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_TEMPORAL);
+        initStructures();
     }
 
 

@@ -23,7 +23,6 @@ import java.io.IOException;
 
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.ands.rifcs.base.Activity;
 import org.ands.rifcs.base.Address;
 import org.ands.rifcs.base.Coverage;
 import org.ands.rifcs.base.Electronic;
@@ -38,19 +37,23 @@ import org.ands.rifcs.base.RegistryObject;
 import org.ands.rifcs.base.RelatedInfo;
 import org.ands.rifcs.base.RelatedObject;
 import org.ands.rifcs.base.Right;
+import org.ands.rifcs.base.Service;
 import org.ands.rifcs.base.Spatial;
 import org.ands.rifcs.base.Temporal;
 
 import org.xml.sax.SAXException;
 
-/** Example of the API that builds an activity registry object. */
-public final class SampleRIFCSBuildActivity {
+/** Example of the API that builds a service registry object.
+ *  This tests the addition of the termIdentifer attribute
+ *  of the subject element to RIF-CS v1.3.
+ */
+public final class SampleRIFCSBuildServiceV1Dot3Number1 {
 
     /** The RIF-CS object. */
     private static RIFCS rifcs = null;
 
     /** This class can not be instantiated. */
-    private SampleRIFCSBuildActivity()  {
+    private SampleRIFCSBuildServiceV1Dot3Number1() {
     }
 
     /** The main method.
@@ -62,39 +65,39 @@ public final class SampleRIFCSBuildActivity {
      *  @throws IOException An IOException
      */
     public static void main(final String[] args) throws RIFCSException,
-    FileNotFoundException, SAXException,
-    ParserConfigurationException, IOException {
+    FileNotFoundException, SAXException, ParserConfigurationException,
+    IOException {
         RIFCSWrapper mw = new RIFCSWrapper();
         rifcs = mw.getRIFCSObject();
         RegistryObject r = rifcs.newRegistryObject();
-        r.setKey("Activity");
+        r.setKey("Service");
         r.setGroup("ANDS");
         r.setOriginatingSource("http://myrepository.au.edu");
-        Activity a = r.newActivity();
-        a.setType("activity");
+        Service s = r.newService();
+        s.setType("service");
 
-        Identifier identifier = a.newIdentifier();
+        Identifier identifier = s.newIdentifier();
         identifier.setType("handle");
         identifier.setValue("hdl:7651/myhandlesuffix");
-        a.addIdentifier(identifier);
+        s.addIdentifier(identifier);
 
-        Name n = a.newName();
+        Name n = s.newName();
         n.setType("primary");
         NamePart np = n.newNamePart();
         np.setValue("Sample Collection");
         n.addNamePart(np);
-        a.addName(n);
+        s.addName(n);
 
-        Location l = a.newLocation();
+        Location l = s.newLocation();
         Address ad = l.newAddress();
         Electronic e = ad.newElectronic();
         e.setValue("http://myrepository.au.edu/collections/collection1");
         e.setType("url");
         ad.addElectronic(e);
         l.addAddress(ad);
-        a.addLocation(l);
+        s.addLocation(l);
 
-        Coverage cov = a.newCoverage();
+        Coverage cov = s.newCoverage();
         Spatial sp = cov.newSpatial();
         Temporal tmp = cov.newTemporal();
         tmp.addDate("1999-3-4", "dateFrom", "W3C");
@@ -108,63 +111,59 @@ public final class SampleRIFCSBuildActivity {
         sp.setType("kmlPolyCoords");
         cov.addSpatial(sp);
         cov.addTemporal(tmp);
-        a.addCoverage(cov);
+        s.addCoverage(cov);
 
-        RelatedObject ro = a.newRelatedObject();
+        RelatedObject ro = s.newRelatedObject();
         ro.setKey("collection1");
         ro.addRelation("isOutputOf", null, null, null);
-        a.addRelatedObject(ro);
-        RelatedObject ro2 = a.newRelatedObject();
+        s.addRelatedObject(ro);
+        RelatedObject ro2 = s.newRelatedObject();
         ro2.setKey("party1");
         ro2.addRelation("isOwnerOf", null, null, null);
-        a.addRelatedObject(ro2);
-        RelatedObject ro3 = a.newRelatedObject();
+        s.addRelatedObject(ro2);
+        RelatedObject ro3 = s.newRelatedObject();
         ro3.setKey("service1");
         ro3.addRelation("supports", null, null, null);
-        a.addRelatedObject(ro3);
+        s.addRelatedObject(ro3);
 
-        a.addSubject("subject1", "local", "identifier1" , "en");
-        a.addSubject("subject2", "local", "identifier2" , "en");
+        s.addSubject("subject1", "local", "identifier1" , "en");
+        s.addSubject("subject2", "local", "identifier2" , "en");
 
-        a.addDescription("This is a sample description", "brief", null);
+        s.addDescription("This is a sample description", "brief", null);
 
-        RelatedInfo ri = a.newRelatedInfo();
-        ri.setIdentifier("http://external-server.edu/related-page.htm", "uri");
-        ri.setTitle("A related information resource");
-        ri.setNotes("Notes about the related information resource");
-        a.addRelatedInfo(ri);
+        s.addAccessPolicy("Access Policy");
 
-
-        Right right = a.newRight();
-        right.setAccessRights("Access Right Value",
-                "Access Rights Uri", "Access Right Type");
+        Right right = s.newRight();
+        right.setAccessRights("Access Right Value", "Access Rights Uri",
+                "Access Right Type");
         right.setLicence("Licence Value", "Licence Uri", "Licence Type");
         right.setRightsStatement("Right Statement Value",
                 "Right Statement Uri");
-        a.addRight(right);
-        right = a.newRight();
-        right.setAccessRights("Access Right Value2",
-                "Access Rights Uri2", "Access Right Type2");
+        s.addRight(right);
+        right = s.newRight();
+        right.setAccessRights("Access Right Value2", "Access Rights Uri2",
+                "Access Right Type2");
         right.setLicence("Licence Value2", "Licence Uri2", "Licence Type2");
         right.setRightsStatement("Right Statement Value2",
                 "Right Statement Uri2");
-        a.addRight(right);
-        a.addExistenceDate("01-01-01", "dd-mm-yy", "12-12-12", "dd-mm-yy");
+        s.addRight(right);
 
-        RelatedInfo relatedInfo = a.newRelatedInfo();
+        s.addExistenceDate("01-01-01", "dd-mm-yy", "12-12-12", "dd-mm-yy");
+
+        RelatedInfo relatedInfo = s.newRelatedInfo();
         relatedInfo.setIdentifier("related info", "text");
         relatedInfo.setNotes("Notes");
         relatedInfo.setTitle("Title");
         relatedInfo.setType("Type");
-        a.addRelatedInfo(relatedInfo);
-        relatedInfo = a.newRelatedInfo();
+        s.addRelatedInfo(relatedInfo);
+        relatedInfo = s.newRelatedInfo();
         relatedInfo.setIdentifier("related info1", "text");
         relatedInfo.setNotes("Notes1");
         relatedInfo.setTitle("Title1");
         relatedInfo.setType("Type");
-        a.addRelatedInfo(relatedInfo);
+        s.addRelatedInfo(relatedInfo);
 
-        r.addActivity(a);
+        r.addService(s);
 
         rifcs.addRegistryObject(r);
         mw.write(System.out);

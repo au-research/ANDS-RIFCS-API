@@ -45,14 +45,16 @@ import org.ands.rifcs.base.Temporal;
 
 import org.xml.sax.SAXException;
 
-/** Example of the API that builds a collection registry object. */
-public final class SampleRIFCSBuildCollection {
+/** Example of the API that builds a collection registry object.
+ *  This tests the addition of the rights element to RIF-CS v1.3.
+ */
+public final class SampleRIFCSBuildCollectionV1Dot3Number1 {
 
     /** The RIF-CS object. */
     private static RIFCS rifcs = null;
 
     /** This class can not be instantiated. */
-    private SampleRIFCSBuildCollection() {
+    private SampleRIFCSBuildCollectionV1Dot3Number1() {
     }
 
     /** The main method.

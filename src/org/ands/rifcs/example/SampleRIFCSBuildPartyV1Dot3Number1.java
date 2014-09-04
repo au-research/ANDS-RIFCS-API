@@ -43,14 +43,17 @@ import org.ands.rifcs.base.Temporal;
 
 import org.xml.sax.SAXException;
 
-/** Example of the API that builds an activity registry object. */
-public final class SampleRIFCSBuildParty {
+/** Example of the API that builds an activity registry object.
+ *  This tests the addition of the termIdentifer attribute
+ *  of the subject element to RIF-CS v1.3.
+ */
+public final class SampleRIFCSBuildPartyV1Dot3Number1 {
 
     /** The RIF-CS object. */
     private static RIFCS rifcs = null;
 
     /** This class can not be instantiated. */
-    private SampleRIFCSBuildParty() {
+    private SampleRIFCSBuildPartyV1Dot3Number1() {
     }
 
     /** The main method.

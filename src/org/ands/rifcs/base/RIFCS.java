@@ -38,10 +38,11 @@ import org.w3c.dom.NodeList;
 public class RIFCS {
     /** Object representing the RIF-CS document. */
     private Document doc = null;
-    /** Map from name to registry object. */
+    /** Map from each registry object's key to the corresponding
+     * registry object. */
     private HashMap<String, RegistryObject> ros =
             new HashMap<String, RegistryObject>();
-    /** Map from registry object type to list of registry objects of
+    /** Map from each registry object type to a list of registry objects of
         that type. */
     private HashMap<String, ArrayList<RegistryObject>> rosByClass =
             new HashMap<String, ArrayList<RegistryObject>>();

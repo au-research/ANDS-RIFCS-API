@@ -240,23 +240,26 @@ public final class Constants {
     public static final String NS_XML = "http://www.w3.org/XML/1998/namespace";
 
     /** RIF-CS schema location base path. */
+    public static final String SCHEMA_BASE =
+            "http://services.ands.org.au/documentation/rifcs/1.3/schema/";
+    /** RIF-CS schema location of registryObjects XSD. */
     public static final String SCHEMA_REGISTRY_OBJECTS =
-        "http://services.ands.org.au/home/orca/schemata/registryObjects.xsd";
+            SCHEMA_BASE + "registryObjects.xsd";
     /** RIF-CS schema location of types XSD. */
     public static final String SCHEMA_REGISTRY_TYPES =
-        "http://services.ands.org.au/home/orca/schemata/registryTypes.xsd";
+            SCHEMA_BASE + "registryTypes.xsd";
     /** RIF-CS schema location of activity XSD. */
     public static final String SCHEMA_ACTIVITY =
-        "http://services.ands.org.au/home/orca/schemata/activity.xsd";
+            SCHEMA_BASE + "activity.xsd";
     /** RIF-CS schema location of collection XSD. */
     public static final String SCHEMA_COLLECTION =
-        "http://services.ands.org.au/home/orca/schemata/collection.xsd";
+            SCHEMA_BASE + "collection.xsd";
     /** RIF-CS schema location of party XSD. */
     public static final String SCHEMA_PARTY =
-        "http://services.ands.org.au/home/orca/schemata/party.xsd";
+            SCHEMA_BASE + "party.xsd";
     /** RIF-CS schema location of service XSD. */
     public static final String SCHEMA_SERVICE =
-        "http://services.ands.org.au/home/orca/schemata/service.xsd";
+            SCHEMA_BASE + "service.xsd";
 
     /** Java Date Format for UTC dates. */
     public static final String TIMESTAMP_UTC_FORMAT =

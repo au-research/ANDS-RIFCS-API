@@ -54,10 +54,10 @@ public final class Constants {
     public static final String ATTRIBUTE_SCHEMA_LOCATION =
             "xsi:schemaLocation";
 
-    /** The seq attribute name. */
+    /** Name of the seq attribute. */
     public static final String ATTRIBUTE_SEQ = "seq";
 
-    /** The style attribute name. */
+    /** Name of the style attribute. */
     public static final String ATTRIBUTE_STYLE = "style";
 
     /** Name of the type attribute. */
@@ -72,6 +72,9 @@ public final class Constants {
     /** Name of the access policy element. */
     public static final String ELEMENT_ACCESS_POLICY = "accessPolicy";
 
+    /** Name of the accessRights element. */
+    public static final String ELEMENT_ACCESS_RIGHTS = "accessRights";
+
     /** Name of the activity element. */
     public static final String ELEMENT_ACTIVITY = "activity";
 
@@ -83,9 +86,6 @@ public final class Constants {
 
     /** Name of the arg element. */
     public static final String ELEMENT_ARG = "arg";
-
-    /** Name of the desc element. */
-    public static final String ELEMENT_DESCRIPTION = "description";
 
     /** Name of the citationInfo element. */
     public static final String ELEMENT_CITATIONINFO = "citationInfo";
@@ -108,20 +108,26 @@ public final class Constants {
     /** Name of the date element. */
     public static final String ELEMENT_DATE = "date";
 
-    /** Name of the startDate element. */
-    public static final String ELEMENT_START_DATE = "startDate";
+    /** Name of the dates element. */
+    public static final String ELEMENT_DATES = "dates";
 
-    /** Name of the endDate element. */
-    public static final String ELEMENT_END_DATE = "endDate";
+    /** Name of the description element. */
+    public static final String ELEMENT_DESCRIPTION = "description";
 
     /** Name of the edition element. */
     public static final String ELEMENT_EDITION = "edition";
 
-    /** Name of the publisher element. */
-    public static final String ELEMENT_PUBLISHER = "publisher";
-
     /** Name of the electronic address element. */
     public static final String ELEMENT_ELECTRONIC = "electronic";
+
+    /** Name of the endDate element. */
+    public static final String ELEMENT_END_DATE = "endDate";
+
+    /** Name of the existenceDates element. */
+    public static final String ELEMENT_EXISTENCE_DATES = "existenceDates";
+
+    /** Name of the format element. */
+    public static final String ELEMENT_FORMAT = "format";
 
     /** Name of the fullCitation element. */
     public static final String ELEMENT_FULL_CITATION = "fullCitation";
@@ -131,6 +137,9 @@ public final class Constants {
 
     /** Name of the key element. */
     public static final String ELEMENT_KEY = "key";
+
+    /** Name of the licence element. */
+    public static final String ELEMENT_LICENCE = "licence";
 
     /** Name of the location element. */
     public static final String ELEMENT_LOCATION = "location";
@@ -156,26 +165,14 @@ public final class Constants {
     /** Name of the place published element. */
     public static final String ELEMENT_PLACE_PUBLISHED = "placePublished";
 
+    /** Name of the publisher element. */
+    public static final String ELEMENT_PUBLISHER = "publisher";
+
     /** Name of the registryObject element. */
     public static final String ELEMENT_REGISTRY_OBJECT = "registryObject";
 
     /** Name of the relatedInfo element. */
     public static final String ELEMENT_RELATED_INFO = "relatedInfo";
-
-    /** Name of the Rights element. */
-    public static final String ELEMENT_RIGHTS = "rights";
-
-    /** Name of the RightsInfo element. */
-    public static final String ELEMENT_RIGHTS_INFO = "rightsInfo";
-
-    /** Name of the RightsTypedInfo element. */
-    public static final String ELEMENT_RIGHTS_TYPED_INFO = "rightsTypedInfo";
-
-    /** Name of the ExistenceDates element. */
-    public static final String ELEMENT_EXISTENSE_DATES = "existenceDates";
-
-    /** Name of the rightsUri element. */
-    public static final String ATTRIBUTE_RIGHTS_URI = "rightsUri";
 
     /** Name of the relatedObject element. */
     public static final String ELEMENT_RELATED_OBJECT = "relatedObject";
@@ -183,8 +180,17 @@ public final class Constants {
     /** Name of the relation element. */
     public static final String ELEMENT_RELATION = "relation";
 
+    /** Name of the rights element. */
+    public static final String ELEMENT_RIGHTS = "rights";
+
+    /** Name of the rightsUri element. */
+    public static final String ATTRIBUTE_RIGHTS_URI = "rightsUri";
+
     /** Name of the RIF-CS root element. */
     public static final String ELEMENT_REGISTRY_OBJECTS = "registryObjects";
+
+    /** Name of the rightsStatement element. */
+    public static final String ELEMENT_RIGHTS_STATEMENT = "rightsStatement";
 
     /** Name of the service element. */
     public static final String ELEMENT_SERVICE = "service";
@@ -192,14 +198,17 @@ public final class Constants {
     /** Name of the spatial element. */
     public static final String ELEMENT_SPATIAL = "spatial";
 
+    /** Name of the startDate element. */
+    public static final String ELEMENT_START_DATE = "startDate";
+
     /** Name of the subject element. */
     public static final String ELEMENT_SUBJECT = "subject";
 
-    /** Name of the title element. */
-    public static final String ELEMENT_TITLE = "title";
-
     /** Name of the temporal element. */
     public static final String ELEMENT_TEMPORAL = "temporal";
+
+    /** Name of the title element. */
+    public static final String ELEMENT_TITLE = "title";
 
     /** Name of the text element. */
     public static final String ELEMENT_TEXT = "text";
@@ -213,14 +222,8 @@ public final class Constants {
     /** Name of the value element. */
     public static final String ELEMENT_VALUE = "value";
 
-    /** rightsStatement of the value element. */
-    public static final String ELEMENT_RIGHTS_STATEMENT = "rightsStatement";
-
-    /** licence of the value element. */
-    public static final String ELEMENT_LICENCE = "licence";
-
-    /** accessRights of the value element. */
-    public static final String ELEMENT_ACCESS_RIGHTS = "accessRights";
+    /** Name of the version element. */
+    public static final String ELEMENT_VERSION = "version";
 
     /** The rif namespace prefix for internal use. */
     public static final String NS_PREFIX = "xmlns:rif";

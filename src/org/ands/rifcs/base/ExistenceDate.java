@@ -39,7 +39,7 @@ public class ExistenceDate extends RIFCSElement {
      * @throws RIFCSException A RIFCSException
      */
     protected ExistenceDate(final Node n) throws RIFCSException {
-        super(n, Constants.ELEMENT_EXISTENSE_DATES);
+        super(n, Constants.ELEMENT_EXISTENCE_DATES);
     }
 
     /**

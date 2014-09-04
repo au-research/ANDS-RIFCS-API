@@ -500,7 +500,7 @@ public class Party extends RIFCSElement {
      */
     public final ExistenceDate newExistenceDate() throws RIFCSException {
         return new ExistenceDate(
-            this.newElement(Constants.ELEMENT_EXISTENSE_DATES));
+            this.newElement(Constants.ELEMENT_EXISTENCE_DATES));
     }
 
     /**

@@ -1,0 +1,8 @@
+<!-- Ruleset for ANDS RIF-CS. Use FindBugs version 3.0.0. -->
+<Project projectName="RIF-CS API">
+  <Jar>./lib/rifcs-api.jar</Jar>
+  <SrcDir>./src</SrcDir>
+  <SuppressionFilter>
+    <LastVersion value="-1" relOp="NEQ" "/>
+  </SuppressionFilter>
+</Project>

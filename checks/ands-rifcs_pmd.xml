@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<ruleset name="ANDS RIF-CS Custom ruleset"
+	 xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+
+  <description>
+    Ruleset for ANDS RIF-CS. Use PMD version 5.1.3.
+  </description>
+
+  <rule ref="rulesets/java/basic.xml" />
+  <rule ref="rulesets/java/braces.xml" />
+  <rule ref="rulesets/java/clone.xml" />
+  <!-- <rule ref="rulesets/java/comments.xml" /> -->
+  <rule ref="rulesets/java/design.xml">
+    <exclude name="GodClass" />
+    <exclude name="ImmutableField" />
+    <exclude name="SimpleDateFormatNeedsLocale" />
+  </rule>
+  <rule ref="rulesets/java/empty.xml" />
+  <rule ref="rulesets/java/finalizers.xml" />
+  <rule ref="rulesets/java/imports.xml" />
+  <!-- <rule ref="rulesets/java/naming.xml" /> -->
+  <rule ref="rulesets/java/strings.xml" />
+  <rule ref="rulesets/java/unnecessary.xml" />
+  <rule ref="rulesets/java/unusedcode.xml" />
+
+</ruleset>

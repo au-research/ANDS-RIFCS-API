@@ -1,7 +1,4 @@
 /**
- * Date Modified: $Date: 2010-05-18 11:07:57 +1000 (Tue, 18 May 2010) $
- * Version: $Revision: 372 $
- *
  * Copyright 2009 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");

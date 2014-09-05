@@ -44,8 +44,8 @@ public class Temporal extends RIFCSElement {
     private static final int TEMPORAL_DATE_FORMAT_LENGTH =
             TEMPORAL_DATE_FORMAT.length();
     /** The date information for this temporal coverage. */
-    private List<TemporalCoverageDate> dates =
-            new ArrayList<TemporalCoverageDate>();
+    private List<DateWithTypeDateFormat> dates =
+            new ArrayList<DateWithTypeDateFormat>();
     /** The text information for this temporal coverage. */
     private List<Element> texts = new ArrayList<Element>();
 
@@ -64,7 +64,7 @@ public class Temporal extends RIFCSElement {
 
 
     /**
-     * Create and return an empty DateElement object.
+     * Create and return an empty DateWithTypeDateFormat object.
      *
      * The returned object has no properties or content and is not part
      * of the RIF-CS document, it is essentially a constructor of an object
@@ -77,13 +77,9 @@ public class Temporal extends RIFCSElement {
      * @throws RIFCSException A RIFCSException
      *
      */
-    // public DateElement newDate() throws RIFCSException
-    // {
-    //     return new DateElement(this.newElement(Constants.ELEMENT_DATE));
-    // }
 
-    public final TemporalCoverageDate newDate() throws RIFCSException {
-        return new TemporalCoverageDate(this.newElement(
+    public final DateWithTypeDateFormat newDate() throws RIFCSException {
+        return new DateWithTypeDateFormat(this.newElement(
                 Constants.ELEMENT_DATE));
     }
 
@@ -92,9 +88,9 @@ public class Temporal extends RIFCSElement {
      * Obtain the date information for this temporal coverage.
      *
      * @return
-     *      A list of DateElement objects
+     *      A list of DateWithTypeDateFormat objects
      */
-    public final List<TemporalCoverageDate> getDates() {
+    public final List<DateWithTypeDateFormat> getDates() {
         return this.dates;
     }
 
@@ -159,12 +155,12 @@ public class Temporal extends RIFCSElement {
      */
     public final void addDate(final String date,
             final String type, final String dateFormat) throws RIFCSException {
-        TemporalCoverageDate de = this.newDate();
+        DateWithTypeDateFormat de = this.newDate();
         de.setType(type);
         de.setDateFormat(dateFormat);
         de.setValue(date);
         this.getElement().appendChild(de.getElement());
-        this.dates.add((TemporalCoverageDate) de);
+        this.dates.add((DateWithTypeDateFormat) de);
     }
 
     /**
@@ -221,7 +217,7 @@ public class Temporal extends RIFCSElement {
         NodeList nl = super.getElements(Constants.ELEMENT_DATE);
 
         for (int i = 0; i < nl.getLength(); i++) {
-            dates.add(new TemporalCoverageDate(nl.item(i)));
+            dates.add(new DateWithTypeDateFormat(nl.item(i)));
         }
     }
 }

@@ -20,21 +20,21 @@ import java.util.Date;
 import org.w3c.dom.Node;
 
 /**
- * Class representing a RIF-CS description object.
+ * Class representing a RIF-CS date with type and dateFormat attributes.
  *
  * @author Scott Yeadon
  *
  */
-public class TemporalCoverageDate extends RIFCSElement {
+public class DateWithTypeDateFormat extends RIFCSElement {
     /**
-     * Construct a TemporalCoverageDate object.
+     * Construct a DateWithTypeDateFormat object.
      *
      * @param n
      *        A w3c Node, typically an Element
      *
      * @throws RIFCSException A RIFCSException
      */
-    protected TemporalCoverageDate(final Node n) throws RIFCSException {
+    protected DateWithTypeDateFormat(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_DATE);
     }
 

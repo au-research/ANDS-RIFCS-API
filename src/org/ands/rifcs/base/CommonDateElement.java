@@ -20,7 +20,7 @@ import java.util.Date;
 import org.w3c.dom.Node;
 
 /**
- * Class representing a RIF-CS description object.
+ * Class representing a RIF-CS date object that has a dateFormat attribute.
  *
  * @author Scott Yeadon
  *
@@ -40,21 +40,21 @@ public class CommonDateElement extends RIFCSElement {
 
 
         /**
-     * Set the type.
+     * Set the dateFormat attribute.
      *
-     * @param type
-     *          The type of date
+     * @param dateFormat
+     *          The dateFormat of the date
      */
-    public final void setDateFormat(final String type) {
-        super.setAttributeValue(Constants.ATTRIBUTE_DATE_FORMAT, type);
+    public final void setDateFormat(final String dateFormat) {
+        super.setAttributeValue(Constants.ATTRIBUTE_DATE_FORMAT, dateFormat);
     }
 
 
     /**
-     * return the type.
+     * return the value of the dateFormat attribute.
      *
      * @return
-     *      The type attribute value or empty string if attribute
+     *      The dateFormat attribute value or empty string if attribute
      *      is empty or not present
      */
     public final String getDateFormat() {

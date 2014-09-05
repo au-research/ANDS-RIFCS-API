@@ -44,13 +44,13 @@ public class Service extends RIFCSElement {
     private List<Subject> subjects =  new ArrayList<Subject>();
     /** List of Description nodes. */
     private List<Description> descriptions =  new ArrayList<Description>();
-    /** List of Rights nodes. */
-    private List<Rights> rights =  new ArrayList<Rights>();
-    /** List of ExistenceDate nodes. */
-    private List<ExistenceDate> existenceDates =
-            new ArrayList<ExistenceDate>();
     /** List of RelatedInfo nodes. */
     private List<RelatedInfo> ris =  new ArrayList<RelatedInfo>();
+    /** List of Rights nodes. */
+    private List<Rights> rightsList =  new ArrayList<Rights>();
+    /** List of ExistenceDates nodes. */
+    private List<ExistenceDates> existenceDates =
+            new ArrayList<ExistenceDates>();
     /** List of AccessPolicy nodes. */
     private List<AccessPolicy> aps =  new ArrayList<AccessPolicy>();
 
@@ -511,7 +511,7 @@ public class Service extends RIFCSElement {
               }
         */
         this.getElement().appendChild(aRights.getElement());
-        this.rights.add(aRights);
+        this.rightsList.add(aRights);
     }
 
 
@@ -522,13 +522,13 @@ public class Service extends RIFCSElement {
      *      A list of Description objects
      */
     public final List<Rights> getRights() {
-        return rights;
+        return rightsList;
     }
 
 
 
     /**
-     * Create and return an empty ExistenceDate object.
+     * Create and return an empty ExistenceDates object.
      *
      * The returned object has no properties or content and is not part
      * of the RIF-CS document, it is essentially a constructor of an object
@@ -536,42 +536,42 @@ public class Service extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
-     * @return the new ExistenceDate object
+     * @return the new ExistenceDates object
      *
      * @throws RIFCSException A RIFCSException
      *
      */
-    public final ExistenceDate newExistenceDate() throws RIFCSException {
-        return new ExistenceDate(this.newElement(
+    public final ExistenceDates newExistenceDate() throws RIFCSException {
+        return new ExistenceDates(this.newElement(
                 Constants.ELEMENT_EXISTENCE_DATES));
     }
 
 
     /**
-     * Add a description to the activity object.
+     * Add an existence dates element to the activity object.
      *
-     * @param existenceDate
-     *    an ExistenceDate object
+     * @param anExistenceDates
+     *    an ExistenceDates object
      */
-    public final void addExistenceDate(final ExistenceDate existenceDate) {
+    public final void addExistenceDates(final ExistenceDates anExistenceDates) {
         /*    if (descriptions == null)
               {
               descriptions = new ArrayList<Description>();
               }
         */
-        this.getElement().appendChild(existenceDate.getElement());
-        this.existenceDates.add(existenceDate);
+        this.getElement().appendChild(anExistenceDates.getElement());
+        this.existenceDates.add(anExistenceDates);
     }
 
 
     /**
-     * Add a description to the activity object.
+     * Add an existence dates element to the activity object.
      * @param startVal The start date
      * @param startDateFormat The start date format
      * @param endVal The end date
      * @param endDateFormat The end date format
      */
-    public final void addExistenceDate(final String startVal,
+    public final void addExistenceDates(final String startVal,
             final String startDateFormat, final String endVal,
             final String endDateFormat) {
         /*    if (descriptions == null)
@@ -579,7 +579,7 @@ public class Service extends RIFCSElement {
               descriptions = new ArrayList<Description>();
               }
         */
-        ExistenceDate date;
+        ExistenceDates date;
         try {
             date = this.newExistenceDate();
             date.setStartDate(startVal, startDateFormat);
@@ -597,7 +597,7 @@ public class Service extends RIFCSElement {
      * @return
      *      A list of Description objects
      */
-    public final List<ExistenceDate> getExistenceDates() {
+    public final List<ExistenceDates> getExistenceDates() {
         return existenceDates;
     }
 
@@ -723,6 +723,8 @@ public class Service extends RIFCSElement {
         initDescriptions();
         initRelatedInfo();
         initAccessPolicies();
+        initRights();
+        initExistenceDates();
     }
 
     /** Initialisation code for identifier elements.
@@ -841,4 +843,31 @@ public class Service extends RIFCSElement {
             aps.add(new AccessPolicy(nl.item(i)));
         }
     }
+
+    /** Initialisation code for rights elements.
+    *
+    * @throws RIFCSException A RIFCSException
+    *
+    */
+   private void initRights() throws RIFCSException {
+       NodeList nl = super.getElements(Constants.ELEMENT_RIGHTS);
+
+       for (int i = 0; i < nl.getLength(); i++) {
+           rightsList.add(new Rights(nl.item(i)));
+       }
+   }
+
+   /** Initialisation code for existenceDates elements.
+   *
+   * @throws RIFCSException A RIFCSException
+   *
+   */
+  private void initExistenceDates() throws RIFCSException {
+      NodeList nl = super.getElements(Constants.ELEMENT_EXISTENCE_DATES);
+
+      for (int i = 0; i < nl.getLength(); i++) {
+          existenceDates.add(new ExistenceDates(nl.item(i)));
+      }
+  }
+
 }

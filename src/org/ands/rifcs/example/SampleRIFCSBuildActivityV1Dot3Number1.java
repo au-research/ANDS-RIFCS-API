@@ -149,7 +149,7 @@ public final class SampleRIFCSBuildActivityV1Dot3Number1 {
         rights.setRightsStatement("Rights Statement Value2",
                 "Rights Statement Uri2");
         a.addRights(rights);
-        a.addExistenceDate("01-01-01", "dd-mm-yy", "12-12-12", "dd-mm-yy");
+        a.addExistenceDates("01-01-01", "dd-mm-yy", "12-12-12", "dd-mm-yy");
 
         RelatedInfo relatedInfo = a.newRelatedInfo();
         relatedInfo.setIdentifier("related info", "text");

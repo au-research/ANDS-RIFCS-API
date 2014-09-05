@@ -16,6 +16,7 @@
 package org.ands.rifcs.base;
 
 import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
  * Class representing registry object rights.
@@ -42,6 +43,7 @@ public class Rights extends RIFCSElement {
      */
     protected Rights(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_RIGHTS);
+        initStructures();
     }
 
     /**
@@ -231,5 +233,28 @@ public class Rights extends RIFCSElement {
         return this.accessRights;
     }
 
+    /** Initialisation code for existing documents.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
+    private void initStructures() throws RIFCSException {
+        NodeList nl;
+
+        nl = super.getElements(Constants.ELEMENT_RIGHTS_STATEMENT);
+        if (nl.getLength() > 0) {
+            this.rightsStatement = new RightsInfo(nl.item(0));
+        }
+
+        nl = super.getElements(Constants.ELEMENT_LICENCE);
+        if (nl.getLength() > 0) {
+            this.licence = new RightsTypedInfo(nl.item(0));
+        }
+
+        nl = super.getElements(Constants.ELEMENT_ACCESS_RIGHTS);
+        if (nl.getLength() > 0) {
+            this.accessRights = new RightsTypedInfo(nl.item(0));
+        }
+    }
 
 }

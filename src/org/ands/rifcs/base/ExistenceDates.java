@@ -16,6 +16,7 @@
 package org.ands.rifcs.base;
 
 import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
  * Class representing registry object existence date.
@@ -23,7 +24,7 @@ import org.w3c.dom.Node;
  * @author Mahmoud Sadeghi
  *
  */
-public class ExistenceDate extends RIFCSElement {
+public class ExistenceDates extends RIFCSElement {
 
     /** The start date. */
     private CommonDateElement startDate = null;
@@ -31,15 +32,16 @@ public class ExistenceDate extends RIFCSElement {
     private CommonDateElement endDate = null;
 
     /**
-     * Construct an ExistenceDate object.
+     * Construct an ExistenceDates object.
      *
      * @param n
      *            A w3c Node, typically an Element
      *
      * @throws RIFCSException A RIFCSException
      */
-    protected ExistenceDate(final Node n) throws RIFCSException {
+    protected ExistenceDates(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_EXISTENCE_DATES);
+        initStructures();
     }
 
     /**
@@ -93,4 +95,25 @@ public class ExistenceDate extends RIFCSElement {
     public final CommonDateElement getEndDate() {
         return this.endDate;
     }
+
+    /** Initialisation code for existing documents.
+    *
+    * @throws RIFCSException A RIFCSException
+    *
+    */
+   private void initStructures() throws RIFCSException {
+       NodeList nl;
+
+       nl = super.getElements(Constants.ELEMENT_START_DATE);
+       if (nl.getLength() > 0) {
+           this.startDate = new CommonDateElement(nl.item(0));
+       }
+
+       nl = super.getElements(Constants.ELEMENT_END_DATE);
+       if (nl.getLength() > 0) {
+           this.endDate = new CommonDateElement(nl.item(0));
+       }
+
+   }
+
 }

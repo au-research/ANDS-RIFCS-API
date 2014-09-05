@@ -44,10 +44,13 @@ public class Collection extends RIFCSElement {
     private List<Subject> subjects = new ArrayList<Subject>();
     /** List of Description nodes. */
     private List<Description> descriptions = new ArrayList<Description>();
-    /** List of Rights nodes. */
-    private List<Rights> rightsList = new ArrayList<Rights>();
     /** List of RelatedInfo nodes. */
     private List<RelatedInfo> ris = new ArrayList<RelatedInfo>();
+    /** List of Rights nodes. */
+    private List<Rights> rightsList = new ArrayList<Rights>();
+    /** The ExistenceDates objects belonging to this Activity. */
+    private List<ExistenceDates> existenceDates =
+        new ArrayList<ExistenceDates>();
     /** List of CitationInfo nodes. */
     private List<CitationInfo> cis = new ArrayList<CitationInfo>();
 
@@ -534,6 +537,71 @@ public class Collection extends RIFCSElement {
     }
 
     /**
+     * Create and return an empty ExistenceDates object.
+     *
+     * The returned object has no properties or content and is not part
+     * of the RIF-CS document, it is essentially a constructor of an object
+     * owned by the RIF-CS document. The returned object needs to be
+     * "filled out" (e.g. with properties, additional sub-elements, etc)
+     * before being added to the RIF-CS document.
+     *
+     * @return the new ExistenceDates object
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
+    public final ExistenceDates newExistenceDate() throws RIFCSException {
+        return new ExistenceDates(this.newElement(
+            Constants.ELEMENT_EXISTENCE_DATES));
+    }
+
+
+    /**
+     * Add an existence dates element to the activity object.
+     *
+     * @param anExistenceDates
+     *    an ExistenceDates object
+     */
+    public final void addExistenceDates(final ExistenceDates anExistenceDates) {
+        /*    if (descriptions == null)
+              {
+              descriptions = new ArrayList<Description>();
+              }
+        */
+        this.getElement().appendChild(anExistenceDates.getElement());
+        this.existenceDates.add(anExistenceDates);
+    }
+
+    /**
+     * Add an existence dates element to the activity object.
+     * @param startVal The start date
+     * @param startDateFormat The start date format
+     * @param endVal The end date
+     * @param endDateFormat The end date format
+     */
+    public final void addExistenceDates(final String startVal,
+                                       final String startDateFormat,
+                                       final String endVal,
+                                       final String endDateFormat) {
+        /*    if (descriptions == null)
+              {
+              descriptions = new ArrayList<Description>();
+              }
+        */
+        ExistenceDates date;
+        try {
+            date = this.newExistenceDate();
+            date.setStartDate(startVal, startDateFormat);
+            date.setEndDate(endVal, endDateFormat);
+            this.getElement().appendChild(date.getElement());
+            this.existenceDates.add(date);
+        } catch (RIFCSException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
      * Create and return an empty RelatedInfo object.
      *
      * The returned object has no properties or content and is not part of the
@@ -648,8 +716,9 @@ public class Collection extends RIFCSElement {
         initSubjects();
         initDescriptions();
         initRelatedInfo();
+        initRights();
+        initExistenceDates();
         initCitationInfo();
-
     }
 
     /** Initialisation code for identifier elements.
@@ -767,5 +836,31 @@ public class Collection extends RIFCSElement {
             cis.add(new CitationInfo(nl.item(i)));
         }
     }
+
+    /** Initialisation code for rights elements.
+    *
+    * @throws RIFCSException A RIFCSException
+    *
+    */
+   private void initRights() throws RIFCSException {
+       NodeList nl = super.getElements(Constants.ELEMENT_RIGHTS);
+
+       for (int i = 0; i < nl.getLength(); i++) {
+           rightsList.add(new Rights(nl.item(i)));
+       }
+   }
+
+   /** Initialisation code for existenceDates elements.
+   *
+   * @throws RIFCSException A RIFCSException
+   *
+   */
+  private void initExistenceDates() throws RIFCSException {
+      NodeList nl = super.getElements(Constants.ELEMENT_EXISTENCE_DATES);
+
+      for (int i = 0; i < nl.getLength(); i++) {
+          existenceDates.add(new ExistenceDates(nl.item(i)));
+      }
+  }
 
 }

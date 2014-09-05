@@ -44,13 +44,13 @@ public class Activity extends RIFCSElement {
     private List<Subject> subjects = new ArrayList<Subject>();
     /** The Description objects belonging to this Activity. */
     private List<Description> descriptions = new ArrayList<Description>();
-    /** The Rights objects belonging to this Activity. */
-    private List<Rights> rights = new ArrayList<Rights>();
-    /** The ExistenceDate objects belonging to this Activity. */
-    private List<ExistenceDate> existenceDates =
-        new ArrayList<ExistenceDate>();
     /** The RelatedInfo objects belonging to this Activity. */
     private List<RelatedInfo> ris = new ArrayList<RelatedInfo>();
+    /** The Rights objects belonging to this Activity. */
+    private List<Rights> rightsList = new ArrayList<Rights>();
+    /** The ExistenceDates objects belonging to this Activity. */
+    private List<ExistenceDates> existenceDates =
+        new ArrayList<ExistenceDates>();
 
     /**
      * Construct an Activity object.
@@ -542,7 +542,7 @@ public class Activity extends RIFCSElement {
               }
         */
         this.getElement().appendChild(aRights.getElement());
-        this.rights.add(aRights);
+        this.rightsList.add(aRights);
     }
 
 
@@ -553,13 +553,13 @@ public class Activity extends RIFCSElement {
      *      A list of Rights objects
      */
     public final List<Rights> getRights() {
-        return rights;
+        return rightsList;
     }
 
 
 
     /**
-     * Create and return an empty ExistenceDate object.
+     * Create and return an empty ExistenceDates object.
      *
      * The returned object has no properties or content and is not part
      * of the RIF-CS document, it is essentially a constructor of an object
@@ -567,41 +567,41 @@ public class Activity extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
-     * @return the new ExistenceDate object
+     * @return the new ExistenceDates object
      *
      * @throws RIFCSException A RIFCSException
      *
      */
-    public final ExistenceDate newExistenceDate() throws RIFCSException {
-        return new ExistenceDate(this.newElement(
+    public final ExistenceDates newExistenceDate() throws RIFCSException {
+        return new ExistenceDates(this.newElement(
             Constants.ELEMENT_EXISTENCE_DATES));
     }
 
 
     /**
-     * Add an existence date to the activity object.
+     * Add an existence dates element to the activity object.
      *
-     * @param existenceDate
-     *    an ExistenceDate object
+     * @param anExistenceDates
+     *    an ExistenceDates object
      */
-    public final void addExistenceDate(final ExistenceDate existenceDate) {
+    public final void addExistenceDates(final ExistenceDates anExistenceDates) {
         /*    if (descriptions == null)
               {
               descriptions = new ArrayList<Description>();
               }
         */
-        this.getElement().appendChild(existenceDate.getElement());
-        this.existenceDates.add(existenceDate);
+        this.getElement().appendChild(anExistenceDates.getElement());
+        this.existenceDates.add(anExistenceDates);
     }
 
     /**
-     * Add an existence date to the activity object.
+     * Add an existence dates element to the activity object.
      * @param startVal The start date
      * @param startDateFormat The start date format
      * @param endVal The end date
      * @param endDateFormat The end date format
      */
-    public final void addExistenceDate(final String startVal,
+    public final void addExistenceDates(final String startVal,
                                        final String startDateFormat,
                                        final String endVal,
                                        final String endDateFormat) {
@@ -610,7 +610,7 @@ public class Activity extends RIFCSElement {
               descriptions = new ArrayList<Description>();
               }
         */
-        ExistenceDate date;
+        ExistenceDates date;
         try {
             date = this.newExistenceDate();
             date.setStartDate(startVal, startDateFormat);
@@ -629,7 +629,7 @@ public class Activity extends RIFCSElement {
      * @return
      *      A list of Description objects
      */
-    public final List<ExistenceDate> getExistenceDates() {
+    public final List<ExistenceDates> getExistenceDates() {
         return existenceDates;
     }
 
@@ -691,6 +691,8 @@ public class Activity extends RIFCSElement {
         initSubjects();
         initDescriptions();
         initRelatedInfo();
+        initRights();
+        initExistenceDates();
     }
 
     /** Initialisation code for identifier elements.
@@ -796,4 +798,31 @@ public class Activity extends RIFCSElement {
             ris.add(new RelatedInfo(nl.item(i)));
         }
     }
+
+    /** Initialisation code for rights elements.
+    *
+    * @throws RIFCSException A RIFCSException
+    *
+    */
+   private void initRights() throws RIFCSException {
+       NodeList nl = super.getElements(Constants.ELEMENT_RIGHTS);
+
+       for (int i = 0; i < nl.getLength(); i++) {
+           rightsList.add(new Rights(nl.item(i)));
+       }
+   }
+
+   /** Initialisation code for existenceDates elements.
+   *
+   * @throws RIFCSException A RIFCSException
+   *
+   */
+  private void initExistenceDates() throws RIFCSException {
+      NodeList nl = super.getElements(Constants.ELEMENT_EXISTENCE_DATES);
+
+      for (int i = 0; i < nl.getLength(); i++) {
+          existenceDates.add(new ExistenceDates(nl.item(i)));
+      }
+  }
+
 }

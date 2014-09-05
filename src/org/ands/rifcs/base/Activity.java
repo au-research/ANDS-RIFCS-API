@@ -33,6 +33,8 @@ public class Activity extends RIFCSElement {
     private List<Identifier> identifiers = new ArrayList<Identifier>();
     /** The Name objects belonging to this Activity. */
     private List<Name> names = new ArrayList<Name>();
+    /** The Dates objects belonging to this Activity. */
+    private List<Dates> datesList = new ArrayList<Dates>();
     /** The Location objects belonging to this Activity. */
     private List<Location> locations = new ArrayList<Location>();
     /** The Coverage objects belonging to this Activity. */
@@ -218,6 +220,48 @@ public class Activity extends RIFCSElement {
      */
     public final List<Name> getNames() {
         return names;
+    }
+
+
+    /**
+     * Create and return an empty Dates object.
+     *
+     * The returned object has no properties or content and is not part
+     * of the RIF-CS document, it is essentially a constructor of an object
+     * owned by the RIF-CS document. The returned object needs to be
+     * "filled out" (e.g. with properties, additional sub-elements, etc)
+     * before being added to the RIF-CS document.
+     *
+     * @return the new Dates object
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
+    public final Dates newDates() throws RIFCSException {
+        return new Dates(this.newElement(Constants.ELEMENT_DATES));
+    }
+
+
+    /**
+     * Add a dates to the activity object.
+     *
+     * @param aDates
+     *    a Dates object
+     */
+    public final void addDates(final Dates aDates) {
+       this.getElement().appendChild(aDates.getElement());
+        this.datesList.add(aDates);
+    }
+
+
+    /**
+     * Obtain the list of dates for this activity.
+     *
+     * @return List<Dates>
+     *      A list of Dates objects
+     */
+    public final List<Dates> getDates() {
+        return datesList;
     }
 
 
@@ -685,6 +729,7 @@ public class Activity extends RIFCSElement {
     private void initStructures() throws RIFCSException {
         initIdentifiers();
         initNames();
+        initDates();
         initLocations();
         initCoverage();
         initRelatedObjects();
@@ -720,6 +765,19 @@ public class Activity extends RIFCSElement {
             names.add(new Name(nl.item(i)));
         }
     }
+
+    /** Initialisation code for dates elements.
+    *
+    * @throws RIFCSException A RIFCSException
+    *
+    */
+   private void initDates() throws RIFCSException {
+       NodeList nl = super.getElements(Constants.ELEMENT_DATES);
+
+       for (int i = 0; i < nl.getLength(); i++) {
+           datesList.add(new Dates(nl.item(i)));
+       }
+   }
 
     /** Initialisation code for location elements.
      *

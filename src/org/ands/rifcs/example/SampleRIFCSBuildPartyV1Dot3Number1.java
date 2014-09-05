@@ -34,7 +34,7 @@ import org.ands.rifcs.base.RIFCSWrapper;
 import org.ands.rifcs.base.RegistryObject;
 import org.ands.rifcs.base.RelatedInfo;
 import org.ands.rifcs.base.RelatedObject;
-import org.ands.rifcs.base.Right;
+import org.ands.rifcs.base.Rights;
 import org.ands.rifcs.base.Spatial;
 import org.ands.rifcs.base.Temporal;
 
@@ -135,20 +135,20 @@ public final class SampleRIFCSBuildPartyV1Dot3Number1 {
         p.addRelatedInfo(ri);
 
 
-        Right right = p.newRight();
-        right.setAccessRights("Access Right Value",
-                "Access Rights Uri", "Access Right Type");
-        right.setLicence("Licence Value", "Licence Uri", "Licence Type");
-        right.setRightsStatement("Right Statement Value",
-                "Right Statement Uri");
-        p.addRight(right);
-        right = p.newRight();
-        right.setAccessRights("Access Right Value2",
-                "Access Rights Uri2", "Access Right Type2");
-        right.setLicence("Licence Value2", "Licence Uri2", "Licence Type2");
-        right.setRightsStatement("Right Statement Value2",
-                "Right Statement Uri2");
-        p.addRight(right);
+        Rights rights = p.newRights();
+        rights.setAccessRights("Access Rights Value",
+                "Access Rights Uri", "Access Rights Type");
+        rights.setLicence("Licence Value", "Licence Uri", "Licence Type");
+        rights.setRightsStatement("Rights Statement Value",
+                "Rights Statement Uri");
+        p.addRights(rights);
+        rights = p.newRights();
+        rights.setAccessRights("Access Rights Value2",
+                "Access Rights Uri2", "Access Rights Type2");
+        rights.setLicence("Licence Value2", "Licence Uri2", "Licence Type2");
+        rights.setRightsStatement("Rights Statement Value2",
+                "Rights Statement Uri2");
+        p.addRights(rights);
         p.addExistenceDate("01-01-01", "dd-mm-yy", "12-12-12", "dd-mm-yy");
 
         RelatedInfo relatedInfo = p.newRelatedInfo();

@@ -36,7 +36,7 @@ import org.ands.rifcs.base.RIFCSWrapper;
 import org.ands.rifcs.base.RegistryObject;
 import org.ands.rifcs.base.RelatedInfo;
 import org.ands.rifcs.base.RelatedObject;
-import org.ands.rifcs.base.Right;
+import org.ands.rifcs.base.Rights;
 import org.ands.rifcs.base.Spatial;
 import org.ands.rifcs.base.Temporal;
 
@@ -74,20 +74,20 @@ public final class SampleRIFCSBuildCollectionV1Dot3Number1 {
         Collection c = r.newCollection();
         c.setType("collection");
         c.addIdentifier("hdl:7651/myhandlesuffix", "handle");
-        Right right = c.newRight();
-        right.setAccessRights("Access Right Value",
-                "Access Rights Uri", "Access Right Type");
-        right.setLicence("Licence Value", "Licence Uri", "Licence Type");
-        right.setRightsStatement("Right Statement Value",
-                "Right Statement Uri");
-        c.addRight(right);
-        right = c.newRight();
-        right.setAccessRights("Access Right Value2",
-                "Access Rights Uri2", "Access Right Type2");
-        right.setLicence("Licence Value2", "Licence Uri2", "Licence Type2");
-        right.setRightsStatement("Right Statement Value2",
-                "Right Statement Uri2");
-        c.addRight(right);
+        Rights rights = c.newRights();
+        rights.setAccessRights("Access Rights Value",
+                "Access Rights Uri", "Access Rights Type");
+        rights.setLicence("Licence Value", "Licence Uri", "Licence Type");
+        rights.setRightsStatement("Rights Statement Value",
+                "Rights Statement Uri");
+        c.addRights(rights);
+        rights = c.newRights();
+        rights.setAccessRights("Access Rights Value2",
+                "Access Rights Uri2", "Access Rights Type2");
+        rights.setLicence("Licence Value2", "Licence Uri2", "Licence Type2");
+        rights.setRightsStatement("Rights Statement Value2",
+                "Rights Statement Uri2");
+        c.addRights(rights);
         Name n = c.newName();
         n.setType("primary");
         NamePart np = n.newNamePart();

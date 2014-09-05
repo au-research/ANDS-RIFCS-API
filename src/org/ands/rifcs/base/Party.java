@@ -43,8 +43,8 @@ public class Party extends RIFCSElement {
     private List<Subject> subjects = new ArrayList<Subject>();
     /** List of Description nodes. */
     private List<Description> descriptions = new ArrayList<Description>();
-    /** List of Right nodes. */
-    private List<Right> rights = new ArrayList<Right>();
+    /** List of Rights nodes. */
+    private List<Rights> rights = new ArrayList<Rights>();
     /** List of ExistenceDate nodes. */
     private List<ExistenceDate> existenceDates = new ArrayList<ExistenceDate>();
     /** List of RelatedInfo nodes. */
@@ -444,7 +444,7 @@ public class Party extends RIFCSElement {
     }
 
     /**
-     * Create and return an empty Right object.
+     * Create and return an empty Rights object.
      *
      * The returned object has no properties or content and is not part of the
      * RIF-CS document, it is essentially a constructor of an object owned by
@@ -452,27 +452,27 @@ public class Party extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
-     * @return the new Right object
+     * @return the new Rights object
      *
      * @throws RIFCSException A RIFCSException
      */
-    public final Right newRight() throws RIFCSException {
-        return new Right(this.newElement(Constants.ELEMENT_RIGHTS));
+    public final Rights newRights() throws RIFCSException {
+        return new Rights(this.newElement(Constants.ELEMENT_RIGHTS));
     }
 
     /**
-     * Add a description to the activity object.
+     * Add a rights element to the activity object.
      *
-     * @param right
-     *            a Right object
+     * @param aRights
+     *            a Rights object
      */
-    public final void addRight(final Right right) {
+    public final void addRights(final Rights aRights) {
         /*
          * if (descriptions == null) { descriptions = new
          * ArrayList<Description>(); }
          */
-        this.getElement().appendChild(right.getElement());
-        this.rights.add(right);
+        this.getElement().appendChild(aRights.getElement());
+        this.rights.add(aRights);
     }
 
     /**
@@ -480,7 +480,7 @@ public class Party extends RIFCSElement {
      *
      * @return A list of Description objects
      */
-    public final List<Right> getRights() {
+    public final List<Rights> getRights() {
         return rights;
     }
 

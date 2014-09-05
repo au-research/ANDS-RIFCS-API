@@ -44,8 +44,8 @@ public class Activity extends RIFCSElement {
     private List<Subject> subjects = new ArrayList<Subject>();
     /** The Description objects belonging to this Activity. */
     private List<Description> descriptions = new ArrayList<Description>();
-    /** The Right objects belonging to this Activity. */
-    private List<Right> rights = new ArrayList<Right>();
+    /** The Rights objects belonging to this Activity. */
+    private List<Rights> rights = new ArrayList<Rights>();
     /** The ExistenceDate objects belonging to this Activity. */
     private List<ExistenceDate> existenceDates =
         new ArrayList<ExistenceDate>();
@@ -511,7 +511,7 @@ public class Activity extends RIFCSElement {
     }
 
     /**
-     * Create and return an empty Right object.
+     * Create and return an empty Rights object.
      *
      * The returned object has no properties or content and is not part
      * of the RIF-CS document, it is essentially a constructor of an object
@@ -519,30 +519,30 @@ public class Activity extends RIFCSElement {
      * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
      *
-     * @return the new Right object
+     * @return the new Rights object
      *
      * @throws RIFCSException A RIFCSException
      *
      */
-    public final Right newRight() throws RIFCSException {
-        return new Right(this.newElement(Constants.ELEMENT_RIGHTS));
+    public final Rights newRights() throws RIFCSException {
+        return new Rights(this.newElement(Constants.ELEMENT_RIGHTS));
     }
 
 
     /**
-     * Add a right to the activity object.
+     * Add a rights element to the activity object.
      *
-     * @param right
-     *    a Right object
+     * @param aRights
+     *    a Rights object
      */
-    public final void addRight(final Right right) {
+    public final void addRights(final Rights aRights) {
         /*    if (descriptions == null)
               {
               descriptions = new ArrayList<Description>();
               }
         */
-        this.getElement().appendChild(right.getElement());
-        this.rights.add(right);
+        this.getElement().appendChild(aRights.getElement());
+        this.rights.add(aRights);
     }
 
 
@@ -550,9 +550,9 @@ public class Activity extends RIFCSElement {
      * Obtain the rights for this activity.
      *
      * @return
-     *      A list of Right objects
+     *      A list of Rights objects
      */
-    public final List<Right> getRights() {
+    public final List<Rights> getRights() {
         return rights;
     }
 

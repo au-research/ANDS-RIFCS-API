@@ -44,8 +44,8 @@ public class Collection extends RIFCSElement {
     private List<Subject> subjects = new ArrayList<Subject>();
     /** List of Description nodes. */
     private List<Description> descriptions = new ArrayList<Description>();
-    /** List of Right nodes. */
-    private List<Right> rightsList = new ArrayList<Right>();
+    /** List of Rights nodes. */
+    private List<Rights> rightsList = new ArrayList<Rights>();
     /** List of RelatedInfo nodes. */
     private List<RelatedInfo> ris = new ArrayList<RelatedInfo>();
     /** List of CitationInfo nodes. */
@@ -490,7 +490,7 @@ public class Collection extends RIFCSElement {
     }
 
     /**
-     * Create and return an empty Right object.
+     * Create and return an empty Rights object.
      *
      * The returned object has no properties or content and is not part of the
      * RIF-CS document, it is essentially a constructor of an object owned by
@@ -498,29 +498,29 @@ public class Collection extends RIFCSElement {
      * with properties, additional sub-elements, etc) before being added to the
      * RIF-CS document.
      *
-     * @return the new Right object
+     * @return the new Rights object
      *
      */
-    public final Right newRight() {
-        Right right = null;
+    public final Rights newRights() {
+        Rights aRights = null;
         try {
-            right = new Right(this.newElement(Constants.ELEMENT_RIGHTS));
+            aRights = new Rights(this.newElement(Constants.ELEMENT_RIGHTS));
         } catch (RIFCSException e) {
             e.printStackTrace();
         }
-        return right;
+        return aRights;
     }
 
 
     /**
      * Add a Rights element to the collection object.
      *
-     * @param right
+     * @param aRights
      *            a Rights object
      */
-    public final void addRight(final Right right) {
-        this.getElement().appendChild(right.getElement());
-        this.rightsList.add(right);
+    public final void addRights(final Rights aRights) {
+        this.getElement().appendChild(aRights.getElement());
+        this.rightsList.add(aRights);
     }
 
 
@@ -529,7 +529,7 @@ public class Collection extends RIFCSElement {
      *
      * @return A list of Rights objects
      */
-    public final List<Right> getRightsList() {
+    public final List<Rights> getRightsList() {
         return rightsList;
     }
 

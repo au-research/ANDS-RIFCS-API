@@ -23,13 +23,13 @@ import org.w3c.dom.Node;
  * @author Mahmoud Sadeghi
  *
  */
-public class Right extends RIFCSElement {
+public class Rights extends RIFCSElement {
 
-    /** The rightsStatement of this Right. */
+    /** The rightsStatement of this Rights. */
     private RightsInfo rightsStatement = null;
-    /** The licence of the Right. */
+    /** The licence of the Rights. */
     private RightsTypedInfo licence = null;
-    /** The accessRights of this Right. */
+    /** The accessRights of this Rights. */
     private RightsTypedInfo accessRights = null;
 
     /**
@@ -40,7 +40,7 @@ public class Right extends RIFCSElement {
      *
      * @throws RIFCSException A RIFCSException
      */
-    protected Right(final Node n) throws RIFCSException {
+    protected Rights(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_RIGHTS);
     }
 

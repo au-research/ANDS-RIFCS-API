@@ -18,7 +18,7 @@ package org.ands.rifcs.base;
 import org.w3c.dom.Node;
 
 /**
- * Class representing subelements of a RIF-CS Right object.
+ * Class representing subelements of a RIF-CS Rights object.
  * This is for subelements of a rights element that
  * only have a rightsUri attribute. (As of RIF-CS v1.5, that
  * means the rightsStatement element.

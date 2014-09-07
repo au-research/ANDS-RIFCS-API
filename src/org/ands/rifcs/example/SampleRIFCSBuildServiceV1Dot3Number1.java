@@ -148,13 +148,13 @@ public final class SampleRIFCSBuildServiceV1Dot3Number1 {
         s.addExistenceDates("01-01-01", "dd-mm-yy", "12-12-12", "dd-mm-yy");
 
         RelatedInfo relatedInfo = s.newRelatedInfo();
-        relatedInfo.setIdentifier("related info", "text");
+        relatedInfo.addIdentifier("related info", "text");
         relatedInfo.setNotes("Notes");
         relatedInfo.setTitle("Title");
         relatedInfo.setType("Type");
         s.addRelatedInfo(relatedInfo);
         relatedInfo = s.newRelatedInfo();
-        relatedInfo.setIdentifier("related info1", "text");
+        relatedInfo.addIdentifier("related info1", "text");
         relatedInfo.setNotes("Notes1");
         relatedInfo.setTitle("Title1");
         relatedInfo.setType("Type");

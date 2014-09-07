@@ -133,7 +133,7 @@ public final class SampleRIFCSBuildCollectionV1Dot3Number1 {
         c.addCoverage(cov);
         c.addDescription("This is a sample description", "brief", null);
         RelatedInfo ri = c.newRelatedInfo();
-        ri.setIdentifier("http://external-server.edu/related-page.htm", "uri");
+        ri.addIdentifier("http://external-server.edu/related-page.htm", "uri");
         ri.setTitle("A related information resource");
         ri.setNotes("Notes about the related information resource");
         c.addRelatedInfo(ri);

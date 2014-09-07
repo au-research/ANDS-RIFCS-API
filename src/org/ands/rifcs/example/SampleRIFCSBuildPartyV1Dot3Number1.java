@@ -129,7 +129,7 @@ public final class SampleRIFCSBuildPartyV1Dot3Number1 {
         p.addDescription("This is a sample description", "brief", null);
 
         RelatedInfo ri = p.newRelatedInfo();
-        ri.setIdentifier("http://external-server.edu/related-page.htm", "uri");
+        ri.addIdentifier("http://external-server.edu/related-page.htm", "uri");
         ri.setTitle("A related information resource");
         ri.setNotes("Notes about the related information resource");
         p.addRelatedInfo(ri);
@@ -152,13 +152,13 @@ public final class SampleRIFCSBuildPartyV1Dot3Number1 {
         p.addExistenceDates("01-01-01", "dd-mm-yy", "12-12-12", "dd-mm-yy");
 
         RelatedInfo relatedInfo = p.newRelatedInfo();
-        relatedInfo.setIdentifier("related info", "text");
+        relatedInfo.addIdentifier("related info", "text");
         relatedInfo.setNotes("Notes");
         relatedInfo.setTitle("Title");
         relatedInfo.setType("Type");
         p.addRelatedInfo(relatedInfo);
         relatedInfo = p.newRelatedInfo();
-        relatedInfo.setIdentifier("related info1", "text");
+        relatedInfo.addIdentifier("related info1", "text");
         relatedInfo.setNotes("Notes1");
         relatedInfo.setTitle("Title1");
         relatedInfo.setType("Type");

@@ -15,6 +15,9 @@
  */
 package org.ands.rifcs.base;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -26,8 +29,12 @@ import org.w3c.dom.NodeList;
  *
  */
 public class RelatedInfo extends RIFCSElement {
-    /** The identifier of this related info. */
-    private Identifier identifier = null;
+    /** The identifiers of this related info. */
+    private List<Identifier> identifiers = new ArrayList<Identifier>();
+    /** List of Relation nodes. */
+    private List<Relation> relations = new ArrayList<Relation>();
+    /** The format of this related info. */
+    private Format format = null;
 
     /**
      * Construct a RelatedInfo object.
@@ -86,7 +93,19 @@ public class RelatedInfo extends RIFCSElement {
 
 
     /**
-     * Set the identifier.
+     * Add an identifier to the relatedInfo object.
+     *
+     * @param anIdentifier
+     *    a completed Identifier object
+     */
+    public final void addIdentifier(final Identifier anIdentifier) {
+        this.getElement().appendChild(anIdentifier.getElement());
+        this.identifiers.add(anIdentifier);
+    }
+
+
+    /**
+     * Convenience method to add an identifier to the relatedInfo object.
      *
      * @param anIdentifier
      *      The identifier of the related information resource
@@ -95,25 +114,128 @@ public class RelatedInfo extends RIFCSElement {
      * @throws RIFCSException A RIFCSException
      *
      */
-    public final void setIdentifier(final String anIdentifier,
-                              final String type) throws RIFCSException {
-        this.identifier = this.newIdentifier();
-        this.identifier.setValue(anIdentifier);
-        this.identifier.setType(type);
-        this.getElement().appendChild(this.identifier.getElement());
+    public final void addIdentifier(final String anIdentifier,
+            final String type) throws RIFCSException {
+        Identifier newIdentifier = this.newIdentifier();
+        newIdentifier.setValue(anIdentifier);
+        newIdentifier.setType(type);
+        this.addIdentifier(newIdentifier);
+    }
+
+    /**
+     * Obtain the identifiers for this location.
+     *
+     * @return
+     *      A list of Identifier objects
+     */
+    public final List<Identifier> getIdentifiers() {
+        return this.identifiers;
     }
 
 
     /**
-     * Obtain the identifier.
+     * Create and return an empty Relation object.
      *
-     * @return Identifier
-     *      The identifier of the related information resource
+     * The returned object has no properties or content and is not part
+     * of the RIF-CS document, it is essentially a constructor of an object
+     * owned by the RIF-CS document. The returned object needs to be
+     * "filled out" (e.g. with properties, additional sub-elements, etc)
+     * before being added to the RIF-CS document.
+     *
+     * @return the new Relation object
+     *
+     * @throws RIFCSException A RIFCSException
+     *
      */
-    public final Identifier getIdentifier() {
-        return identifier;
+    public final Relation newRelation() throws RIFCSException {
+        return new Relation(this.newElement(Constants.ELEMENT_RELATION));
     }
 
+
+    /**
+     * Add a related object relation.
+     *
+     * @param type
+     *          The type of relation being described
+     * @param url
+     *    A URL expressing or implementing the relationship
+     *    between registry objects
+     * @param description
+     *    String describing the relation or null
+     * @param descriptionLanguage
+     *    The xml:lang attribute value
+     * @throws RIFCSException A RIFCSException
+     */
+    public final void addRelation(final String type,
+                            final String url,
+                            final String description,
+                            final String descriptionLanguage)
+                                    throws RIFCSException {
+        Relation relation = newRelation();
+
+        relation.setType(type);
+
+        if (url != null) {
+            relation.setURL(url);
+        }
+
+        if (description != null) {
+            relation.setDescription(description);
+        }
+
+        if (descriptionLanguage != null) {
+            relation.setDescriptionLanguage(descriptionLanguage);
+        }
+
+        addRelation(relation);
+    }
+
+
+    /**
+     * Obtain the relations for this collection.
+     *
+     * @return
+     *      A list of Relation objects
+     */
+    public final List<Relation> getRelations() {
+        return relations;
+    }
+
+
+    /**
+     * Add a related object relation.
+     *
+     * @param relation
+     *    A Relation object
+     */
+    public final void addRelation(final Relation relation) {
+        this.getElement().appendChild(relation.getElement());
+        this.relations.add(relation);
+    }
+
+    /**
+     * Set the format.
+     *
+     * @param aFormat
+     *    a Format element representing the format
+     *    of the containing registry object
+     */
+    public final void setFormat(final Format aFormat) {
+        this.format = aFormat;
+        this.getElement().appendChild(aFormat.getElement());
+    }
+
+
+    /**
+     * Return the format.
+     *
+     * @return
+     *    a Format element representing the format
+     *    of the containing registry object
+     */
+    public final Format getFormat() {
+        return this.format;
+    }
 
     /**
      * Set the title.
@@ -179,10 +301,48 @@ public class RelatedInfo extends RIFCSElement {
      *
      */
     private void initStructures() throws RIFCSException {
+        initIdentifiers();
+        initRelations();
+        initFormat();
+    }
+
+    /** Initialisation code for identifier elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
+    private void initIdentifiers() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_IDENTIFIER);
 
-        if (nl.getLength() > 0) {
-            this.identifier = new Identifier(nl.item(0));
+        for (int i = 0; i < nl.getLength(); i++) {
+            identifiers.add(new Identifier(nl.item(i)));
         }
     }
+
+    /** Initialisation code for relation elements.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
+    private void initRelations() throws RIFCSException {
+        NodeList nl = super.getElements(Constants.ELEMENT_RELATION);
+
+        for (int i = 0; i < nl.getLength(); i++) {
+            relations.add(new Relation(nl.item(i)));
+        }
+    }
+
+    /** Initialisation code for relation elements.
+    *
+    * @throws RIFCSException A RIFCSException
+    *
+    */
+   private void initFormat() throws RIFCSException {
+       NodeList nl = super.getElements(Constants.ELEMENT_FORMAT);
+
+       if (nl.getLength() > 0) {
+           this.format = new Format(nl.item(0));
+       }
+   }
+
 }

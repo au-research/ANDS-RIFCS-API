@@ -30,6 +30,45 @@
 
     <h5>Change History</h5>
     <ul>
+      <li>Work in progress for release 2.0.0</li>
+      <ul>
+        <li>Updated for RIF-CS v1.5. (There was not a separate release
+        of this API to support RIF-CS 1.4.)</li>
+        <li>Source code reformatted. See the checks directory for
+        configuration files to use with Checkstyle, PMD, and
+        FindBugs. (The code passes the Checkstyle checks, but not all
+        the PMD or FindBugs checks.)</li>
+        <li>Existing classes in org.ands.rifcs.example renamed. For
+        example, SampleRIFCSBuildActivity became
+        SampleRIFCSBuildActivityV1Dot3Number1 to indicate that it is
+        a test of RIF-CS v1.3.</li>
+        <li>Incompatible changes:
+	  <ul>
+	    <li>The classes Right and ExistenceDate have been renamed
+	    as Rights and ExistenceDates, so that they now match the
+	    corresponding RIF-CS element names. The methods
+	    newRight() and addRight() have been renamed to
+	    newRights() and addRights().</li>
+	    <li>The Collection class now supports existenceDates
+	    element. </li>
+	    <li>The class TemporalCoverageDate has been renamed as
+	    DateWithTypeDataFormat. It is now also used in the
+	    contruction of Dates objects.</li>
+	    <li>The previously deprecated method
+	    Collection.addRelatedInfo(String) has now been removed.</li>
+	    <li></li>
+	  </ul>
+        <li>Defects fixed:
+	  <ul>
+	    <li>The Collection class did not support existenceDates
+	    elements. It now does.</li>
+	    <li>The rights and existenceDates elements were not
+	    parsed when reading existing RIF-CS data. They now are.</li>
+	    <li></li>
+	    <li></li>
+	  </ul>
+	</li>
+      </ul>
       <li>1.3.0</li>
       <ul>
         <li>Updated for RIF-CS 1.3.</li>

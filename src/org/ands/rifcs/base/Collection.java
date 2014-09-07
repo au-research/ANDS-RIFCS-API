@@ -675,29 +675,6 @@ public class Collection extends RIFCSElement {
     }
 
     /**
-     * Convenience method to add related info
-     * containing a single URL identifier
-     * to the collection object.
-     *
-     * @param relatedInfoURI
-     *            a relatedInfo URI
-     *
-     * @throws RIFCSException A RIFCSException
-     * @deprecated Use the newRelatedInfo() method to construct relatedInfo.
-     *             This method will be removed in a future release. If used it
-     *             will create a single identifier of type uri within the
-     *             related info element.
-     */
-    @Deprecated
-    public final void addRelatedInfo(
-            final String relatedInfoURI) throws RIFCSException {
-        RelatedInfo ri = newRelatedInfo();
-        ri.setIdentifier(relatedInfoURI, "uri");
-        this.getElement().appendChild(ri.getElement());
-        this.ris.add(ri);
-    }
-
-    /**
      * Obtain the related info for this collection.
      *
      * @return A list of RelatedInfo objects

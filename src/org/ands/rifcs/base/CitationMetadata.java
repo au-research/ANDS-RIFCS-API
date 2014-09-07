@@ -199,10 +199,13 @@ public class CitationMetadata extends RIFCSElement {
 
     /**
      * Set the resource edition.
+     * The name of the "edition" element was changed to "version"
+     * in RIF-CS v1.4.
      *
      * @param edition
      *    the resource edition
      */
+    @Deprecated
     public final void setEdition(final String edition) {
         Element e = this.newElement(Constants.ELEMENT_EDITION);
         e.setTextContent(edition);
@@ -212,12 +215,43 @@ public class CitationMetadata extends RIFCSElement {
 
     /**
      * Return the resource edition.
+     * The name of the "edition" element was changed to "version"
+     * in RIF-CS v1.4.
      *
      * @return String
      *    the resource edition
      */
+    @Deprecated
     public final String getEdition() {
         NodeList nl = super.getElements(Constants.ELEMENT_EDITION);
+        if (nl.getLength() == 1) {
+            return nl.item(0).getTextContent();
+        }
+
+        return null;
+    }
+
+    /**
+     * Set the resource version.
+     *
+     * @param version
+     *    the resource version
+     */
+    public final void setVersion(final String version) {
+        Element e = this.newElement(Constants.ELEMENT_VERSION);
+        e.setTextContent(version);
+        this.getElement().appendChild(e);
+    }
+
+
+    /**
+     * Return the resource version.
+     *
+     * @return String
+     *    the resource version
+     */
+    public final String getVersion() {
+        NodeList nl = super.getElements(Constants.ELEMENT_VERSION);
         if (nl.getLength() == 1) {
             return nl.item(0).getTextContent();
         }

@@ -259,7 +259,7 @@ public class RIFCSWrapper {
         removeElements(docRO, XSD_IMPORT);
         // Define namespace namespace
         Element xmlImport = docRO.createElementNS(
-                "http://www.w3.org/2001/XMLSchema", "xsd:import");
+                "http://www.w3.org/2001/XMLSchema", XSD_IMPORT);
         xmlImport.setAttribute("namespace",
                 "http://www.w3.org/XML/1998/namespace");
         xmlImport.setAttribute("schemaLocation",
@@ -269,7 +269,7 @@ public class RIFCSWrapper {
                 root.getElementsByTagName("xsd:element").item(0));
         // Repeat for extRif namespace
         xmlImport = docRO.createElementNS(
-                "http://www.w3.org/2001/XMLSchema", "xsd:import");
+                "http://www.w3.org/2001/XMLSchema", XSD_IMPORT);
         xmlImport.setAttribute("namespace",
                 "http://ands.org.au/standards/rif-cs/extendedRegistryObjects");
         xmlImport.setAttribute("schemaLocation",
@@ -281,7 +281,7 @@ public class RIFCSWrapper {
         removeElements(docCollection, XSD_INCLUDE);
         removeElements(docParty, XSD_INCLUDE);
         removeElements(docService, XSD_INCLUDE);
-        removeElements(docTypes, "xsd:import");
+        removeElements(docTypes, XSD_IMPORT);
 
         addToSchema(docRO, docActivity);
         addToSchema(docRO, docCollection);

@@ -214,6 +214,24 @@ public class RelatedInfo extends RIFCSElement {
     }
 
     /**
+     * Create and return an empty Format object.
+     *
+     * The returned object has no properties or content and is not part
+     * of the RIF-CS document, it is essentially a constructor of an object
+     * owned by the RIF-CS document. The returned object needs to be
+     * "filled out" (e.g. with properties, additional sub-elements, etc)
+     * before being added to the RIF-CS document.
+     *
+     * @return the new Format object
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
+    public final Format newFormat() throws RIFCSException {
+        return new Format(this.newElement(Constants.ELEMENT_FORMAT));
+    }
+
+    /**
      * Set the format.
      *
      * @param aFormat

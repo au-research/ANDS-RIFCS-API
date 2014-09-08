@@ -77,6 +77,27 @@ public class Format extends RIFCSElement {
 
 
     /**
+     * Convenience method to add an identifier to the format object.
+     *
+     * @param identifier
+     *            an identifier string
+     * @param type
+     *            the identifier type
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
+    public final void addIdentifier(final String identifier,
+            final String type) throws RIFCSException {
+        Identifier i = newIdentifier();
+        i.setType(type);
+        i.setValue(identifier);
+        this.getElement().appendChild(i.getElement());
+        this.identifiers.add(i);
+    }
+
+
+    /**
      * Obtain the identifiers for this format.
      *
      * @return

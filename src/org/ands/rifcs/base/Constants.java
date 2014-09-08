@@ -241,7 +241,13 @@ public final class Constants {
 
     /** RIF-CS schema location base path. */
     public static final String SCHEMA_BASE =
-            "http://services.ands.org.au/documentation/rifcs/1.3/schema/";
+            "http://services.ands.org.au/documentation/rifcs/1.5/schema/";
+    /** RIF-CS schema location of extRif XSD. The API does not support
+     * creation of extRif annotation nodes, but because the
+     * registryObjects XSD imports it, it must be loaded in order
+     * to support validation. */
+    public static final String SCHEMA_EXTRIF =
+            SCHEMA_BASE + "extRif.xsd";
     /** RIF-CS schema location of registryObjects XSD. */
     public static final String SCHEMA_REGISTRY_OBJECTS =
             SCHEMA_BASE + "registryObjects.xsd";

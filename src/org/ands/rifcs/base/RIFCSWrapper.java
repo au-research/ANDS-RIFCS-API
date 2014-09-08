@@ -64,6 +64,9 @@ public class RIFCSWrapper {
     /** Schema include directive. Defined as a constant because it
      *  is used multiple times throughout the class. */
     private static final String XSD_INCLUDE = "xsd:include";
+    /** Schema import directive. The extRif schema is included
+     * using xsd:import. */
+    private static final String XSD_IMPORT = "xsd:import";
     /** The RIF-CS document. */
     private Document doc = null;
     /** The RIF-CS object. */
@@ -239,6 +242,8 @@ public class RIFCSWrapper {
 
         Document docRO = builder.parse(new URL(
                 Constants.SCHEMA_REGISTRY_OBJECTS).openStream());
+        Document docExtRif = builder.parse(new URL(
+                Constants.SCHEMA_EXTRIF).openStream());
         Document docActivity = builder.parse(new URL(
                 Constants.SCHEMA_ACTIVITY).openStream());
         Document docCollection = builder.parse(new URL(
@@ -251,6 +256,8 @@ public class RIFCSWrapper {
                 Constants.SCHEMA_REGISTRY_TYPES).openStream());
 
         removeElements(docRO, XSD_INCLUDE);
+        removeElements(docRO, XSD_IMPORT);
+        // Define namespace namespace
         Element xmlImport = docRO.createElementNS(
                 "http://www.w3.org/2001/XMLSchema", "xsd:import");
         xmlImport.setAttribute("namespace",
@@ -258,6 +265,15 @@ public class RIFCSWrapper {
         xmlImport.setAttribute("schemaLocation",
                 "http://www.w3.org/2001/xml.xsd");
         Element root = docRO.getDocumentElement();
+        root.insertBefore(xmlImport,
+                root.getElementsByTagName("xsd:element").item(0));
+        // Repeat for extRif namespace
+        xmlImport = docRO.createElementNS(
+                "http://www.w3.org/2001/XMLSchema", "xsd:import");
+        xmlImport.setAttribute("namespace",
+                "http://ands.org.au/standards/rif-cs/extendedRegistryObjects");
+        xmlImport.setAttribute("schemaLocation",
+                Constants.SCHEMA_EXTRIF);
         root.insertBefore(xmlImport,
                 root.getElementsByTagName("xsd:element").item(0));
 
@@ -272,6 +288,7 @@ public class RIFCSWrapper {
         addToSchema(docRO, docParty);
         addToSchema(docRO, docService);
         addToSchema(docRO, docTypes);
+        addToSchema(docRO, docExtRif);
 
         return new DOMSource(docRO);
     }

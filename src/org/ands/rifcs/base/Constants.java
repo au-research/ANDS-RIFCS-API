@@ -225,6 +225,9 @@ public final class Constants {
     /** Name of the version element. */
     public static final String ELEMENT_VERSION = "version";
 
+    /** The attribute used to define the default namespace. */
+    public static final String NS_XMLNS = "xmlns";
+
     /** The rif namespace prefix for internal use. */
     public static final String NS_PREFIX = "xmlns:rif";
 
@@ -238,6 +241,9 @@ public final class Constants {
 
     /** XML namespace location. */
     public static final String NS_XML = "http://www.w3.org/XML/1998/namespace";
+    /** XML schema instance location. */
+    public static final String NS_XML_SCHEMA_INSTANCE =
+            "http://www.w3.org/2001/XMLSchema-instance";
 
     /** RIF-CS schema location base path. */
     public static final String SCHEMA_BASE =

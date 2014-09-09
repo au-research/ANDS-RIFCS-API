@@ -24,6 +24,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 
+import org.ands.rifcs.base.Constants;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -110,7 +111,23 @@ public class DefaultRIFCSHandler extends DefaultHandler implements RIFCSHandler
         }
 
         for (int i = 0; i < attributes.getLength(); i++) {
-            e.setAttribute(attributes.getQName(i), attributes.getValue(i));
+            if (attributes.getURI(i).length() > 0) {
+                e.setAttributeNS(attributes.getURI(i),
+                        attributes.getQName(i), attributes.getValue(i));
+            } else {
+                // Ignore namespace declarations for the default namespace
+                // and for the XMLSchema-instance namespace.
+                // This makes writing out the resulting document work.
+                // (Otherwise, you get duplicate default xmlns="..."
+                // and xmlns:xsi="..." attributes generated.
+                if (!(attributes.getQName(i).equals(Constants.NS_XMLNS)
+                    || (attributes.getQName(i).startsWith(Constants.NS_XMLNS)
+                            && attributes.getValue(i).equals(
+                                    Constants.NS_XML_SCHEMA_INSTANCE)))) {
+                    e.setAttribute(attributes.getQName(i),
+                            attributes.getValue(i));
+                }
+            }
         }
 
         elements.push(e);

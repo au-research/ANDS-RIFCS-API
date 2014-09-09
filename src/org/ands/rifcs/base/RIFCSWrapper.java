@@ -257,7 +257,7 @@ public class RIFCSWrapper {
 
         removeElements(docRO, XSD_INCLUDE);
         removeElements(docRO, XSD_IMPORT);
-        // Define namespace namespace
+        // Define XML namespace to support use of xml:lang attributes
         Element xmlImport = docRO.createElementNS(
                 "http://www.w3.org/2001/XMLSchema", XSD_IMPORT);
         xmlImport.setAttribute("namespace",

@@ -1,7 +1,4 @@
 /**
- * Date Modified: $Date: 2012-04-04 12:13:39 +1000 (Wed, 04 Apr 2012) $
- * Version: $Revision: 1695 $
- * 
  * Copyright 2008 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,42 +21,65 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.ands.rifcs.base.Collection;
+import org.ands.rifcs.base.Name;
+import org.ands.rifcs.base.NamePart;
+import org.ands.rifcs.base.RIFCS;
+import org.ands.rifcs.base.RIFCSException;
+import org.ands.rifcs.base.RIFCSWrapper;
+import org.ands.rifcs.base.RegistryObject;
 
-import org.ands.rifcs.base.*;
-import org.ands.rifcs.ch.*;
+import org.ands.rifcs.ch.RIFCSReader;
 
 import org.xml.sax.SAXException;
 
-public class SampleRIFCSRead
-{
-	private static RIFCS rifcs = null;
+/** Example of the API that reads RIF-CS data from a file. */
+public final class SampleRIFCSRead {
+    /** The RIF-CS object. */
+    private static RIFCS rifcs = null;
 
-    public static void main(String[] args) throws RIFCSException, FileNotFoundException, SAXException, ParserConfigurationException, IOException, MalformedURLException
-    {
+    /** This class can not be instantiated. */
+    private SampleRIFCSRead() {
+    }
+
+    /** The main method.
+     *  @param args The command-line arguments. args[0] is the name
+     *          of a file to be read.
+     *  @throws RIFCSException A RIFCSException
+     *  @throws FileNotFoundException A FileNotFoundException
+     *  @throws SAXException A SAXException
+     *  @throws ParserConfigurationException A ParserConfigurationException
+     *  @throws IOException An IOException
+     *  @throws MalformedURLException A MalformedURLException
+     */
+    public static void main(final String[] args) throws RIFCSException,
+    FileNotFoundException, SAXException, ParserConfigurationException,
+    IOException, MalformedURLException {
         RIFCSReader rr = new RIFCSReader();
         rr.mapToDOM(new FileInputStream(args[0]));
         RIFCSWrapper rw = new RIFCSWrapper(rr.getDocument());
-	    rw.validate();
-	    RIFCS rifcs = rw.getRIFCSObject();
+        rw.validate();
+        rifcs = rw.getRIFCSObject();
 
-	    List<RegistryObject> list = rifcs.getCollections();
-	    for (Iterator<RegistryObject> i=list.iterator(); i.hasNext();)
-        {
-	    	RegistryObject ro = (RegistryObject)i.next();
-            Collection c = (Collection)ro.getClassObject();
-            Iterator j = c.getNames().iterator();
-            while(j.hasNext()) 
-            {
-                Name n = (Name)j.next();
-                if(n.getType().equals("primary"))
-                {
-                    Iterator k = n.getNameParts().iterator();
-                    while(k.hasNext()) 
-                        System.out.println((new StringBuilder()).append(((NamePart)k.next()).getValue()).append(" (").append(ro.getKey()).append(")").toString());
+        List<RegistryObject> list = rifcs.getCollections();
+        for (Iterator<RegistryObject> i = list.iterator(); i.hasNext();) {
+            RegistryObject ro = (RegistryObject) i.next();
+            Collection c = (Collection) ro.getClassObject();
+            Iterator<Name> j = c.getNames().iterator();
+            while (j.hasNext()) {
+                Name n = (Name) j.next();
+                if (n.getType().equals("primary")) {
+                    Iterator<NamePart> k = n.getNameParts().iterator();
+                    while (k.hasNext()) {
+                        System.out.println(new StringBuilder().
+                                append(((NamePart) k.next()).
+                                        getValue()).append(" (").
+                                        append(ro.getKey()).append(")").
+                                        toString());
+                    }
                 }
             }
         }

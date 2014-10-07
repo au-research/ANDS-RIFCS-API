@@ -1,7 +1,4 @@
 /**
- * Date Modified: $Date: 2010-07-07 16:14:13 +1000 (Wed, 07 Jul 2010) $
- * Version: $Revision: 458 $
- * 
  * Copyright 2009 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,140 +16,136 @@
 package org.ands.rifcs.base;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * Class representing a RIF-CS name object
- * 
+ * Class representing a RIF-CS name object.
+ *
  * @author Scott Yeadon
  *
  */
-public class Contributor extends RIFCSElement
-{
+public class Contributor extends RIFCSElement {
+    /** List of NamePart nodes. */
     private List<NamePart> nameParts = new ArrayList<NamePart>();
 
     /**
-     * Construct a Name object
-     * 
+     * Construct a Name object.
+     *
      * @param n
      *        A w3c Node, typically an Element
-     *        
-     * @exception RIFCSException
-     */     
-    protected Contributor(Node n) throws RIFCSException
-    {
+     *
+     * @throws RIFCSException A RIFCSException
+     */
+    protected Contributor(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_CONTRIBUTOR);
         initStructures();
     }
-    
-    
+
+
     /**
-     * Set the citation sequence
-     * 
-     * @param seq 
+     * Set the citation sequence.
+     *
+     * @param seq
      *          an integer sequence number indicating the order
      *          a contributor would appear in a citation
-     */      
-    public void setSeq(int seq)
-    {
+     */
+    public final void setSeq(final int seq) {
         super.setAttributeValue(Constants.ATTRIBUTE_SEQ, String.valueOf(seq));
     }
 
-    
+
     /**
-     * return the seq
-     * 
+     * return the seq.
+     *
      * @return int
      *          an integer sequence number indicating the order
      *          a contributor would appear in a citation or -1 if not
      *          set
-     */  
-    public int getSeq()
-    {
+     */
+    public final int getSeq() {
        String seq = super.getAttributeValue(Constants.ATTRIBUTE_SEQ);
-       if (seq == null || seq.equals(""))
-       {
+       if (seq == null || seq.equals("")) {
            return -1;
        }
-       return Integer.valueOf(seq);
+       return Integer.parseInt(seq);
     }
-    
-    
+
+
     /**
      * Create and return an empty NamePart object.
-     * 
+     *
      * The returned object has no properties or content and is not part
      * of the RIF-CS document, it is essentially a constructor of an object
      * owned by the RIF-CS document. The returned object needs to be
-     * "filled out" (e.g. with properties, additional sub-elements, etc) 
+     * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
-     * 
-     * @exception RIFCSException
+     *
+     * @return the new NamePart object
+     *
+     * @throws RIFCSException A RIFCSException
      *
      */
-    public NamePart newNamePart() throws RIFCSException
-    {
+    public final NamePart newNamePart() throws RIFCSException {
         return new NamePart(this.newElement(Constants.ELEMENT_NAMEPART));
     }
-    
-    
+
+
     /**
-     * Add a name part to a name object 
-     * 
+     * Add a name part to a name object.
+     *
      * @param namePart
      *    a completed NamePart object
      */
-    public void addNamePart(NamePart namePart)
-    {
+    public final void addNamePart(final NamePart namePart) {
        this.getElement().appendChild(namePart.getElement());
        this.nameParts.add(namePart);
     }
-    
-    
+
+
     /**
-     * Convenience method to add a name part to a name object 
-     * 
+     * Convenience method to add a name part to a name object.
+     *
      * @param namePart
      *    String with the name value
      * @param type
      *    namePart type (e.g. surname, middle name) or null
+     * @throws RIFCSException A RIFCSException
      */
-    public void addNamePart(String namePart,
-                            String type) throws RIFCSException
-    {
+    public final void addNamePart(final String namePart,
+                            final String type) throws RIFCSException {
         NamePart np = newNamePart();
         np.setValue(namePart);
         np.setType(type);
         this.getElement().appendChild(np.getElement());
         this.nameParts.add(np);
     }
-    
-    
+
+
     /**
-     * Obtain the name parts for this name
-     * 
-     * @return 
+     * Obtain the name parts for this name.
+     *
+     * @return
      *      A list of NamePart objects
      */
-    public List<NamePart> getNameParts()
-    {
+    public final List<NamePart> getNameParts() {
         return nameParts;
     }
-    
-    
-    /* initialisation code for existing documents */
-    private void initStructures() throws RIFCSException
-    {
+
+
+    /** Initialisation code for existing documents.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
+    private void initStructures() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_NAMEPART);
-        
-        for (int i = 0; i < nl.getLength(); i++)
-        {
+
+        for (int i = 0; i < nl.getLength(); i++) {
             nameParts.add(new NamePart(nl.item(i)));
-        }        
+        }
     }
 
 }

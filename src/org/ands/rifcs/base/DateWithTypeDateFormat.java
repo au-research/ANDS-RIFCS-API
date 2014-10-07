@@ -1,7 +1,4 @@
 /**
- * Date Modified: $Date: 2010-07-07 16:14:13 +1000 (Wed, 07 Jul 2010) $
- * Version: $Revision: 458 $
- * 
  * Copyright 2009 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,109 +20,100 @@ import java.util.Date;
 import org.w3c.dom.Node;
 
 /**
- * Class representing a RIF-CS description object
- * 
+ * Class representing a RIF-CS date with type and dateFormat attributes.
+ *
  * @author Scott Yeadon
  *
  */
-public class TemporalCoverageDate extends RIFCSElement
-{
+public class DateWithTypeDateFormat extends RIFCSElement {
     /**
-     * Construct a TemporalCoverageDate object
-     * 
-     * @param n 
+     * Construct a DateWithTypeDateFormat object.
+     *
+     * @param n
      *        A w3c Node, typically an Element
-     *        
-     * @exception RIFCSException
-     */     
-    protected TemporalCoverageDate(Node n) throws RIFCSException
-    {
+     *
+     * @throws RIFCSException A RIFCSException
+     */
+    protected DateWithTypeDateFormat(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_DATE);
     }
 
     /**
-     * Set the dateFormat
-     * 
-     * @param type 
-     *          The type of date
-     */      
-    public void setDateFormat(String dateFormat)
-    {
+     * Set the dateFormat.
+     *
+     * @param dateFormat
+     *          The date format
+     */
+    public final void setDateFormat(final String dateFormat) {
         super.setAttributeValue(Constants.ATTRIBUTE_DATE_FORMAT, dateFormat);
     }
 
 
     /**
-     * return the type
-     * 
+     * return the dateFormat.
+     *
      * @return
-     *      The type attribute value or empty string if attribute
+     *      The date format value or empty string if attribute
      *      is empty or not present
      */
-    public String DateFormat()
-    {
+    public final String getDateFormat() {
         return super.getAttributeValue(Constants.ATTRIBUTE_DATE_FORMAT);
     }
-    
-    
-    
+
+
+
     /**
-     * Set the type
-     * 
-     * @param type 
+     * Set the type.
+     *
+     * @param type
      *          The type of date
-     */      
-    public void setType(String type)
-    {
+     */
+    public final void setType(final String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
 
     /**
-     * return the type
-     * 
+     * return the type.
+     *
      * @return
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-    public String getType()
-    {
+    public final String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
 
 
     /**
-     * Set the content
-     * 
-     * @param value 
+     * Set the content.
+     *
+     * @param value
      *      The content of the date
      */
-    public void setValue(String value)
-    {
+    public final void setValue(final String value) {
         super.setTextContent(value);
     }
 
 
     /**
-     * Set the content
-     * 
-     * @param value 
+     * Set the content.
+     *
+     * @param value
      *      The content of the date
      */
-    public void setValue(Date value)
-    {
+    public final void setValue(final Date value) {
         super.setTextContent(RegistryObject.formatDate(value));
     }
 
-    
+
     /**
-     * Obtain the content
-     * 
-     * @return 
+     * Obtain the content.
+     *
+     * @return
      *      The description string
-     */  
-    public String getValue()
-    {
+     */
+    public final String getValue() {
         return super.getTextContent();
     }
 }

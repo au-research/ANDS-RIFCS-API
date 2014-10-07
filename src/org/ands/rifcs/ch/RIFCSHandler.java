@@ -1,7 +1,4 @@
 /**
- * Date Modified: $Date: 2010-01-18 10:22:16 +1100 (Mon, 18 Jan 2010) $
- * Version: $Revision: 288 $
- * 
  * Copyright 2008 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,24 +12,23 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  */
 package org.ands.rifcs.ch;
 
 import org.w3c.dom.Document;
 /**
- * Interface which any METS Content Handler must implement
- * 
+ * Interface which any RIF-CS Content Handler must implement.
+ *
  * @author Scott Yeadon
  */
-public interface RIFCSHandler
-{
+public interface RIFCSHandler {
     /**
-     * Get a DOM document resulting from a SAX parse
-     *  
+     * Get a DOM document resulting from a SAX parse.
+     *
      *  @return
      *      The DOM document. May be null if called before parsing and empty
      *      if parsing exception caught.
      */
-    public Document getDocument();
+    Document getDocument();
 }

@@ -1,7 +1,4 @@
 /**
- * Date Modified: $Date: 2010-07-07 16:14:13 +1000 (Wed, 07 Jul 2010) $
- * Version: $Revision: 458 $
- * 
  * Copyright 2009 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,84 +20,77 @@ import java.util.Date;
 import org.w3c.dom.Node;
 
 /**
- * Class representing a RIF-CS description object
- * 
+ * Class representing a RIF-CS date object that has a dateFormat attribute.
+ *
  * @author Scott Yeadon
  *
  */
-public class CommonDateElement extends RIFCSElement
-{
+public class CommonDateElement extends RIFCSElement {
     /**
-     * Construct a CommonDateElement object
-     * 
-     * @param n 
+     * Construct a CommonDateElement object.
+     *
+     * @param n
      *        A w3c Node, typically an Element
-     *        
-     * @exception RIFCSException
-     */     
-    protected CommonDateElement(Node n) throws RIFCSException
-    {
+     *
+     * @throws RIFCSException A RIFCSException
+     */
+    protected CommonDateElement(final Node n) throws RIFCSException {
         super(n, n.getNodeName());
     }
 
-    
-	/**
-     * Set the type
-     * 
-     * @param type 
-     *          The type of date
-     */      
-    public void setDateFormat(String type)
-    {
-        super.setAttributeValue(Constants.ATTRIBUTE_DATE_FORMAT, type);
+
+        /**
+     * Set the dateFormat attribute.
+     *
+     * @param dateFormat
+     *          The dateFormat of the date
+     */
+    public final void setDateFormat(final String dateFormat) {
+        super.setAttributeValue(Constants.ATTRIBUTE_DATE_FORMAT, dateFormat);
     }
 
 
     /**
-     * return the type
-     * 
+     * return the value of the dateFormat attribute.
+     *
      * @return
-     *      The type attribute value or empty string if attribute
+     *      The dateFormat attribute value or empty string if attribute
      *      is empty or not present
      */
-    public String getDateFormat()
-    {
+    public final String getDateFormat() {
         return super.getAttributeValue(Constants.ATTRIBUTE_DATE_FORMAT);
     }
 
 
     /**
-     * Set the content
-     * 
-     * @param value 
+     * Set the content.
+     *
+     * @param value
      *      The content of the date
      */
-    public void setValue(String value)
-    {
+    public final void setValue(final String value) {
         super.setTextContent(value);
     }
 
 
     /**
-     * Set the content
-     * 
-     * @param value 
+     * Set the content.
+     *
+     * @param value
      *      The content of the date
      */
-    public void setValue(Date value)
-    {
+    public final void setValue(final Date value) {
         super.setTextContent(RegistryObject.formatDate(value));
     }
 
-    
+
     /**
-     * Obtain the content
-     * 
-     * @return 
+     * Obtain the content.
+     *
+     * @return
      *      The description string
-     */  
-    public String getValue()
-    {
+     */
+    public final String getValue() {
         return super.getTextContent();
     }
 }

@@ -1,7 +1,4 @@
 /**
- * Date Modified: $Date: 2010-01-18 10:22:16 +1100 (Mon, 18 Jan 2010) $
- * Version: $Revision: 288 $
- * 
  * Copyright 2009 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,46 +18,42 @@ package org.ands.rifcs.base;
 import org.w3c.dom.Node;
 
 /**
- * Class representing a service access policy
- * 
+ * Class representing a service access policy.
+ *
  * @author Scott Yeadon
  *
  */
-public class AccessPolicy extends RIFCSElement
-{
+public class AccessPolicy extends RIFCSElement {
     /**
-     * Construct an AccessPolicy object
-     * 
+     * Construct an AccessPolicy object.
+     *
      * @param n
      *        A w3c Node, typically an Element
-     *        
-     * @exception RIFCSException
-     */     
-    protected AccessPolicy(Node n) throws RIFCSException
-    {
+     *
+     * @throws RIFCSException A RIFCSException
+     */
+    protected AccessPolicy(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_ACCESS_POLICY);
     }
 
 
     /**
-     * Set the access policy URI
-     * 
-     * @param value 
+     * Set the access policy URI.
+     *
+     * @param value
      *      The access policy URI
      */
-    public void setValue(String value)
-    {
+    public final void setValue(final String value) {
         super.setTextContent(value);
     }
 
 
     /**
-     * Obtain the access policy URI
-     * 
+     * Obtain the access policy URI.
+     *
      * @return The access policy URI
-     */  
-    public String getValue()
-    {
+     */
+    public final String getValue() {
         return super.getTextContent();
     }
 }

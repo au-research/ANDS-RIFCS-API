@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 
 <!--
-  - METS API build file
+  - RIF-CS API build file
   -
-  - Version:  $Revision: 95 $
-  - Date:     $Date: 2009-08-18 14:08:36 +1000 (Tue, 18 Aug 2009) $
+  - Version:  (Removed; see Git history)
+  - Date:     (Removed; see Git history)
   -->
 
 <project name="rifcs-api" default="build_jar" basedir=".">
@@ -14,11 +14,11 @@
   <!-- ============================================================= -->
 
   <description>
-===================== DSpace platform build file =====================
+===================== RIF-CS API platform build file =====================
 
 Common usage:
 
-  Fresh install, including database setup and registry loading:
+  Fresh install:
     % ant ;
 
 ======================================================================

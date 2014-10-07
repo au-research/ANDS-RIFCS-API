@@ -1,7 +1,4 @@
 /**
- * Date Modified: $Date: 2012-04-10 10:06:16 +1100 (TUE, 10 Apr 2012) $
- * Version: $Revision: 288 $
- * 
  * Copyright 2009 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,72 +18,71 @@ package org.ands.rifcs.base;
 import org.w3c.dom.Node;
 
 /**
- * Class representing a RIF-CS RightsInfo object
- * 
+ * Class representing subelements of a RIF-CS Rights object.
+ * This is for subelements of a rights element that
+ * only have a rightsUri attribute. (As of RIF-CS v1.5, that
+ * means the rightsStatement element.
+ *
+ * Cf. the RightsTypedInfo class.
+ *
  * @author Mahmoud Sadeghi
  *
  */
-public class RightsInfo extends RIFCSElement
-{
+public class RightsInfo extends RIFCSElement {
     /**
-     * Construct a RightsInfo object
-     * 
-     * @param n 
+     * Construct a RightsInfo object.
+     *
+     * @param n
      *        A w3c Node, typically an Element
-     *        
-     * @exception RIFCSException
-     */     
-    protected RightsInfo(Node n) throws RIFCSException
-    {
+     *
+     * @throws RIFCSException A RIFCSException
+     */
+    protected RightsInfo(final Node n) throws RIFCSException {
         super(n, n.getNodeName());
     }
 
 
     /**
-     * Set the rightsUri
-     * 
+     * Set the rightsUri.
+     *
      * @param rightsUri
      *          The rightsUri of RightsInfo
-     */      
-    public void setRightsUri(String rightsUri)
-    {
+     */
+    public final void setRightsUri(final String rightsUri) {
         super.setAttributeValue(Constants.ATTRIBUTE_RIGHTS_URI, rightsUri);
     }
 
 
     /**
-     * return the rightsUri
-     * 
+     * return the rightsUri.
+     *
      * @return
      *      The type attribute value or empty string if attribute
      *      is empty or not present
      */
-    public String getRightsUri()
-    {
+    public final String getRightsUri() {
         return super.getAttributeValue(Constants.ATTRIBUTE_RIGHTS_URI);
     }
-    
-    
+
+
     /**
-     * Set the content
-     * 
-     * @param value 
+     * Set the content.
+     *
+     * @param value
      *      The content of the RightsInfo
      */
-    public void setValue(String value)
-    {
+    public final void setValue(final String value) {
         super.setTextContent(value);
     }
 
 
     /**
-     * Obtain the content
-     * 
-     * @return 
+     * Obtain the content.
+     *
+     * @return
      *      The RightsInfo string
-     */  
-    public String getValue()
-    {
+     */
+    public final String getValue() {
         return super.getTextContent();
     }
 }

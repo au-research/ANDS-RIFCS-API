@@ -1,7 +1,4 @@
 /**
- * Date Modified: $Date: 2010-01-18 10:22:16 +1100 (Mon, 18 Jan 2010) $
- * Version: $Revision: 288 $
- * 
  * Copyright 2008 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,59 +17,60 @@
 package org.ands.rifcs.base;
 
 /**
- * An exception class for exceptions
- * 
- * @author Scott Yeadon, ANU 
+ * An exception class for exceptions.
+ *
+ * @author Scott Yeadon, ANU
  */
-public class RIFCSException extends Exception
-{
+public class RIFCSException extends Exception {
+
     /**
-     * create a ROException
-     * 
+     * Serialization UID for this class.
+     */
+    private static final long serialVersionUID = 8917262045342086205L;
+
+    /**
+     * create a ROException.
+     *
      * @param reason
      *            string describing reason for the exception
      */
-    public RIFCSException(String reason)
-    {
+    public RIFCSException(final String reason) {
         super(reason);
     }
-    
-    
+
+
     /**
-     * create a ROException
-     * 
+     * create a ROException.
+     *
      * @param reason
      *            string describing reason for the exception
      * @param cause
      *            A Throwable describing the cause of the exception
      */
-    public RIFCSException(String reason,
-                        Throwable cause)
-    {
+    public RIFCSException(final String reason,
+                        final Throwable cause) {
         super(reason, cause);
     }
-    
-    
+
+
     /**
-     * create a ROException
-     * 
+     * create a ROException.
+     *
      * @param cause
      *            A Throwable describing the cause of the exception
      */
-    public RIFCSException(Throwable cause)
-    {
+    public RIFCSException(final Throwable cause) {
         super(cause);
     }
-    
-    
+
+
     /**
-     * Obtain the reason for the exception
+     * Obtain the reason for the exception.
      *
      * @return
      *          The message text of the exception
      */
-    public String getMessage()
-    {
+    public final String getMessage() {
         return super.getMessage();
     }
 }

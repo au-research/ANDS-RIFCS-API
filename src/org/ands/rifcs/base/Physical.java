@@ -1,7 +1,4 @@
 /**
- * Date Modified: $Date: 2010-01-18 10:22:16 +1100 (Mon, 18 Jan 2010) $
- * Version: $Revision: 288 $
- * 
  * Copyright 2009 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,137 +22,135 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * Class representing a RIF-CS physical address object
- * 
+ * Class representing a RIF-CS physical address object.
+ *
  * @author Scott Yeadon
  *
  */
-public class Physical extends RIFCSElement
-{
+public class Physical extends RIFCSElement {
+    /** List of AddressPart nodes. */
     private List<AddressPart> addressParts = new ArrayList<AddressPart>();
 
     /**
-     * Construct a physical address object
-     * 
+     * Construct a physical address object.
+     *
      * @param n
      *        A w3c Node, typically an Element
-     *        
-     * @exception RIFCSException
-     */     
-    protected Physical(Node n) throws RIFCSException
-    {
+     *
+     * @throws RIFCSException A RIFCSException
+     */
+    protected Physical(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_PHYSICAL);
         initStructures();
     }
-    
-    
+
+
     /**
-     * Set the type
-     * 
-     * @param type 
+     * Set the type.
+     *
+     * @param type
      *          The type of physical address
-     */      
-    public void setType(String type)
-    {
+     */
+    public final void setType(final String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
-    
+
     /**
-     * return the type
-     * 
-     * @return 
+     * return the type.
+     *
+     * @return
      *      The type attribute value or empty string if attribute
      *      is empty or not present
-     */  
-   public String getType()
-    {
+     */
+   public final String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
-    
-    
+
+
    /**
-    * Set the language
-    * 
-    * @param lang 
+    * Set the language.
+    *
+    * @param lang
     *      The xml:lang attribute value
-    */  
-    public void setLanguage(String lang)
-    {
-        super.setAttributeValueNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG, lang);
+    */
+    public final void setLanguage(final String lang) {
+        super.setAttributeValueNS(Constants.NS_XML,
+                Constants.ATTRIBUTE_LANG, lang);
     }
 
 
     /**
-     * Obtain the language
-     * 
-     * @return 
+     * Obtain the language.
+     *
+     * @return
      *      The type attribute value or empty string if attribute
      *      is empty or not present
-     */  
-    public String getLanguage()
-    {
-        return super.getAttributeValueNS(Constants.NS_XML, Constants.ATTRIBUTE_LANG);
+     */
+    public final String getLanguage() {
+        return super.getAttributeValueNS(Constants.NS_XML,
+                Constants.ATTRIBUTE_LANG);
     }
 
-    
+
     /**
      * Create and return an empty AddressPart object.
-     * 
+     *
      * The returned object has no properties or content and is not part
      * of the RIF-CS document, it is essentially a constructor of an object
      * owned by the RIF-CS document. The returned object needs to be
-     * "filled out" (e.g. with properties, additional sub-elements, etc) 
+     * "filled out" (e.g. with properties, additional sub-elements, etc)
      * before being added to the RIF-CS document.
-     * 
-     * @exception RIFCSException
+     *
+     * @return the new AddressPart object
+     *
+     * @throws RIFCSException A RIFCSException
      *
      */
-    public AddressPart newAddressPart() throws RIFCSException
-    {
+    public final AddressPart newAddressPart() throws RIFCSException {
         return new AddressPart(this.newElement(Constants.ELEMENT_ADDRESSPART));
     }
-    
-    
+
+
     /**
-     * Add an address part to the physical address object 
-     * 
+     * Add an address part to the physical address object.
+     *
      * @param addressPart
-     *    a completed AddressPart object      
+     *    a completed AddressPart object
      */
-    public void addAddressPart(AddressPart addressPart)
-    {
+    public final void addAddressPart(final AddressPart addressPart) {
         /*if (addressParts == null)
         {
             addressParts = new ArrayList<AddressPart>();
         }*/
-        
+
        this.getElement().appendChild(addressPart.getElement());
        this.addressParts.add(addressPart);
     }
-    
-    
+
+
     /**
-     * Obtain the address parts for this physical address
-     * 
-     * @return 
+     * Obtain the address parts for this physical address.
+     *
+     * @return
      *      A list of AddressPart objects
-     */          
-    public List<AddressPart> getAddressParts()
-    {
+     */
+    public final List<AddressPart> getAddressParts() {
         return addressParts;
     }
-    
-    
-    /* initialisation code for existing documents */
-    private void initStructures() throws RIFCSException
-    {
+
+
+    /** Initialisation code for existing documents.
+     *
+     * @throws RIFCSException A RIFCSException
+     *
+     */
+    private void initStructures() throws RIFCSException {
         NodeList nl = super.getElements(Constants.ELEMENT_ADDRESSPART);
-        
-        for (int i = 0; i < nl.getLength(); i++)
-        {
+
+        for (int i = 0; i < nl.getLength(); i++) {
             addressParts.add(new AddressPart(nl.item(i)));
-        }        
+        }
     }
 
 }

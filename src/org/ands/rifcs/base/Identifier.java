@@ -1,7 +1,4 @@
 /**
- * Date Modified: $Date: 2010-01-18 10:22:16 +1100 (Mon, 18 Jan 2010) $
- * Version: $Revision: 288 $
- * 
  * Copyright 2009 The Australian National University (ANU)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,72 +18,66 @@ package org.ands.rifcs.base;
 import org.w3c.dom.Node;
 
 /**
- * Class representing a RIF-CS identifier object
- * 
+ * Class representing a RIF-CS identifier object.
+ *
  * @author Scott Yeadon
  *
  */
-public class Identifier extends RIFCSElement
-{
+public class Identifier extends RIFCSElement {
     /**
-     * Construct an Identifier object
-     * 
+     * Construct an Identifier object.
+     *
      * @param n
      *        A w3c Node, typically an Element
-     *        
-     * @exception RIFCSException
-     */     
-    protected Identifier(Node n) throws RIFCSException
-    {
+     *
+     * @throws RIFCSException A RIFCSException
+     */
+    protected Identifier(final Node n) throws RIFCSException {
         super(n, Constants.ELEMENT_IDENTIFIER);
     }
-    
-    
+
+
     /**
-     * Set the type
-     * 
-     * @param type 
-     *      The location type</a>
-     */      
-    public void setType(String type)
-    {
+     * Set the type.
+     *
+     * @param type
+     *      The location type
+     */
+    public final void setType(final String type) {
         super.setAttributeValue(Constants.ATTRIBUTE_TYPE, type);
     }
 
-    
+
     /**
-     * return the type
-     * 
-     * @return 
+     * return the type.
+     *
+     * @return
      *      The type attribute value or empty string if attribute
      *      is empty or not present
-     */  
-    public String getType()
-    {
+     */
+    public final String getType() {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
 
-    
+
     /**
-     * Set the content
-     * 
-     * @param value 
+     * Set the content.
+     *
+     * @param value
      *      The content of the identifier
      */
-    public void setValue(String value)
-    {
+    public final void setValue(final String value) {
         super.setTextContent(value);
     }
-    
-    
+
+
     /**
-     * Obtain the content
-     * 
-     * @return 
+     * Obtain the content.
+     *
+     * @return
      *      The identifier string
-     */  
-    public String getValue()
-    {
+     */
+    public final String getValue() {
         return super.getTextContent();
     }
 }

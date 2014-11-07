@@ -29,6 +29,14 @@ import org.w3c.dom.NodeList;
  *
  */
 public class Electronic extends RIFCSElement {
+    /** List of Notes nodes.
+     * @since 3.0.0
+     */
+    private List<Notes> notes = new ArrayList<Notes>();
+    /** List of MediaType nodes.
+     * @since 3.0.0
+     */
+    private List<MediaType> mediaTypes = new ArrayList<MediaType>();
     /** List of Arg nodes. */
     private List<Arg> args = new ArrayList<Arg>();
 
@@ -68,6 +76,216 @@ public class Electronic extends RIFCSElement {
         return super.getAttributeValue(Constants.ATTRIBUTE_TYPE);
     }
 
+
+    /**
+     * Set the target.
+     *
+     * @param target
+     *      The electronic target
+     * @since 3.0.0
+     */
+    public final void setTarget(final String target) {
+        super.setAttributeValue(Constants.ATTRIBUTE_TARGET, target);
+    }
+
+
+    /**
+     * Return the target.
+     *
+     * @return
+     *      The target attribute value or empty string if attribute
+     *      is empty or not present
+     * @since 3.0.0
+     */
+    public final String getTarget() {
+        return super.getAttributeValue(Constants.ATTRIBUTE_TARGET);
+    }
+
+
+    /**
+     * Set the title.
+     *
+     * @param title
+     *    The title of the electronic address
+     * @since 3.0.0
+     */
+    public final void setTitle(final String title) {
+        Element e = this.newElement(Constants.ELEMENT_TITLE);
+        e.setTextContent(title);
+        this.getElement().appendChild(e);
+    }
+
+
+    /**
+     * Get the title.
+     *
+     * @return String
+     *    The title of the electronic address
+     * @since 3.0.0
+     */
+    public final String getTitle() {
+        NodeList nl = super.getElements(Constants.ELEMENT_TITLE);
+        if (nl.getLength() == 1) {
+            return nl.item(0).getTextContent();
+        }
+
+        return null;
+    }
+
+
+    /**
+     * Add a notes element to the electronic address.
+     *
+     * @param notesObject
+     *    a Notes object
+     * @since 3.0.0
+     */
+    public final void addNotes(final Notes notesObject) {
+        this.getElement().appendChild(notesObject.getElement());
+        this.notes.add(notesObject);
+    }
+
+
+    /**
+     * Obtain the notes elements of this electronic address.
+     *
+     * @return
+     *      A list of Notes objects
+     * @since 3.0.0
+     */
+    public final List<Notes> getNotes() {
+        return notes;
+    }
+
+    /**
+     * Create and return an empty notes element.
+     *
+     * The returned object has no properties or content and is not part
+     * of the RIF-CS document, it is essentially a constructor of an object
+     * owned by the RIF-CS document. The returned object needs to be
+     * "filled out" (e.g. with properties, additional sub-elements, etc)
+     * before being added to the RIF-CS document.
+     *
+     * @return the new Notes object
+     *
+     * @throws RIFCSException A RIFCSException
+     * @since 3.0.0
+     *
+     */
+    public final Notes newNotes() throws RIFCSException {
+        return new Notes(this.newElement(Constants.ELEMENT_NOTES));
+    }
+
+
+    /**
+     * Convenience method to add an notes element to the electronic object.
+     *
+     * @param notesText
+     *            notes to be added
+     *
+     * @throws RIFCSException A RIFCSException
+     * @since 3.0.0
+     *
+     */
+    public final void addNotes(final String notesText)
+            throws RIFCSException {
+        Notes n = newNotes();
+        n.setValue(notesText);
+        addNotes(n);
+    }
+
+
+    /**
+     * Add a media type to the electronic address.
+     *
+     * @param mediaType
+     *    a MediaType object
+     * @since 3.0.0
+     */
+    public final void addMediaType(final MediaType mediaType) {
+        this.getElement().appendChild(mediaType.getElement());
+        this.mediaTypes.add(mediaType);
+    }
+
+
+    /**
+     * Obtain the media types of this electronic resource.
+     *
+     * @return
+     *      A list of MediaType objects
+     * @since 3.0.0
+     */
+    public final List<MediaType> getMediaTypes() {
+        return mediaTypes;
+    }
+
+    /**
+     * Create and return an empty media type element.
+     *
+     * The returned object has no properties or content and is not part
+     * of the RIF-CS document, it is essentially a constructor of an object
+     * owned by the RIF-CS document. The returned object needs to be
+     * "filled out" (e.g. with properties, additional sub-elements, etc)
+     * before being added to the RIF-CS document.
+     *
+     * @return the new MediaType object
+     *
+     * @throws RIFCSException A RIFCSException
+     * @since 3.0.0
+     *
+     */
+    public final MediaType newMediaType() throws RIFCSException {
+        return new MediaType(this.newElement(Constants.ELEMENT_MEDIATYPE));
+    }
+
+
+    /**
+     * Convenience method to add a media type element to the electronic object.
+     *
+     * @param mediaTypeText
+     *            media type to be added
+     *
+     * @throws RIFCSException A RIFCSException
+     * @since 3.0.0
+     *
+     */
+    public final void addMediaType(final String mediaTypeText)
+            throws RIFCSException {
+        MediaType m = newMediaType();
+        m.setValue(mediaTypeText);
+        addMediaType(m);
+    }
+
+
+    /**
+     * Set the byteSize.
+     *
+     * @param byteSize
+     *    The byte size of the electronic address
+     * @since 3.0.0
+     */
+    public final void setByteSize(final String byteSize) {
+        Element e = this.newElement(Constants.ELEMENT_BYTESIZE);
+        e.setTextContent(byteSize);
+        this.getElement().appendChild(e);
+    }
+
+
+    /**
+     * Get the byte size.
+     *
+     * @return String
+     *    The byte size of the electronic address
+     * @since 3.0.0
+     */
+    public final String getByteSize() {
+        NodeList nl = super.getElements(Constants.ELEMENT_BYTESIZE);
+        if (nl.getLength() == 1) {
+            return nl.item(0).getTextContent();
+        }
+
+        return null;
+    }
 
     /**
      * Create and return an empty Arg object.

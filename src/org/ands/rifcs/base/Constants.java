@@ -69,6 +69,10 @@ public final class Constants {
     /** Name of the use attribute. */
     public static final String ATTRIBUTE_USE = "use";
 
+    /** Name of the target attribute.
+     * @since 3.0.0 */
+    public static final String ATTRIBUTE_TARGET = "target";
+
     /** Name of the access policy element. */
     public static final String ELEMENT_ACCESS_POLICY = "accessPolicy";
 
@@ -86,6 +90,10 @@ public final class Constants {
 
     /** Name of the arg element. */
     public static final String ELEMENT_ARG = "arg";
+
+    /** Name of the byteSize element.
+     * @since 3.0.0 */
+    public static final String ELEMENT_BYTESIZE = "byteSize";
 
     /** Name of the citationInfo element. */
     public static final String ELEMENT_CITATIONINFO = "citationInfo";
@@ -143,6 +151,10 @@ public final class Constants {
 
     /** Name of the location element. */
     public static final String ELEMENT_LOCATION = "location";
+
+    /** Name of the mediaType element.
+     * @since 3.0.0 */
+    public static final String ELEMENT_MEDIATYPE = "mediaType";
 
     /** Name of the name element. */
     public static final String ELEMENT_NAME = "name";
@@ -247,7 +259,7 @@ public final class Constants {
 
     /** RIF-CS schema location base path. */
     public static final String SCHEMA_BASE =
-            "http://services.ands.org.au/documentation/rifcs/1.5/schema/";
+            "http://services.ands.org.au/documentation/rifcs/1.6/schema/";
     /** RIF-CS schema location of extRif XSD. The API does not support
      * creation of extRif annotation nodes, but because the
      * registryObjects XSD imports it, it must be loaded in order

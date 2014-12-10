@@ -27,6 +27,7 @@ Common usage:
   <target name="build_jar"
           description="Compile the source code">
     <mkdir dir="${basedir}/build/classes"/>
+    <mkdir dir="${basedir}/lib"/>
     <javac srcdir="${basedir}/src"
            destdir="${basedir}/build/classes"
            debug="on" deprecation="on">
